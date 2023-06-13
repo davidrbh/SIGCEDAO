@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * Clase que hace referencia al EspecialidadModel.php
+ */
 class EspecialidadModel extends Mysql
 {
 

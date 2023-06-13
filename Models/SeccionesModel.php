@@ -1,10 +1,12 @@
-<?php 
-
-	class SeccionesModel extends Mysql
+<?php
+/**
+ * Clase que hace referencia a SeccionesModel.php
+ */
+class SeccionesModel extends Mysql
+{
+	public function __construct()
 	{
-		public function __construct()
-		{
-			parent::__construct();
-		}	
+		parent::__construct();
 	}
- ?>
+}
+?>

@@ -1,10 +1,14 @@
-<?php 
+<?php
 
-	class DocentesModel extends Mysql
+/**
+ * Clase que hace referencia a DocentesModel.php
+ */
+
+class DocentesModel extends Mysql
+{
+	public function __construct()
 	{
-		public function __construct()
-		{
-			parent::__construct();
-		}	
+		parent::__construct();
 	}
- ?>
+}
+?>
