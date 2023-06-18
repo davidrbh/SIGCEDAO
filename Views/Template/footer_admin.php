@@ -5,6 +5,8 @@
     <p class="text-center">Todos los Derechos Reservados</p>
     <img class="logos-logo" src="<?= media(); ?>/images/logo-colegio.png" alt width="80px">
     <img class="logos-logo" src="<?= media(); ?>/images/logo-uni.png" alt width="100px">
+    <img class="logos-logo" src="<?= media(); ?>/images/logo-alcaldia.png" alt width="120px">
+
 </div>
 
 <script>
