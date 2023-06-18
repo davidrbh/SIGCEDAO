@@ -31,6 +31,25 @@ class Estudiantes extends Controllers
 
         $this->views->getView($this, "estudiantes", $data);
     }
+
+    /**
+     * La funcion getSelectEstados() se usa para generar dinámicamente opciones de selección HTML a partir de los datos obtenidos desde una base de datos, en este caso, de los estados de Venezuela.
+     */
+
+     public function getSelectEstados()
+		{
+			$htmlOptions = "";
+			$arrData = $this->model->selectEstados();
+			if(count($arrData) > 0 ){
+				for ($i=0; $i < count($arrData); $i++) { 
+					
+					$htmlOptions .= '<option value="'.$arrData[$i]['id_estado'].'">'.$arrData[$i]['desc_estado'].'</option>';
+					
+				}
+			}
+			echo $htmlOptions;
+			die();		
+		}
 }
 
 
