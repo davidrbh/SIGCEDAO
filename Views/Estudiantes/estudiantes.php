@@ -1,9 +1,18 @@
-<?php  headerAdmin($data); ?> 
-    <main class="app-content"> 
+<?php  headerAdmin($data); ?>
+<div id="contentAjax"></div>
+<main class="app-content"> 
+
+<?php getModal('modalEstudiantes',$data);  ?> 
+
+
   
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-solid fa-users"> </i> <?= $data['page_title']; ?></h1>
+          <h1><i class="fa fa-solid fa-users"> </i> <?= $data['page_title']; ?>
+          <button class="btn btn-primary" type="button" onclick="openModal();" ><i class="fa-solid fa-circle-plus"></i> Nuevo</button>
+        </h1>
+         
+
           
         </div>
         <ul class="app-breadcrumb breadcrumb">
