@@ -8,5 +8,13 @@ class EstudiantesModel extends Mysql
     {
         parent::__construct();
     }
+    
+    public function selectEstados()
+		{
+			$sql ="SELECT * FROM estado ORDER BY `estado`.`desc_estado` ASC";
+			$request = $this->select_all($sql);
+			return $request;
+		}
+
 }
 ?>
