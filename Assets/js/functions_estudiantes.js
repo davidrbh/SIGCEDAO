@@ -2,14 +2,11 @@ let formEstudiante = document.querySelector("#formEstudiante");
 formEstudiante.onsubmit = function (e) {
   e.preventDefault();
 
-  let intId_estudiante = document.querySelector("#formEstudiante").value;
-  let strNombre = document.querySelector("#txtNombre").value;
-  let strDescripcion = document.querySelector("#txtDescripcion").value;
+  //let intId_estudiante = document.querySelector("#formEstudiante").value;
+  //let strNombre = document.querySelector("#txtNombre").value;
+  //let strDescripcion = document.querySelector("#txtDescripcion").value;
   let intStatus = document.querySelector("#listStatus").value;
-  if (strNombre == "" || strDescripcion == "" || intStatus == "") {
-    swal("Atención", "Todos los campos son obligatorios.", "error");
-    return false;
-  }
+ 
 
   let elementsValid = document.getElementsByClassName("valid");
   for (let i = 0; i < elementsValid.length; i++) {
@@ -55,7 +52,6 @@ function openModal() {
     .classList.replace("btn-info", "btn-primary");
   document.querySelector("#btnText").innerHTML = "Guardar";
   document.querySelector("#titleModal").innerHTML = "Nuevo Estudiante";
-  document.querySelector("#periodo-escolar").innerHTML = 
   document.querySelector("#formEstudiante").reset();
 
   $("#modalFormEstudiante").modal("show");
@@ -130,9 +126,9 @@ function obtenerPeriodoEscolarActual() {
 
 
 function fntPeriodoAnterior(periodo){
-        document.querySelector("#periodo-escolar option").innerHTML = periodo;
-        document.querySelector("#periodo-escolar option").value = periodo;
-        $("#periodo-escolar").selectpicker("render");
+        document.querySelector("#periodo-escolar-anterior option").innerHTML = periodo;
+        document.querySelector("#periodo-escolar-anterior option").value = periodo;
+        $("#periodo-escolar-anterior").selectpicker("render");
 }
 
 function fntPeriodoActual(periodo){
