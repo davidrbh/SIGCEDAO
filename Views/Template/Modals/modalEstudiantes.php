@@ -580,10 +580,10 @@
                 </select>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-4">
                 <label class="control-label">Cúal?</label>
                 <input class="form-control valid" id="otraPersona_retiro" name="otraPersona_retiro" type="text"
-                  placeholder="Otras personas">
+                  placeholder="">
               </div>
 
               <div class="form-group col-md-4">
@@ -609,16 +609,16 @@
                 </div>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-5">
                 <label class="control-label">Cúal?</label>
                 <input class="form-control valid" id="alumnoVive_otra" name="alumnoVive_otra" type="text"
-                  placeholder="Otras personas">
+                  placeholder="">
               </div>
 
 
               <div class="form-group col-md-3">
                 <label for="cuantos_hermanos">Cuantos hermanos varones:</label>
-                <select class="form-control selectpicker " id="cuantos_hermanos" name="cuantos_hermanos" required>
+                <select class="form-control selectpicker " id="cuantos_hermanos" name="cuantos_hermanos">
                   <option value="">Seleccione</option>
                   <option value="0">Ninguno</option>
                   <option value="1">1</option>
@@ -633,7 +633,7 @@
 
               <div class="form-group col-md-3">
                 <label for="cuantas_hermanas">Cuantos hermanas hembras:</label>
-                <select class="form-control selectpicker " id="cuantas_hermanas" name="cuantas_hermanas" required>
+                <select class="form-control selectpicker " id="cuantas_hermanas" name="cuantas_hermanas" >
                   <option value="">Seleccione</option>
                   <option value="0">Ninguna</option>
                   <option value="1">1</option>
@@ -659,7 +659,7 @@
 
               <div class="form-group col-md-3">
                 <label for="Listhermanos_plantel">Número de hermanos:</label>
-                <select class="form-control selectpicker " id="Listhermanos_plantel" name="Listhermanos_plantel" required>
+                <select class="form-control selectpicker " id="Listhermanos_plantel" name="Listhermanos_plantel" >
                   <option value="">Seleccione</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -713,7 +713,7 @@
               <div class="form-group col-md-3">
                 <label class="control-label">Número de persona que depende de ese ingreso:</label>
                 <input class="form-control valid validNumber" id="ingreso_numeroPersona" name="ingreso_numeroPersona"
-                  type="text" placeholder="">
+                  type="text"  maxlength="1" placeholder="">
               </div>
 
 
