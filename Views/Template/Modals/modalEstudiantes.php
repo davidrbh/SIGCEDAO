@@ -26,24 +26,24 @@
 
                 <div class="form-group col-md-3">
                   <label class="control-label">Primer nombre:</label>
-                  <input class="form-control valid validText" id="nombre1" name="nombre1" type="text" placeholder=""
+                  <input class="form-control valid validText" id="nombre_alumno1" name="nombre_alumno1" type="text" placeholder=""
                     required="">
                 </div>
 
                 <div class="form-group col-md-3">
                   <label class="control-label">Segundo Nombre (opcional):</label>
-                  <input class="form-control valid validText" id="nombre2" name="nombre2" type="text" placeholder="">
+                  <input class="form-control valid validText" id="nombre_alumno2" name="nombre_alumno2" type="text" placeholder="">
                 </div>
 
                 <div class="form-group col-md-3">
                   <label class="control-label">Primer apellido:</label>
-                  <input class="form-control valid validText" id="apellido1" name="apellido1" type="text" placeholder=""
+                  <input class="form-control valid validText" id="apellido_alumno1" name="apellido_alumno1" type="text" placeholder=""
                     required="">
                 </div>
 
                 <div class="form-group col-md-3">
                   <label class="control-label">Segundo apellido (opcional):</label>
-                  <input class="form-control valid validText" id="Apellido2" name="Apellido2" type="text"
+                  <input class="form-control valid validText" id="apellido_alumno2" name="apellido_alumno2" type="text"
                     placeholder="">
                 </div>
 
@@ -69,7 +69,7 @@
 
                 <div class="form-group col-md-3">
                   <label for="listNacionalidad">Nacionalidad:</label>
-                  <select class="form-control selectpicker " id="listGenero" name="listGenero" required>
+                  <select class="form-control selectpicker " id="listNacionalidad" name="listNacionalidad" required>
                     <option value="">Seleccione</option>
                     <option value="1">Venezolana</option>
                     <option value="2">Extranjera</option>
@@ -89,7 +89,7 @@
 
                 <div class="form-group col-md-3">
                   <label class="control-label">Lugar de nacimiento:</label>
-                  <input class="form-control valid" id="nacimiento" name="nacimiento" type="text" placeholder=""
+                  <input class="form-control valid" id="lugar_nacimiento" name="lugar_nacimiento" type="text" placeholder=""
                     required="">
                 </div>
 
@@ -116,7 +116,7 @@
         <div class="tile">
           <div class="tile-body">
 
-            <input type="hidden" id="idEstudiante" name="idEstudiante" value="">
+            
             <p class="text-primary">Todos los campos son obligatorios.</p>
 
             <div class="form-row">
@@ -136,8 +136,8 @@
               </div>
 
               <div class="form-group col-md-1">
-                <label for="listNacionalidad_ma">Nacionalidad:</label>
-                <select class="form-control selectpicker" id="listNacionalidad_ma" name="listNacionalidad_ma" required>
+                <label for="listNacionalidad_madre">Nacionalidad:</label>
+                <select class="form-control selectpicker" id="listNacionalidad_madre" name="listNacionalidad_madre" required>
                   <option value="V-">V-</option>
                   <option value="E-">E-</option>
 
@@ -146,14 +146,14 @@
 
 
               <div class="form-group col-md-2">
-                <label for="cedula_ma">Cédula:</label>
-                <input type="text" class="form-control valid validNumber" id="cedula_ma" name="cedula_ma" placeholder=""
+                <label for="cedula_madre">Cédula:</label>
+                <input type="text" class="form-control valid validNumber" id="cedula_madre" name="cedula_madre" placeholder=""
                   maxlength="8" required="">
               </div>
 
               <div class="form-group col-md-3">
                 <label class="control-label">Ocupación:</label>
-                <input class="form-control valid validText" id="ocupacion_ma" name="ocupacion_ma" type="text"
+                <input class="form-control valid validText" id="ocupacion_madre" name="ocupacion_madre" type="text"
                   placeholder="" required="">
               </div>
 
@@ -176,8 +176,8 @@
               </div>
 
               <div class="form-group col-md-1">
-                <label for="listNacionalidad_pa">Nacionalidad:</label>
-                <select class="form-control selectpicker" id="listNacionalidad_pa" name="listNacionalidad_pa" required>
+                <label for="listNacionalidad_padre">Nacionalidad:</label>
+                <select class="form-control selectpicker" id="listNacionalidad_padre" name="listNacionalidad_padre" required>
                   <option value="V-">V-</option>
                   <option value="E-">E-</option>
 
@@ -185,14 +185,14 @@
               </div>
 
               <div class="form-group col-md-2">
-                <label for="cedula_pa">Cédula:</label>
-                <input type="text" class="form-control valid validNumber" id="cedula_pa" name="cedula_pa" placeholder=""
+                <label for="cedula_padre">Cédula:</label>
+                <input type="text" class="form-control valid validNumber" id="cedula_padre" name="cedula_padre" placeholder=""
                   maxlength="8" required="">
               </div>
 
               <div class="form-group col-md-3">
                 <label class="control-label">Ocupación:</label>
-                <input class="form-control valid validText" id="ocupacion_pa" name="ocupacion_pa" type="text"
+                <input class="form-control valid validText" id="ocupacion_padre" name="ocupacion_padre" type="text"
                   placeholder="">
               </div>
 
@@ -224,8 +224,8 @@
               </div>
 
               <div class="form-group col-md-2">
-                <label for="cedula_rep">Cédula:</label>
-                <input type="text" class="form-control valid validNumber" id="cedula_rep" name="cedula_rep"
+                <label for="cedula_repre">Cédula:</label>
+                <input type="text" class="form-control valid validNumber" id="cedula_repre" name="cedula_repre"
                   placeholder="" maxlength="8" required="">
               </div>
 
@@ -247,19 +247,19 @@
 
               <div class="form-group col-md-3">
                 <label class="control-label">Ocupación:</label>
-                <input class="form-control valid validText" id="ocupacion_rep" name="ocupacion_rep" type="text"
+                <input class="form-control valid validText" id="ocupacion_repre" name="ocupacion_repre" type="text"
                   placeholder="" required="">
               </div>
 
               <div class="form-group col-md-2">
-                <label for="telefono_rep">Teléfono:</label>
-                <input type="text" class="form-control valid validNumber" id="txtTelefono" name="txtTelefono"
+                <label for="telefono_repre">Teléfono:</label>
+                <input type="text" class="form-control valid validNumber" id="telefono_repre" name="telefono_repre"
                   required="">
               </div>
 
               <div class="form-group col-md-2">
-                <label for="celular_rep">celular:</label>
-                <input type="text" class="form-control valid validNumber" id="celular_rep" name="celular_rep"
+                <label for="celular_repre">celular:</label>
+                <input type="text" class="form-control valid validNumber" id="celular_repre" name="celular_repre"
                   placeholder="" required="">
               </div>
 
@@ -271,7 +271,7 @@
 
               <div class="form-group col-md-3">
                 <label class="control-label">Colaboración que puede prestar al plantel:</label>
-                <input class="form-control valid" id="colaboracion" name="colaboracion" type="text" placeholder="">
+                <input class="form-control valid" id="colaboracion_plantel" name="colaboracion_plantel" type="text" placeholder="">
               </div>
 
 
@@ -291,7 +291,7 @@
         <div class="tile">
           <div class="tile-body">
 
-            <input type="hidden" id="idEstudiante" name="idEstudiante" value="">
+            
             <p class="text-primary">Todos los campos son obligatorios.</p>
 
             <div class="form-row">
@@ -305,8 +305,8 @@
               </div>
 
               <div class="form-group col-md-2">
-                <label for="listGradoCursado">Grado cursado:</label>
-                <select class="form-control selectpicker" id="listGradoCursado" name="listGradoCursado" required>
+                <label for="listGrado_cursado">Grado cursado:</label>
+                <select class="form-control selectpicker" id="listGrado_cursado" name="listGrado_cursado" required>
                   <option value="">Seleccione</option>
                   <option value="Primero">Primero (1)</option>
                   <option value="Segundo">Segundo (2)</option>
@@ -360,7 +360,7 @@
         <div class="tile">
           <div class="tile-body">
 
-            <input type="hidden" id="idEstudiante" name="idEstudiante" value="">
+      
             <p class="text-primary">Todos los campos son obligatorios.</p>
 
             <div class="form-row">
@@ -368,8 +368,8 @@
 
 
               <div class="form-group col-md-2">
-                <label for="listGradoCursar">Grado a cursar:</label>
-                <select class="form-control selectpicker" id="listGradoCursar" name="listGradoCursar" required>
+                <label for="listGrado_acursar">Grado a cursar:</label>
+                <select class="form-control selectpicker" id="listGrado_acursar" name="listGrado_acursar" required>
                   <option value="">Seleccione</option>
                   <option value="Primero">Primero (1)</option>
                   <option value="Segundo">Segundo (2)</option>
@@ -441,8 +441,8 @@
             <div class="form-row">
 
               <div class="form-group col-md-3">
-                <label for="alergico">Padece de alguna enfermedad?</label>
-                <select class="form-control selectpicker " id="padece-enfermedad" name="padece-enfermedad" required>
+                <label for="padece_enfermedad">Padece de alguna enfermedad?</label>
+                <select class="form-control selectpicker " id="listPadece_enfermedad" name="listPadece_enfermedad" required>
                   <option value="">Seleccione</option>
                   <option value="Si">Si</option>
                   <option value="No">No</option>
@@ -451,7 +451,7 @@
 
               <div class="form-group col-md-3">
                 <label class="control-label">Enfermedades que padece:</label>
-                <input class="form-control valid" id="enfermedades" name="enfermedades" type="text" placeholder="">
+                <input class="form-control valid" id="enfermedad_padece" name="enfermedad_padece" type="text" placeholder="">
               </div>
 
               <div class="form-group col-md-2">
@@ -470,8 +470,8 @@
 
 
               <div class="form-group col-md-3">
-                <label for="listAlergico">Alergico a algún medicamento?</label>
-                <select class="form-control selectpicker " id="listAlergico" name="listAlergico" required>
+                <label for="listAlergico_medicamento">Alergico a algún medicamento?</label>
+                <select class="form-control selectpicker " id="listAlergico_medicamento" name="listAlergico_medicamento" required>
                   <option value="">Seleccione</option>
                   <option value="Si">Si</option>
                   <option value="No">No</option>
@@ -486,31 +486,31 @@
 
 
               <div class="form-group col-md-5">
-                <label for="alumnoEnfermedades" class="control-label">El Alumno ha padecido de estas
+                <label for="alumno_enfermedades" class="control-label">El Alumno ha padecido de estas
                   enfermedades?</label>
                 <div class="animated-checkbox">
                   <label>
-                    <input type="checkbox" id="checkRubeola" name="checkRubeola" value="Rubeola"><span
+                    <input type="checkbox" id="checkRubeola" name="checkRubeola" value="1"><span
                       class="label-text">Rubeola</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkSarampion" name="checkSarampion" value="Sarampion"><span
+                    <input type="checkbox" id="checkSarampion" name="checkSarampion" value="1"><span
                       class="label-text">Sarampión</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkLechina" name="checkLechina" value="Lechina"><span
+                    <input type="checkbox" id="checkLechina" name="checkLechina" value="1"><span
                       class="label-text">Lechina</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkPapera" name="checkPapera" value="Paperas"><span
+                    <input type="checkbox" id="checkPapera" name="checkPapera" value="1"><span
                       class="label-text">Paperas</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkOtra" name="checkOtra" value="Otra"><span
+                    <input type="checkbox" id="checkOtra" name="checkOtra" value="1"><span
                       class="label-text">Otra</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkNinguna" name="checkNinguna" value="Ninguna"><span
+                    <input type="checkbox" id="checkNinguna" name="checkNinguna" value="1"><span
                       class="label-text">Ninguna</span>
                   </label>
                   </label>
@@ -519,7 +519,7 @@
 
               <div class="form-group col-md-3">
                 <label class="control-label">Cúal?</label>
-                <input class="form-control valid" id="enfermedadOtra" name="enfermedadOtra" type="text" placeholder="">
+                <input class="form-control valid" id="otra_enfermedad" name="otra_enfermedad" type="text" placeholder="">
               </div>
 
               <div class="form-group col-md-3">
@@ -534,8 +534,8 @@
 
 
               <div class="form-group col-md-3">
-                <label for="nacimientoParto">Situación del nacimiento (parto):</label>
-                <select class="form-control selectpicker " id="nacimientoParto" name="nacimientoParto" required>
+                <label for="nacimiento_parto">Situación del nacimiento (parto):</label>
+                <select class="form-control selectpicker " id="nacimiento_parto" name="nacimiento_parto" required>
                   <option value="">Seleccione</option>
 
                   <option value="Normal">Normal</option>
@@ -549,8 +549,8 @@
 
 
               <div class="form-group col-md-3">
-                <label for="listSolo">El niño o niña se va solo?</label>
-                <select class="form-control selectpicker" id="listSolo" name="listSolo" required>
+                <label for="listSeva_solo">El Alumno se va solo?</label>
+                <select class="form-control selectpicker" id="listSeva_solo" name="listSeva_solo" required>
                   <option value="">Seleccione</option>
                   <option value="Si">Si</option>
                   <option value="No">No</option>
@@ -560,13 +560,13 @@
 
               <div class="form-group col-md-5">
                 <label class="control-label">Nombre de la persona autorizada para retirarlo:</label>
-                <input class="form-control valid validText" id="retiro1" name="retiro1" type="text" placeholder="">
+                <input class="form-control valid validText" id="autorizada_retirarlo" name="autorizada_retirarlo" type="text" placeholder="">
               </div>
 
 
               <div class="form-group col-md-3">
-                <label for="listParentesco2">Parentesco con el Estudiante:</label>
-                <select class="form-control selectpicker " id="listParentesco2" name="listParentesco2">
+                <label for="listParentesco_retiro">Parentesco con el Estudiante:</label>
+                <select class="form-control selectpicker " id="listParentesco_retiro" name="listParentesco_retiro">
                   <option value="">Seleccione</option>
                   <option value="Padre">Padre</option>
                   <option value="Madre">Madre</option>
@@ -576,13 +576,13 @@
                   <option value="Hermana">Hermana</option>
                   <option value="Tio">Tio</option>
                   <option value="Tia">Tia</option>
-                  <option value="9">Otro</option>
+                  <option value="otro">Otro</option>
                 </select>
               </div>
 
               <div class="form-group col-md-3">
                 <label class="control-label">Cúal?</label>
-                <input class="form-control valid" id="viveOtraPersona" name="viveOtraPersona" type="text"
+                <input class="form-control valid" id="otraPersona_retiro" name="otraPersona_retiro" type="text"
                   placeholder="Otras personas">
               </div>
 
@@ -590,31 +590,35 @@
                 <label class="control-label">Con quién vive el Alumno?</label>
                 <div class="animated-checkbox">
                   <label>
-                    <input type="checkbox" id="checkMadre" name="checkMadre" value="Madre"><span
+                    <input type="checkbox" id="checkMadre" name="checkMadre" value="1"><span
                       class="label-text">Madre</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkPadre" name="checkPadre" value="Padre"><span
+                    <input type="checkbox" id="checkPadre" name="checkPadre" value="1"><span
                       class="label-text">Padre</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkHermano" name="checkHermano" value="Hermanos"><span
+                    <input type="checkbox" id="checkHermano" name="checkHermano" value="1"><span
                       class="label-text">Hermanos</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkOtro" name="checkOtro" value="Otras personas"><span
+                    <input type="checkbox" id="checkOtro" name="checkOtro" value="1"><span
                       class="label-text">Otras personas</span>
                   </label>
                   </label>
                 </div>
               </div>
 
-              
+              <div class="form-group col-md-3">
+                <label class="control-label">Cúal?</label>
+                <input class="form-control valid" id="alumnoVive_otra" name="alumnoVive_otra" type="text"
+                  placeholder="Otras personas">
+              </div>
 
 
               <div class="form-group col-md-3">
-                <label for="cuantosHermanos">Cuantos hermanos varones:</label>
-                <select class="form-control selectpicker " id="cuantosHermanos" name="cuantosHermanos" required>
+                <label for="cuantos_hermanos">Cuantos hermanos varones:</label>
+                <select class="form-control selectpicker " id="cuantos_hermanos" name="cuantos_hermanos" required>
                   <option value="">Seleccione</option>
                   <option value="0">Ninguno</option>
                   <option value="1">1</option>
@@ -628,8 +632,8 @@
 
 
               <div class="form-group col-md-3">
-                <label for="cuantashermanas">Cuantos hermanas hembras:</label>
-                <select class="form-control selectpicker " id="cuantashermanas" name="cuantashermanas" required>
+                <label for="cuantas_hermanas">Cuantos hermanas hembras:</label>
+                <select class="form-control selectpicker " id="cuantas_hermanas" name="cuantas_hermanas" required>
                   <option value="">Seleccione</option>
                   <option value="0">Ninguna</option>
                   <option value="1">1</option>
@@ -644,8 +648,8 @@
 
 
               <div class="form-group col-md-3">
-                <label for="listHermanoPlantel">El Alumno tiene hermanos en el plantel?</label>
-                <select class="form-control selectpicker" id="listHermanoPlantel" name="listHermanoPlantel" required>
+                <label for="listHermano_plantel">El Alumno tiene hermanos en el plantel?</label>
+                <select class="form-control selectpicker" id="listHermano_plantel" name="listHermano_plantel" required>
                   <option value="">Seleccione</option>
                   <option value="Si">Si</option>
                   <option value="No">No</option>
@@ -654,8 +658,8 @@
               </div>
 
               <div class="form-group col-md-3">
-                <label for="cuantashermanas">Número de hermanos:</label>
-                <select class="form-control selectpicker " id="cuantashermanas" name="cuantashermanas" required>
+                <label for="Listhermanos_plantel">Número de hermanos:</label>
+                <select class="form-control selectpicker " id="Listhermanos_plantel" name="Listhermanos_plantel" required>
                   <option value="">Seleccione</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -668,17 +672,17 @@
 
               <div class="form-group col-md-3">
                 <label class="control-label">Grado que cursan:</label>
-                <input class="form-control valid" id="gradoHermanos" name="gradoHermanos" type="text" placeholder="">
+                <input class="form-control valid" id="grado_hermanos" name="grado_hermanos" type="text" placeholder="">
               </div>
 
               <div class="form-group col-md-3">
                 <label class="control-label">Turno:</label>
-                <input class="form-control valid" id="turnoHermanos" name="turnoHermanos" type="text" placeholder="">
+                <input class="form-control valid" id="turno_hermanos" name="turno_hermanos" type="text" placeholder="">
               </div>
 
               <div class="form-group col-md-3">
-                <label for="cuantashermanas">Tipo de vivienda:</label>
-                <select class="form-control selectpicker " id="cuantashermanas" name="cuantashermanas" required>
+                <label for="listVivienda">Tipo de vivienda:</label>
+                <select class="form-control selectpicker " id="listVivienda" name="listVivienda" required>
                   <option value="">Seleccione</option>
                   <option value="Apartamento">Apartamento</option>
                   <option value="Casa">Casa</option>
@@ -690,8 +694,8 @@
               </div>
 
               <div class="form-group col-md-3">
-                <label for="condicionVivienda">Condición de la vivienda:</label>
-                <select class="form-control selectpicker " id="condicionVivienda" name="condicionVivienda" required>
+                <label for="listCondicion_vivienda">Condición de la vivienda:</label>
+                <select class="form-control selectpicker " id="listCondicion_vivienda" name="listCondicion_vivienda" required>
                   <option value="">Seleccione</option>
                   <option value="Apartamento">Alquilada</option>
                   <option value="Casa">Propia</option>
@@ -703,12 +707,12 @@
 
               <div class="form-group col-md-3">
                 <label class="control-label">Ingreso Familiar aproximado en Bs (Mensual):</label>
-                <input class="form-control valid" id="ingresos" name="ingresos" type="text" placeholder="">
+                <input class="form-control valid" id="ingreso_familia" name="ingreso_familia" type="text" placeholder="">
               </div>
 
               <div class="form-group col-md-3">
                 <label class="control-label">Número de persona que depende de ese ingreso:</label>
-                <input class="form-control valid validNumber" id="numeroPersonaIngresos" name="numeroPersonaIngresos"
+                <input class="form-control valid validNumber" id="ingreso_numeroPersona" name="ingreso_numeroPersona"
                   type="text" placeholder="">
               </div>
 
@@ -740,42 +744,42 @@
                 <label class="control-label">Documentos:</label>
                 <div class="animated-checkbox">
                   <label>
-                    <input type="checkbox" id="checkBoletin" name="checkBoletin" value="Boletin de calificación"><span
+                    <input type="checkbox" id="checkBoletin" name="checkBoletin" value="1"><span
                       class="label-text">Boletin de calificación</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkPromocion" name="checkPromocion" value="Boletin de promoción"><span
+                    <input type="checkbox" id="checkPromocion" name="checkPromocion" value="1"><span
                       class="label-text">Boletin de promoción</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkconducta" name="checkconducta" value="Carta de buena conducta"><span
+                    <input type="checkbox" id="checkconducta" name="checkconducta" value="1"><span
                       class="label-text">Carta de buena conducta</span>
                   </label>
                   <label>
                     <input type="checkbox" id="checkPartida" name="checkPartida"
-                      value="Copia de partida de nacimento"><span class="label-text">Copia de partida de
+                      value="1"><span class="label-text">Copia de partida de
                       nacimento</span>
                   </label>
                   <label>
                     <input type="checkbox" id="checkCedulaAlumno" name="checkCedulaAlumno"
-                      value="Copia de la cédula del alumno"><span class="label-text">Copia de la cédula del
+                      value="1"><span class="label-text">Copia de la cédula del
                       alumno</span>
                   </label>
                   <label>
                     <input type="checkbox" id="checkCedulaRepre" name="checkCedulaRepre"
-                      value="Copia de la cédula del representante"><span class="label-text">Copia de la cédula del
+                      value="1"><span class="label-text">Copia de la cédula del
                       representante</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkFotosAlumno" name="checkFotosAlumno" value="Fotos del alumno"><span
+                    <input type="checkbox" id="checkFotosAlumno" name="checkFotosAlumno" value="1"><span
                       class="label-text">Fotos del alumno</span>
                   </label>
                   <label>
                     <input type="checkbox" id="checkFotosRepre" name="checkFotosRepre"
-                      value="Fotos del representante"><span class="label-text">Fotos del representante</span>
+                      value="1"><span class="label-text">Fotos del representante</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkOtrosDocumentos" name="checkOtrosDocumentos" value="Otros"><span
+                    <input type="checkbox" id="checkOtrosDocumentos" name="checkOtrosDocumentos" value="1"><span
                       class="label-text">Otros</span>
                   </label>
                   </label>
@@ -785,7 +789,7 @@
 
               <div class="form-group col-md-3">
                 <label class="control-label">Otros Documentos:</label>
-                <input class="form-control valid" id="documentosOtros" name="documentosOtros" type="text" placeholder=""
+                <input class="form-control valid" id="otros_documentos" name="otros_documentos" type="text" placeholder=""
                   required="">
               </div>
 
