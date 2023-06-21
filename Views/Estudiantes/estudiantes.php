@@ -2,14 +2,16 @@
 <div id="contentAjax"></div>
 <main class="app-content"> 
 
-<?php getModal('modalEstudiantes',$data);  ?> 
+<?php getModal('modalEstudiantes',$data);
+      getModal('modalPre-escolar',$data);  ?> 
 
 
   
       <div class="app-title">
         <div>
           <h1><i class="fa fa-solid fa-users"> </i> <?= $data['page_title']; ?>
-          <button class="btn btn-primary" type="button" onclick="openModal();" ><i class="fa-solid fa-circle-plus"></i> Nuevo</button>
+          <button class="btn btn-primary" type="button" onclick="openModal();" ><i class="fa-solid fa-circle-plus"></i> Nuevo Alumno</button>
+          <button class="btn btn-info" type="button" onclick="openModal2();" ><i class="fa-solid fa-circle-plus"></i> Pre-escolar</button>       
         </h1>
          
 
