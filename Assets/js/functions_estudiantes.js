@@ -42,19 +42,78 @@ formEstudiante.onsubmit = function (e) {
   };
 };
 
+
+
+/**
+ * Pre-escolar
+ */
+
+let formPre_escolar = document.querySelector("#formPre-escolar");
+formPre_escolar.onsubmit = function (e) {
+  e.preventDefault();
+
+  //let intId_estudiante = document.querySelector("#formEstudiante").value;
+  //let strNombre = document.querySelector("#txtNombre").value;
+  //let strDescripcion = document.querySelector("#txtDescripcion").value;
+  let intStatus = document.querySelector("#listStatus").value;
+ 
+
+  let elementsValid = document.getElementsByClassName("valid");
+  for (let i = 0; i < elementsValid.length; i++) {
+    if (elementsValid[i].classList.contains("is-invalid")) {
+      swal("Atención", "Por favor verifique los campos en rojo.", "error");
+      return false;
+    }
+  }
+  divLoading.style.display = "flex";
+  let request = window.XMLHttpRequest
+    ? new XMLHttpRequest()
+    : new ActiveXObject("Microsoft.XMLHTTP");
+  let ajaxUrl = base_url + "/Estudiantes/setPre_escolar";
+  let formData = new FormData(formPre_escolar);
+  request.open("POST", ajaxUrl, true);
+  request.send(formData);
+
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      let objData = JSON.parse(request.responseText);
+      if (objData.status) {
+        $("#modalFormPre-escolar").modal("hide");
+        formPre_escolar.reset();
+        swal("Estudiantes", objData.msg, "success");
+        tablePre_escolar.api().ajax.reload(function () {});
+      } else {
+        swal("Error", objData.msg, "error");
+      }
+    }
+
+    divLoading.style.display = "none";
+    return false;
+  };
+};
+
+/**
+ * openModal
+ */
 function openModal() {
   document.querySelector("#idEstudiante").value = "";
-  document
-    .querySelector(".modal-header")
-    .classList.replace("headerUpdate", "headerRegister");
-  document
-    .querySelector("#btnActionForm")
-    .classList.replace("btn-info", "btn-primary");
+  document.querySelector(".modal-header").classList.replace("headerUpdate", "headerRegister");
+  document.querySelector("#btnActionForm").classList.replace("btn-info", "btn-primary");
   document.querySelector("#btnText").innerHTML = "Guardar";
   document.querySelector("#titleModal").innerHTML = "Nuevo Estudiante";
   document.querySelector("#formEstudiante").reset();
 
   $("#modalFormEstudiante").modal("show");
+}
+
+function openModal2(){
+  document.querySelector("#idPre-escolar").value = "";
+  document.querySelector(".modal-header").classList.replace("headerUpdate", "headerRegister");
+  document.querySelector("#btnActionForm").classList.replace("btn-info", "btn-primary");
+  document.querySelector("#btnText").innerHTML = "Guardar";
+  document.querySelector("#titleModal").innerHTML = "Nuevo Estudiante";
+  document.querySelector("#formPre-escolar").reset();
+  $("#modalFormPre-escolar").modal("show");
 }
 
 window.addEventListener("load",function () {
@@ -80,9 +139,23 @@ function fntEstado() {
         document.querySelector("#selectEstadoid").innerHTML = request.responseText;
         document.querySelector("#selectEstadoid").value = "";
         $("#selectEstadoid").selectpicker("render");
+        document.querySelector("#selectEstadoid2").innerHTML = request.responseText;
+        document.querySelector("#selectEstadoid2").value = "";
+        $("#selectEstadoid2").selectpicker("render");
+        document.querySelector("#selectEstadoid3").innerHTML = request.responseText;
+        document.querySelector("#selectEstadoid3").value = "";
+        $("#selectEstadoid3").selectpicker("render");
+        document.querySelector("#selectEstadoid4").innerHTML = request.responseText;
+        document.querySelector("#selectEstadoid4").value = "";
+        $("#selectEstadoid4").selectpicker("render");
+      
+        
       }
     };
-  }
+  };
+
+
+
 }
 
 
