@@ -50,6 +50,15 @@ class Estudiantes extends Controllers
 			echo $htmlOptions;
 			die();		
 		}
+
+        public function setEstudiante()
+        {
+            dep($_POST);
+        }
+
+        public function setPre_escolar(){
+            dep($_POST);
+        }
 }
 
 
