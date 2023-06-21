@@ -323,8 +323,8 @@
 
               <div class="form-group col-md-2">
 
-                <label class="control-label" for="periodo-escolar">Periodo escolar:</label>
-                <select class="form-control" id="periodo-escolar" name="periodo-escolar">
+                <label class="control-label" for="periodo-escolar-anterior">Periodo escolar:</label>
+                <select class="form-control" id="periodo-escolar-anterior" name="periodo-escolar-anterior">
                   <option value="2022-2023">2022-2023</option>
                 </select>
 
