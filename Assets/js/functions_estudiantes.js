@@ -210,3 +210,250 @@ function fntPeriodoActual(periodo){
   $("#periodo-escolar-actual").selectpicker("render");
 }
 
+
+
+let selectPadeceEnfermedad = document.getElementById("listPadece_enfermedad");
+let enfermedadPadece = document.querySelectorAll(".oculto");
+
+
+
+selectPadeceEnfermedad.addEventListener("change", function() {
+  this.value === "Si" 
+    ? enfermedadPadece.forEach(function(e){(e).style.display="block"})  
+    : enfermedadPadece.forEach(function(e){(e).style.display="none"})
+ 
+  
+});
+
+
+
+let selectlistTratamiento = document.getElementById("listTratamiento");
+let tratamiento = document.querySelector(".oculto1");
+
+selectlistTratamiento.addEventListener("change", function() {
+  this.value === "Si" 
+    ? tratamiento.style.display = "block" 
+    : tratamiento.style.display = "none"
+  
+});
+
+let selectlistMedicamento = document.getElementById("listAlergico_medicamento");
+let medicamento = document.querySelector(".oculto2");
+
+selectlistMedicamento.addEventListener("change", function() {
+  this.value === "Si" 
+    ? medicamento.style.display = "block" 
+    : medicamento.style.display = "none"
+  
+});
+
+
+let selectlistOtraEnfermedad = document.getElementById("checkOtra");
+let otraEnfermedad = document.querySelector(".oculto3");
+
+selectlistOtraEnfermedad.addEventListener("change", function() {
+  this.checked  
+    ? this.value = "1" 
+    : this.value ="0"
+
+  this.value !== "0" 
+    ? otraEnfermedad.style.display = "block" 
+    : otraEnfermedad.style.display = "none"
+  
+});
+
+
+let rubeola = document.getElementById("checkRubeola");
+let papera = document.getElementById("checkPapera");
+let sarampeon = document.getElementById("checkSarampion");
+let lechina = document.getElementById("checkLechina");
+let ninguna = document.getElementById("checkNinguna");
+
+rubeola.addEventListener("change", function(){
+  this.checked  
+    ? this.value = "1" 
+    : this.value ="0"
+});
+
+papera.addEventListener("change", function(){
+  this.checked  
+    ? this.value = "1" 
+    : this.value ="0"
+});
+
+sarampeon.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+lechina.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+ninguna.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+
+let madreVive = document.getElementById("checkMadre");
+let padreVive = document.getElementById("checkPadre");
+let hermanoVive = document.getElementById("checkHermano");
+let otroVive = document.getElementById("checkOtro");
+
+madreVive.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+padreVive.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+hermanoVive.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+otroVive.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+let alumnoVive_otra = document.getElementById("checkOtro");
+let viveOtraPersona = document.querySelector(".oculto4");
+
+alumnoVive_otra.addEventListener("change", function() {
+  this.value === "1" 
+   ? viveOtraPersona.style.display = "block" 
+   : viveOtraPersona.style.display = "none"
+  
+});
+
+let viveHermanos = document.getElementById("checkHermano");
+let hermanos = document.querySelectorAll(".oculto5");
+
+viveHermanos.addEventListener("change", function() {
+  
+  this.value === "1" 
+   ? hermanos.forEach(function(e){(e).style.display="block"})  
+   : hermanos.forEach(function(e){(e).style.display="none"})
+});
+
+
+
+let listHermano_plantel = document.getElementById("listHermano_plantel");
+let hermanosPlantel = document.querySelectorAll(".oculto6");
+
+listHermano_plantel.addEventListener("change", function(){
+  this.value === "Si"
+    ? hermanosPlantel.forEach(function(e){(e).style.display="block"})  
+    : hermanosPlantel.forEach(function(e){(e).style.display="none"})  
+});
+
+
+let boletin = document.getElementById("checkBoletin");
+let promocion = document.getElementById("checkPromocion");
+let conducta = document.getElementById("checkconducta");
+let partida = document.getElementById("checkPartida");
+let cedulaAlumno = document.getElementById("checkCedulaAlumno");
+let cedulaRepresentante = document.getElementById("checkCedulaRepre");
+let fotoAlumno = document.getElementById("checkFotosAlumno");
+let fotoRepresentante = document.getElementById("checkFotosRepre");
+let boletinGrado = document.getElementById("checkBoletinGrado");
+let otrosDocumentos = document.getElementById("checkOtrosDocumentos");
+
+
+boletin.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+promocion.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+conducta.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+partida.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+cedulaAlumno.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+cedulaRepresentante.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+fotoAlumno.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+fotoRepresentante.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+boletinGrado.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+otrosDocumentos.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+
+
+let documentosOtros = document.querySelector(".oculto7");
+
+otrosDocumentos.addEventListener("change", function() {
+  
+  this.value === "1" 
+  ? documentosOtros.style.display = "block" 
+  : documentosOtros.style.display = "none"
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
