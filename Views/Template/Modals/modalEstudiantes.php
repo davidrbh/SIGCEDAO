@@ -747,46 +747,46 @@
                 <label class="control-label">Documentos:</label>
                 <div class="animated-checkbox">
                   <label>
-                    <input type="checkbox" id="checkBoletin" name="checkBoletin" value=""><span
+                    <input type="checkbox" id="checkBoletin" name="checkBoletin" value="0"><span
                       class="label-text">Boletin de calificación</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkPromocion" name="checkPromocion" value=""><span
+                    <input type="checkbox" id="checkPromocion" name="checkPromocion" value="0"><span
                       class="label-text">Boletin de promoción</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkconducta" name="checkconducta" value=""><span
+                    <input type="checkbox" id="checkconducta" name="checkconducta" value="0"><span
                       class="label-text">Carta de buena conducta</span>
                   </label>
                   <label>
                     <input type="checkbox" id="checkPartida" name="checkPartida"
-                      value=""><span class="label-text">Copia de partida de
+                      value="0"><span class="label-text">Copia de partida de
                       nacimento</span>
                   </label>
                   <label>
                     <input type="checkbox" id="checkCedulaAlumno" name="checkCedulaAlumno"
-                      value=""><span class="label-text">Copia de la cédula del
+                      value="0"><span class="label-text">Copia de la cédula del
                       alumno</span>
                   </label>
                   <label>
                     <input type="checkbox" id="checkCedulaRepre" name="checkCedulaRepre"
-                      value=""><span class="label-text">Copia de la cédula del
+                      value="0"><span class="label-text">Copia de la cédula del
                       representante</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkFotosAlumno" name="checkFotosAlumno" value=""><span
+                    <input type="checkbox" id="checkFotosAlumno" name="checkFotosAlumno" value="0"><span
                       class="label-text">Fotos del alumno</span>
                   </label>
                   <label>
                     <input type="checkbox" id="checkFotosRepre" name="checkFotosRepre"
-                      value=""><span class="label-text">Fotos del representante</span>
+                      value="0"><span class="label-text">Fotos del representante</span>
                   </label>
                   <label>
                     <input type="checkbox" id="checkBoletinGrado" name="checkBoletinGrado"
-                      value=""><span class="label-text">Boletin de grado</span>
+                      value="0"><span class="label-text">Boletin de grado</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkOtrosDocumentos" name="checkOtrosDocumentos" value=""><span
+                    <input type="checkbox" id="checkOtrosDocumentos" name="checkOtrosDocumentos" value="0"><span
                       class="label-text">Otros</span>
                   </label>
                   </label>
