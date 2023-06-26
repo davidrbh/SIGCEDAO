@@ -241,7 +241,7 @@
                   <option value="Hermana">Hermana</option>
                   <option value="Tio">Tio</option>
                   <option value="Tia">Tia</option>
-                  <option value="Otro">Otro</option>
+                  
                 </select>
               </div>
 
@@ -365,6 +365,15 @@
 
             <div class="form-row">
 
+            <div class="form-group col-md-2">
+                <label for="listTipo_alumno">Tipo de Alumno:</label>
+                <select class="form-control selectpicker" id="listTipo_alumno" name="listTipo_alumno" required>
+                  <option value="">Seleccione</option>
+                  <option value="Nuevo ingreso">Nuevo Ingreso</option>
+                  <option value="Segundo">Regular</option>
+      
+                </select>
+              </div>
 
 
               <div class="form-group col-md-2">
@@ -384,7 +393,7 @@
               </div>
 
 
-              <div class="form-group col-md-2">
+              <div class="form-group col-md-3">
                 <label for="listTurno">Turno:</label>
                 <select class="form-control selectpicker" id="listTurno" name="listTurno" required>
                   <option value="">Seleccione</option>
@@ -440,7 +449,7 @@
 
             <div class="form-row">
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-3" >
                 <label for="padece_enfermedad">Padece de alguna enfermedad?</label>
                 <select class="form-control selectpicker " id="listPadece_enfermedad" name="listPadece_enfermedad" required>
                   <option value="">Seleccione</option>
@@ -449,27 +458,27 @@
                 </select>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-3 oculto" style="display: none;">
                 <label class="control-label">Enfermedades que padece:</label>
-                <input class="form-control valid" id="enfermedad_padece" name="enfermedad_padece" type="text" placeholder="">
+                <input class="form-control valid" id="enfermedad_padece" name="enfermedad_padece" type="text" value="" placeholder="">
               </div>
 
-              <div class="form-group col-md-2">
+              <div class="form-group col-md-2 oculto" style="display: none;">
                 <label for="listTratamiento">Sigue tratamiento?</label>
-                <select class="form-control selectpicker " id="listTratamiento" name="listTratamiento" required>
+                <select class="form-control selectpicker " id="listTratamiento"  name="listTratamiento">
                   <option value="">Seleccione</option>
                   <option value="Si">Si</option>
                   <option value="No">No</option>
                 </select>
               </div>
 
-              <div class="form-group col-md-4">
-                <label class="control-label">Cúal?</label>
-                <input class="form-control valid" id="tratamiento" name="tratamiento" type="text" placeholder="">
+              <div class="form-group col-md-4 oculto oculto1" style="display: none;">
+                <label class="control-label">Cuál?</label>
+                <input class="form-control valid " id="tratamiento" name="tratamiento" value="" type="text" placeholder="">
               </div>
 
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-3 ">
                 <label for="listAlergico_medicamento">Alergico a algún medicamento?</label>
                 <select class="form-control selectpicker " id="listAlergico_medicamento" name="listAlergico_medicamento" required>
                   <option value="">Seleccione</option>
@@ -478,48 +487,48 @@
                 </select>
               </div>
 
-              <div class="form-group col-md-4">
-                <label class="control-label">Cúal?</label>
-                <input class="form-control valid" id="medicamento" name="medicamento" type="text" placeholder="">
+              <div class="form-group col-md-4 oculto2" style="display: none;">
+                <label class="control-label">Cuál?</label>
+                <input class="form-control valid" id="medicamento" name="medicamento" value="" type="text" placeholder="">
               </div>
 
 
 
-              <div class="form-group col-md-5">
+              <div class="form-group col-md-5 enfermedades">
                 <label for="alumno_enfermedades" class="control-label">El Alumno ha padecido de estas
                   enfermedades?</label>
                 <div class="animated-checkbox">
                   <label>
-                    <input type="checkbox" id="checkRubeola" name="checkRubeola" value="1"><span
+                    <input type="checkbox" id="checkRubeola" name="checkRubeola" value="0"><span
                       class="label-text">Rubeola</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkSarampion" name="checkSarampion" value="1"><span
+                    <input type="checkbox" id="checkSarampion" name="checkSarampion" value="0"><span
                       class="label-text">Sarampión</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkLechina" name="checkLechina" value="1"><span
+                    <input type="checkbox" id="checkLechina" name="checkLechina" value="0"><span
                       class="label-text">Lechina</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkPapera" name="checkPapera" value="1"><span
+                    <input type="checkbox" id="checkPapera" name="checkPapera" value="0"><span
                       class="label-text">Paperas</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkOtra" name="checkOtra" value="1"><span
+                    <input type="checkbox" id="checkOtra" name="checkOtra" value="0"><span
                       class="label-text">Otra</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkNinguna" name="checkNinguna" value="1"><span
+                    <input type="checkbox" id="checkNinguna" name="checkNinguna" value="0"><span
                       class="label-text">Ninguna</span>
                   </label>
                   </label>
                 </div>
               </div>
 
-              <div class="form-group col-md-3">
-                <label class="control-label">Cúal?</label>
-                <input class="form-control valid" id="otra_enfermedad" name="otra_enfermedad" type="text" placeholder="">
+              <div class="form-group col-md-3 oculto3" style="display: none;">
+                <label class="control-label">Cuál?</label>
+                <input class="form-control valid" id="otra_enfermedad" name="otra_enfermedad" value="" type="text" placeholder="">
               </div>
 
               <div class="form-group col-md-3">
@@ -537,7 +546,6 @@
                 <label for="nacimiento_parto">Situación del nacimiento (parto):</label>
                 <select class="form-control selectpicker " id="nacimiento_parto" name="nacimiento_parto" required>
                   <option value="">Seleccione</option>
-
                   <option value="Normal">Normal</option>
                   <option value="Cesaria">Cesária</option>
                   <option value="Forceps">Forceps</option>
@@ -560,7 +568,7 @@
 
               <div class="form-group col-md-5">
                 <label class="control-label">Nombre de la persona autorizada para retirarlo:</label>
-                <input class="form-control valid validText" id="autorizada_retirarlo" name="autorizada_retirarlo" type="text" placeholder="">
+                <input class="form-control valid validText" id="autorizada_retirarlo" value="" name="autorizada_retirarlo" type="text" placeholder="">
               </div>
 
 
@@ -576,47 +584,42 @@
                   <option value="Hermana">Hermana</option>
                   <option value="Tio">Tio</option>
                   <option value="Tia">Tia</option>
-                  <option value="otro">Otro</option>
+                  <option value="Otro">Otro</option>
                 </select>
               </div>
 
-              <div class="form-group col-md-4">
-                <label class="control-label">Cúal?</label>
-                <input class="form-control valid" id="otraPersona_retiro" name="otraPersona_retiro" type="text"
-                  placeholder="">
-              </div>
 
               <div class="form-group col-md-4">
                 <label class="control-label">Con quién vive el Alumno?</label>
                 <div class="animated-checkbox">
                   <label>
-                    <input type="checkbox" id="checkMadre" name="checkMadre" value="1"><span
+                    <input type="checkbox" id="checkMadre" name="checkMadre" value=""><span
                       class="label-text">Madre</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkPadre" name="checkPadre" value="1"><span
+                    <input type="checkbox" id="checkPadre" name="checkPadre" value=""><span
                       class="label-text">Padre</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkHermano" name="checkHermano" value="1"><span
+                    <input type="checkbox" id="checkHermano" name="checkHermano" value=""><span
                       class="label-text">Hermanos</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkOtro" name="checkOtro" value="1"><span
+                    <input type="checkbox" id="checkOtro" name="checkOtro" value=""><span
                       class="label-text">Otras personas</span>
                   </label>
                   </label>
                 </div>
               </div>
 
-              <div class="form-group col-md-5">
-                <label class="control-label">Cúal?</label>
-                <input class="form-control valid" id="alumnoVive_otra" name="alumnoVive_otra" type="text"
+              <div class="form-group col-md-5 oculto4" style="display: none;">
+                <label class="control-label">Cuál?</label>
+                <input class="form-control valid validText" id="alumnoVive_otra" value="" name="alumnoVive_otra" type="text"
                   placeholder="">
               </div>
 
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-3 oculto5" style="display: none;">
                 <label for="cuantos_hermanos">Cuantos hermanos varones:</label>
                 <select class="form-control selectpicker " id="cuantos_hermanos" name="cuantos_hermanos">
                   <option value="">Seleccione</option>
@@ -625,13 +628,13 @@
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
-                  <option value="5">5</option>
+                  <option value="5">5</option> 
 
                 </select>
               </div>
 
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-3 oculto5" style="display: none;">
                 <label for="cuantas_hermanas">Cuantos hermanas hembras:</label>
                 <select class="form-control selectpicker " id="cuantas_hermanas" name="cuantas_hermanas" >
                   <option value="">Seleccione</option>
@@ -657,9 +660,9 @@
                 </select>
               </div>
 
-              <div class="form-group col-md-3">
-                <label for="Listhermanos_plantel">Número de hermanos:</label>
-                <select class="form-control selectpicker " id="Listhermanos_plantel" name="Listhermanos_plantel" >
+              <div class="form-group col-md-3 oculto6" style="display: none;">
+                <label for="hermanos_plantel">Número de hermanos:</label>
+                <select class="form-control selectpicker " id="hermanos_plantel" name="hermanos_plantel" >
                   <option value="">Seleccione</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -670,14 +673,14 @@
                 </select>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-3 oculto6" style="display: none;>
                 <label class="control-label">Grado que cursan:</label>
-                <input class="form-control valid" id="grado_hermanos" name="grado_hermanos" type="text" placeholder="">
+                <input class="form-control valid" id="grado_hermanos" name="grado_hermanos" value="" type="text" placeholder="">
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-3 oculto6" style="display: none;>
                 <label class="control-label">Turno:</label>
-                <input class="form-control valid" id="turno_hermanos" name="turno_hermanos" type="text" placeholder="">
+                <input class="form-control valid" id="turno_hermanos" name="turno_hermanos" value="" type="text" placeholder="">
               </div>
 
               <div class="form-group col-md-3">
@@ -744,42 +747,46 @@
                 <label class="control-label">Documentos:</label>
                 <div class="animated-checkbox">
                   <label>
-                    <input type="checkbox" id="checkBoletin" name="checkBoletin" value="1"><span
+                    <input type="checkbox" id="checkBoletin" name="checkBoletin" value=""><span
                       class="label-text">Boletin de calificación</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkPromocion" name="checkPromocion" value="1"><span
+                    <input type="checkbox" id="checkPromocion" name="checkPromocion" value=""><span
                       class="label-text">Boletin de promoción</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkconducta" name="checkconducta" value="1"><span
+                    <input type="checkbox" id="checkconducta" name="checkconducta" value=""><span
                       class="label-text">Carta de buena conducta</span>
                   </label>
                   <label>
                     <input type="checkbox" id="checkPartida" name="checkPartida"
-                      value="1"><span class="label-text">Copia de partida de
+                      value=""><span class="label-text">Copia de partida de
                       nacimento</span>
                   </label>
                   <label>
                     <input type="checkbox" id="checkCedulaAlumno" name="checkCedulaAlumno"
-                      value="1"><span class="label-text">Copia de la cédula del
+                      value=""><span class="label-text">Copia de la cédula del
                       alumno</span>
                   </label>
                   <label>
                     <input type="checkbox" id="checkCedulaRepre" name="checkCedulaRepre"
-                      value="1"><span class="label-text">Copia de la cédula del
+                      value=""><span class="label-text">Copia de la cédula del
                       representante</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkFotosAlumno" name="checkFotosAlumno" value="1"><span
+                    <input type="checkbox" id="checkFotosAlumno" name="checkFotosAlumno" value=""><span
                       class="label-text">Fotos del alumno</span>
                   </label>
                   <label>
                     <input type="checkbox" id="checkFotosRepre" name="checkFotosRepre"
-                      value="1"><span class="label-text">Fotos del representante</span>
+                      value=""><span class="label-text">Fotos del representante</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkOtrosDocumentos" name="checkOtrosDocumentos" value="1"><span
+                    <input type="checkbox" id="checkBoletinGrado" name="checkBoletinGrado"
+                      value=""><span class="label-text">Boletin de grado</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" id="checkOtrosDocumentos" name="checkOtrosDocumentos" value=""><span
                       class="label-text">Otros</span>
                   </label>
                   </label>
@@ -787,10 +794,10 @@
               </div>
 
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-3 oculto7" style="display:none;"> 
                 <label class="control-label">Otros Documentos:</label>
                 <input class="form-control valid" id="otros_documentos" name="otros_documentos" type="text" placeholder=""
-                  required="">
+                 value="">
               </div>
 
 
