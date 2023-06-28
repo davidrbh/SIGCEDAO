@@ -158,10 +158,10 @@
                 </select>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-3 pre-oculto" style="display: none;">
                   <label for="cuantos_hermanos">Cuantos hermanos?</label>
                   <input type="text" class="form-control valid validNumber" id="cuantos_hermanos" name="cuantos_hermanos"
-                    placeholder="" maxlength="1" >
+                    placeholder="" value="" maxlength="1" >
                 </div>
 
 
@@ -293,6 +293,7 @@
                   <option value="Bachiller">Bachiller</option>
                   <option value="Tecnico-medio">Tecnico-medio</option>
                   <option value="Universitario">Universitario</option>
+                 
 
                 </select>
               </div>
@@ -459,7 +460,7 @@
                   </select>
                 </div>
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-3 pre-oculto1" style="display: none;">
                 <label class="control-label">Quién?</label>
                 <input class="form-control valid" id="quien_loayuda" name="quien_loayuda" type="text"
                   placeholder="" required="">
@@ -528,12 +529,12 @@
 
               <div class="form-group col-md-5">
                 <label class="control-label">Nombre de las personas autorizadas para retirarlo de la escuela:</label>
-                <input class="form-control valid " id="persona_retirarlo" name="persona_retirarlo" type="text"
+                <input class="form-control valid validText" id="persona_retirarlo" name="persona_retirarlo" type="text"
                   placeholder="Nombre completo" >
               </div>
 
 
-              <div class="form-group col-md-1">
+              <div class="form-group col-md-2">
                 <label for="listNacionalidad_retiro">Nacionalidad:</label>
                 <select class="form-control selectpicker" id="listNacionalidad_retiro" name="listNacionalidad_retiro" required>
                 <option value="">Seleccione</option>  
@@ -544,7 +545,7 @@
               </div>
 
 
-              <div class="form-group col-md-2">
+              <div class="form-group col-md-3">
                 <label for="cedula_retiro">Cédula:</label>
                 <input type="text" class="form-control valid validNumber" id="cedula_retiro" name="cedula_retiro" placeholder=""
                   maxlength="8" required="">
@@ -566,14 +567,328 @@
               </div>
 
 
+            </div>
+        
+            </div>
+            </div>
+            </div>
+
+            <div>
+        <h3 class="titulo-modal">ANTECEDENTES DEL NACIMIENTO</h3>
+      </div>
+      <div class="modal-body">
+        <div class="tile">
+          <div class="tile-body">
+
+            
+            <p class="text-primary">Todos los campos son obligatorios.</p>
+
+            <div class="form-row">
+
+            <div class="form-group col-md-2">
+                <label for="embarazo_pre_escolar">Situación del embarazo:</label>
+                <select class="form-control selectpicker " id="embarazo_pre_escolar" name="embarazo_pre_escolar" required>
+                  <option value="">Seleccione</option>
+                  <option value="Normal">Normal</option>
+                  <option value="Con problemas">Con problemas</option>
+                  <option value="Planificado">Planificado</option>
+                  <option value="No planificado">No planificado</option>
+                 
+                </select>
+              </div>
+
+
+              <div class="form-group col-md-5">
+                <label class="control-label">Enfermedades o problemas durante el embarazo:</label>
+                <input class="form-control valid" id="problema_embarazo" name="problema_embarazo" type="text"
+                  placeholder="" required="">
+              </div>
+
+              <div class="form-group col-md-5">
+                <label class="control-label">Oficio o trabajo realizado durante el embarazo:</label>
+                <input class="form-control valid" id="oficio_embarazo" name="oficio_embarazo" type="text"
+                  placeholder="" >
+              </div>
+
+
+              <div class="form-group col-md-3">
+                <label for="parto_prescolar">Situación del nacimiento (parto):</label>
+                <select class="form-control selectpicker " id="parto_prescolar" name="parto_prescolar" required>
+                  <option value="">Seleccione</option>
+                  <option value="Normal">Normal</option>
+                  <option value="Cesaria">Cesária</option>
+                  <option value="Forceps">Forceps</option>
+                  <option value="Prematuro">Prematuro</option>
+
+
+                </select>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label class="control-label">Edad de la madre durante el parto:</label>
+                <input class="form-control valid validNumber" id="edad_embarazo" name="edad_embarazo" type="text"
+                  placeholder="" maxlength="2" >
+              </div>
+
+                <div class="form-group col-md-4">
+                  <label for="listProblema_parto">Problemas durante el parto?</label>
+                  <select class="form-control selectpicker " id="listProblema_parto" name="listProblema_parto" required>
+                    <option value="">Seleccione</option>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-3 pre-oculto2" style="display: none;">
+                <label class="control-label">Cuál?</label>
+                <input class="form-control valid" id="cual_problema_parto" name="cual_problema_parto" type="text"
+                  placeholder="" required="">
+              </div>
 
               <div class="form-group col-md-2">
+                <label for="peso_alnacer">Peso al nacer (KG):</label>
+                <input type="text" class="form-control valid validNumber" id="peso_alnacer" name="peso_alnacer"
+                  >
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="talla_alnacer">Talla (CM):</label>
+                <input type="text" class="form-control valid validNumber" id="talla_alnacer" name="talla_alnacer"
+                  required="">
+              </div>
+
+              <div class="form-group col-md-4">
+                  <label for="listProblema_nacimiento">Algun problema en los primeros dias de nacimiento?</label>
+                  <select class="form-control selectpicker " id="listProblema_nacimiento" name="listProblema_nacimiento" required>
+                    <option value="">Seleccione</option>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-3 pre-oculto3" style="display: none;">
+                <label class="control-label">Cuál?</label>
+                <input class="form-control valid" id="cual_problema_parto" name="cual_problema_parto" type="text"
+                  placeholder="" required="">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="comenzo_hablar">Edad que comenzo a hablar:</label>
+                <input type="text" class="form-control valid validNumber" id="comenzo_hablar" name="comenzo_hablar"
+                  >
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="comenzo_caminar">Edad que comenzo a caminar:</label>
+                <input type="text" class="form-control valid validNumber" id="comenzo_caminar" name="comenzo_caminar"
+                  >
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="dejo_panales">Edad que dejo de usar los pañales:</label>
+                <input type="text" class="form-control valid validNumber" id="dejo_panales" name="dejo_panales"
+                  >
+              </div>
+
+            
+
+            </div>
+        
+            </div>
+            </div>
+            </div>
+
+            <div>
+        <h3 class="titulo-modal">CONDICIONES FISICAS Y DE SALUD DEL NIÑO(A)</h3>
+      </div>
+      <div class="modal-body">
+        <div class="tile">
+          <div class="tile-body">
+
+            
+            <p class="text-primary">Todos los campos son obligatorios.</p>
+
+            <div class="form-row">
+
+            <div class="form-group col-md-2">
+                <label for="peso_nino">Peso (KG):</label>
+                <input type="text" class="form-control valid validNumber" id="peso_nino" name="peso_nino"
+                  >
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="talla_nino">Talla (CM):</label>
+                <input type="text" class="form-control valid validNumber" id="talla_nino" name="talla_nino"
+                  >
+              </div>
+
+
+              <div class="form-group col-md-2">
+                <label for="grupo_sanguineo">Grupo sanguineo:</label>
+                <input type="text" class="form-control valid validNumber" id="grupo_sanguineo" name="grupo_sanguineo"
+                  >
+              </div>
+
+           
+
+                <div class="form-group col-md-3">
+                  <label for="listAlergico">Es alergico?</label>
+                  <select class="form-control selectpicker " id="listAlergico" name="listAlergico" required>
+                    <option value="">Seleccione</option>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-3 pre-oculto4" style="display: none;">
+                <label class="control-label">Especifique:</label>
+                <input class="form-control valid" id="Especifique_alergico" name="Especifique_alergico" type="text"
+                  placeholder="" >
+              </div>
+
+              <div class="form-group col-md-3">
+                <label class="control-label">Enfermedades padecidas:</label>
+                <input class="form-control valid" id="enfermeda_padecida_nino" name="enfermeda_padecida_nino" type="text"
+                  placeholder="" >
+              </div>
+
+
+              <div class="form-group col-md-3">
+                  <label for="listHospitalizado">Ha sido hospitalizado alguna vez?</label>
+                  <select class="form-control selectpicker " id="listHospitalizado" name="listHospitalizado" required>
+                    <option value="">Seleccione</option>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+
+              <div class="form-group col-md-3 pre-oculto5" style="display: none;">
+                <label class="control-label">Causa:</label>
+                <input class="form-control valid" id="alergico_causa" name="alergico_causa" type="text"
+                  placeholder="" >
+              </div>
+
+
+              <div class="form-group col-md-4">
+                <label class="control-label">En caso de fiebre alta, que medicamento le administra?</label>
+                <input class="form-control valid" id="medicamento_fiebre" name="medicamento_fiebre" type="text"
+                  placeholder="" >
+              </div>
+
+
+              <div class="form-group col-md-5">
+                <label class="control-label">Padece de alguna discapacidad?</label>
+                <div class="animated-checkbox">
+                  <label>
+                    <input type="checkbox" id="checkMotora" name="checkMotora" value="0"><span
+                      class="label-text">Motora</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" id="checkCrecimiento" name="checkCrecimiento" value="0"><span
+                      class="label-text">De crecimiento</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" id="checkAuditiva" name="checkAuditiva" value="0"><span
+                      class="label-text">Auditiva</span>
+                  </label>
+
+                  <label>
+                    <input type="checkbox" id="checkVisual" name="checkVisual" value="0"><span
+                      class="label-text">Visual</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" id="checkOtra_discapacidad" name="checkOtra_discapacidad" value="0"><span
+                      class="label-text">Otra</span>
+                  </label>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group col-md-5 pre-oculto6" style="display: none;">
+                <label class="control-label">Especifique:</label>
+                <input class="form-control valid validText" id="discapacidad_otra" value="" name="discapacidad_otra" type="text"
+                  placeholder="">
+              </div>
+
+              <div class="form-group col-md-3">
+                  <label for="listEspecialistas">Es atendido por especialitas?</label>
+                  <select class="form-control selectpicker " id="listEspecialistas" name="listEspecialistas" required>
+                    <option value="">Seleccione</option>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-3 pre-oculto7" style="display: none;">
+                <label class="control-label">Cuál?</label>
+                <input class="form-control valid" id="especialista_cual" name="especialista_cual" type="text"
+                  placeholder="" >
+              </div>
+
+                <div class="form-group col-md-3">
+                  <label for="listProblema_lenguaje">Presento problemas en el lenguaje?</label>
+                  <select class="form-control selectpicker " id="listProblema_lenguaje" name="listProblema_lenguaje" required>
+                    <option value="">Seleccione</option>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label for="listMano_frecuentemente">Mano que utiliza frecuentemente:</label>
+                  <select class="form-control selectpicker " id="listMano_frecuentemente" name="listMano_frecuentemente" required>
+                    <option value="">Seleccione</option>
+                    <option value="Derecha">Derecha</option>
+                    <option value="Izquierda">Izquierda</option>
+                    <option value="Ambas">Ambas</option>
+                  </select>
+                </div>
+
+              <div class="form-group col-md-3">
+                <label class="control-label">Hora en que se acuesta:</label>
+                <input class="form-control valid" id="tiempo_acuesta" name="tiempo_acuesta" type="text"
+                  placeholder="" >
+              </div>
+
+              <div class="form-group col-md-3">
+                <label class="control-label">Hora en que se levanta:</label>
+                <input class="form-control valid " id="tiempo_selevanta" name="tiempo_selevanta" type="text"
+                  placeholder="" >
+              </div>
+
+              <div class="form-group col-md-2">
+                  <label for="listsueno_nino">Sueño del niño(a):</label>
+                  <select class="form-control selectpicker " id="listsueno_nino" name="listsueno_nino" required>
+                    <option value="">Seleccione</option>
+                    <option value="Tranquilo">Tranquilo</option>
+                    <option value="Agitado">Agitado</option>
+                    <option value="Imsomne">Imsomne</option>
+                    <option value="Pesadilla">Pesadilla</option>
+                    <option value="Despierta constantemente">Despierta constantemente</option>
+                  </select>
+                </div>
+
+              <div class="form-group col-md-2">
+                <label class="control-label">Con quién duerme el niño?</label>
+                <input class="form-control valid " id="duerme_nino" name="duerme_nino" type="text"
+                  placeholder="" >
+              </div>
+
+              <div class="form-group col-md-5">
+                <label class="control-label">Otra informacion que desee suministrar y deba suministrar:</label>
+                <input class="form-control valid " id="informacion_sumisnitrar" name="informacion_sumisnitrar" type="text"
+                  placeholder="" >
+              </div>
+
+
+              <div class="form-group col-md-3">
                 <label for="exampleSelect1">Status:</label>
                 <select class="form-control selectpicker" id="listStatus" name="listStatus" required="">
                   <option value="1">Activo</option>
                   <option value="2">Inactivo</option>
                 </select>
               </div>
+
 
             </div>
             <div class="tile-footer">
@@ -585,6 +900,11 @@
                   class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
 
             </div>
+
+            </div>
+            </div>
+            </div>
+          
 
 </form>
 
