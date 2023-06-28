@@ -445,6 +445,129 @@ otrosDocumentos.addEventListener("change", function() {
 
 
 
+///////////////////pre-escolar/////////////////
+
+
+let listPre_escolar_hermanos = document.getElementById("listHermanos");
+let pre_escolar_hermanos = document.querySelector(".pre-oculto");
+
+listPre_escolar_hermanos.addEventListener("change", function() {
+  this.value === "Si" 
+   ? pre_escolar_hermanos.style.display = "block" 
+   : pre_escolar_hermanos.style.display = "none"
+  
+});
+
+let listcome_solo= document.getElementById("listLo_ayudan");
+let come_solo= document.querySelector(".pre-oculto1");
+
+listcome_solo.addEventListener("change", function() {
+  this.value === "Si" 
+   ? come_solo.style.display = "block" 
+   : come_solo.style.display = "none"
+  
+});
+
+
+let listParto= document.getElementById("listProblema_parto");
+let parto = document.querySelector(".pre-oculto2");
+
+listParto.addEventListener("change", function() {
+  this.value === "Si" 
+   ? parto.style.display = "block" 
+   : parto.style.display = "none"
+  
+});
+
+let listnacimiento= document.getElementById("listProblema_nacimiento");
+let nacimiento = document.querySelector(".pre-oculto3");
+
+listnacimiento.addEventListener("change", function() {
+  this.value === "Si" 
+   ? nacimiento.style.display = "block" 
+   : nacimiento.style.display = "none"
+  
+});
+
+
+
+let listAlergico= document.getElementById("listAlergico");
+let alergico = document.querySelector(".pre-oculto4");
+
+listAlergico.addEventListener("change", function() {
+  this.value === "Si" 
+   ? alergico.style.display = "block" 
+   : alergico.style.display = "none"
+  
+});
+
+let listHospitalizado= document.getElementById("listHospitalizado");
+let causa_alergico = document.querySelector(".pre-oculto5");
+
+listHospitalizado.addEventListener("change", function() {
+  this.value === "Si" 
+   ? causa_alergico.style.display = "block" 
+   : causa_alergico.style.display = "none"
+  
+});
+
+
+let motora = document.getElementById("checkMotora");
+let crecimiento = document.getElementById("checkCrecimiento");
+let auditiva = document.getElementById("checkAuditiva");
+let visual = document.getElementById("checkVisual");
+let otra_discapacidad = document.getElementById("checkOtra_discapacidad");
+
+motora.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+crecimiento.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+auditiva.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+visual.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+otra_discapacidad.addEventListener("change", function(){
+  this.checked 
+   ? this.value = "1" 
+   : this.value ="0"
+});
+
+let discapacidad_otra= document.getElementById("checkOtra_discapacidad");
+let discapacidad = document.querySelector(".pre-oculto6");
+
+discapacidad_otra.addEventListener("change", function() {
+  this.value == "1" 
+   ? discapacidad.style.display = "block" 
+   : discapacidad.style.display = "none"
+  
+});
+
+
+
+let listEspecialistas= document.getElementById("listEspecialistas");
+let especialista = document.querySelector(".pre-oculto7");
+
+listEspecialistas.addEventListener("change", function() {
+  this.value === "Si" 
+   ? especialista.style.display = "block" 
+   : especialista.style.display = "none"
+  
+});
 
 
 
