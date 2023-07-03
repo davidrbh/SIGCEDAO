@@ -64,7 +64,7 @@
 
                                 <li><a class="treeview-item" href="<?= base_url(); ?>/especialidad"><i
                                             class="icon fa fa-circle-o"></i>
-                                        Espacialidad</a></li>
+                                        Especialidad</a></li>
 
                             </ul>
                         </li>
