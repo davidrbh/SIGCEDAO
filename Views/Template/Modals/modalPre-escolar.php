@@ -26,41 +26,41 @@
 
                 <div class="form-group col-md-3">
                   <label class="control-label">Primer nombre:</label>
-                  <input class="form-control valid validText" id="nombre_alumno1" name="nombre_alumno1" type="text" placeholder=""
+                  <input class="form-control valid validText" id="nombre_alumnoPre1" name="nombre_alumnoPre1" type="text" placeholder=""
                     required="">
                 </div>
 
                 <div class="form-group col-md-3">
                   <label class="control-label">Segundo Nombre (opcional):</label>
-                  <input class="form-control valid validText" id="nombre_alumno2" name="nombre_alumno2" type="text" placeholder="">
+                  <input class="form-control valid validText" id="nombre_alumnoPre2" name="nombre_alumnoPre2" type="text" placeholder="">
                 </div>
 
                 <div class="form-group col-md-3">
                   <label class="control-label">Primer apellido:</label>
-                  <input class="form-control valid validText" id="apellido_alumno1" name="apellido_alumno1" type="text" placeholder=""
+                  <input class="form-control valid validText" id="apellido_alumnoPre1" name="apellido_alumnoPre1" type="text" placeholder=""
                     required="">
                 </div>
 
                 <div class="form-group col-md-3">
                   <label class="control-label">Segundo apellido (opcional):</label>
-                  <input class="form-control valid validText" id="apellido_alumno2" name="apellido_alumno2" type="text"
+                  <input class="form-control valid validText" id="apellido_alumnoPre2" name="apellido_alumnoPre2" type="text"
                     placeholder="">
                 </div>
 
                 <div class="form-group col-md-3">
-                  <label for="cedula_escolar">Cédula de identidad o Escolar:</label>
-                  <input type="text" class="form-control valid validNumber" id="cedula_escolar" name="cedula_escolar"
+                  <label for="cedula_escolarPre">Cédula de identidad o Escolar:</label>
+                  <input type="text" class="form-control valid validNumber" id="cedula_escolarPre" name="cedula_escolarPre"
                     placeholder="" maxlength="8" required="">
                 </div>
 
                 <div class="form-group col-md-3">
-                  <label for="fecha_nac">Fecha de nacimiento:</label>
-                  <input type="date" name="fecha_nac" value="" class="form-control" id="fecha_nac" step="1">
+                  <label for="fecha_nac_pre">Fecha de nacimiento:</label>
+                  <input type="date" name="fecha_nac_pre" value="" class="form-control" id="fecha_nac_pre" step="1">
                 </div>
 
                 <div class="form-group col-md-3">
-                  <label for="listGenero">Género:</label>
-                  <select class="form-control selectpicker " id="listGenero" name="listGenero" required>
+                  <label for="listGeneroPre">Género:</label>
+                  <select class="form-control selectpicker " id="listGeneroPre" name="listGeneroPre" required>
                     <option value="">Seleccione</option>
                     <option value="1">Masculino</option>
                     <option value="2">Femenino</option>
@@ -68,8 +68,8 @@
                 </div>
 
                 <div class="form-group col-md-3">
-                  <label for="listNacionalidad">Nacionalidad:</label>
-                  <select class="form-control selectpicker " id="listNacionalidad" name="listNacionalidad" required>
+                  <label for="listNacionalidadPre">Nacionalidad:</label>
+                  <select class="form-control selectpicker " id="listNacionalidadPre" name="listNacionalidadPre" required>
                     <option value="">Seleccione</option>
                     <option value="1">Venezolana</option>
                     <option value="2">Extranjera</option>
@@ -92,7 +92,7 @@
 
                 <div class="form-group col-md-3">
                   <label class="control-label">Lugar de nacimiento:</label>
-                  <input class="form-control valid" id="lugar_nacimiento" name="lugar_nacimiento" type="text" placeholder=""
+                  <input class="form-control valid" id="lugar_nacimientoPre" name="lugar_nacimientoPre" type="text" placeholder=""
                     required="">
                 </div>
 
@@ -149,8 +149,8 @@
               </div>
 
               <div class="form-group col-md-2">
-                <label for="listHermanos">Tiene hermanos?</label>
-                <select class="form-control selectpicker" id="listHermanos" name="listHermanos" required>
+                <label for="listHermanosPre">Tiene hermanos?</label>
+                <select class="form-control selectpicker" id="listHermanosPre" name="listHermanosPre" required>
                 <option value="">Seleccione</option>  
                 <option value="Si">Si</option>
                   <option value="No">No</option>
@@ -191,19 +191,19 @@
 
               <div class="form-group col-md-2">
                 <label class="control-label">Nombre de la madre:</label>
-                <input class="form-control valid validText" id="nombre_madre" name="nombre_madre" type="text"
+                <input class="form-control valid validText" id="nombre_madrePre" name="nombre_madrePre" type="text"
                   placeholder="" required="">
               </div>
 
               <div class="form-group col-md-2">
                 <label class="control-label">Apellido de la madre:</label>
-                <input class="form-control valid validText" id="apellido_madre" name="apellido_madre" type="text"
+                <input class="form-control valid validText" id="apellido_madrePre" name="apellido_madrePre" type="text"
                   placeholder="" required="">
               </div>
 
               <div class="form-group col-md-1">
-                <label for="listNacionalidad_madre">Nacionalidad:</label>
-                <select class="form-control selectpicker" id="listNacionalidad_madre" name="listNacionalidad_madre" required>
+                <label for="listNacionalidad_madrePre">Nacionalidad:</label>
+                <select class="form-control selectpicker" id="listNacionalidad_madrePre" name="listNacionalidad_madrePre" required>
                 <option value="">Seleccione</option>  
                 <option value="V-">V-</option>
                   <option value="E-">E-</option>
@@ -213,8 +213,8 @@
 
 
               <div class="form-group col-md-2">
-                <label for="cedula_madre">Cédula:</label>
-                <input type="text" class="form-control valid validNumber" id="cedula_madre" name="cedula_madre" placeholder=""
+                <label for="cedula_madrePre">Cédula:</label>
+                <input type="text" class="form-control valid validNumber" id="cedula_madrePre" name="cedula_madrePre" placeholder=""
                   maxlength="8" required="">
               </div>
 
@@ -231,13 +231,13 @@
 
               <div class="form-group col-md-3">
                   <label class="control-label">Lugar de nacimiento:</label>
-                  <input class="form-control valid" id="lugar_nacimientoMadre" name="lugar_nacimientoMadre" type="text" placeholder=""
+                  <input class="form-control valid" id="lugar_nacimientoMadrePre" name="lugar_nacimientoMadrePre" type="text" placeholder=""
                     required="">
                 </div>
 
                 <div class="form-group col-md-3">
-                  <label for="listNacionalidad_madre">Nacionalidad:</label>
-                  <select class="form-control selectpicker " id="listNacionalidad_madre" name="listNacionalidad_madre" required>
+                  <label for="listNacionalidad_madre_Pre">Nacionalidad:</label>
+                  <select class="form-control selectpicker " id="listNacionalidad_madrePre" name="listNacionalidad_madrePre" required>
                     <option value="">Seleccione</option>
                     <option value="1">Venezolana</option>
                     <option value="2">Extranjera</option>
@@ -257,25 +257,25 @@
                 </div>
 
                 <div class="form-group col-md-2">
-                  <label for="fecha_nac_madre">Fecha de nacimiento:</label>
-                  <input type="date" name="fecha_nac_madre" value="" class="form-control" id="fecha_nac_madre" step="1">
+                  <label for="fecha_nac_madrePre">Fecha de nacimiento:</label>
+                  <input type="date" name="fecha_nac_madrePre" value="" class="form-control" id="fecha_nac_madrePre" step="1">
                 </div>
 
                 <div class="form-group col-md-5">
                   <label class="control-label">Dirección de Habitación:</label>
-                  <input class="form-control valid" id="direccion_habitacion_madre" name="direccion_habitacion_madre" type="text"
+                  <input class="form-control valid" id="direccion_habitacion_madrePre" name="direccion_habitacion_madrePre" type="text"
                     placeholder="" required="">
                 </div>
 
                 <div class="form-group col-md-2">
-                <label for="telefono_madre">Teléfono:</label>
-                <input type="text" class="form-control valid validNumber" id="telefono_madre" name="telefono_madre"
+                <label for="telefono_madrePre">Teléfono:</label>
+                <input type="text" class="form-control valid validNumber" id="telefono_madrePre" name="telefono_madrePre"
                   required="">
               </div>
 
               <div class="form-group col-md-6">
                   <label class="control-label">Dirección de Trabajo:</label>
-                  <input class="form-control valid" id="direccion_trabajo_madre" name="direccion_trabajo_madre" type="text"
+                  <input class="form-control valid" id="direccion_trabajo_madrePre" name="direccion_trabajo_madrePre" type="text"
                     placeholder="" >
                 </div>
 
@@ -308,19 +308,19 @@
 
                 <div class="form-group col-md-3">
                 <label class="control-label">Nombre del padre:</label>
-                <input class="form-control valid validText" id="nombre_padre" name="nombre_padre" type="text"
+                <input class="form-control valid validText" id="nombre_padrePre" name="nombre_padrePre" type="text"
                   placeholder="" required="">
               </div>
 
               <div class="form-group col-md-3">
                 <label class="control-label">Apellido del padre:</label>
-                <input class="form-control valid validText" id="apellido_padre" name="apellido_padre" type="text"
+                <input class="form-control valid validText" id="apellido_padrePre" name="apellido_padrePre" type="text"
                   placeholder="" required="">
               </div>
 
               <div class="form-group col-md-2">
-                <label for="listNacionalidad_padre">Nacionalidad:</label>
-                <select class="form-control selectpicker" id="listNacionalidad_padre" name="listNacionalidad_padre" required>
+                <label for="listNacionalidad_padrePre">Nacionalidad:</label>
+                <select class="form-control selectpicker" id="listNacionalidad_padrePre" name="listNacionalidad_padrePre" required>
                 <option value="">Seleccione</option>  
                 <option value="V-">V-</option>
                   <option value="E-">E-</option>
@@ -330,8 +330,8 @@
 
 
               <div class="form-group col-md-2">
-                <label for="cedula_padre">Cédula:</label>
-                <input type="text" class="form-control valid validNumber" id="cedula_padre" name="cedula_padre" placeholder=""
+                <label for="cedula_padrePre">Cédula:</label>
+                <input type="text" class="form-control valid validNumber" id="cedula_padrePre" name="cedula_padrePre" placeholder=""
                   maxlength="8" required="">
               </div>
 
@@ -348,13 +348,13 @@
 
               <div class="form-group col-md-5">
                   <label class="control-label">Lugar de nacimiento:</label>
-                  <input class="form-control valid" id="lugar_nacimientoPadre" name="lugar_nacimientoPadre" type="text" placeholder=""
+                  <input class="form-control valid" id="lugar_nacimientoPadrePre" name="lugar_nacimientoPadrePre" type="text" placeholder=""
                     required="">
                 </div>
 
                 <div class="form-group col-md-3">
-                  <label for="listNacionalidad_padre">Nacionalidad:</label>
-                  <select class="form-control selectpicker " id="listNacionalidad_padre" name="listNacionalidad_padre" required>
+                  <label for="direccion_habitacion_Padre_Pre">Nacionalidad:</label>
+                  <select class="form-control selectpicker " id="direccion_habitacion_Padre_Pre" name="direccion_habitacion_Padre_Pre" required>
                     <option value="">Seleccione</option>
                     <option value="1">Venezolana</option>
                     <option value="2">Extranjera</option>
@@ -374,19 +374,19 @@
                 </div>
 
                 <div class="form-group col-md-2">
-                  <label for="fecha_nac_padre">Fecha de nacimiento:</label>
-                  <input type="date" name="fecha_nac_padre" value="" class="form-control" id="fecha_nac_padre" step="1">
+                  <label for="fecha_nac_padrePre">Fecha de nacimiento:</label>
+                  <input type="date" name="fecha_nac_padrePre" value="" class="form-control" id="fecha_nac_padrePre" step="1">
                 </div>
 
                 <div class="form-group col-md-5">
                   <label class="control-label">Dirección de Habitación:</label>
-                  <input class="form-control valid" id="direccion_habitacion_Padre" name="direccion_habitacion_Padre" type="text"
+                  <input class="form-control valid" id="direccion_habitacion_PadrePre" name="direccion_habitacion_PadrePre" type="text"
                     placeholder="" required="">
                 </div>
 
                 <div class="form-group col-md-2">
-                <label for="telefono_padre">Teléfono:</label>
-                <input type="text" class="form-control valid validNumber" id="telefono_padre" name="telefono_padre"
+                <label for="telefono_padrePre">Teléfono:</label>
+                <input type="text" class="form-control valid validNumber" id="telefono_padrePre" name="telefono_padrePre"
                   required="">
               </div>
 
@@ -552,8 +552,8 @@
               </div>
 
               <div class="form-group col-md-2">
-                <label for="listParentesco">Parentesco con el Alumno:</label>
-                <select class="form-control selectpicker " id="listParentesco" name="listParentesco" required>
+                <label for="listParentescoPre">Parentesco con el Alumno:</label>
+                <select class="form-control selectpicker " id="listParentescoPre" name="listParentescoPre" required>
                   <option value="">Seleccione</option>
                   <option value="Padre">Padre</option>
                   <option value="Madre">Madre</option>
@@ -732,8 +732,8 @@
            
 
                 <div class="form-group col-md-3">
-                  <label for="listAlergico">Es alergico?</label>
-                  <select class="form-control selectpicker " id="listAlergico" name="listAlergico" required>
+                  <label for="listAlergicoPre">Es alergico?</label>
+                  <select class="form-control selectpicker " id="listAlergicoPre" name="listAlergicoPre" required>
                     <option value="">Seleccione</option>
                     <option value="Si">Si</option>
                     <option value="No">No</option>
@@ -883,7 +883,7 @@
 
               <div class="form-group col-md-3">
                 <label for="exampleSelect1">Status:</label>
-                <select class="form-control selectpicker" id="listStatus" name="listStatus" required="">
+                <select class="form-control selectpicker" id="listStatus2" name="listStatus2" required="">
                   <option value="1">Activo</option>
                   <option value="2">Inactivo</option>
                 </select>
