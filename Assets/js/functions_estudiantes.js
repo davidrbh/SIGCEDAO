@@ -2,10 +2,64 @@ let formEstudiante = document.querySelector("#formEstudiante");
 formEstudiante.onsubmit = function (e) {
   e.preventDefault();
 
-  //let intId_estudiante = document.querySelector("#formEstudiante").value;
-  //let strNombre = document.querySelector("#txtNombre").value;
-  //let strDescripcion = document.querySelector("#txtDescripcion").value;
-  let intStatus = document.querySelector("#listStatus").value;
+  let  strNombreAlumno = document.querySelector('#nombre_alumno1').value;
+  let  strApellidoAlumno = document.querySelector('#apellido_alumno1').value;
+  let  intCedulaEscolar = document.querySelector('#cedula_escolar').value;
+  let  intGenero = document.querySelector('#listGenero').value;
+  let  intNacionalidad = document.querySelector('#listNacionalidad').value;
+  let  intEstado = document.querySelector('#selectEstadoid').value;
+  let  strLugarNacimiento = document.querySelector('#lugar_nacimiento').value;
+  let  strDireccionHabitacion = document.querySelector('#direccion_habitacion').value; 
+  let  strNombreMadre = document.querySelector('#nombre_madre').value;
+  let  strApellidoMadre = document.querySelector('#apellido_madre').value;
+  let  intNacionalidadMadre = document.querySelector('#listNacionalidad_madre').value;
+  let  intCedulaMadre = document.querySelector('#cedula_madre').value;
+  let  strOcupacionMadre = document.querySelector('#ocupacion_madre').value;
+  let  intTelefonoMadre = document.querySelector('#telefono_madre').value;
+  let  strNombrePadre = document.querySelector('#nombre_padre').value;
+  let  strApellidoPadre = document.querySelector('#apellido_padre').value;
+  let  intNacionalidadPadre = document.querySelector('#listNacionalidad_padre').value;
+  let  intCedulaPadre = document.querySelector('#cedula_padre').value;
+  let  strOcupacionPadre = document.querySelector('#ocupacion_padre').value;
+  let  intTelefonoPadre = document.querySelector('#telefono_padre').value;
+  let  strNombreRepre = document.querySelector('#nombre_repre').value;
+  let  strApellidoRepre = document.querySelector('#apellido_repre').value;
+  let  intNacionalidadRepre = document.querySelector('#listNacionalidad_rep').value;
+  let  intCedulaRepre = document.querySelector('#cedula_repre').value;
+  let  strParentesco = document.querySelector('#listParentesco').value;
+  let  strOcupacionRepre = document.querySelector('#ocupacion_repre').value;
+  let  intTelefonoRepre = document.querySelector('#telefono_repre').value;
+  let  intCelularRepre= document.querySelector('#celular_repre').value;
+  let  strDireccionRepre = document.querySelector('#direccion_repre').value;
+  let  strNombrePlantel = document.querySelector('#plantel').value;
+  let  strGradoCursado = document.querySelector('#listGrado_cursado').value;
+  let  strRepitiente = document.querySelector('#listRepitiente').value;
+  let  strTipoAlumno = document.querySelector('#listTipo_alumno').value;
+  let  strGradoAcursar = document.querySelector('#listGrado_acursar').value;
+  let  strTurno = document.querySelector('#listTurno').value;
+  let  strFuncionario = document.querySelector('#funcionario').value;
+  let  strPadeceEnfermedad = document.querySelector('#listPadece_enfermedad').value;
+  let  strAlergicoMedicamento = document.querySelector('#listAlergico_medicamento').value;
+  let  strPsicologo = document.querySelector('#listPsicologo').value;
+  let  strNacimientoParto = document.querySelector('#nacimiento_parto').value;
+  let  strSevaSolo = document.querySelector('#listSeva_solo').value;
+  let  strHermanosPlantel = document.querySelector('#listHermano_plantel').value;
+  let  strTipoVivienda = document.querySelector('#listVivienda').value;
+  let  strCondicionVivienda = document.querySelector('#listCondicion_vivienda').value;
+  let  intStatus = document.querySelector('#listStatus').value;
+  
+
+  if(strNombreAlumno == '' || strApellidoAlumno == '' || intCedulaEscolar == '' || intGenero == ''
+   || intNacionalidad == '' || intEstado == '' || strLugarNacimiento == ''|| strDireccionHabitacion == '' || strNombreMadre == '' || strApellidoMadre == '' || intNacionalidadMadre == ''
+   || intCedulaMadre == '' || strOcupacionMadre == '' || intTelefonoMadre == ''|| strNombrePadre == '' || strApellidoPadre == '' || intNacionalidadPadre == '' || intCedulaPadre == ''
+   || strOcupacionPadre == '' || intTelefonoPadre == '' || strNombreRepre == ''|| strApellidoRepre == '' || intNacionalidadRepre == '' || intCedulaRepre == '' || strParentesco == ''
+   || strOcupacionRepre == '' || intTelefonoRepre == '' || intCelularRepre == ''|| strDireccionRepre == '' || strNombrePlantel == '' || strGradoCursado == '' || strRepitiente == ''
+   || strTipoAlumno == '' || strGradoAcursar == '' || strTurno == ''|| strFuncionario == '' || strPadeceEnfermedad == '' || strAlergicoMedicamento == '' || strPsicologo == ''
+   || strNacimientoParto == '' || strSevaSolo == '' || strHermanosPlantel == ''|| strTipoVivienda == '' || strCondicionVivienda == '' || intStatus == '')
+  {
+      swal("Atención", "Todos los campos son obligatorios." , "error");
+      return false;
+  };
  
 
   let elementsValid = document.getElementsByClassName("valid");
@@ -52,11 +106,57 @@ let formPre_escolar = document.querySelector("#formPre-escolar");
 formPre_escolar.onsubmit = function (e) {
   e.preventDefault();
 
-  //let intId_estudiante = document.querySelector("#formEstudiante").value;
-  //let strNombre = document.querySelector("#txtNombre").value;
-  //let strDescripcion = document.querySelector("#txtDescripcion").value;
-  let intStatus = document.querySelector("#listStatus").value;
  
+  let  strNombreAlumnoPre = document.querySelector('#nombre_alumnoPre1').value;
+  let  strApellidoAlumnoPre = document.querySelector('#apellido_alumnoPre1').value;
+  let  intCedulaEscolarPre = document.querySelector('#cedula_escolarPre').value;
+  let  intGeneroPre = document.querySelector('#listGeneroPre').value;
+  let  intNacionalidadPre = document.querySelector('#listNacionalidadPre').value;
+  let  intEstadoPre = document.querySelector('#selectEstadoid2').value;
+  let  strLugarNacimientoPre = document.querySelector('#lugar_nacimientoPre').value;
+  let  intTallaCamisa = document.querySelector('#listTalla_camisa').value;
+  let  intTallaPantalon = document.querySelector('#listTalla_pantalon').value;
+  let  intTallaZapato = document.querySelector('#listTalla_zapato').value;
+  let  intPeso = document.querySelector('#peso').value; 
+  let  intEstatura = document.querySelector('#estatura').value; 
+  let  strHermanosPre = document.querySelector('#listHermanosPre').value; 
+  let  strNombreMadrePre = document.querySelector('#nombre_madrePre').value;
+  let  strApellidoMadrePre = document.querySelector('#apellido_madrePre').value;
+  let  intNacionalidadMadrePre = document.querySelector('#listNacionalidad_madrePre').value;
+  let  intCedulaMadrePre = document.querySelector('#cedula_madrePre').value;
+  let  strEstadoCivilMadre = document.querySelector('#listEstado_civil_madre').value;
+  let  strNacimientoMadrePre = document.querySelector('#lugar_nacimientoMadrePre').value;
+  let  strNacionalidad_madre_pre = document.querySelector('#listNacionalidad_madrePre').value;
+  let  intEstadoMadrePre = document.querySelector('#selectEstadoid3').value;
+  let  strDireccionHabitacionMadrePre = document.querySelector('#direccion_habitacion_madrePre').value;
+  let  intTelefonoMadrePre = document.querySelector('#telefono_madrePre').value;
+  let  strDireccionTrabajoMadrePre = document.querySelector('#direccion_trabajo_madrePre').value;
+  let  strNivelAcademicoMadrePre = document.querySelector('#listNivel_academico_madre').value;
+  let  strNombrePadrePre = document.querySelector('#nombre_padrePre').value;
+  let  strApellidoPadrePre = document.querySelector('#apellido_padrePre').value;
+  let  intNacionalidadPadrePre = document.querySelector('#listNacionalidad_padrePre').value;
+  let  intCedulaPadrePre = document.querySelector('#cedula_padrePre').value;
+  let  strEstadoCivilPadre = document.querySelector('#listEstado_civil_padrePre').value;
+  let  strNacimientoPadrePre = document.querySelector('#lugar_nacimientoPadrePre').value;
+  let  strNacionalidad_Padre_pre = document.querySelector('#listNacionalidad_padrePre').value;
+  let  intEstadoPadrePre = document.querySelector('#selectEstadoid4').value;
+  let  strDireccionHabitacionPadrePre = document.querySelector('#direccion_habitacion_Padre_Pre').value;
+  let  intTelefonoPadrePre = document.querySelector('#telefono_padrePre').value;
+  let  strDireccionTrabajoPadrePre = document.querySelector('#direccion_trabajo_padre').value;
+  let  strNivelAcademicoPadrePre = document.querySelector('#listNivel_academico_padre').value;
+  let  intStatus2 = document.querySelector('#listStatus2').value;
+  
+
+  if(strNombreAlumnoPre == '' || strApellidoAlumnoPre == '' || intCedulaEscolarPre == '' || intGeneroPre == ''
+   || intNacionalidadPre == '' || intEstadoPre == '' || strLugarNacimientoPre == ''|| intTallaCamisa == '' || intTallaPantalon == '' || intTallaZapato == '' || intPeso == ''
+   || intEstatura == '' || strHermanosPre == '' || strNombreMadrePre == ''|| strApellidoMadrePre == '' || intNacionalidadMadrePre == '' || intCedulaMadrePre == '' || strEstadoCivilMadre == ''
+   || strNacimientoMadrePre == '' || strNacionalidad_madre_pre == '' || intEstadoMadrePre == ''|| strDireccionHabitacionMadrePre == '' || intTelefonoMadrePre == '' || strDireccionTrabajoMadrePre == '' || strNivelAcademicoMadrePre == ''
+   || strNombrePadrePre == '' || strApellidoPadrePre == '' || intNacionalidadPadrePre == ''|| intCedulaPadrePre == '' || strEstadoCivilPadre == '' || strNacimientoPadrePre == '' || strNacionalidad_Padre_pre == ''
+   || intEstadoPadrePre == '' || strDireccionHabitacionPadrePre == '' || intTelefonoPadrePre == ''|| strDireccionTrabajoPadrePre == '' || strNivelAcademicoPadrePre == '' || intStatus2 == '')
+  {
+      swal("Atención", "Todos los campos son obligatorios." , "error");
+      return false;
+  };
 
   let elementsValid = document.getElementsByClassName("valid");
   for (let i = 0; i < elementsValid.length; i++) {
