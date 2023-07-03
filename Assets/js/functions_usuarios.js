@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function(){
         "aProcessing":true,
         "aServerSide":true,
         "language": {
-            "url": "/Assets/js/datatable-spanish.json"
+            "url":" " + base_url + "/Assets/js/datatable-spanish.json"
         },
         "ajax":{
             "url": " "+base_url+"/Usuarios/getUsuarios",
@@ -244,9 +244,9 @@ function ftnViewUsuario(id_usuario)
 
             if(objData.status)
             {
-               let  estadoUsuario = objData.data.status == 1 ? 
-                '<span class="badge badge-success">Activo</span>' : 
-                '<span class="badge badge-danger">Inactivo</span>';
+               let  estadoUsuario = objData.data.status == 1 
+                ? '<span class="badge badge-success">Activo</span>' 
+                : '<span class="badge badge-danger">Inactivo</span>';
 
                 document.querySelector("#celCedula").innerHTML = objData.data.cedula;
                 document.querySelector("#celNombre").innerHTML = objData.data.nombres;
@@ -255,7 +255,7 @@ function ftnViewUsuario(id_usuario)
                 document.querySelector("#celEmail").innerHTML = objData.data.email_user;
                 document.querySelector("#celTipoUsuario").innerHTML = objData.data.nombre_rol;
                 document.querySelector("#celEstado").innerHTML = estadoUsuario;
-                document.querySelector("#celFechaRegistro").innerHTML = objData.data.fechaRegistro; 
+                
                 $('#modalViewUsuario').modal('show');
             }else{
                 swal("Error", objData.msg , "error");

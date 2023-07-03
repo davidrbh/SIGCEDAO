@@ -129,12 +129,8 @@ $("#tableRoles").DataTable();
 
 function openModal() {
   document.querySelector("#id_Rol").value = "";
-  document
-    .querySelector(".modal-header")
-    .classList.replace("headerUpdate", "headerRegister");
-  document
-    .querySelector("#btnActionForm")
-    .classList.replace("btn-info", "btn-primary");
+  document.querySelector(".modal-header").classList.replace("headerUpdate", "headerRegister");
+  document.querySelector("#btnActionForm").classList.replace("btn-info", "btn-primary");
   document.querySelector("#btnText").innerHTML = "Guardar";
   document.querySelector("#titleModal").innerHTML = "Nuevo Rol";
   document.querySelector("#formRol").reset();
@@ -168,8 +164,7 @@ function fntEditRol(id_rol) {
       if (objData.status) {
         document.querySelector("#id_Rol").value = objData.data.id_rol;
         document.querySelector("#txtNombre").value = objData.data.nombre_rol;
-        document.querySelector("#txtDescripcion").value =
-          objData.data.descripcion;
+        document.querySelector("#txtDescripcion").value =objData.data.descripcion;
         document.querySelector("#listStatus").value = objData.data.status;
 
         $("#listStatus").selectpicker("render");
