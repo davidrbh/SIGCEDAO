@@ -128,10 +128,7 @@
               <td>Estado:</td>
               <td id="celEstado">Larry</td>
             </tr>
-            <tr>
-              <td>Fecha registro:</td>
-              <td id="celFechaRegistro">Larry</td>
-            </tr>
+          
           </tbody>
         </table>
       </div>
