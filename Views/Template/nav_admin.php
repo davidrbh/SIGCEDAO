@@ -4,8 +4,8 @@
     <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="<?= media(); ?>/images/image-perfil.jpeg"
             alt="User Image">
         <div>
-            <p class="app-sidebar__user-name"> David Barrera</p>
-            <p class="app-sidebar__user-designation"> Director</p>
+        <p class="app-sidebar__user-name"> <?= $_SESSION['userData']['nombres']; ?></p>
+          <p class="app-sidebar__user-designation"><?= $_SESSION['userData']['nombre_rol']; ?></p>
         </div>
     </div>
     <ul class="app-menu">
@@ -78,10 +78,21 @@
         </li>
 
 
-        <li>
-            <a class="app-menu__item" href="<?= base_url(); ?>/estudiantes">
-                <i class="app-menu__icon fa fa-solid fa-users"></i>
-                <span class="app-menu__label">Estudiantes</span></a>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview">
+                <i class="app-menu__icon fa fa-solid fa-users" aria-hidden="true"></i>
+                <span class="app-menu__label">Estudiantes</span><i
+                    class="treeview-indicator fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+
+
+                <li><a class="treeview-item" href="<?= base_url(); ?>/estudiantes_inicial"><i class="icon fa fa-circle-o"></i>
+                        Inicial</a></li>
+
+
+                <li><a class="treeview-item" href="<?= base_url(); ?>/estudiantes"><i class="icon fa fa-circle-o"></i>
+                        Basica</a></li>
+
+            </ul>
         </li>
 
 
@@ -95,7 +106,7 @@
                 <span class="app-menu__label">Planillas</span></a></li>
 
 
-        <li><a class="app-menu__item" href="<?= base_url(); ?>/logout">
+                <li><a class="app-menu__item" href="<?= base_url(); ?>/logout">
                 <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
                 <span class="app-menu__label">Cerrar Sesión</span></a></li>
     </ul>
