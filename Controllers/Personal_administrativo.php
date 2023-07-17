@@ -11,7 +11,12 @@ class Personal_administrativo extends Controllers
      */
     public function __construct()
     {
+        sessionStart();
         parent::__construct();
+        if(empty($_SESSION['login']))
+			{
+				header('location:' .base_url() .'/login');
+			}
     }
     /**
      * la función personal_administrativo() se utiliza para cargar la vista a traves de la function "getView" roles.php y pasarle algunos datos específicos para que pueda ser renderizada correctamente.
