@@ -152,16 +152,16 @@
                 <label for="listHermanosPre">Tiene hermanos?</label>
                 <select class="form-control selectpicker" id="listHermanosPre" name="listHermanosPre" required>
                 <option value="">Seleccione</option>  
-                <option value="Si">Si</option>
-                  <option value="No">No</option>
+                <option value="1">Si</option>
+                  <option value="2">No</option>
 
                 </select>
               </div>
 
               <div class="form-group col-md-3 pre-oculto" style="display: none;">
                   <label for="cuantos_hermanos">Cuantos hermanos?</label>
-                  <input type="text" class="form-control valid validNumber" id="cuantos_hermanos" name="cuantos_hermanos"
-                    placeholder="" value="" maxlength="1" >
+                  <input type="number" class="form-control valid validNumber" id="cuantos_hermanos" name="cuantos_hermanos"
+                    placeholder="" value="" min="1" >
                 </div>
 
 
@@ -505,7 +505,7 @@
 
                 <div class="form-group col-md-3">
                 <label class="control-label">Cuantas horas duerme?</label>
-                <input class="form-control valid validNumber" id="horas_dormidas" name="horas_dormidas" type="text"
+                <input class="form-control valid validNumber" id="horas_dormidas" name="horas_dormidas" type="number"
                   placeholder="" >
               </div>
 
@@ -626,8 +626,8 @@
 
               <div class="form-group col-md-3">
                 <label class="control-label">Edad de la madre durante el parto:</label>
-                <input class="form-control valid validNumber" id="edad_embarazo" name="edad_embarazo" type="text"
-                  placeholder="" maxlength="2" >
+                <input class="form-control valid validNumber" id="edad_embarazo" name="edad_embarazo" type="number"
+                  placeholder="" min="12" >
               </div>
 
                 <div class="form-group col-md-4">
@@ -674,19 +674,19 @@
 
               <div class="form-group col-md-3">
                 <label for="comenzo_hablar">Edad que comenzo a hablar:</label>
-                <input type="text" class="form-control valid validNumber" id="comenzo_hablar" name="comenzo_hablar"
+                <input type="number" min="1" class="form-control valid validNumber" id="comenzo_hablar" name="comenzo_hablar"
                   >
               </div>
 
               <div class="form-group col-md-3">
                 <label for="comenzo_caminar">Edad que comenzo a caminar:</label>
-                <input type="text" class="form-control valid validNumber" id="comenzo_caminar" name="comenzo_caminar"
+                <input type="number" min="1" class="form-control valid validNumber" id="comenzo_caminar" name="comenzo_caminar"
                   >
               </div>
 
               <div class="form-group col-md-3">
                 <label for="dejo_panales">Edad que dejo de usar los pañales:</label>
-                <input type="text" class="form-control valid validNumber" id="dejo_panales" name="dejo_panales"
+                <input type="number" min="1" class="form-control valid validNumber" id="dejo_panales" name="dejo_panales"
                   >
               </div>
 
