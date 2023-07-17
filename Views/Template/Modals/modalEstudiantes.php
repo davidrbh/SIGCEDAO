@@ -69,7 +69,7 @@
 
                 <div class="form-group col-md-3">
                   <label for="listNacionalidad">Nacionalidad:</label>
-                  <select class="form-control selectpicker " id="listNacionalidad" name="listNacionalidad" required>
+                  <select class="form-control selectpicker " id="listNacionalidad"  name="listNacionalidad" required>
                     <option value="">Seleccione</option>
                     <option value="1">Venezolana</option>
                     <option value="2">Extranjera</option>
@@ -299,21 +299,21 @@
 
 
               <div class="form-group col-md-3">
-                <label class="control-label">Escuela:</label>
+                <label class="control-label">Escuela de procedencia:</label>
                 <input class="form-control valid" id="plantel" name="plantel" type="text"
-                  placeholder="Plantel de procedencia" required="">
+                  placeholder="Plantel de procedencia" value="U.E.D Antonio Ornes" required="">
               </div>
 
               <div class="form-group col-md-2">
                 <label for="listGrado_cursado">Grado cursado:</label>
                 <select class="form-control selectpicker" id="listGrado_cursado" name="listGrado_cursado" required>
                   <option value="">Seleccione</option>
-                  <option value="Primero">Primero (1)</option>
-                  <option value="Segundo">Segundo (2)</option>
-                  <option value="Tercero">Tercero (3)</option>
-                  <option value="Cuarto">Cuarto (4)</option>
-                  <option value="Quinto">Quinto (5)</option>
-                  <option value="Sexto">Sexto (6)</option>
+                  <option value="Primero">Primero</option>
+                  <option value="Segundo">Segundo</option>
+                  <option value="Tercero">Tercero</option>
+                  <option value="Cuarto">Cuarto</option>
+                  <option value="Quinto">Quinto</option>
+                  <option value="Sexto">Sexto</option>
 
 
 
@@ -332,7 +332,7 @@
 
               <div class="form-group col-md-2">
                 <label class="control-label">Literal:</label>
-                <input class="form-control valid " id="literal" name="literal" type="text" placeholder="" required="">
+                <input class="form-control valid validText" maxlength="1" id="literal" name="literal" type="text" placeholder="" required="">
               </div>
 
               <div class="form-group col-md-3">
@@ -365,7 +365,7 @@
 
             <div class="form-row">
 
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3">
                 <label for="listTipo_alumno">Tipo de Alumno:</label>
                 <select class="form-control selectpicker" id="listTipo_alumno" name="listTipo_alumno" required>
                   <option value="">Seleccione</option>
@@ -376,35 +376,39 @@
               </div>
 
 
-              <div class="form-group col-md-2">
-                <label for="listGrado_acursar">Grado a cursar:</label>
-                <select class="form-control selectpicker" id="listGrado_acursar" name="listGrado_acursar" required>
-                  <option value="">Seleccione</option>
-                  <option value="Primero">Primero (1)</option>
-                  <option value="Segundo">Segundo (2)</option>
-                  <option value="Tercero">Tercero (3)</option>
-                  <option value="Cuarto">Cuarto (4)</option>
-                  <option value="Quinto">Quinto (5)</option>
-                  <option value="Sexto">Sexto (6)</option>
-
-
-
-                </select>
-              </div>
+             
 
 
               <div class="form-group col-md-3">
                 <label for="listTurno">Turno:</label>
                 <select class="form-control selectpicker" id="listTurno" name="listTurno" required>
                   <option value="">Seleccione</option>
-                  <option value="Diurno">Diurno</option>
-                  <option value="Vespertino">Vespertino</option>
+                  <option value="1">Diurno</option>
+                  <option value="2">Vespertino</option>
 
 
 
 
                 </select>
               </div>
+
+
+              <div class="form-group col-md-2">
+                  <label for="selectSeccionid">Grado a cursar:</label>
+                  <select class="form-control  " data-live-search="true" id="selectSeccionid" name="selectSeccionid"
+                    required="">
+
+
+                  </select>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <fieldset>
+                      <label class="control-label" for="nombreDocente">Nombre del docente:</label>
+                     <select class="form-control" id="nombreDocente" name="nombreDocente" type="text"placeholder="<?php  ?>" value="" readonly="">
+                        </select>  
+                    </fieldset>
+                  </div>
 
 
 
@@ -418,15 +422,16 @@
               </div>
 
               <div class="form-group col-md-3">
-                <label class="control-label">Funcionario que realiza la inscripción:</label>
-                <input class="form-control valid " id="funcionario" name="funcionario" type="text" placeholder=""
-                  required="">
-              </div>
+              <fieldset disabled>
+                  <label for="funcionario">Funcionario que realiza la inscripción:</label>
+                  <input type="text" class="form-control valid validText" id="funcionario" name="funcionario" value="<?= $_SESSION['userData']['nombres'];?>" required="">
+                </fieldset>
+                </div>
 
               <div class="form-group col-md-3">
                 <label for="fecha_inscripcion">Fecha de inscripción:</label>
-                <input type="date" name="fecha_inscripcion" value="" class="form-control" id="fecha_inscripcion"
-                  step="1">
+                <input type="date" name="fecha_inscripcion" value="<?php echo date("Y-m-d"); ?>" class="form-control" id="fecha_inscripcion" max="<?php echo date("Y-m-d"); ?>"
+                  step="1" >
               </div>
 
 
@@ -453,8 +458,8 @@
                 <label for="padece_enfermedad">Padece de alguna enfermedad?</label>
                 <select class="form-control selectpicker " id="listPadece_enfermedad" name="listPadece_enfermedad" required>
                   <option value="">Seleccione</option>
-                  <option value="Si">Si</option>
-                  <option value="No">No</option>
+                  <option value="1">Si</option>
+                  <option value="2">No</option>
                 </select>
               </div>
 
@@ -467,8 +472,8 @@
                 <label for="listTratamiento">Sigue tratamiento?</label>
                 <select class="form-control selectpicker " id="listTratamiento"  name="listTratamiento">
                   <option value="">Seleccione</option>
-                  <option value="Si">Si</option>
-                  <option value="No">No</option>
+                  <option value="1">Si</option>
+                  <option value="2">No</option>
                 </select>
               </div>
 
@@ -482,8 +487,8 @@
                 <label for="listAlergico_medicamento">Alergico a algún medicamento?</label>
                 <select class="form-control selectpicker " id="listAlergico_medicamento" name="listAlergico_medicamento" required>
                   <option value="">Seleccione</option>
-                  <option value="Si">Si</option>
-                  <option value="No">No</option>
+                  <option value="1">Si</option>
+                  <option value="2">No</option>
                 </select>
               </div>
 
@@ -535,8 +540,8 @@
                 <label for="listPsicologo">Ha sido tratado por psicologos?</label>
                 <select class="form-control selectpicker" id="listPsicologo" name="listPsicologo" required>
                   <option value="">Seleccione</option>
-                  <option value="Si">Si</option>
-                  <option value="No">No</option>
+                  <option value="1">Si</option>
+                  <option value="2">No</option>
 
                 </select>
               </div>
@@ -560,8 +565,8 @@
                 <label for="listSeva_solo">El Alumno se va solo?</label>
                 <select class="form-control selectpicker" id="listSeva_solo" name="listSeva_solo" required>
                   <option value="">Seleccione</option>
-                  <option value="Si">Si</option>
-                  <option value="No">No</option>
+                  <option value="1">Si</option>
+                  <option value="2">No</option>
 
                 </select>
               </div>
@@ -593,19 +598,19 @@
                 <label class="control-label">Con quién vive el Alumno?</label>
                 <div class="animated-checkbox">
                   <label>
-                    <input type="checkbox" id="checkMadre" name="checkMadre" value=""><span
+                    <input type="checkbox" id="checkMadre" name="checkMadre" value="0"><span
                       class="label-text">Madre</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkPadre" name="checkPadre" value=""><span
+                    <input type="checkbox" id="checkPadre" name="checkPadre" value="0"><span
                       class="label-text">Padre</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkHermano" name="checkHermano" value=""><span
+                    <input type="checkbox" id="checkHermano" name="checkHermano" value="0"><span
                       class="label-text">Hermanos</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkOtro" name="checkOtro" value=""><span
+                    <input type="checkbox" id="checkOtro" name="checkOtro" value="0"><span
                       class="label-text">Otras personas</span>
                   </label>
                   </label>
@@ -621,31 +626,15 @@
 
               <div class="form-group col-md-3 oculto5" style="display: none;">
                 <label for="cuantos_hermanos">Cuantos hermanos varones:</label>
-                <select class="form-control selectpicker " id="cuantos_hermanos" name="cuantos_hermanos">
-                  <option value="">Seleccione</option>
-                  <option value="0">Ninguno</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option> 
-
-                </select>
+                <input class="form-control" id="cuantos_hermanos" name="cuantos_hermanos" min="0" type="number">
+               
               </div>
 
 
-              <div class="form-group col-md-3 oculto5" style="display: none;">
-                <label for="cuantas_hermanas">Cuantos hermanas hembras:</label>
-                <select class="form-control selectpicker " id="cuantas_hermanas" name="cuantas_hermanas" >
-                  <option value="">Seleccione</option>
-                  <option value="0">Ninguna</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-
-                </select>
+             <div class="form-group col-md-3 oculto5" style="display: none;">
+                <label for="cuantos_hermanas">Cuantos hermanas hembras:</label>
+                <input class="form-control" id="cuantos_hermanas" name="cuantos_hermanas" min="0" type="number">
+               
               </div>
 
 
@@ -654,8 +643,8 @@
                 <label for="listHermano_plantel">El Alumno tiene hermanos en el plantel?</label>
                 <select class="form-control selectpicker" id="listHermano_plantel" name="listHermano_plantel" required>
                   <option value="">Seleccione</option>
-                  <option value="Si">Si</option>
-                  <option value="No">No</option>
+                  <option value="1">Si</option>
+                  <option value="2">No</option>
 
                 </select>
               </div>
@@ -708,15 +697,15 @@
                 </select>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-4">
                 <label class="control-label">Ingreso Familiar aproximado en Bs (Mensual):</label>
                 <input class="form-control valid" id="ingreso_familia" name="ingreso_familia" type="text" placeholder="">
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-4">
                 <label class="control-label">Número de persona que depende de ese ingreso:</label>
                 <input class="form-control valid validNumber" id="ingreso_numeroPersona" name="ingreso_numeroPersona"
-                  type="text"  maxlength="1" placeholder="">
+                  type="number" placeholder="" min="0">
               </div>
 
 
