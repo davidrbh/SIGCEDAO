@@ -3,7 +3,7 @@
 <main class="app-content"> 
 
 <?php getModal('modalEstudiantes',$data);
-      getModal('modalPre-escolar',$data);  ?> 
+       ?> 
 
 
   
@@ -11,7 +11,6 @@
         <div>
           <h1><i class="fa fa-solid fa-users"> </i> <?= $data['page_title']; ?>
           <button class="btn btn-primary" type="button" onclick="openModal();" ><i class="fa-solid fa-circle-plus"></i> Nuevo Alumno</button>
-          <button class="btn btn-info" type="button" onclick="openModal2();" ><i class="fa-solid fa-circle-plus"></i> Pre-escolar</button>       
         </h1>
          
 
@@ -22,18 +21,44 @@
           <li class="breadcrumb-item"><a href="<?= base_url(); ?>/estudiantes"><?= $data['page_title']; ?></a></li>
         </ul>
       </div>
+
+
+      
       <div class="row">
-        <div class="col-md-12">
+         <div class="col-md-12">
           <div class="tile">
-           <div conteiner>
-           
+            <div class="tile-body">
+              <div class="table-responsive">
+                <table class="table table-hover table-bordered display responsive nowrap" id="tableEstudiantes">
+                  <thead>
+                    <tr>
+                      
+                      <th>Acciones</th>
+                      <th>Nombre del alumno</th>
+                      <th>Apellido del alumno</th>
+                      <th>Cédula escolar</th>
+                      <th>Nombre del representante</th>
+                      <th>Teléfono</th>
+                      <th>Celular</th>
+                      <th>Grado </th>
+                      <th>Sección</th>
+                      <th>Turno</th>
+                      <th>Status</th>
+                   
 
+
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                   
+                  </tbody>
+                </table>
+              </div>
             </div>
-
-          
           </div>
-        </div>
-      </div>
+         </div>
+         </div>
     
     </main>
     
