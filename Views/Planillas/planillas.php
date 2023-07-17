@@ -3,7 +3,7 @@
   
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-file-invoice"> </i><?= $data['page_title']; ?></h1>
+          <h1><i class="fa fa-file-invoice"> </i> <?= $data['page_title']; ?></h1>
           
         </div>
         <ul class="app-breadcrumb breadcrumb">
