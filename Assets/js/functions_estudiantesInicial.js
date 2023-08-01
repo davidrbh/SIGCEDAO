@@ -106,6 +106,7 @@ function openModal(){
 
   window.addEventListener("load",function () {
     fntEstado();
+    fntPeriodoActual(obtenerPeriodoEscolarActual());
   },
   false
 );
@@ -139,6 +140,30 @@ function openModal(){
   
   
   
+  }
+
+
+  function obtenerPeriodoEscolarActual() {
+    const anioActual = new Date().getFullYear();
+    const anioInicio = 2020;
+    const anioFin = 3000; // Ampliar el rango de años si es necesario
+    let periodoEscolar;
+  
+    // Determinar el periodo escolar en función del año actual
+    for (let anio = anioInicio; anio <= anioFin; anio++) {
+      if (anio === anioActual) {
+        periodoEscolar = `${anio}-${anio + 1}`;
+        break;
+      }
+    }
+  
+    return periodoEscolar || "Desconocido";
+  }
+
+  function fntPeriodoActual(periodo) {
+    document.querySelector("#periodo-escolar-actual option").innerHTML = periodo;
+    document.querySelector("#periodo-escolar-actual option").value = periodo;
+    $("#periodo-escolar-actual").selectpicker("render");
   }
 
 
@@ -266,4 +291,45 @@ listEspecialistas.addEventListener("change", function() {
   
 });
 
+$(document).ready(function () {
 
+  $("#listTurnoPre").change(function () {
+    let parametros = "id=" + $("#listTurnoPre").val();
+
+    $.ajax({
+      data: parametros,
+      url: base_url + "/Estudiantes_inicial/getSelectTipoSecciones_inicial",
+      type: "post",
+      beforeSend: function () {
+        
+      },
+      success: function (data) {
+      
+       $("#selectSeccionid").html(data).selectpicker('refresh');
+       
+        
+          
+      },
+    });
+  });
+
+  $("#selectSeccionid").change (function () {
+    let parametros2 = "id="+$("#selectSeccionid").val();
+
+
+         $.ajax({
+             data: parametros2,
+             url: base_url+'/Estudiantes_inicial/getNombreDocente',
+             type: 'post',
+             beforeSend: function () {
+           
+             },
+             success: function (data) {
+              $("#nombreDocente").html(data);
+             }
+         });
+
+         })  
+
+
+});
