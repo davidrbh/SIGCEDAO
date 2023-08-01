@@ -9,30 +9,22 @@ formEstudiante.onsubmit = function (e) {
   let intNacionalidad = document.querySelector("#listNacionalidad").value;
   let intEstado = document.querySelector("#selectEstadoid").value;
   let strLugarNacimiento = document.querySelector("#lugar_nacimiento").value;
-  let strDireccionHabitacion = document.querySelector(
-    "#direccion_habitacion"
-  ).value;
+  let strDireccionHabitacion = document.querySelector("#direccion_habitacion").value;
   let strNombreMadre = document.querySelector("#nombre_madre").value;
   let strApellidoMadre = document.querySelector("#apellido_madre").value;
-  let intNacionalidadMadre = document.querySelector(
-    "#listNacionalidad_madre"
-  ).value;
+  let intNacionalidadMadre = document.querySelector("#listNacionalidad_madre").value;
   let intCedulaMadre = document.querySelector("#cedula_madre").value;
   let strOcupacionMadre = document.querySelector("#ocupacion_madre").value;
   let intTelefonoMadre = document.querySelector("#telefono_madre").value;
   let strNombrePadre = document.querySelector("#nombre_padre").value;
   let strApellidoPadre = document.querySelector("#apellido_padre").value;
-  let intNacionalidadPadre = document.querySelector(
-    "#listNacionalidad_padre"
-  ).value;
+  let intNacionalidadPadre = document.querySelector("#listNacionalidad_padre").value;
   let intCedulaPadre = document.querySelector("#cedula_padre").value;
   let strOcupacionPadre = document.querySelector("#ocupacion_padre").value;
   let intTelefonoPadre = document.querySelector("#telefono_padre").value;
   let strNombreRepre = document.querySelector("#nombre_repre").value;
   let strApellidoRepre = document.querySelector("#apellido_repre").value;
-  let intNacionalidadRepre = document.querySelector(
-    "#listNacionalidad_rep"
-  ).value;
+  let intNacionalidadRepre = document.querySelector("#listNacionalidad_rep").value;
   let intCedulaRepre = document.querySelector("#cedula_repre").value;
   let strParentesco = document.querySelector("#listParentesco").value;
   let strOcupacionRepre = document.querySelector("#ocupacion_repre").value;
@@ -43,23 +35,17 @@ formEstudiante.onsubmit = function (e) {
   let strGradoCursado = document.querySelector("#listGrado_cursado").value;
   let strRepitiente = document.querySelector("#listRepitiente").value;
   let strTipoAlumno = document.querySelector("#listTipo_alumno").value;
-  let strGradoAcursar = document.querySelector("#listGrado_acursar").value;
+  let strGradoAcursar = document.querySelector("#selectSeccionid").value;
   let strTurno = document.querySelector("#listTurno").value;
   let strFuncionario = document.querySelector("#funcionario").value;
-  let strPadeceEnfermedad = document.querySelector(
-    "#listPadece_enfermedad"
-  ).value;
-  let strAlergicoMedicamento = document.querySelector(
-    "#listAlergico_medicamento"
-  ).value;
+  let strPadeceEnfermedad = document.querySelector("#listPadece_enfermedad").value;
+  let strAlergicoMedicamento = document.querySelector("#listAlergico_medicamento").value;
   let strPsicologo = document.querySelector("#listPsicologo").value;
   let strNacimientoParto = document.querySelector("#nacimiento_parto").value;
   let strSevaSolo = document.querySelector("#listSeva_solo").value;
   let strHermanosPlantel = document.querySelector("#listHermano_plantel").value;
   let strTipoVivienda = document.querySelector("#listVivienda").value;
-  let strCondicionVivienda = document.querySelector(
-    "#listCondicion_vivienda"
-  ).value;
+  let strCondicionVivienda = document.querySelector("#listCondicion_vivienda").value;
   let intStatus = document.querySelector("#listStatus").value;
 
   if (
@@ -246,7 +232,7 @@ let selectPadeceEnfermedad = document.getElementById("listPadece_enfermedad");
 let enfermedadPadece = document.querySelectorAll(".oculto");
 
 selectPadeceEnfermedad.addEventListener("change", function () {
-  this.value === "Si"
+  this.value === "1"
     ? enfermedadPadece.forEach(function (e) {
         e.style.display = "block";
       })
@@ -259,7 +245,7 @@ let selectlistTratamiento = document.getElementById("listTratamiento");
 let tratamiento = document.querySelector(".oculto1");
 
 selectlistTratamiento.addEventListener("change", function () {
-  this.value === "Si"
+  this.value === "1"
     ? (tratamiento.style.display = "block")
     : (tratamiento.style.display = "none");
 });
@@ -268,7 +254,7 @@ let selectlistMedicamento = document.getElementById("listAlergico_medicamento");
 let medicamento = document.querySelector(".oculto2");
 
 selectlistMedicamento.addEventListener("change", function () {
-  this.value === "Si"
+  this.value === "1"
     ? (medicamento.style.display = "block")
     : (medicamento.style.display = "none");
 });
@@ -454,7 +440,7 @@ $(document).ready(function () {
 
          $.ajax({
              data: parametros2,
-             url: base_url+'/Estudiantes/getNombreDocente',
+             url: base_url+'/Estudiantes_inicial/getNombreDocente',
              type: 'post',
              beforeSend: function () {
            
