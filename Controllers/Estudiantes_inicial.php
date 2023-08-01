@@ -45,6 +45,39 @@ class Estudiantes_inicial extends Controllers
         public function setPre_escolar(){
             dep($_POST);
         }
+
+        public function getNombreDocente($id)
+		{
+			$htmlOptions = "";
+			$intId = ($_POST['id']);
+			$arrData = $this->model->selectNombreDocente($intId);
+			if(count($arrData) > 0 ){
+				for ($i=0; $i < count($arrData); $i++) { 
+					
+					$htmlOptions .= '<option value="'.$arrData[$i]['id_tipo_seccion'].'">'.$arrData[$i]['nombre_docente'].'</option>';
+					
+				}
+			}
+			echo $htmlOptions;
+			die();		
+		}
+
+        public function getSelectTipoSecciones_inicial($id)
+		{
+			$htmlOptions = "";
+            $intTurno = ($_POST['id']);
+			$arrData = $this->model ->selectTipoSecciones_inicial($intTurno);
+			if(count($arrData) > 0 ){
+				for ($i=0; $i < count($arrData); $i++) { 
+					
+					$htmlOptions .= '<option value="'.$arrData[$i]['id_tipo_seccion'].'">'.$arrData[$i]['nombre_seccion'].'</option>';
+					
+				}
+			}
+			echo $htmlOptions;
+			die();		
+		}
+
 }
 
 
