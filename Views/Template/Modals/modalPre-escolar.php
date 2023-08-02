@@ -725,7 +725,7 @@
 
               <div class="form-group col-md-2">
                 <label for="grupo_sanguineo">Grupo sanguineo:</label>
-                <input type="text" class="form-control valid validNumber" id="grupo_sanguineo" name="grupo_sanguineo"
+                <input type="text" class="form-control valid " id="grupo_sanguineo" name="grupo_sanguineo"
                   >
               </div>
 
