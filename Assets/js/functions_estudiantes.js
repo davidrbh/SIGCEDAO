@@ -419,7 +419,7 @@ $(document).ready(function () {
 
     $.ajax({
       data: parametros,
-      url: base_url + "/Estudiantes/getSelectTipoSecciones",
+      url: base_url + "/Estudiantes/getSelectSecciones",
       type: "post",
       beforeSend: function () {
         
