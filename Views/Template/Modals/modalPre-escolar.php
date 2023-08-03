@@ -164,6 +164,76 @@
                     placeholder="" value="" min="1" >
                 </div>
 
+                <div class="form-group col-md-3">
+                <label for="listTipo_alumno_pre">Tipo de Alumno:</label>
+                <select class="form-control selectpicker" id="listTipo_alumno_pre" name="listTipo_alumno_pre" required>
+                  <option value="">Seleccione</option>
+                  <option value="Nuevo ingreso">Nuevo Ingreso</option>
+                  <option value="Segundo">Regular</option>
+      
+                </select>
+              </div>
+
+
+             
+
+
+              <div class="form-group col-md-3">
+                <label for="listTurnoPre">Turno:</label>
+                <select class="form-control selectpicker" id="listTurnoPre" name="listTurnoPre" required>
+                  <option value="">Seleccione</option>
+                  <option value="1">Diurno</option>
+                  <option value="2">Vespertino</option>
+
+
+
+
+                </select>
+              </div>
+
+
+              <div class="form-group col-md-2">
+                  <label for="selectSeccionid">Grado a cursar:</label>
+                  <select class="form-control  " data-live-search="true" id="selectSeccionid" name="selectSeccionid"
+                    required="">
+
+
+                  </select>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <fieldset>
+                      <label class="control-label" for="nombreDocente">Nombre del docente:</label>
+                     <select class="form-control" id="nombreDocente" name="nombreDocente" type="text"placeholder="<?php  ?>" value="" readonly="">
+                        </select>  
+                    </fieldset>
+                  </div>
+
+
+
+              <div class="form-group col-md-2">
+
+                <label class="control-label" for="periodo-escolar-actual">Periodo escolar:</label>
+                <select class="form-control" id="periodo-escolar-actual" name="periodo-escolar-actual">
+                  <option value="2022-2023">2022-2023</option>
+                </select>
+
+              </div>
+
+              <div class="form-group col-md-3">
+              <fieldset disabled>
+                  <label for="funcionario">Funcionario que realiza la inscripción:</label>
+                  <input type="text" class="form-control valid validText" id="funcionario" name="funcionario" value="<?= $_SESSION['userData']['nombres'];?>" required="">
+                </fieldset>
+                </div>
+
+              <div class="form-group col-md-3">
+                <label for="fecha_inscripcion">Fecha de inscripción:</label>
+                <input type="date" name="fecha_inscripcion" value="<?php echo date("Y-m-d"); ?>" class="form-control" id="fecha_inscripcion" max="<?php echo date("Y-m-d"); ?>"
+                  step="1" >
+              </div>
+
+
 
 
 
