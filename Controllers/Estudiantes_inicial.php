@@ -46,15 +46,15 @@ class Estudiantes_inicial extends Controllers
             dep($_POST);
         }
 
-        public function getNombreDocente($id)
+        public function getNombreDocente_inicial($id)
 		{
 			$htmlOptions = "";
 			$intId = ($_POST['id']);
-			$arrData = $this->model->selectNombreDocente($intId);
+			$arrData = $this->model->selectNombreDocente_inicial($intId);
 			if(count($arrData) > 0 ){
 				for ($i=0; $i < count($arrData); $i++) { 
 					
-					$htmlOptions .= '<option value="'.$arrData[$i]['id_tipo_seccion'].'">'.$arrData[$i]['nombre_docente'].'</option>';
+					$htmlOptions .= '<option value="'.$arrData[$i]['id_seccion'].'">'.$arrData[$i]['nombre_docente'].'</option>';
 					
 				}
 			}
@@ -62,15 +62,15 @@ class Estudiantes_inicial extends Controllers
 			die();		
 		}
 
-        public function getSelectTipoSecciones_inicial($id)
+        public function getSelectSecciones_inicial($id)
 		{
 			$htmlOptions = "";
             $intTurno = ($_POST['id']);
-			$arrData = $this->model ->selectTipoSecciones_inicial($intTurno);
+			$arrData = $this->model ->selectSecciones_inicial($intTurno);
 			if(count($arrData) > 0 ){
 				for ($i=0; $i < count($arrData); $i++) { 
 					
-					$htmlOptions .= '<option value="'.$arrData[$i]['id_tipo_seccion'].'">'.$arrData[$i]['nombre_seccion'].'</option>';
+					$htmlOptions .= '<option value="'.$arrData[$i]['id_seccion'].'">'.$arrData[$i]['nombre_seccion'].'</option>';
 					
 				}
 			}
