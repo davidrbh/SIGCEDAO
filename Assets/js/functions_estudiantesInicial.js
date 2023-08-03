@@ -298,7 +298,7 @@ $(document).ready(function () {
 
     $.ajax({
       data: parametros,
-      url: base_url + "/Estudiantes_inicial/getSelectTipoSecciones_inicial",
+      url: base_url + "/Estudiantes_inicial/getSelectSecciones_inicial",
       type: "post",
       beforeSend: function () {
         
@@ -319,7 +319,7 @@ $(document).ready(function () {
 
          $.ajax({
              data: parametros2,
-             url: base_url+'/Estudiantes_inicial/getNombreDocente',
+             url: base_url+'/Estudiantes_inicial/getNombreDocente_inicial',
              type: 'post',
              beforeSend: function () {
            
