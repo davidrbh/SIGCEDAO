@@ -27,11 +27,11 @@ class EstudiantesModel extends Mysql
             FROM `seccion`
             JOIN `desc_seccion` 
             ON   `desc_seccion`.`id_desc_seccion` = `seccion`.`desc_seccion_id`
-            AND  `desc_seccion`.`id_desc_seccion` < 15
+            AND  `desc_seccion`.`id_desc_seccion` < 17
             AND  `desc_seccion`.`turno_id` = $this->intTurno
             WHERE`seccion`.`periodo_escolar` = '2023-2024' OR '1'
             AND  `seccion`.`status` = 1  
-            ORDER BY `seccion`.`desc_seccion_id` ASC";
+            ORDER BY `seccion`.`desc_seccion_id` DESC";
 			$request = $this->select_all($sql);
 			return $request;
 
@@ -39,12 +39,13 @@ class EstudiantesModel extends Mysql
 
         public function selectNombreDocente($seccion)
 		{
+		
 			$this->intSeccion = $seccion;
 			$sql = "SELECT `seccion`.`id_seccion`, `docentes`.`nombre_docente`
                     FROM `seccion`
-                    JOIN `docentes` 
-                    ON   `docentes`.`id_docentes` = `seccion`.`id_seccion`
-                    WHERE`seccion`.`id_seccion` =  $this->intSeccion";
+                    JOIN `docentes`
+                    ON docentes.id_docentes = seccion.docente_id
+                    WHERE`seccion`.`id_seccion` =   $this->intSeccion";
 			$request = $this->select_all($sql);
 			return $request;
 		}
