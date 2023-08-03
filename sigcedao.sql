@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-08-2023 a las 01:51:20
+-- Tiempo de generación: 03-08-2023 a las 14:17:02
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.5
 
@@ -57,36 +57,38 @@ INSERT INTO `aula` (`id_aula`, `nombre_aula`, `status`) VALUES
 
 CREATE TABLE `desc_seccion` (
   `id_desc_seccion` bigint(20) NOT NULL,
-  `nombre` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `aula_id` bigint(20) NOT NULL,
-  `turno_id` bigint(20) NOT NULL
+  `nombre_seccion` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `aula_id` bigint(20) DEFAULT NULL,
+  `turno_id` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `desc_seccion`
 --
 
-INSERT INTO `desc_seccion` (`id_desc_seccion`, `nombre`, `aula_id`, `turno_id`) VALUES
-(1, 'Primero A', 1, 1),
-(2, 'Primero B', 1, 2),
-(3, 'Segundo A', 2, 1),
-(4, 'Segundo B', 2, 2),
-(5, 'Tercero A', 3, 1),
-(6, 'Tercero B', 3, 2),
-(7, 'Cuarto A', 4, 1),
-(8, 'Cuarto B', 4, 2),
-(9, 'Quinto A', 5, 1),
-(10, 'Quinto B', 5, 2),
-(11, 'Sexto A', 6, 1),
-(12, 'Sexto B', 6, 2),
-(13, 'Inicial A', 9, 1),
-(14, 'Inicial B', 9, 2),
-(15, 'CRA A', 7, 1),
-(16, 'CRA B', 7, 2),
-(17, 'CBIT A', 8, 1),
-(18, 'CBIT B', 8, 2),
-(19, 'Aula integrada A', 10, 1),
-(20, 'Aula integrada B', 10, 2);
+INSERT INTO `desc_seccion` (`id_desc_seccion`, `nombre_seccion`, `aula_id`, `turno_id`) VALUES
+(1, 'Seleccione:', NULL, 1),
+(2, 'Seleccione:', NULL, 2),
+(3, 'Primero A', 1, 1),
+(4, 'Primero B', 1, 2),
+(5, 'Segundo A', 2, 1),
+(6, 'Segundo B', 2, 2),
+(7, 'Tercero A', 3, 1),
+(8, 'Tercero B', 3, 2),
+(9, 'Cuarto A', 4, 1),
+(10, 'Cuarto B', 4, 2),
+(11, 'Quinto A', 5, 1),
+(12, 'Quinto B', 5, 2),
+(13, 'Sexto A', 6, 1),
+(14, 'Sexto B', 6, 2),
+(15, 'Inicial A', 9, 1),
+(16, 'Inicial B', 9, 2),
+(17, 'CRA A', 7, 1),
+(18, 'CRA B', 7, 2),
+(19, 'CBIT A', 8, 1),
+(20, 'CBIT B', 8, 2),
+(21, 'Aula integrada A', 10, 1),
+(22, 'Aula integrada B', 10, 2);
 
 -- --------------------------------------------------------
 
@@ -111,7 +113,9 @@ CREATE TABLE `docentes` (
 --
 
 INSERT INTO `docentes` (`id_docentes`, `especialidad_id`, `nombre_docente`, `apellido_docente`, `nacionalidad_docente`, `cedula_docente`, `celular_docente`, `correo_docente`, `status`) VALUES
-(1, 1, 'Ana', 'Deyan', '', 4416939, 4125403027, 'anamer2210@gmail.com', 1);
+(1, 1, 'Ana', 'Deyan', '', 4416939, 4125403027, 'anamer2210@gmail.com', 1),
+(2, 1, 'Analix', 'Hernandez', 'V-', 14909718, 4241697285, 'analix.1979@gmail.com', 1),
+(3, 1, 'Jose', 'Duarte', 'V-', 10421528, 2125741416, 'jose_duarte@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -313,10 +317,10 @@ INSERT INTO `rol` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
 
 CREATE TABLE `seccion` (
   `id_seccion` bigint(20) NOT NULL,
-  `desc_seccion_id` bigint(20) NOT NULL,
-  `docente_id` bigint(20) NOT NULL,
-  `periodo_escolar` varchar(226) COLLATE utf8mb4_swedish_ci NOT NULL,
-  `status` int(11) NOT NULL
+  `desc_seccion_id` bigint(20) DEFAULT NULL,
+  `docente_id` bigint(20) DEFAULT NULL,
+  `periodo_escolar` varchar(226) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
@@ -324,7 +328,11 @@ CREATE TABLE `seccion` (
 --
 
 INSERT INTO `seccion` (`id_seccion`, `desc_seccion_id`, `docente_id`, `periodo_escolar`, `status`) VALUES
-(1, 1, 1, '2023-2024', 1);
+(1, 3, 1, '2023-2024', 1),
+(2, 4, 2, '2023-2024', 1),
+(3, 5, 3, '2023-2024', 1),
+(5, 1, NULL, '1', 1),
+(6, 2, NULL, '1', 1);
 
 -- --------------------------------------------------------
 
@@ -480,13 +488,13 @@ ALTER TABLE `aula`
 -- AUTO_INCREMENT de la tabla `desc_seccion`
 --
 ALTER TABLE `desc_seccion`
-  MODIFY `id_desc_seccion` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_desc_seccion` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `docentes`
 --
 ALTER TABLE `docentes`
-  MODIFY `id_docentes` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_docentes` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `especialidad`
@@ -534,7 +542,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `seccion`
 --
 ALTER TABLE `seccion`
-  MODIFY `id_seccion` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_seccion` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `turno`
