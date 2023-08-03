@@ -69,7 +69,7 @@ class Estudiantes extends Controllers
 			if(count($arrData) > 0 ){
 				for ($i=0; $i < count($arrData); $i++) { 
 					
-					$htmlOptions .= '<option value="'.$arrData[$i]['id_tipo_seccion'].'">'.$arrData[$i]['nombre_docente'].'</option>';
+					$htmlOptions .= '<option value="'.$arrData[$i]['id_seccion'].'">'.$arrData[$i]['nombre_docente'].'</option>';
 					
 				}
 			}
@@ -77,15 +77,15 @@ class Estudiantes extends Controllers
 			die();		
 		}
 
-        public function getSelectTipoSecciones($id)
+        public function getSelectSecciones($id)
 		{
 			$htmlOptions = "";
             $intTurno = ($_POST['id']);
-			$arrData = $this->model ->selectTipoSecciones($intTurno);
+			$arrData = $this->model ->selectSecciones($intTurno);
 			if(count($arrData) > 0 ){
 				for ($i=0; $i < count($arrData); $i++) { 
 					
-					$htmlOptions .= '<option value="'.$arrData[$i]['id_tipo_seccion'].'">'.$arrData[$i]['nombre_seccion'].'</option>';
+					$htmlOptions .= '<option value="'.$arrData[$i]['id_seccion'].'">'.$arrData[$i]['nombre_seccion'].'</option>';
 					
 				}
 			}
