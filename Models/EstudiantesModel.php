@@ -20,12 +20,18 @@ class EstudiantesModel extends Mysql
 		}
 
 
-        public function selectTipoSecciones(int $turno)
+        public function selectSecciones(int $turno)
         {
             $this->intTurno = $turno;
-            $sql ="SELECT tipo_seccion.id_tipo_seccion, tipo_seccion.nombre_seccion
-                   FROM `tipo_seccion` 
-                   WHERE turno_id = $this->intTurno AND `id_tipo_seccion` > 2";
+            $sql ="SELECT `seccion`.`id_seccion`,`seccion`.`docente_id`,`seccion`.`desc_seccion_id`,`desc_seccion`.`nombre_seccion`,`seccion`.`periodo_escolar`,`desc_seccion`.`turno_id`
+            FROM `seccion`
+            JOIN `desc_seccion` 
+            ON   `desc_seccion`.`id_desc_seccion` = `seccion`.`desc_seccion_id`
+            AND  `desc_seccion`.`id_desc_seccion` < 15
+            AND  `desc_seccion`.`turno_id` = $this->intTurno
+            WHERE`seccion`.`periodo_escolar` = '2023-2024' OR '1'
+            AND  `seccion`.`status` = 1  
+            ORDER BY `seccion`.`desc_seccion_id` ASC";
 			$request = $this->select_all($sql);
 			return $request;
 
@@ -34,11 +40,11 @@ class EstudiantesModel extends Mysql
         public function selectNombreDocente($seccion)
 		{
 			$this->intSeccion = $seccion;
-			$sql = "SELECT `tipo_seccion`.`id_tipo_seccion`, `tipo_seccion`.`docente_id`, `docentes`.`nombre_docente`
-                    FROM `tipo_seccion` 
-                    LEFT JOIN `docentes` 
-                    ON `tipo_seccion`.`docente_id` = `docentes`.`id_docentes` 
-                    WHERE `tipo_seccion`.`id_tipo_seccion` = $this->intSeccion";
+			$sql = "SELECT `seccion`.`id_seccion`, `docentes`.`nombre_docente`
+                    FROM `seccion`
+                    JOIN `docentes` 
+                    ON   `docentes`.`id_docentes` = `seccion`.`id_seccion`
+                    WHERE`seccion`.`id_seccion` =  $this->intSeccion";
 			$request = $this->select_all($sql);
 			return $request;
 		}
