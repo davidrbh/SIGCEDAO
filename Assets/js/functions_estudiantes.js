@@ -440,7 +440,7 @@ $(document).ready(function () {
 
          $.ajax({
              data: parametros2,
-             url: base_url+'/Estudiantes_inicial/getNombreDocente',
+             url: base_url+'/Estudiantes/getNombreDocente',
              type: 'post',
              beforeSend: function () {
            
