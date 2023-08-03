@@ -27,14 +27,15 @@ class Estudiantes_inicialModel extends Mysql
 
         }
 
+        
         public function selectNombreDocente($seccion)
 		{
 			$this->intSeccion = $seccion;
-			$sql = "SELECT `tipo_seccion`.`id_tipo_seccion`, `tipo_seccion`.`docente_id`, `docentes`.`nombre_docente`
-                    FROM `tipo_seccion` 
-                    LEFT JOIN `docentes` 
-                    ON `tipo_seccion`.`docente_id` = `docentes`.`id_docentes` 
-                    WHERE `tipo_seccion`.`id_tipo_seccion` = $this->intSeccion";
+			$sql = "SELECT `seccion`.`id_seccion`, `docentes`.`nombre_docente`
+                    FROM `seccion`
+                    JOIN `docentes` 
+                    ON   `docentes`.`id_docentes` = `seccion`.`id_seccion`
+                    WHERE`seccion`.`id_seccion` =  $this->intSeccion";
 			$request = $this->select_all($sql);
 			return $request;
 		}
