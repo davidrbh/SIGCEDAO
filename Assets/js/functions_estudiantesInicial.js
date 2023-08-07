@@ -36,7 +36,6 @@ formPre_escolar.onsubmit = function (e) {
   let  strApellidoPadrePre = document.querySelector('#apellido_padrePre').value;
   let  intNacionalidadPadrePre = document.querySelector('#listNacionalidad_padrePre').value;
   let  intCedulaPadrePre = document.querySelector('#cedula_padrePre').value;
-  let  strEstadoCivilPadre = document.querySelector('#listEstado_civil_padrePre').value;
   let  strNacimientoPadrePre = document.querySelector('#lugar_nacimientoPadrePre').value;
   let  strNacionalidad_Padre_pre = document.querySelector('#listNacionalidad_padrePre').value;
   let  intEstadoPadrePre = document.querySelector('#selectEstadoid4').value;
@@ -51,7 +50,7 @@ formPre_escolar.onsubmit = function (e) {
    || intNacionalidadPre == '' || intEstadoPre == '' || strLugarNacimientoPre == ''|| intTallaCamisa == '' || intTallaPantalon == '' || intTallaZapato == '' || intPeso == ''
    || intEstatura == '' || strHermanosPre == '' || strNombreMadrePre == ''|| strApellidoMadrePre == '' || intNacionalidadMadrePre == '' || intCedulaMadrePre == '' || strEstadoCivilMadre == ''
    || strNacimientoMadrePre == '' || strNacionalidad_madre_pre == '' || intEstadoMadrePre == ''|| strDireccionHabitacionMadrePre == '' || intTelefonoMadrePre == '' || strDireccionTrabajoMadrePre == '' || strNivelAcademicoMadrePre == ''
-   || strNombrePadrePre == '' || strApellidoPadrePre == '' || intNacionalidadPadrePre == ''|| intCedulaPadrePre == '' || strEstadoCivilPadre == '' || strNacimientoPadrePre == '' || strNacionalidad_Padre_pre == ''
+   || strNombrePadrePre == '' || strApellidoPadrePre == '' || intNacionalidadPadrePre == ''|| intCedulaPadrePre == '' || strNacimientoPadrePre == '' || strNacionalidad_Padre_pre == ''
    || intEstadoPadrePre == '' || strDireccionHabitacionPadrePre == '' || intTelefonoPadrePre == ''|| strDireccionTrabajoPadrePre == '' || strNivelAcademicoPadrePre == '' || intStatus2 == '')
   {
       swal("Atención", "Todos los campos son obligatorios." , "error");
@@ -69,7 +68,7 @@ formPre_escolar.onsubmit = function (e) {
   let request = window.XMLHttpRequest
     ? new XMLHttpRequest()
     : new ActiveXObject("Microsoft.XMLHTTP");
-  let ajaxUrl = base_url + "/Estudiantes/setPre_escolar";
+  let ajaxUrl = base_url + "/Estudiantes_inicial/setPre_escolar";
   let formData = new FormData(formPre_escolar);
   request.open("POST", ajaxUrl, true);
   request.send(formData);
