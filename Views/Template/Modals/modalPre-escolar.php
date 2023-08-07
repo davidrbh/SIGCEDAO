@@ -409,9 +409,9 @@
                 <label for="listEstado_civil_padre">Estado Civil:</label>
                 <select class="form-control selectpicker" id="listEstado_civil_padre" name="listEstado_civil_padre" required>
                 <option value="">Seleccione</option>  
-                <option value="Soltera">Soltero</option>
-                  <option value="Casada">Casado</option>
-                  <option value="Viuda">Viudo</option>
+                <option value="Soltero">Soltero</option>
+                  <option value="Casado">Casado</option>
+                  <option value="Viudo">Viudo</option>
 
                 </select>
               </div>
