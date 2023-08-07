@@ -476,10 +476,10 @@
                 <label for="listNivel_academico_padre">Nivel académico:</label>
                 <select class="form-control selectpicker" id="listNivel_academico_padre" name="listNivel_academico_padre" required>
                 <option value="">Seleccione</option>  
-                <option value="Educación primaria">Educación primaria</option>
-                  <option value="Educación media">Educación media</option>
-                  <option value="Educación tecnico-medio">Educación tecnico-medio</option>
-                  <option value="Educación universitaria">Educación universitaria</option>
+                <option value="Primaria">Primaria</option>
+                  <option value="Bachiller">Bachiller</option>
+                  <option value="Tecnico-medio">Tecnico-medio</option>
+                  <option value="Universitario">Universitario</option>
 
                 </select>
               </div>
@@ -533,7 +533,7 @@
                 <div class="form-group col-md-3 pre-oculto1" style="display: none;">
                 <label class="control-label">Quién?</label>
                 <input class="form-control valid" id="quien_loayuda" name="quien_loayuda" type="text"
-                  placeholder="" required="">
+                  placeholder="" >
               </div>
 
               <div class="form-group col-md-3">
@@ -712,7 +712,7 @@
                 <div class="form-group col-md-3 pre-oculto2" style="display: none;">
                 <label class="control-label">Cuál?</label>
                 <input class="form-control valid" id="cual_problema_parto" name="cual_problema_parto" type="text"
-                  placeholder="" required="">
+                  placeholder="" >
               </div>
 
               <div class="form-group col-md-2">
@@ -738,8 +738,8 @@
 
                 <div class="form-group col-md-3 pre-oculto3" style="display: none;">
                 <label class="control-label">Cuál?</label>
-                <input class="form-control valid" id="cual_problema_parto" name="cual_problema_parto" type="text"
-                  placeholder="" required="">
+                <input class="form-control valid" id="cual_problema_nacer" name="cual_problema_nacer" type="text"
+                  placeholder="" >
               </div>
 
               <div class="form-group col-md-3">
