@@ -339,8 +339,8 @@
                 <label for="listRepitiente">Repitiente:</label>
                 <select class="form-control selectpicker" id="listRepitiente" name="listRepitiente" required>
                   <option value="">Seleccione</option>
-                  <option value="Si">Si</option>
-                  <option value="No">No</option>
+                  <option value="1">Si</option>
+                  <option value="2">No</option>
 
                 </select>
               </div>
@@ -689,8 +689,8 @@
                 <label for="listCondicion_vivienda">Condición de la vivienda:</label>
                 <select class="form-control selectpicker " id="listCondicion_vivienda" name="listCondicion_vivienda" required>
                   <option value="">Seleccione</option>
-                  <option value="Apartamento">Alquilada</option>
-                  <option value="Casa">Propia</option>
+                  <option value="Alquilada">Alquilada</option>
+                  <option value="Propia">Propia</option>
 
 
 
