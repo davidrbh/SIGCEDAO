@@ -11,6 +11,17 @@ class EstudiantesModel extends Mysql
     {
         parent::__construct();
     }
+
+    public function selectEstudiantes()
+	{
+
+		$sql = "SELECT `estudiantes`.`id_estudiante`,`estudiantes`.`nombre_alumno1`,`estudiantes`.`apellido_alumno1`,`estudiantes`.`cedula_escolar`,`estudiantes`.`nombre_repre`,`estudiantes`.`telefono_repre`,`estudiantes`.`celular_repre`,`estudiantes`.`seccion_id`,`estudiantes`.`turno`,`estudiantes`.`status`
+                FROM `estudiantes` 
+                WHERE `estudiantes`.`status` != 0";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
     
     public function selectEstados()
 		{
