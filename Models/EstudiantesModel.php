@@ -15,8 +15,12 @@ class EstudiantesModel extends Mysql
     public function selectEstudiantes()
 	{
 
-		$sql = "SELECT `estudiantes`.`id_estudiante`,`estudiantes`.`nombre_alumno1`,`estudiantes`.`apellido_alumno1`,`estudiantes`.`cedula_escolar`,`estudiantes`.`nombre_repre`,`estudiantes`.`telefono_repre`,`estudiantes`.`celular_repre`,`estudiantes`.`seccion_id`,`estudiantes`.`turno`,`estudiantes`.`status`
+		$sql = "SELECT `estudiantes`.`id_estudiante`,`estudiantes`.`nombre_alumno1`,`estudiantes`.`apellido_alumno1`,`estudiantes`.`cedula_escolar`,`estudiantes`.`nombre_repre`,`estudiantes`.`apellido_repre`,`estudiantes`.`telefono_repre`,`estudiantes`.`celular_repre`,`desc_seccion`.`nombre_seccion`,`estudiantes`.`turno`,`estudiantes`.`status`
                 FROM `estudiantes` 
+                LEFT JOIN `seccion` 
+                ON `estudiantes`.`seccion_id` = `seccion`.`id_seccion`
+                LEFT JOIN `desc_seccion` 
+                ON `desc_seccion`.`id_desc_seccion` = `seccion`.`desc_seccion_id`
                 WHERE `estudiantes`.`status` != 0";
 		$request = $this->select_all($sql);
 		return $request;
