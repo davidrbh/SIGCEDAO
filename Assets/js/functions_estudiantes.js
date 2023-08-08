@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       { data: "nombre_repre" },
       { data: "telefono_repre" },
       { data: "celular_repre" },
-      { data: "seccion_id" },
+      { data: "nombre_seccion" },
       { data: "turno" },
       { data: "status" },
     ],
