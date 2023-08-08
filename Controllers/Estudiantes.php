@@ -107,6 +107,13 @@ class Estudiantes extends Controllers
 			} else {
 				$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
 			}
+			if ($arrData[$i]['turno'] == 1) {
+				$arrData[$i]['turno'] = 'Diurno';
+			}else{
+				$arrData[$i]['turno'] ='Vespertino' ;
+			}
+
+			$arrData[$i]['nombre_repre'] =   $arrData[$i]['nombre_repre'].' '.$arrData[$i]['apellido_repre'];
 
 
 			$btnView = '<button class="btn btn-info btn-sm btnViewEstudiante" onClick="ftnViewEstudiante(' . $arrData[$i]['id_estudiante'] . ')" title="Ver Estudiante"><i class="fa fa-eye" aria-hidden="true"></i></button>';
