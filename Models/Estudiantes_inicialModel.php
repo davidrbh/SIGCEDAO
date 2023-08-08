@@ -9,6 +9,20 @@ class Estudiantes_inicialModel extends Mysql
         parent::__construct();
     }
     
+    public function selectEstudiantes_inicial()
+	{
+
+		$sql = "SELECT `estudiantes_inicial`.`inicial_id`,`estudiantes_inicial`.`nombre_alumno1`,`estudiantes_inicial`.`apellido_alumno1`,`estudiantes_inicial`.`cedula_escolar`,`estudiantes_inicial`.`nombre_madre`,`estudiantes_inicial`.`apellido_madre`,`estudiantes_inicial`.`telefono_madre`,`desc_seccion`.`nombre_seccion`,`estudiantes_inicial`.`turno`,`estudiantes_inicial`.`status`
+                FROM `estudiantes_inicial` 
+                LEFT JOIN `seccion` 
+                ON `estudiantes_inicial`.`seccion_id` = `seccion`.`id_seccion`
+                LEFT JOIN `desc_seccion` 
+                ON `desc_seccion`.`id_desc_seccion` = `seccion`.`desc_seccion_id`
+                WHERE `estudiantes_inicial`.`status` != 0";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
     public function selectEstados()
 		{
 			$sql ="SELECT * FROM estado ORDER BY `estado`.`desc_estado` ASC";
