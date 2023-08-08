@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-08-2023 a las 05:07:01
+-- Tiempo de generación: 08-08-2023 a las 18:09:21
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.5
 
@@ -205,21 +205,21 @@ CREATE TABLE `estudiantes` (
   `nacionalidad_madre` varchar(5) COLLATE utf8mb4_swedish_ci NOT NULL DEFAULT 'V-',
   `cedula_madre` int(11) NOT NULL,
   `ocupacion_madre` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `telefono_madre` mediumint(9) NOT NULL,
+  `telefono_madre` varchar(20) COLLATE utf8mb4_swedish_ci NOT NULL,
   `nombre_padre` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `apellido_padre` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `nacionalidad_padre` varchar(5) COLLATE utf8mb4_swedish_ci NOT NULL DEFAULT 'V-',
   `cedula_padre` int(11) NOT NULL,
   `ocupacion_padre` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `telefono_padre` mediumint(9) NOT NULL,
+  `telefono_padre` varchar(20) COLLATE utf8mb4_swedish_ci NOT NULL,
   `nombre_repre` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `apellido_repre` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `nacionalidad_repre` varchar(5) COLLATE utf8mb4_swedish_ci NOT NULL DEFAULT 'V-',
   `cedula_repre` int(11) NOT NULL,
   `parentesco_repre` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `ocupacion_repre` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `telefono_repre` mediumint(9) NOT NULL,
-  `celular_repre` mediumint(9) NOT NULL,
+  `telefono_repre` varchar(20) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `celular_repre` varchar(20) COLLATE utf8mb4_swedish_ci NOT NULL,
   `direccion_repre` mediumtext COLLATE utf8mb4_swedish_ci NOT NULL,
   `colaboracion_plantel` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `plantel` varchar(256) COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -244,7 +244,7 @@ CREATE TABLE `estudiantes` (
   `lechina` int(11) NOT NULL DEFAULT 0,
   `paperas` int(11) NOT NULL DEFAULT 0,
   `otra_enfermedad` int(11) NOT NULL DEFAULT 0,
-  `otra_enfermedad_cual` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `otra_enfermedad_cual` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `ninguna_enfermedad` int(11) NOT NULL DEFAULT 1,
   `psicologo` int(11) NOT NULL DEFAULT 2,
   `nacimiento_parto` text COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -257,7 +257,7 @@ CREATE TABLE `estudiantes` (
   `cuantos_hermanos` int(11) NOT NULL DEFAULT 0,
   `cuantas_hermanas` int(11) NOT NULL DEFAULT 0,
   `vive_otra_persona` int(11) NOT NULL DEFAULT 1,
-  `cual_persona_vive` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `cual_persona_vive` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `hermanos_plantel` int(11) NOT NULL DEFAULT 2,
   `cuantos_hermanos_plantel` int(11) DEFAULT NULL,
   `grado_cursanHermanos` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
@@ -276,9 +276,16 @@ CREATE TABLE `estudiantes` (
   `foto_repre` int(11) NOT NULL DEFAULT 0,
   `boletin_grado` int(11) NOT NULL DEFAULT 0,
   `otros_documentos` int(11) NOT NULL DEFAULT 0,
-  `documentos_1` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `documentos_1` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `estudiantes`
+--
+
+INSERT INTO `estudiantes` (`id_estudiante`, `nombre_alumno1`, `nombre_alumno2`, `apellido_alumno1`, `apellido_alumno2`, `cedula_escolar`, `fecha_nac`, `genero`, `nacionalidad_alumno`, `estado_id`, `lugar_nacimiento`, `direccion_hab`, `nombre_madre`, `apellido_madre`, `nacionalidad_madre`, `cedula_madre`, `ocupacion_madre`, `telefono_madre`, `nombre_padre`, `apellido_padre`, `nacionalidad_padre`, `cedula_padre`, `ocupacion_padre`, `telefono_padre`, `nombre_repre`, `apellido_repre`, `nacionalidad_repre`, `cedula_repre`, `parentesco_repre`, `ocupacion_repre`, `telefono_repre`, `celular_repre`, `direccion_repre`, `colaboracion_plantel`, `plantel`, `grado_cursado`, `periodo_escolar`, `literal`, `repitiente`, `tipo_alumno`, `turno`, `seccion_id`, `periodo_escolar_new`, `funcionario`, `fecha_inscripcion`, `enfermedad_padece`, `enfermedad_1`, `tratamiento_enfermedad`, `tratamiento_1`, `alergico_medicamento`, `alergico_1`, `rubeola`, `sarampion`, `lechina`, `paperas`, `otra_enfermedad`, `otra_enfermedad_cual`, `ninguna_enfermedad`, `psicologo`, `nacimiento_parto`, `alumno_seva_solo`, `nombre_retiro`, `parestesco_retiro`, `vive_madre`, `vive_padre`, `vive_hermanos`, `cuantos_hermanos`, `cuantas_hermanas`, `vive_otra_persona`, `cual_persona_vive`, `hermanos_plantel`, `cuantos_hermanos_plantel`, `grado_cursanHermanos`, `turno_cursanHermanos`, `tipo_vivienda`, `condicion_vivienda`, `ingresos_familiares`, `dependecia_ingreso`, `boletin_calificacion`, `boletin_promocion`, `carta_conducta`, `copia_partida_nac`, `copia_cedula_alumno`, `copia_cedula_repre`, `foto_alumno`, `foto_repre`, `boletin_grado`, `otros_documentos`, `documentos_1`, `status`) VALUES
+(1, 'Josue', 'Sebastian', 'Hernandez', 'Barrera', 24723325, '2012-08-30', 1, 1, 1, 'Maracay', 'Av.panteon, esquina trocadero a san gabriel edificio, san miguel, piso 12, apto 122-A', 'Deynalix', 'Barrera', 'V-', 26441548, 'Comerciante', '02125529546', 'Genniber', 'Hernandez', 'V-', 22412251, 'Comerciante', '02125514511', 'David', 'Barrera', 'V-', 24723325, 'Tio', 'Ingeniero Informatico', '02125529546', '04242029800', 'Av.panteon, esquina trocadero a san gabriel edificio, san miguel, piso 12, apto 122-A', 'Personal de apoyo', 'U.E.D Antonio Ornes', 'Cuarto', '2022-2023', 'B', 2, 'Nuevo Ingreso', 1, 1, '2023-2024', 'Josue Hernandez', '2023-08-07', 2, NULL, 2, NULL, 2, NULL, 0, 0, 0, 0, 0, 'Ninguna', 1, 2, 'Normal', 1, 'David Barrera', 'Tio', 1, 1, 2, 0, 0, 1, 'Abuela, Tio', 2, NULL, NULL, NULL, 'Apartamento', 'Propia', 500, 4, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -321,9 +328,9 @@ CREATE TABLE `estudiantes_inicial` (
   `estado_madre_id` bigint(20) NOT NULL,
   `fecha_nac_madre` date NOT NULL,
   `direccion_hab_madre` mediumtext COLLATE utf8mb4_swedish_ci NOT NULL,
-  `telefono_madre` mediumint(9) NOT NULL,
+  `telefono_madre` bigint(9) NOT NULL,
   `direccion_trabajo_madre` mediumtext COLLATE utf8mb4_swedish_ci NOT NULL,
-  `telefono_trabajo_madre` mediumint(9) DEFAULT NULL,
+  `telefono_trabajo_madre` bigint(9) DEFAULT NULL,
   `nivel_academico_madre` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `otros_datos_madre` mediumtext COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `nombre_padre` text COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -336,9 +343,9 @@ CREATE TABLE `estudiantes_inicial` (
   `estado_padre_id` bigint(11) NOT NULL DEFAULT 1,
   `fecha_nac_padre` date NOT NULL,
   `direccion_hab_padre` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `telefono_padre` mediumint(9) NOT NULL,
-  `direccion_trabajo_padre` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `telefono_trabajo_padre` mediumint(9) NOT NULL,
+  `telefono_padre` bigint(9) NOT NULL,
+  `direccion_trabajo_padre` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `telefono_trabajo_padre` bigint(9) DEFAULT NULL,
   `nivel_academico_padre` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `otros_datos_padre` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `come_solo` text COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -346,7 +353,7 @@ CREATE TABLE `estudiantes_inicial` (
   `quien_ayuda` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `comida_favortia` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `comida_rechaza` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
-  `alimientos_prohibidos` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `alimientos_prohibidos` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `enfinteres` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `asea_solo` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `horas_duerme` int(11) NOT NULL,
@@ -356,6 +363,7 @@ CREATE TABLE `estudiantes_inicial` (
   `nombre_retiro` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `nacionalidad_retiro` varchar(5) COLLATE utf8mb4_swedish_ci NOT NULL DEFAULT 'V-',
   `cedula_retiro` int(11) NOT NULL,
+  `celular_retiro` bigint(20) NOT NULL,
   `parentesco_retiro` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `situacion_embarazo` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `enfermedad_durante_embarazo` text COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -363,11 +371,11 @@ CREATE TABLE `estudiantes_inicial` (
   `situacion_parto_nacimiento` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `edad_madre_embarazo` int(11) NOT NULL,
   `problemas_parto` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `cual_problema_parto` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `cual_problema_parto` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `peso_alnacer` int(11) NOT NULL,
   `talla_alnacer` int(11) NOT NULL,
   `problemas_primeros_dias` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `cual_problema` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `cual_problema` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `edad_hablar` int(11) NOT NULL,
   `edad_caminar` int(11) NOT NULL,
   `edad_panales` int(11) NOT NULL,
@@ -375,27 +383,34 @@ CREATE TABLE `estudiantes_inicial` (
   `talla_nino` int(11) NOT NULL,
   `grupo_sanguineo` varchar(256) COLLATE utf8mb4_swedish_ci NOT NULL,
   `alergico` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `especifique_alergia` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `especifique_alergia` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `enfermedades_padrecidad` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `hospitalizado` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `causa_hospitalizado` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `fiebre_alta_medicamento` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `causa_hospitalizado` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `fiebre_alta_medicamento` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `motora` int(11) NOT NULL DEFAULT 0,
   `crecimiento` int(11) NOT NULL DEFAULT 0,
   `auditiva` int(11) NOT NULL DEFAULT 0,
   `otra_discapacidad` int(11) NOT NULL DEFAULT 0,
-  `especifique_discapacidad` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `especifique_discapacidad` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `atendido_especialista` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `cual_especialista` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `cual_especialista` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `problemas_lenguaje` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `mano_habil` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `hora_para_dormir` int(11) NOT NULL,
-  `hora_se_levanta` int(11) NOT NULL,
+  `hora_para_dormir` varchar(11) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `hora_se_levanta` varchar(11) COLLATE utf8mb4_swedish_ci NOT NULL,
   `sueno_nino` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `con_quien_duerme` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `imporfacion_importante` int(11) DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `estudiantes_inicial`
+--
+
+INSERT INTO `estudiantes_inicial` (`inicial_id`, `nombre_alumno1`, `nombre_alumno2`, `apellido_alumno1`, `apellido_alumno2`, `cedula_escolar`, `fecha_nac`, `genero`, `nacionalidad_alumno`, `estado_id`, `nacimiento_alumno`, `talla_camisa`, `talla_pantalon`, `talla_zapato`, `peso`, `estatura`, `tiene_hermanos`, `cuantos_hermanos`, `tipo_alumno`, `turno`, `seccion_id`, `periodo_escolar`, `funcionario`, `fecha_inscripcion`, `nombre_madre`, `apellido_madre`, `nacionalidad_madre`, `cedula_madre`, `estado_civil_madre`, `nacimiento_madre`, `tipo_nacionalidad_madre`, `estado_madre_id`, `fecha_nac_madre`, `direccion_hab_madre`, `telefono_madre`, `direccion_trabajo_madre`, `telefono_trabajo_madre`, `nivel_academico_madre`, `otros_datos_madre`, `nombre_padre`, `apellido_padre`, `nacionalidad_padre`, `cedula_padre`, `estado_civil_padre`, `nacimiento_padre`, `tipo_nacionalidad_padre`, `estado_padre_id`, `fecha_nac_padre`, `direccion_hab_padre`, `telefono_padre`, `direccion_trabajo_padre`, `telefono_trabajo_padre`, `nivel_academico_padre`, `otros_datos_padre`, `come_solo`, `lo_ayudan`, `quien_ayuda`, `comida_favortia`, `comida_rechaza`, `alimientos_prohibidos`, `enfinteres`, `asea_solo`, `horas_duerme`, `tiempo_dedica_madre`, `tiempo_dedica_padre`, `tiempo_dedica_abuelos`, `nombre_retiro`, `nacionalidad_retiro`, `cedula_retiro`, `celular_retiro`, `parentesco_retiro`, `situacion_embarazo`, `enfermedad_durante_embarazo`, `oficio_durante_embarazo`, `situacion_parto_nacimiento`, `edad_madre_embarazo`, `problemas_parto`, `cual_problema_parto`, `peso_alnacer`, `talla_alnacer`, `problemas_primeros_dias`, `cual_problema`, `edad_hablar`, `edad_caminar`, `edad_panales`, `peso_nino`, `talla_nino`, `grupo_sanguineo`, `alergico`, `especifique_alergia`, `enfermedades_padrecidad`, `hospitalizado`, `causa_hospitalizado`, `fiebre_alta_medicamento`, `motora`, `crecimiento`, `auditiva`, `otra_discapacidad`, `especifique_discapacidad`, `atendido_especialista`, `cual_especialista`, `problemas_lenguaje`, `mano_habil`, `hora_para_dormir`, `hora_se_levanta`, `sueno_nino`, `con_quien_duerme`, `imporfacion_importante`, `status`) VALUES
+(1, 'Gabriel', NULL, 'Acosta', 'Barrera', 26940227, '2020-10-10', 1, 1, 1, 'Bogotá-Colombia', 4, 4, 26, 20, 1, 1, 2, 'Nuevo Ingreso', 1, 7, '2023-2024', 'David Barrera', '2023-08-08', 'Deynalix', 'Barrera', 'V-', 26940227, 'Soltera', 'Caracas', '\'\\\'Venezolana\\\'\'', 1, '1997-05-21', 'Av.panteón, esquina trocadero a san Gabriel, edificio san miguel, piso 12, apto 122-A', 2125529546, 'Av.panteón, esquina trocadero a san Gabriel, edificio san miguel, piso 12, apto 122-A', NULL, 'Bachiller', NULL, 'Vifael', 'Acosta', 'V-', 24640221, 'Soltero', 'Caracas', 1, 1, '1996-10-10', 'Cota 905', 4241123536, 'Cota 905', NULL, 'Bachiller', NULL, 'No', 'Si', 'La madre', 'Tetero', 'Aguacate', 'Ninguno', 'No', 'No', 8, 5, 5, 7, 'David Barrera', 'V-', 24723325, 4242029800, 'Tío ', 'Normal', 'Ninguna', 'Ninguno', 'Normal', 26, 'No', NULL, 3, 20, 'No', NULL, 1, 1, 2, 5, 50, 'ORH +', 'No', NULL, 'Ninguna', 'No', NULL, 'Acetominofen', 0, 0, 0, 0, NULL, 'No', NULL, 'No', 'Izquierda', '9', '6', 'Tranquilo', 'con la madre', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -700,7 +715,7 @@ ALTER TABLE `aula`
 -- AUTO_INCREMENT de la tabla `desc_seccion`
 --
 ALTER TABLE `desc_seccion`
-  MODIFY `id_desc_seccion` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_desc_seccion` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `docentes`
@@ -724,7 +739,13 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `id_estudiante` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_estudiante` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `estudiantes_inicial`
+--
+ALTER TABLE `estudiantes_inicial`
+  MODIFY `inicial_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `modulos`
