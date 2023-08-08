@@ -34,11 +34,13 @@
                     <tr>
                       
                       <th>Acciones</th>
-                      <th>Nombre del alumno</th>
-                      <th>Apellido del alumno</th>
+                      <th>Nombre</th>
+                      <th>Apellido</th>
                       <th>Cédula escolar</th>
                       <th>Nombre de la madre</th>
                       <th>Teléfono</th>
+                      <th>Sección</th>
+                      <th>Turno</th>
                       <th>Status</th>
                    
 
