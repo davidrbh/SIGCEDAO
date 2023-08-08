@@ -93,6 +93,52 @@ class Estudiantes extends Controllers
 			die();		
 		}
 
+		public function getEstudiantes()
+		{
+			$arrData = $this->model->selectEstudiantes();
+
+		for ($i = 0; $i < count($arrData); $i++) {
+			$btnView = '';
+			$btnEdit = '';
+			$btnDelete = '';
+
+			if ($arrData[$i]['status'] == 1) {
+				$arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
+			} else {
+				$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
+			}
+
+
+			$btnView = '<button class="btn btn-info btn-sm btnViewEstudiante" onClick="ftnViewEstudiante(' . $arrData[$i]['id_estudiante'] . ')" title="Ver Estudiante"><i class="fa fa-eye" aria-hidden="true"></i></button>';
+
+
+
+
+			$btnEdit = '<button class="btn btn-primary btn-sm btnEditEstudiante" onClick="fntEditEstudiante(' . $arrData[$i]['id_estudiante'] . ')" title="Editar Estudiante"><i class="fas fa-pencil-alt"></i></button>';
+
+			//$btnEdit = '<button class="btn btn-secondary btn-sm" disabled><i class="fas fa-pencil-alt"></i></button>';
+
+
+
+
+
+			$btnDelete = '<button class="btn btn-danger btn-sm btnDelEstudiante" onClick="fntDelEstudiante(' . $arrData[$i]['id_estudiante'] . ')" title="Eliminar Estudiante"><i class="far fa-trash-alt"></i></button>';
+
+			//$btnDelete = '<button class="btn btn-secondary btn-sm" disabled><i class="far fa-trash-alt"></i></button>';
+
+
+
+
+
+
+			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+		}
+
+		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+
+		die();
+		}
+
 
 
 
