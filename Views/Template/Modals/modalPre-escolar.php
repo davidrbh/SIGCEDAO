@@ -598,13 +598,13 @@
               </div>
 
               <div class="form-group col-md-5">
-                <label class="control-label">Nombre de las personas autorizadas para retirarlo de la escuela:</label>
+                <label class="control-label">Nombre de la persona autorizada para retirarlo de la escuela:</label>
                 <input class="form-control valid validText" id="persona_retirarlo" name="persona_retirarlo" type="text"
                   placeholder="Nombre completo" >
               </div>
 
 
-              <div class="form-group col-md-2">
+              <div class="form-group col-md-3">
                 <label for="listNacionalidad_retiro">Nacionalidad:</label>
                 <select class="form-control selectpicker" id="listNacionalidad_retiro" name="listNacionalidad_retiro" required>
                 <option value="">Seleccione</option>  
@@ -615,10 +615,16 @@
               </div>
 
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-2">
                 <label for="cedula_retiro">Cédula:</label>
                 <input type="text" class="form-control valid validNumber" id="cedula_retiro" name="cedula_retiro" placeholder=""
                   maxlength="8" required="">
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="telefono_retiro">Teléfono:</label>
+                <input type="text" class="form-control valid validNumber" id="telefono_retiro" name="telefono_retiro"
+                  >
               </div>
 
               <div class="form-group col-md-2">
