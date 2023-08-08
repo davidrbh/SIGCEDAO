@@ -40,7 +40,6 @@
                       <th>Representante</th>
                       <th>Teléfono</th>
                       <th>Celular</th>
-                      <th>Grado </th>
                       <th>Sección</th>
                       <th>Turno</th>
                       <th>Status</th>
