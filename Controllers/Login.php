@@ -49,7 +49,7 @@ class Login extends Controllers
 
 						$arrData = $this->model->sessionLogin($_SESSION['id_User']);
 
-						sessionUser($_SESSION['id_User']);
+						sessionUser($_SESSION['id_User']); 
 						//$_SESSION['userData'] = $arrData; 
 
 						$arrResponse = array('status' => true, 'msg' => 'ok');
