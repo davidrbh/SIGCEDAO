@@ -45,7 +45,7 @@
                             class="treeview-indicator fa fa-angle-right"></i></a>
                     <ul class="treeview-menu">
 
-                    <li><a class="treeview-item" href="<?= base_url(); ?>/secciones"><i
+                    <li><a class="treeview-item" href="<?= base_url(); ?>/secciones_config"><i
                                     class="icon fa fa-circle-o"></i>
                                 Secciones</a></li>
 
@@ -96,9 +96,9 @@
         </li>
 
 
-        <li><a class="app-menu__item" href="<?= base_url(); ?>/representantes">
+        <li><a class="app-menu__item" href="<?= base_url(); ?>/secciones">
                 <i class="app-menu__icon fa fa-id-card-o" aria-hidden="true"></i>
-                <span class="app-menu__label">Representantes</span></a></li>
+                <span class="app-menu__label">Secciones</span></a></li>
 
 
         <li><a class="app-menu__item" href="<?= base_url(); ?>/planillas">
