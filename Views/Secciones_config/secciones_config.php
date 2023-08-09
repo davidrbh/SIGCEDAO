@@ -3,7 +3,7 @@
   
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-id-card-o"></i><?= $data['page_title']; ?></h1>
+          <h1><i class="fa fa-id-card-o"></i> <?= $data['page_title']; ?></h1>
           
         </div>
         <ul class="app-breadcrumb breadcrumb">
@@ -12,18 +12,33 @@
         </ul>
       </div>
       <div class="row">
-        <div class="col-md-12">
+
+      <div class="col-md-12">
           <div class="tile">
-           <div conteiner>
-           
+            <div class="tile-body">
+              <div class="table-responsive">
+                <table class="table table-hover table-bordered display responsive nowrap" id="tableEspecialidad">
+                  <thead>
+                    <tr>
+                      
+                      <th>Acciones</th>
+                      <th>Sección</th>
+                      <th>Docente</th>
+                      <th>Periodo escolar</th>
+                      <th>Status</th>
 
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                   
+                  </tbody>
+                </table>
+              </div>
             </div>
-
-          
           </div>
-        </div>
-      </div>
-    
+         </div>
+      
     </main>
     
 
