@@ -1,9 +1,12 @@
 <?php  headerAdmin($data); ?> 
     <main class="app-content"> 
-  
+    <?php getModal('modalSecciones_config',$data); ?>
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-id-card-o"></i> <?= $data['page_title']; ?></h1>
+          <h1><i class="fa fa-id-card-o"></i> <?= $data['page_title']; ?>
+          <button class="btn btn-primary" type="button" onclick="openModal();" ><i class="fa-solid fa-circle-plus"></i> Nueva Sección</button>
+
+        </h1>
           
         </div>
         <ul class="app-breadcrumb breadcrumb">
@@ -17,7 +20,7 @@
           <div class="tile">
             <div class="tile-body">
               <div class="table-responsive">
-                <table class="table table-hover table-bordered display responsive nowrap" id="tableEspecialidad">
+                <table class="table table-hover table-bordered display responsive nowrap" id="tableSecciones_config">
                   <thead>
                     <tr>
                       
