@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-08-2023 a las 18:09:21
+-- Tiempo de generación: 10-08-2023 a las 04:33:06
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.5
 
@@ -82,13 +82,7 @@ INSERT INTO `desc_seccion` (`id_desc_seccion`, `nombre_seccion`, `aula_id`, `tur
 (15, 'Seleccione:', NULL, 1),
 (16, 'Seleccione:', NULL, 2),
 (17, 'Inicial A', 9, 1),
-(18, 'Inicial B', 9, 2),
-(19, 'CRA A', 7, 1),
-(20, 'CRA B', 7, 2),
-(21, 'CBIT A', 8, 1),
-(22, 'CBIT B', 8, 2),
-(23, 'Aula integrada A', 10, 1),
-(24, 'Aula integrada B', 10, 2);
+(18, 'Inicial B', 9, 2);
 
 -- --------------------------------------------------------
 
@@ -113,7 +107,7 @@ CREATE TABLE `docentes` (
 --
 
 INSERT INTO `docentes` (`id_docentes`, `especialidad_id`, `nombre_docente`, `apellido_docente`, `nacionalidad_docente`, `cedula_docente`, `celular_docente`, `correo_docente`, `status`) VALUES
-(1, 1, 'Ana', 'Deyan', '', 4416939, 4125403027, 'anamer2210@gmail.com', 1),
+(1, 1, 'Ana', 'Deyan', 'V-', 4416939, 4125403027, 'anamer2210@gmail.com', 1),
 (2, 1, 'Analix', 'Hernandez', 'V-', 14909718, 4241697285, 'analix.1979@gmail.com', 1),
 (3, 1, 'Jose', 'Duarte', 'V-', 10421528, 2125741416, 'jose_duarte@gmail.com', 1),
 (4, 1, 'Ysmara', 'Amundaray', 'V-', 24940227, 4128042321, 'ysmarit@gmail.com', 1),
@@ -328,9 +322,9 @@ CREATE TABLE `estudiantes_inicial` (
   `estado_madre_id` bigint(20) NOT NULL,
   `fecha_nac_madre` date NOT NULL,
   `direccion_hab_madre` mediumtext COLLATE utf8mb4_swedish_ci NOT NULL,
-  `telefono_madre` bigint(9) NOT NULL,
+  `telefono_madre` varchar(20) COLLATE utf8mb4_swedish_ci NOT NULL,
   `direccion_trabajo_madre` mediumtext COLLATE utf8mb4_swedish_ci NOT NULL,
-  `telefono_trabajo_madre` bigint(9) DEFAULT NULL,
+  `telefono_trabajo_madre` varchar(20) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `nivel_academico_madre` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `otros_datos_madre` mediumtext COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `nombre_padre` text COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -343,9 +337,9 @@ CREATE TABLE `estudiantes_inicial` (
   `estado_padre_id` bigint(11) NOT NULL DEFAULT 1,
   `fecha_nac_padre` date NOT NULL,
   `direccion_hab_padre` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `telefono_padre` bigint(9) NOT NULL,
+  `telefono_padre` varchar(20) COLLATE utf8mb4_swedish_ci NOT NULL,
   `direccion_trabajo_padre` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
-  `telefono_trabajo_padre` bigint(9) DEFAULT NULL,
+  `telefono_trabajo_padre` varchar(20) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `nivel_academico_padre` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `otros_datos_padre` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `come_solo` text COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -363,7 +357,7 @@ CREATE TABLE `estudiantes_inicial` (
   `nombre_retiro` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `nacionalidad_retiro` varchar(5) COLLATE utf8mb4_swedish_ci NOT NULL DEFAULT 'V-',
   `cedula_retiro` int(11) NOT NULL,
-  `celular_retiro` bigint(20) NOT NULL,
+  `celular_retiro` varchar(20) COLLATE utf8mb4_swedish_ci NOT NULL,
   `parentesco_retiro` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `situacion_embarazo` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `enfermedad_durante_embarazo` text COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -410,7 +404,7 @@ CREATE TABLE `estudiantes_inicial` (
 --
 
 INSERT INTO `estudiantes_inicial` (`inicial_id`, `nombre_alumno1`, `nombre_alumno2`, `apellido_alumno1`, `apellido_alumno2`, `cedula_escolar`, `fecha_nac`, `genero`, `nacionalidad_alumno`, `estado_id`, `nacimiento_alumno`, `talla_camisa`, `talla_pantalon`, `talla_zapato`, `peso`, `estatura`, `tiene_hermanos`, `cuantos_hermanos`, `tipo_alumno`, `turno`, `seccion_id`, `periodo_escolar`, `funcionario`, `fecha_inscripcion`, `nombre_madre`, `apellido_madre`, `nacionalidad_madre`, `cedula_madre`, `estado_civil_madre`, `nacimiento_madre`, `tipo_nacionalidad_madre`, `estado_madre_id`, `fecha_nac_madre`, `direccion_hab_madre`, `telefono_madre`, `direccion_trabajo_madre`, `telefono_trabajo_madre`, `nivel_academico_madre`, `otros_datos_madre`, `nombre_padre`, `apellido_padre`, `nacionalidad_padre`, `cedula_padre`, `estado_civil_padre`, `nacimiento_padre`, `tipo_nacionalidad_padre`, `estado_padre_id`, `fecha_nac_padre`, `direccion_hab_padre`, `telefono_padre`, `direccion_trabajo_padre`, `telefono_trabajo_padre`, `nivel_academico_padre`, `otros_datos_padre`, `come_solo`, `lo_ayudan`, `quien_ayuda`, `comida_favortia`, `comida_rechaza`, `alimientos_prohibidos`, `enfinteres`, `asea_solo`, `horas_duerme`, `tiempo_dedica_madre`, `tiempo_dedica_padre`, `tiempo_dedica_abuelos`, `nombre_retiro`, `nacionalidad_retiro`, `cedula_retiro`, `celular_retiro`, `parentesco_retiro`, `situacion_embarazo`, `enfermedad_durante_embarazo`, `oficio_durante_embarazo`, `situacion_parto_nacimiento`, `edad_madre_embarazo`, `problemas_parto`, `cual_problema_parto`, `peso_alnacer`, `talla_alnacer`, `problemas_primeros_dias`, `cual_problema`, `edad_hablar`, `edad_caminar`, `edad_panales`, `peso_nino`, `talla_nino`, `grupo_sanguineo`, `alergico`, `especifique_alergia`, `enfermedades_padrecidad`, `hospitalizado`, `causa_hospitalizado`, `fiebre_alta_medicamento`, `motora`, `crecimiento`, `auditiva`, `otra_discapacidad`, `especifique_discapacidad`, `atendido_especialista`, `cual_especialista`, `problemas_lenguaje`, `mano_habil`, `hora_para_dormir`, `hora_se_levanta`, `sueno_nino`, `con_quien_duerme`, `imporfacion_importante`, `status`) VALUES
-(1, 'Gabriel', NULL, 'Acosta', 'Barrera', 26940227, '2020-10-10', 1, 1, 1, 'Bogotá-Colombia', 4, 4, 26, 20, 1, 1, 2, 'Nuevo Ingreso', 1, 7, '2023-2024', 'David Barrera', '2023-08-08', 'Deynalix', 'Barrera', 'V-', 26940227, 'Soltera', 'Caracas', '\'\\\'Venezolana\\\'\'', 1, '1997-05-21', 'Av.panteón, esquina trocadero a san Gabriel, edificio san miguel, piso 12, apto 122-A', 2125529546, 'Av.panteón, esquina trocadero a san Gabriel, edificio san miguel, piso 12, apto 122-A', NULL, 'Bachiller', NULL, 'Vifael', 'Acosta', 'V-', 24640221, 'Soltero', 'Caracas', 1, 1, '1996-10-10', 'Cota 905', 4241123536, 'Cota 905', NULL, 'Bachiller', NULL, 'No', 'Si', 'La madre', 'Tetero', 'Aguacate', 'Ninguno', 'No', 'No', 8, 5, 5, 7, 'David Barrera', 'V-', 24723325, 4242029800, 'Tío ', 'Normal', 'Ninguna', 'Ninguno', 'Normal', 26, 'No', NULL, 3, 20, 'No', NULL, 1, 1, 2, 5, 50, 'ORH +', 'No', NULL, 'Ninguna', 'No', NULL, 'Acetominofen', 0, 0, 0, 0, NULL, 'No', NULL, 'No', 'Izquierda', '9', '6', 'Tranquilo', 'con la madre', NULL, 1);
+(1, 'Gabriel', NULL, 'Acosta', 'Barrera', 26940227, '2020-10-10', 1, 1, 1, 'Bogotá-Colombia', 4, 4, 26, 20, 1, 1, 2, 'Nuevo Ingreso', 1, 7, '2023-2024', 'David Barrera', '2023-08-08', 'Deynalix', 'Barrera', 'V-', 26940227, 'Soltera', 'Caracas', '\'\\\'Venezolana\\\'\'', 1, '1997-05-21', 'Av.panteón, esquina trocadero a san Gabriel, edificio san miguel, piso 12, apto 122-A', '02125529546', 'Av.panteón, esquina trocadero a san Gabriel, edificio san miguel, piso 12, apto 122-A', NULL, 'Bachiller', NULL, 'Vifael', 'Acosta', 'V-', 24640221, 'Soltero', 'Caracas', 1, 1, '1996-10-10', 'Cota 905', '04241123536', 'Cota 905', NULL, 'Bachiller', NULL, 'No', 'Si', 'La madre', 'Tetero', 'Aguacate', 'Ninguno', 'No', 'No', 8, 5, 5, 7, 'David Barrera', 'V-', 24723325, '04242029800', 'Tío ', 'Normal', 'Ninguna', 'Ninguno', 'Normal', 26, 'No', NULL, 3, 20, 'No', NULL, 1, 1, 2, 5, 50, 'ORH +', 'No', NULL, 'Ninguna', 'No', NULL, 'Acetominofen', 0, 0, 0, 0, NULL, 'No', NULL, 'No', 'Izquierda', '9', '6', 'Tranquilo', 'con la madre', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -593,7 +587,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `cedula`, `nombres`, `apellidos`, `telefono`, `email_user`, `password`, `token`, `rol_id`, `datecreated`, `status`) VALUES
-(1, 'V-24723325', 'Josue Sebastian', 'Hernandez Barrera', '0424-2029800', '7396davidrbh@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', 1, '2022-07-23 19:51:47', 1),
+(1, '24723325', 'Josue Sebastian', 'Hernandez Barrera', '0424-2029800', '7396davidrbh@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', 1, '2022-07-23 19:51:47', 1),
 (2, 'V-14909718', 'Analix Dubraska', 'Hernandez Deyan', '0424-1697285', 'analix@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'b82c33bd7a7f6812facf-4419b02e4616b610625a-d4990f15b14a7dfe1fff-5ad55286698f85cdd', 2, '2022-07-24 21:14:03', 1),
 (9, 'V-3250811', 'Jildry', 'Marquez', '0212-8993222', 'mjildry23@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', 1, '2022-07-28 00:21:58', 1),
 (10, 'V-13528981', 'Richard', 'Parra', '0424-2939291', 'richard66np@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', 1, '2022-08-04 20:21:49', 1);
