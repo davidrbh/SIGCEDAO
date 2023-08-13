@@ -66,6 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
         text: "<i class='fas fa-file-csv'></i> CSV",
         titleAttr: "Exportar a CSV",
         className: "btn btn-info",
+        exportOptions: {
+          columns: [1, 2, 3],
+        },
       },
     ],
     resonsieve: "true",
@@ -81,12 +84,13 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
 
       let intId_secciones_config = document.querySelector("#id_seccion").value;
-      let strNombre = document.querySelector("#nombreSecciones_config").value;
+      let strNombre_seccion = document.querySelector("#selectSeccionesid").value;
+      let strNombre_docente = document.querySelector("#selectDocenteid").value;
       let strPeriodoEscolar = document.querySelector("#periodo_escolar").value;
       let intStatus = document.querySelector("#listStatus").value;
        
 
-      if (strNombre == "" || strPeriodoEscolar == "" || intStatus == "") {
+      if (strNombre_seccion == "" || strNombre_docente == "" || strPeriodoEscolar == "" || intStatus == "") {
         swal("Atención", "Todos los campos son obligatorios.", "error");
         return false;
       }
@@ -153,31 +157,37 @@ function fntEditSeccion_config(id_seccion) {
   let request = window.XMLHttpRequest
     ? new XMLHttpRequest()
     : new ActiveXObject("Microsoft.XMLHTTP");
-  let ajaxUrl = base_url + "/Secciones_config/getSeccion_config/" + id_seccion;
+  let ajaxUrl = base_url + "/Secciones_config/getSeccion_config2/" + id_seccion;
   request.open("GET", ajaxUrl, true);
   request.send();
 
   request.onreadystatechange = function () {
     if (request.readyState == 4 && request.status == 200) {
       let objData = JSON.parse(request.responseText);
+      console.log(objData)
 
       if (objData.status) {
         document.querySelector("#id_seccion").value =
-          objData.data.id_especialidad;
-        document.querySelector("#nombreSecciones_config").value =
-          objData.data.nombre_especialidad;
+          objData.data.id_seccion;
+        document.querySelector("#selectSeccionesid").value =
+          objData.data.desc_seccion_id;
+          document.querySelector("#selectDocenteid").value =
+          objData.data.docente_id;
         document.querySelector("#periodo_escolar").value =
-          objData.data.descripcion;
+          objData.data.periodo_escolar;
         document.querySelector("#listStatus").value = objData.data.status;
 
+        $("#selectSeccionesid").selectpicker("render");
+        $("#selectDocenteid").selectpicker("render");
         $("#listStatus").selectpicker("render");
-
         $("#modalFormSecciones_config").modal("show");
+        
       } else {
         swal("Error", objData.msg, "error");
       }
     }
     divLoading.style.display = "none";
+    
     return false;
   };
 }
@@ -200,7 +210,7 @@ function fntDelSeccion_config(id_seccion) {
           ? new XMLHttpRequest()
           : new ActiveXObject("Microsoft.XMLHTTP");
         let ajaxUrl = base_url + "/Secciones_config/delSeccion_config/";
-        let strData = "id_seccion =" + id_seccion;
+        let strData = "id_seccion=" + id_seccion;
         request.open("POST", ajaxUrl, true);
         request.setRequestHeader(
           "Content-type",
@@ -234,6 +244,7 @@ function ftnViewSeccion_config(id_seccion)
              request.onreadystatechange = function(){
         if(request.readyState == 4 && request.status == 200){
             let  objData = JSON.parse(request.responseText);
+            
 
             if(objData.status)
             {
@@ -242,8 +253,8 @@ function ftnViewSeccion_config(id_seccion)
                 : '<span class="badge badge-danger">Inactivo</span>';
 
             
-                document.querySelector("#celNombre").innerHTML = objData.data.nombre_secciones_config;
-                document.querySelector("#celNombre_docente").innerHTML = objData.data.nombre_docente;
+                document.querySelector("#celNombre_seccion").innerHTML = objData.data.nombre_seccion;
+                document.querySelector("#celNombre_docente").innerHTML = objData.data.nombre_completo;
                 document.querySelector("#celPeriodo_escolar").innerHTML = objData.data.periodo_escolar;
                 document.querySelector("#celEstado").innerHTML = estadoSecciones_config;
              

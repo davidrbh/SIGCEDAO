@@ -57,11 +57,11 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="modalViewEspecialidad" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modalViewSecciones_config" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog " >
     <div class="modal-content">
       <div class="modal-header header-primary">
-        <h5 class="modal-title" id="titleModal">Datos de la especialidad</h5>
+        <h5 class="modal-title" id="titleModal">Datos de la sección</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -71,12 +71,16 @@
           <tbody>
            
             <tr>
-              <td>Nombre de la especialidad:</td>
-              <td id="celNombre">Jacob</td>
+              <td>Sección:</td>
+              <td id="celNombre_seccion">Jacob</td>
             </tr>
             <tr>
-              <td>Descripción:</td>
-              <td id="celDescripcion">Jacob</td>
+              <td>Docente:</td>
+              <td id="celNombre_docente">Jacob</td>
+            </tr>
+            <tr>
+              <td>Periodo escolar:</td>
+              <td id="celPeriodo_escolar">Larry</td>
             </tr>
             <tr>
               <td>Estado:</td>

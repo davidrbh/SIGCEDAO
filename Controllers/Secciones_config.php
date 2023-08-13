@@ -97,6 +97,25 @@ class Secciones_config extends Controllers
 		die();
 	}
 
+	public function getSeccion_config2(int $intId_seccion_config)
+	{
+
+		$intId_seccion_config = intval(strClean($intId_seccion_config));
+		if ($intId_seccion_config > 0) {
+			$arrData = $this->model->selectSeccion_config2($intId_seccion_config);
+			if (empty($arrData)) {
+				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+			} else {
+				$arrResponse = array('status' => true, 'data' => $arrData);
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+
+		die();
+	}
+
+	
+
 
     public function setSeccion_config()
     {
@@ -105,34 +124,37 @@ class Secciones_config extends Controllers
 
 		if ($_POST) {
 
-			if (empty($_POST['nombreEspecialidad']) || empty($_POST['txtDescripcion']) || empty($_POST['listStatus'])) {
+			if (empty($_POST['selectSeccionesid']) || empty($_POST['selectDocenteid']) || empty($_POST['periodo_escolar']) || empty($_POST['listStatus'])) {
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
 			} else {
 
-				$id_especialidad = intval($_POST['id_especialidad']);
-				$strNombre = ucwords(strClean($_POST['nombreEspecialidad']));
-				$strDescripcion = ucwords(strClean($_POST['txtDescripcion']));
-				$intStatus = strtolower(strClean($_POST['listStatus']));
+				$id_seccion = intval($_POST['id_seccion']);
+				$int_nombreSeccion = intval($_POST['selectSeccionesid']);
+				$int_nombreDocente = intval($_POST['selectDocenteid']);
+				$strPeriodo = strClean($_POST['periodo_escolar']);
+				$intStatus = intval($_POST['listStatus']);
 
-				if ($id_especialidad == 0) {
+				if ($id_seccion == 0) {
 					$option = 1;
 
 					
 
 
-					$request_especialidad = $this->model->insertEspecialidad(
-						$strNombre,
-						$strDescripcion,
+					$request_seccion_config = $this->model->insertSeccion_config(
+						$int_nombreSeccion,
+						$int_nombreDocente,
+						$strPeriodo,
 						$intStatus
 					);
 
 				} else {
 					$option = 2;
 
-					$request_especialidad = $this->model->updateEspecialidad(
-						$id_especialidad,
-						$strNombre,
-						$strDescripcion,
+					$request_seccion_config = $this->model->updateSeccion_config(
+						$id_seccion,
+						$int_nombreSeccion,
+						$int_nombreDocente,
+						$strPeriodo,
 						$intStatus
 					);
 
@@ -141,14 +163,14 @@ class Secciones_config extends Controllers
 
 
 
-				if ($request_especialidad > 0) {
+				if ($request_seccion_config > 0) {
 					if ($option == 1) {
 						$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
 					} else {
 						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 					}
-				} else if ($request_especialidad == false) {
-					$arrResponse = array('status' => false, 'msg' => '¡Atención! la especialidad ya existe, ingrese otra.');
+				} else if ($request_seccion_config == false) {
+					$arrResponse = array('status' => false, 'msg' => '¡Atención! la Sección ya existe, ingrese otra.');
 				} else {
 					$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
 				}
@@ -160,19 +182,21 @@ class Secciones_config extends Controllers
     }
 
 
-    public function delEspecialidad()
+    public function delSeccion_config()
 	{
+	
 		if ($_POST) {
 
-			$intId_especialidad = intval($_POST['id_especialidad']);
-			$requestDelete = $this->model->deleteEspecialidad($intId_especialidad);
+			$id_seccion = intval($_POST['id_seccion']);
+			
+			$requestDelete = $this->model->deleteSeccion_config($id_seccion);
 			if ($requestDelete == 'ok') {
 
-				$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado la Especialidad');
+				$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado la Sección');
 			} else if ($requestDelete == 'exist') {
-				$arrResponse = array('status' => false, 'msg' => 'No es posible eliminar la Especialidad asociado a docentes.');
+				$arrResponse = array('status' => false, 'msg' => 'No es posible eliminar la Sección asociada a los estudiantes.');
 			} else {
-				$arrResponse = array('status' => false, 'msg' => 'Error al eliminar la Especialidad.');
+				$arrResponse = array('status' => false, 'msg' => 'Error al eliminar la Sección.');
 			}
 			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 
