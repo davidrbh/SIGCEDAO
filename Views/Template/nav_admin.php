@@ -97,7 +97,7 @@
 
 
         <li><a class="app-menu__item" href="<?= base_url(); ?>/secciones">
-                <i class="app-menu__icon fa fa-id-card-o" aria-hidden="true"></i>
+                <i class="app-menu__icon fa fa-chalkboard-user" aria-hidden="true"></i>
                 <span class="app-menu__label">Secciones</span></a></li>
 
 
