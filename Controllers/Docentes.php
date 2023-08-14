@@ -35,12 +35,96 @@ class Docentes extends Controllers
 
         $this->views->getView($this, "docentes", $data);
     }
+
+
+    public function getDocentes()
+	{
+
+		$arrData = $this->model->selectDocentes();
+
+		for ($i = 0; $i < count($arrData); $i++) {
+			$btnView = '';
+			$btnEdit = '';
+			$btnDelete = '';
+
+			if ($arrData[$i]['status'] == 1) {
+				$arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
+			} else {
+				$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
+			}
+
+			
+
+
+			$btnView = '<button class="btn btn-info btn-sm btnViewDocente" onClick="ftnViewDocente(' . $arrData[$i]['id_docentes'] . ')" title="Ver Docente"><i class="fa fa-eye" aria-hidden="true"></i></button>';
+
+
+
+
+			$btnEdit = '<button class="btn btn-primary btn-sm btnEditDocente" onClick="fntEditDocente(' . $arrData[$i]['id_docentes'] . ')" title="Editar Docente"><i class="fas fa-pencil-alt"></i></button>';
+
+			//$btnEdit = '<button class="btn btn-secondary btn-sm" disabled><i class="fas fa-pencil-alt"></i></button>';
+
+
+
+
+
+			$btnDelete = '<button class="btn btn-danger btn-sm btnDelDocente" onClick="fntDelDocente(' . $arrData[$i]['id_docentes'] . ')" title="Eliminar Docente"><i class="far fa-trash-alt"></i></button>';
+
+			//$btnDelete = '<button class="btn btn-secondary btn-sm" disabled><i class="far fa-trash-alt"></i></button>';
+
+
+
+
+
+
+			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+		}
+
+		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+
+		die();
+
+	}
+
+    public function getDocente(int $intId_docente)
+	{
+
+		$intId_docente = intval(strClean($intId_docente));
+		if ($intId_docente > 0) {
+			$arrData = $this->model->selectEspecialidad($intId_docente);
+			if (empty($arrData)) {
+				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+			} else {
+				$arrResponse = array('status' => true, 'data' => $arrData);
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+
+		die();
+	}
+
+
+	public function getSelectEspecialidad()
+	{
+		$htmlOptions = "";
+		$arrData = $this->model->selectEspecialidad();
+		if(count($arrData) > 0 ){
+			for ($i=0; $i < count($arrData); $i++) { 
+				
+				$htmlOptions .= '<option value="'.$arrData[$i]['id_especialidad'].'">'.$arrData[$i]['nombre_especialidad'].'</option>';
+				
+			}
+		}
+		echo $htmlOptions;
+		die();		
+	}
+
+	
+
+
+
 }
-
-
-
-
-
 
 
 ?>
