@@ -60,6 +60,8 @@ class EspecialidadModel extends Mysql
     public function deleteEspecialidad(int $id_especialidad)
 	{
 		$this->intId_especialidad = $id_especialidad;
+        $sql = "SELECT * FROM `docentes` WHERE `docentes`.`especialidad_id` = {$this->intId_especialidad} ";
+		$request = $this->select_all($sql);
 
 		if (empty($request)) {
 			$sql = "UPDATE especialidad SET status = ? WHERE id_especialidad = $this->intId_especialidad ";
