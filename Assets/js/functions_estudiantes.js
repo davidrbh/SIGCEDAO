@@ -356,7 +356,7 @@ window.addEventListener(
   function () {
     fntEstado();
     fntPeriodoAnterior(obtenerPeriodoEscolarAnterior());
-    fntPeriodoActual(obtenerPeriodoEscolarActual());
+    //fntPeriodoActual(obtenerPeriodoEscolarActual());
   },
   false
 );
@@ -422,11 +422,11 @@ function fntPeriodoAnterior(periodo) {
   $("#periodo-escolar-anterior").selectpicker("render");
 }
 
-function fntPeriodoActual(periodo) {
-  document.querySelector("#periodo-escolar-actual option").innerHTML = periodo;
-  document.querySelector("#periodo-escolar-actual option").value = periodo;
-  $("#periodo-escolar-actual").selectpicker("render");
-}
+// function fntPeriodoActual(periodo) {
+//   document.querySelector("#periodo-escolar-actual option").innerHTML = periodo;
+//   document.querySelector("#periodo-escolar-actual option").value = periodo;
+//   $("#periodo-escolar-actual").selectpicker("render");
+// }
 
 let selectPadeceEnfermedad = document.getElementById("listPadece_enfermedad");
 let enfermedadPadece = document.querySelectorAll(".oculto");
@@ -650,7 +650,22 @@ $(document).ready(function () {
              }
          });
 
+         $.ajax({
+          data: parametros2,
+          url: base_url+'/Estudiantes/getPeriodo',
+          type: 'post',
+          beforeSend: function () {
+        
+          },
+          success: function (data) {
+           $("#periodo-escolar-actual").html(data);
+          }
+      });
+
          })  
+
+
+  
 
 
 });

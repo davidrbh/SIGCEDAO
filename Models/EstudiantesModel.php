@@ -52,15 +52,30 @@ class EstudiantesModel extends Mysql
 
         }
 
-        public function selectNombreDocente($seccion)
+        public function selectNombreDocente(int $seccion)
 		{
 		
 			$this->intSeccion = $seccion;
-			$sql = "SELECT `seccion`.`id_seccion`, `docentes`.`nombre_docente`
+			$sql = "SELECT `seccion`.`id_seccion`, CONCAT(`docentes`.`nombre_docente`,' ', `docentes`.`apellido_docente`)
+                    AS 'nombre_completo' 
                     FROM `seccion`
                     JOIN `docentes`
                     ON docentes.id_docentes = seccion.docente_id
-                    WHERE`seccion`.`id_seccion` =   $this->intSeccion";
+                    WHERE`seccion`.`id_seccion` =  {$this->intSeccion}";
+			$request = $this->select_all($sql);
+			return $request;
+		}
+
+       
+               
+
+        public function selectPeriodo(int $seccion)
+		{
+		
+			$this->intSeccion = $seccion;
+			$sql = "SELECT `seccion`.`id_seccion`, `seccion`.`periodo_escolar`
+                    FROM `seccion`
+                    WHERE`seccion`.`id_seccion` =  {$this->intSeccion}";
 			$request = $this->select_all($sql);
 			return $request;
 		}
