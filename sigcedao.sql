@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-08-2023 a las 00:57:54
+-- Tiempo de generación: 14-08-2023 a las 06:59:54
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.5
 
@@ -131,7 +131,8 @@ CREATE TABLE `especialidad` (
 --
 
 INSERT INTO `especialidad` (`id_especialidad`, `nombre_especialidad`, `descripcion`, `status`) VALUES
-(1, 'Docente De Aula', 'Maestro De Aula', 1);
+(1, 'Docente de Aula', 'Maestro de Aula', 1),
+(3, 'Docente Especialista', 'Especialista del área ', 1);
 
 -- --------------------------------------------------------
 
@@ -721,7 +722,7 @@ ALTER TABLE `docentes`
 -- AUTO_INCREMENT de la tabla `especialidad`
 --
 ALTER TABLE `especialidad`
-  MODIFY `id_especialidad` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_especialidad` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `estado`
