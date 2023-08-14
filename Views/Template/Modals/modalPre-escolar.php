@@ -210,15 +210,22 @@
                   </div>
 
 
+                  <div class="form-group col-md-2">
+                    <fieldset>
+                      <label class="control-label" for="periodo-escolar-actual">Periodo escolar:</label>
+                     <select class="form-control" id="periodo-escolar-actual" name="periodo-escolar-actual" type="text"placeholder="<?php  ?>" value="" readonly="">
+                        </select>  
+                    </fieldset>
+                  </div>
 
-              <div class="form-group col-md-2">
+              <!-- <div class="form-group col-md-2">
 
                 <label class="control-label" for="periodo-escolar-actual">Periodo escolar:</label>
                 <select class="form-control" id="periodo-escolar-actual" name="periodo-escolar-actual">
                   <option value="2022-2023">2022-2023</option>
                 </select>
 
-              </div>
+              </div> -->
 
               <div class="form-group col-md-3">
               <fieldset disabled>

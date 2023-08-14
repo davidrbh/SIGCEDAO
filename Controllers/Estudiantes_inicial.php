@@ -54,7 +54,23 @@ class Estudiantes_inicial extends Controllers
 			if(count($arrData) > 0 ){
 				for ($i=0; $i < count($arrData); $i++) { 
 					
-					$htmlOptions .= '<option value="'.$arrData[$i]['id_seccion'].'">'.$arrData[$i]['nombre_docente'].'</option>';
+					$htmlOptions .= '<option value="'.$arrData[$i]['id_seccion'].'">'.$arrData[$i]['nombre_completo'].'</option>';
+					
+				}
+			}
+			echo $htmlOptions;
+			die();		
+		}
+
+		public function getPeriodo($id)
+		{
+			$htmlOptions = "";
+			$intId = ($_POST['id']);
+			$arrData = $this->model->selectPeriodo($intId);
+			if(count($arrData) > 0 ){
+				for ($i=0; $i < count($arrData); $i++) { 
+					
+					$htmlOptions .= '<option value="'.$arrData[$i]['periodo_escolar'].'">'.$arrData[$i]['periodo_escolar'].'</option>';
 					
 				}
 			}

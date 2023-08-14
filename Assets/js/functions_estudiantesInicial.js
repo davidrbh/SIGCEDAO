@@ -188,7 +188,7 @@ function openModal(){
 
   window.addEventListener("load",function () {
     fntEstado();
-    fntPeriodoActual(obtenerPeriodoEscolarActual());
+    //fntPeriodoActual(obtenerPeriodoEscolarActual());
   },
   false
 );
@@ -242,11 +242,11 @@ function openModal(){
     return periodoEscolar || "Desconocido";
   }
 
-  function fntPeriodoActual(periodo) {
-    document.querySelector("#periodo-escolar-actual option").innerHTML = periodo;
-    document.querySelector("#periodo-escolar-actual option").value = periodo;
-    $("#periodo-escolar-actual").selectpicker("render");
-  }
+  // function fntPeriodoActual(periodo) {
+  //   document.querySelector("#periodo-escolar-actual option").innerHTML = periodo;
+  //   document.querySelector("#periodo-escolar-actual option").value = periodo;
+  //   $("#periodo-escolar-actual").selectpicker("render");
+  // }
 
 
   ///////////////////pre-escolar/////////////////
@@ -410,6 +410,18 @@ $(document).ready(function () {
               $("#nombreDocente").html(data);
              }
          });
+
+      $.ajax({
+          data: parametros2,
+          url: base_url+'/Estudiantes_inicial/getPeriodo',
+          type: 'post',
+          beforeSend: function () {
+        
+          },
+          success: function (data) {
+           $("#periodo-escolar-actual").html(data);
+          }
+      });
 
          })  
 
