@@ -25,7 +25,7 @@ class Secciones_configModel extends Mysql
                ON `desc_seccion`.`id_desc_seccion` = `seccion`.`desc_seccion_id` 
                INNER JOIN `docentes` 
                ON `docentes`.`id_docentes` = `seccion`.`docente_id`
-               WHERE `seccion`.`status` = 1";
+               WHERE `seccion`.`status` != 0";
         $request = $this->select_all($sql);
         return $request;
     }
