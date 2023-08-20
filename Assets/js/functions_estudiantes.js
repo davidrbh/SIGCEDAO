@@ -398,7 +398,7 @@ function obtenerPeriodoEscolarAnterior() {
   return periodoEscolar || "Desconocido";
 }
 
-function obtenerPeriodoEscolarActual() {
+/*function obtenerPeriodoEscolarActual() {
   const anioActual = new Date().getFullYear();
   const anioInicio = 2020;
   const anioFin = 3000; // Ampliar el rango de años si es necesario
@@ -413,7 +413,20 @@ function obtenerPeriodoEscolarActual() {
   }
 
   return periodoEscolar || "Desconocido";
+}*/
+
+function obtenerPeriodoEscolarActual() {
+  let fechaActual = new Date();
+  let mesActual = fechaActual.getMonth() + 1; // Sumamos 1 ya que los meses en JavaScript van de 0 a 11
+  let anioActual = fechaActual.getFullYear();
+  let anioInicio = (mesActual >= 8) ? anioActual : anioActual - 1;
+  let anioFin = anioInicio + 1;
+  let periodoEscolar = `${anioInicio}-${anioFin}`;
+  
+  return periodoEscolar;
 }
+
+
 
 function fntPeriodoAnterior(periodo) {
   document.querySelector("#periodo-escolar-anterior option").innerHTML =

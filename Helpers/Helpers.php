@@ -28,6 +28,18 @@
         require_once ($view_footer);
     }
 
+    function obtenerPeriodoEscolarActual() {
+        $fechaActual = new DateTime();
+        $mesActual = $fechaActual->format('m');
+        $anioActual = $fechaActual->format('Y');
+        $anioInicio = ($mesActual >= 8) ? $anioActual : $anioActual - 1;
+        $anioFin = $anioInicio + 1;
+        $periodoEscolar = "$anioInicio-$anioFin";
+        
+        return $periodoEscolar;
+      }
+      
+
 
     
     //Muestra información formateada

@@ -95,6 +95,8 @@ class Estudiantes extends Controllers
 
         public function getSelectSecciones($id)
 		{
+			
+			
 			$htmlOptions = "";
             $intTurno = ($_POST['id']);
 			$arrData = $this->model ->selectSecciones($intTurno);

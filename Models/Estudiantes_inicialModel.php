@@ -4,6 +4,9 @@
  */
 class Estudiantes_inicialModel extends Mysql
 {
+    public $turno;
+    public $seccion;
+    public $periodo;
     public function __construct()
     {
         parent::__construct();
@@ -33,14 +36,15 @@ class Estudiantes_inicialModel extends Mysql
         public function selectSecciones_inicial(int $turno)
         {
             $this->intTurno = $turno;
+            $this->strPeriodo = obtenerPeriodoEscolarActual();
             $sql ="SELECT `seccion`.`id_seccion`,`seccion`.`docente_id`,`seccion`.`desc_seccion_id`,`desc_seccion`.`nombre_seccion`,`seccion`.`periodo_escolar`,`desc_seccion`.`turno_id`
                    FROM `seccion`
                    JOIN `desc_seccion` 
                    ON   `desc_seccion`.`id_desc_seccion` = `seccion`.`desc_seccion_id`
                    AND  `desc_seccion`.`id_desc_seccion` > 14 
-                   AND  `desc_seccion`.`turno_id` = $this->intTurno
-                   WHERE`seccion`.`periodo_escolar` = '2023-2024' OR '1'
-                   AND  `seccion`.`status` = 1  
+                   AND  `desc_seccion`.`turno_id` = {$this->intTurno}
+                   WHERE`seccion`.`periodo_escolar` = '$this->strPeriodo'
+                   AND  `seccion`.`status` = 1  OR `seccion`.`periodo_escolar` = 1
                    ORDER BY `seccion`.`desc_seccion_id`";
 			$request = $this->select_all($sql);
 			return $request;
@@ -56,7 +60,7 @@ class Estudiantes_inicialModel extends Mysql
                     FROM `seccion`
                     JOIN `docentes`
                     ON docentes.id_docentes = seccion.docente_id
-                    WHERE`seccion`.`id_seccion` =  {$this->intSeccion}";
+                    WHERE`seccion`.`id_seccion` =  {$this->intSeccion} AND `seccion`.`status` = 1 ";
 			$request = $this->select_all($sql);
 			return $request;
 		}
@@ -67,7 +71,7 @@ class Estudiantes_inicialModel extends Mysql
 			$this->intSeccion = $seccion;
 			$sql = "SELECT `seccion`.`id_seccion`, `seccion`.`periodo_escolar`
                     FROM `seccion`
-                    WHERE`seccion`.`id_seccion` =  {$this->intSeccion}";
+                    WHERE`seccion`.`id_seccion` =  {$this->intSeccion} AND `seccion`.`status` = 1";
 			$request = $this->select_all($sql);
 			return $request;
 		}
