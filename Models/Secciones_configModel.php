@@ -45,7 +45,8 @@ class Secciones_configModel extends Mysql
     {
         $sql ="SELECT `id_docentes`, CONCAT(`nombre_docente`,' ', `apellido_docente`) 
                AS 'nombre_completo' 
-               FROM `docentes`";
+               FROM `docentes`
+               WHERE `docentes`.`status` = 1";
         $request = $this->select_all($sql);
         return $request;
     }

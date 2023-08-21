@@ -65,6 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
         text: "<i class='fas fa-file-csv'></i> CSV",
         titleAttr: "Exportar a CSV",
         className: "btn btn-info",
+        exportOptions: {
+          columns: [1, 2, 3],
+        },
       },
     ],
     resonsieve: "true",

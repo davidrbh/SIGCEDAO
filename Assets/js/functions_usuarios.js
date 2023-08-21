@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 "className": "btn btn-success",
                 "exportOptions": {
                     "columns": [1,2,3,4,5,6,7]
-                }
+                },
             },{
                 "extend": "pdfHtml5",
                 "text": "<i class='fas fa-file-pdf'></i> PDF",
@@ -66,7 +66,10 @@ document.addEventListener('DOMContentLoaded', function(){
                 "extend": "csvHtml5",
                 "text": "<i class='fas fa-file-csv'></i> CSV",
                 "titleAttr":"Exportar a CSV",
-                "className": "btn btn-info"
+                "className": "btn btn-info",
+                "exportOptions": {
+                    "columns": [1,2,3,4,5,6,7]
+                },
             }
         ],
         "resonsieve":"true",
