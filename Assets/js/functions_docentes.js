@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     order: [[0, "desc"]],
   });
 
-  //NUEVA ESPECIALIDAD
+  //NUEVO DOCENTE
   if (document.querySelector("#formDocente")) {
     let formDocente = document.querySelector("#formDocente");
     formDocente.onsubmit = function (e) {
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
           let objData = JSON.parse(request.responseText);
           if (objData.status) {
             $("#modalFormDocente").modal("hide");
-            modalFormDocente.reset();
+            formDocente.reset();
             swal("Docente", objData.msg, "success");
             tableDocentes.api().ajax.reload(function () {});
           } else {
@@ -175,3 +175,127 @@ function openModal() {
       };
     }
   }
+
+
+  function fntEditDocente(id_docente) {
+  document.querySelector("#titleModal").innerHTML = "Actualizar Docente";
+  document.querySelector(".modal-header").classList.replace("headerRegister", "headerUpdate");
+  document.querySelector("#btnActionForm").classList.replace("btn-primary", "btn-info");
+  document.querySelector("#btnText").innerHTML = "Actualizar";
+
+  divLoading.style.display = "flex";
+
+  let request = window.XMLHttpRequest
+    ? new XMLHttpRequest()
+    : new ActiveXObject("Microsoft.XMLHTTP");
+  let ajaxUrl = base_url + "/Docentes/getDocente/" + id_docente;
+  
+  request.open("GET", ajaxUrl, true);
+  request.send();
+
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      let objData = JSON.parse(request.responseText);
+
+
+      if (objData.status) {
+        document.querySelector("#id_docente").value = objData.data.id_docentes;
+        document.querySelector("#nombreDocente").value = objData.data.nombre_docente;
+        document.querySelector("#apellidoDocente").value = objData.data.apellido_docente;
+        document.querySelector("#listNacionalidad_docente").value = objData.data.nacionalidad_docente;
+        document.querySelector("#cedulaDocente").value = objData.data.cedula_docente;
+        document.querySelector("#telefonoDocente").value = objData.data.celular_docente;
+        document.querySelector("#emailDocente").value = objData.data.correo_docente;
+        document.querySelector('#listEspecialidad').value = objData.data.especialidad_id;
+        document.querySelector("#listStatus").value = objData.data.status;
+
+        $("#listEspecialidad").selectpicker("render");
+        $("#listStatus").selectpicker("render");
+        
+
+        $("#modalFormDocente").modal("show");
+      } else {
+        swal("Error", objData.msg, "error");
+      }
+    }
+    divLoading.style.display = "none";
+    return false;
+  };
+}
+
+function fntDelDocente(id_docente) {
+  swal(
+    {
+      title: "Eliminar Docente",
+      text: "¿Realmente quiere eliminar el Docente?",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Si, eliminar!",
+      cancelButtonText: "No, cancelar!",
+      closeOnConfirm: false,
+      closeOnCancel: true,
+    },
+    function (isConfirm) {
+      if (isConfirm) {
+        let request = window.XMLHttpRequest
+          ? new XMLHttpRequest()
+          : new ActiveXObject("Microsoft.XMLHTTP");
+        let ajaxUrl = base_url + "/Docentes/delDocente/";
+        let strData = "id_docente=" + id_docente;
+        request.open("POST", ajaxUrl, true);
+        request.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        );
+        request.send(strData);
+        request.onreadystatechange = function () {
+          if (request.readyState == 4 && request.status == 200) {
+            let objData = JSON.parse(request.responseText);
+            if (objData.status) {
+              swal("Eliminar!", objData.msg, "success");
+              tableDocentes.api().ajax.reload(function () {});
+            } else {
+              swal("Atención!", objData.msg, "error");
+            }
+          }
+        };
+      }
+    }
+  );
+}
+
+function ftnViewDocente(id_docente)
+{
+    
+           
+            let  request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            let  ajaxUrl = base_url+'/Docentes/getDocente/'+id_docente; 
+            request.open("GET",ajaxUrl,true);
+            request.send();
+             request.onreadystatechange = function(){
+        if(request.readyState == 4 && request.status == 200){
+            let  objData = JSON.parse(request.responseText);
+
+            if(objData.status)
+            {
+               let  estadoDocente = objData.data.status == 1 
+                ? '<span class="badge badge-success">Activo</span>' 
+                : '<span class="badge badge-danger">Inactivo</span>';
+
+            
+                document.querySelector("#celNombre").innerHTML = objData.data.nombre_docente;
+                document.querySelector("#celApellido").innerHTML = objData.data.apellido_docente;
+                document.querySelector("#celCedula").innerHTML = objData.data.cedula;
+                document.querySelector("#celTelefono").innerHTML = objData.data.celular_docente;
+                document.querySelector("#celEmail").innerHTML = objData.data.correo_docente;
+                document.querySelector("#celEspecialidad").innerHTML = objData.data.nombre_especialidad;
+                document.querySelector("#celEstado").innerHTML = estadoDocente;
+             
+                $('#modalViewDocente').modal('show');
+            }else{
+                swal("Error", objData.msg , "error");
+            }
+        }
+    }
+
+}
