@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-08-2023 a las 06:59:54
+-- Tiempo de generación: 21-08-2023 a las 03:29:38
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.5
 
@@ -132,7 +132,8 @@ CREATE TABLE `especialidad` (
 
 INSERT INTO `especialidad` (`id_especialidad`, `nombre_especialidad`, `descripcion`, `status`) VALUES
 (1, 'Docente de Aula', 'Maestro de Aula', 1),
-(3, 'Docente Especialista', 'Especialista del área ', 1);
+(3, 'Docente Especialista', 'Especialista Del área', 1),
+(4, 'Ejemplo', 'Sdasdas', 0);
 
 -- --------------------------------------------------------
 
@@ -588,7 +589,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `cedula`, `nombres`, `apellidos`, `telefono`, `email_user`, `password`, `token`, `rol_id`, `datecreated`, `status`) VALUES
-(1, '24723325', 'Josue Sebastian', 'Hernandez Barrera', '0424-2029800', '7396davidrbh@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', 1, '2022-07-23 19:51:47', 1),
+(1, 'V-24723325', 'Josue Sebastian', 'Hernandez Barrera', '0424-2029800', '7396davidrbh@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', 1, '2022-07-23 19:51:47', 1),
 (2, 'V-14909718', 'Analix Dubraska', 'Hernandez Deyan', '0424-1697285', 'analix@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'b82c33bd7a7f6812facf-4419b02e4616b610625a-d4990f15b14a7dfe1fff-5ad55286698f85cdd', 2, '2022-07-24 21:14:03', 1),
 (9, 'V-3250811', 'Jildry', 'Marquez', '0212-8993222', 'mjildry23@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', 1, '2022-07-28 00:21:58', 1),
 (10, 'V-13528981', 'Richard', 'Parra', '0424-2939291', 'richard66np@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', 1, '2022-08-04 20:21:49', 1);
@@ -716,13 +717,13 @@ ALTER TABLE `desc_seccion`
 -- AUTO_INCREMENT de la tabla `docentes`
 --
 ALTER TABLE `docentes`
-  MODIFY `id_docentes` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_docentes` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `especialidad`
 --
 ALTER TABLE `especialidad`
-  MODIFY `id_especialidad` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_especialidad` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `estado`
