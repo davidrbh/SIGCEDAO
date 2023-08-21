@@ -92,7 +92,7 @@ class Docentes extends Controllers
 
 		$intId_docente = intval(strClean($intId_docente));
 		if ($intId_docente > 0) {
-			$arrData = $this->model->selectEspecialidad($intId_docente);
+			$arrData = $this->model->selectDocente($intId_docente);
 			if (empty($arrData)) {
 				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 			} else {
@@ -118,6 +118,105 @@ class Docentes extends Controllers
 		}
 		echo $htmlOptions;
 		die();		
+	}
+
+	public function setDocente()
+    {
+       
+
+
+		if ($_POST) {
+
+			if (empty($_POST['nombreDocente']) || empty($_POST['apellidoDocente']) || empty($_POST['cedulaDocente']) || empty($_POST['telefonoDocente']) || empty($_POST['emailDocente']) || empty($_POST['listStatus'])) {
+				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
+			} else {
+
+				$id_docente = intval($_POST['id_docente']);
+				$strNombreDocente = strClean($_POST['nombreDocente']);
+				$strApellidoDocente = strClean($_POST['apellidoDocente']);
+				$strNacionalidad = strClean($_POST['listNacionalidad_docente']);
+				$intCedula = strClean($_POST['cedulaDocente']);
+				$intTelefono = intval($_POST['telefonoDocente']);
+				$strEmail = strClean($_POST['emailDocente']);
+				$intEspecialidad = intval($_POST['listEspecialidad']);
+				$intStatus = intval($_POST['listStatus']);
+				
+				if ($id_docente == 0) {
+					$option = 1;
+
+					
+
+
+					$request_seccion_config = $this->model->insertDocente(
+						$strNombreDocente,
+						$strApellidoDocente,
+						$strNacionalidad,
+						$intCedula,
+						$intTelefono,
+						$strEmail,
+						$intEspecialidad,
+						$intStatus
+					);
+
+				} else {
+					$option = 2;
+
+					$request_seccion_config = $this->model->updateDocente(
+						$id_docente,
+						$strNombreDocente,
+						$strApellidoDocente,
+						$strNacionalidad,
+						$intCedula,
+						$intTelefono,
+						$strEmail,
+						$intEspecialidad,
+						$intStatus
+					);
+
+
+				}
+
+
+
+				if ($request_seccion_config > 0) {
+					if ($option == 1) {
+						$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+					} else {
+						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+					}
+				} else if ($request_seccion_config == false) {
+					$arrResponse = array('status' => false, 'msg' => '¡Atención! la Sección ya existe, ingrese otra.');
+				} else {
+					$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
+				}
+			}
+
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+    }
+
+
+    public function delDocente()
+	{
+	
+		if ($_POST) {
+
+			$id_docente = intval($_POST['id_docente']);
+			
+			$requestDelete = $this->model->deleteDocente($id_docente);
+			if ($requestDelete == 'ok') {
+
+				$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el Docente');
+			} else if ($requestDelete == 'exist') {
+				$arrResponse = array('status' => false, 'msg' => 'No es posible eliminar al Docente que esta asociado a una Sección.');
+			} else {
+				$arrResponse = array('status' => false, 'msg' => 'Error al eliminar el Docente.');
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+
+		}
+		die();
 	}
 
 	
