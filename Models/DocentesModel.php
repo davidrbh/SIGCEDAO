@@ -40,7 +40,7 @@ class DocentesModel extends Mysql
 		$this->intId_docente = $id_docente;
 		$sql = "SELECT `docentes`.`id_docentes`,`docentes`.`nombre_docente`,`docentes`.`apellido_docente`,
 		CONCAT(`docentes`.`nacionalidad_docente`,`docentes`.`cedula_docente`)
-		AS 'cedula',`especialidad`.`nombre_especialidad`,`docentes`.`celular_docente`,`docentes`.`correo_docente`,`docentes`.`correo_docente`,`docentes`.`status`
+		AS 'cedula',`docentes`.`cedula_docente`,`docentes`.`nacionalidad_docente`,`especialidad`.`nombre_especialidad`,`especialidad`.`id_especialidad`,`docentes`.`celular_docente`,`docentes`.`correo_docente`,`docentes`.`correo_docente`,`docentes`.`status`
 		FROM `docentes`
 		INNER JOIN `especialidad`
 		ON `especialidad`.`id_especialidad` = `docentes`.`especialidad_id`

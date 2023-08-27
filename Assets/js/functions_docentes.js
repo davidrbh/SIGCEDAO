@@ -206,9 +206,11 @@ function openModal() {
         document.querySelector("#cedulaDocente").value = objData.data.cedula_docente;
         document.querySelector("#telefonoDocente").value = objData.data.celular_docente;
         document.querySelector("#emailDocente").value = objData.data.correo_docente;
-        document.querySelector('#listEspecialidad').value = objData.data.especialidad_id;
+        document.querySelector('#listEspecialidad').value = objData.data.id_especialidad;
         document.querySelector("#listStatus").value = objData.data.status;
 
+        
+        $("#listNacionalidad_docente").selectpicker("render");
         $("#listEspecialidad").selectpicker("render");
         $("#listStatus").selectpicker("render");
         
