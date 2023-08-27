@@ -33,11 +33,7 @@
                 <li><a class="treeview-item" href="<?= base_url(); ?>/usuarios"><i class="icon fa fa-circle-o"></i>
                         Usuarios</a></li>
 
-                <li><a class="treeview-item" href="<?= base_url(); ?>/personal_administrativo"><i
-                            class="icon fa fa-circle-o"></i>
-                        Personal administrativo</a></li>
-
-
+                
 
                 <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview">
                         <i class="app-menu__icon fa fa-sitemap" aria-hidden="true"></i>
