@@ -2,10 +2,44 @@
     
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
+    use setasign\Fpdi\Fpdi; 
+
+    
 
     require 'Libraries/phpmailer/Exception.php';
     require 'Libraries/phpmailer/PHPMailer.php';
     require 'Libraries/phpmailer/SMTP.php';
+ // require 'Libraries/Fpdi/src/FpdfTpl/FpdfTpl.php';
+   // require 'Libraries/FPDI/src/Fpdi.php';
+
+   // require 'Libraries/FPDI/src/FpdfTpl/FpdfTpl.php';
+
+
+    // if (!function_exists('generateNewPdf')) {
+    //     function generateNewPdf($outputFilename, $content)
+    //     {
+    //         $pdf = new Fpdi();
+    //         $pdf->AddPage();
+    //         $pdf->SetFont('Arial', 'B', 16);
+    //         $pdf->Cell(40, 10, $content);
+    //         $pdf->Output($outputFilename, 'F');
+    //         return $outputFilename;
+    //     }
+    // }
+    
+    // if (!function_exists('importPdfContent')) {
+    //     function importPdfContent($outputFilename, $importFilename)
+    //     {
+    //         $pdf = new Fpdi();
+    //         $pageCount = $pdf->setSourceFile($importFilename);
+    //         $templateId = $pdf->importPage(1);
+    //         $pdf->AddPage();
+    //         $pdf->useTemplate($templateId);
+    //         $pdf->Output($outputFilename, 'F');
+    //         return $outputFilename;
+    //     }
+    // }
+ 
     //Retorna la url del proyecto
     function base_url()
     {
@@ -151,7 +185,7 @@
     function sessionStart()
     {
         session_start();
-        $inactive = 7600;
+        $inactive = 12000;
         if(isset($_SESSION['timeout']))
         {
             $session_in = time() - $_SESSION['inicio'];
