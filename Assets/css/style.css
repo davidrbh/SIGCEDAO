@@ -147,8 +147,34 @@ cursor: pointer;
 	font-size: 1.55rem;
 	
 }
+ .centrar{
+	width: 200px;
+	height: 200px;
+}
+.tile{
+	display:grid;
+	grid-row:2;
+}
+.col-md-x{
+	position: relative;
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	
+  }
+  @media (min-width: 768px) {
+
+.col-md-x {
+	-webkit-box-flex: 0;
+		-ms-flex: 0 0 25%;
+			flex: 0 0 25%;
+	max-width: 55%;}
 
 
+}
+
+
+		
 
 
 
