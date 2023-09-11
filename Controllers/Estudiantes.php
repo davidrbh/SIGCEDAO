@@ -336,7 +336,7 @@ class Estudiantes extends Controllers
 
 
 
-			$btnDelete = '<button class="btn btn-danger btn-sm btnDelEstudiante" onClick="fntDelEstudiante(' . $arrData[$i]['id_estudiante'] . ')" title="Eliminar Estudiante"><i class="far fa-trash-alt"></i></button>';
+			//$btnDelete = '<button class="btn btn-danger btn-sm btnDelEstudiante" onClick="fntDelEstudiante(' . $arrData[$i]['id_estudiante'] . ')" title="Eliminar Estudiante"><i class="far fa-trash-alt"></i></button>';
 
 			//$btnDelete = '<button class="btn btn-secondary btn-sm" disabled><i class="far fa-trash-alt"></i></button>';
 
@@ -352,6 +352,47 @@ class Estudiantes extends Controllers
 
 		die();
 		}
+
+		// public function delEstudiante()
+		// {
+		// 	if ($_POST) {
+	
+		// 		$intId_estudiante = intval($_POST['id_estudiante']);
+		// 		$requestDelete = $this->model->deleteEstudiante($intId_estudiante);
+		// 		if ($requestDelete == 'ok') {
+	
+		// 			$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado al Estudiante');
+		// 		} else if ($requestDelete == 'exist') {
+		// 			$arrResponse = array('status' => false, 'msg' => 'No es posible eliminar al estudiante asociado a una sección.');
+		// 		} else {
+		// 			$arrResponse = array('status' => false, 'msg' => 'Error al eliminar al estudiante.');
+		// 		}
+		// 		echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+	
+		// 	}
+		// 	die();
+		// }
+
+		public function getEstudiante(int $intId_estudiante)
+	{
+
+		$intId_estudiante = intval($intId_estudiante);
+		if ($intId_estudiante > 0) {
+			$arrData = $this->model->selectEstudiante($intId_estudiante);
+			if (empty($arrData)) {
+				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+			} else {
+				$arrResponse = array('status' => true, 'data' => $arrData);
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+
+		die();
+	}
+	
+
+
+
 
 
 

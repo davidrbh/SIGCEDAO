@@ -837,3 +837,400 @@
 
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalViewEstudiante" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog " >
+    <div class="modal-content">
+      <div class="modal-header header-primary">
+        <h5 class="modal-title" id="titleModal">Datos del estudiante</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <table class="table table-bordered">
+          <tbody>
+           
+            <tr>
+              <td>Primer Nombre:</td>
+              <td id="celNombre1">Jacob</td>
+            </tr>
+            <tr>
+              <td>Segundo Nombre:</td>
+              <td id="celNombre2">Jacob</td>
+            </tr>
+            <tr>
+              <td>Primer Apellido:</td>
+              <td id="celApellido1">Larry</td>
+            </tr>
+            <tr>
+              <td>Segundo Apellido:</td>
+              <td id="celApellido2">Larry</td>
+            </tr>
+            <tr>
+              <td>Cédula escolar:</td>
+              <td id="celCedula_escolar">Larry</td>
+            </tr>
+            <tr>
+              <td>Fecha de nacimiento:</td>
+              <td id="celFecha_nac">Larry</td>
+            </tr>
+            <tr>
+              <td>Género:</td>
+              <td id="celGenero">Larry</td>
+            </tr>
+            <tr>
+              <td>Nacionalidad:</td>
+              <td id="celNacionalidad">Larry</td>
+            </tr>
+            <tr>
+              <td>Estado:</td>
+              <td id="celEstado">Larry</td>
+            </tr>
+            <tr>
+              <td>Lugar de nacimiento:</td>
+              <td id="celNacimiento">Larry</td>
+            </tr>
+            <tr>
+              <td>Dirección:</td>
+              <td id="celDireccion">Larry</td>
+            </tr>
+            <tr>
+              <td>Nombre de la madre:</td>
+              <td id="celNombre_madre">Larry</td>
+            </tr>
+            <tr>
+              <td>Apellido de la madre:</td>
+              <td id="celApellido_madre">Larry</td>
+            </tr>
+            <tr>
+              <td>Nacionalidad de la madre:</td>
+              <td id="celNacionalidad_madre">Larry</td>
+            </tr>
+            <tr>
+              <td>Cédula de la madre:</td>
+              <td id="celCedula_madre">Larry</td>
+            </tr>
+            <tr>
+              <td>Ocupación de la madre:</td>
+              <td id="celOcupacion_madre">Larry</td>
+            </tr>
+            <tr>
+              <td>Teléfono de la madre:</td>
+              <td id="celTelefono_madre">Larry</td>
+            </tr>
+            <tr>
+              <td>Nombre del padre:</td>
+              <td id="celNombre_padre">Larry</td>
+            </tr>
+            <tr>
+              <td>Apellido del padre:</td>
+              <td id="celApellido_padre">Larry</td>
+            </tr>
+            <tr>
+              <td>Nacionalidad del padre:</td>
+              <td id="celNacionalidad_padre">Larry</td>
+            </tr>
+            <tr>
+              <td>Cédula del padre:</td>
+              <td id="celCedula_padre">Larry</td>
+            </tr>
+            <tr>
+              <td>Ocupación del padre:</td>
+              <td id="celOcupacion_padre">Larry</td>
+            </tr>
+            <tr>
+              <td>Teléfono del padre:</td>
+              <td id="celTelefono_padre">Larry</td>
+            </tr>
+            <tr>
+              <td>Nombre del representante:</td>
+              <td id="celNombre_repre">Larry</td>
+            </tr>
+            <tr>
+              <td>Apellido del representante:</td>
+              <td id="celApellido_repre">Larry</td>
+            </tr>
+            <tr>
+              <td>Nacionalidad del representante:</td>
+              <td id="celNacionalidad_repre">Larry</td>
+            </tr>
+            <tr>
+              <td>Cédula del representante:</td>
+              <td id="celCedula_repre">Larry</td>
+            </tr>
+            <tr>
+              <td>Parentesco del representante:</td>
+              <td id="celParentesco">Larry</td>
+            </tr>
+            <tr>
+              <td>Ocupación del representante:</td>
+              <td id="celOcupacion_repre">Larry</td>
+            </tr>
+            <tr>
+              <td>Teléfono del representante:</td>
+              <td id="celTelefono_repre">Larry</td>
+            </tr>
+            <tr>
+              <td>Celular del representante:</td>
+              <td id="celCelular_repre">Larry</td>
+            </tr>
+            <tr>
+              <td>Dirección del representante:</td>
+              <td id="celDireccion_repre">Larry</td>
+            </tr>
+            <tr>
+              <td>Colaboración con el plantel:</td>
+              <td id="celColaboracion">Larry</td>
+            </tr>
+            <tr>
+              <td>Nombre del plantel:</td>
+              <td id="celPLantel">Larry</td>
+            </tr>
+            <tr>
+              <td>Grado cursado:</td>
+              <td id="celGrado_cursado">Larry</td>
+            </tr>
+            <tr>
+              <td>Périodo escolar:</td>
+              <td id="celPeriodo_anterior">Larry</td>
+            </tr>
+            <tr>
+              <td>Literal:</td>
+              <td id="celLiteral">Larry</td>
+            </tr>
+            <tr>
+              <td>Es repitiente?:</td>
+              <td id="celRepitiente">Larry</td>
+            </tr>
+            <tr>
+              <td>Tipo de alumno:</td>
+              <td id="celTipo_alumno">Larry</td>
+            </tr>
+            <tr>
+              <td>Turno:</td>
+              <td id="celTurno">Larry</td>
+            </tr>
+            <tr>
+              <td>Sección:</td>
+              <td id="celSeccion">Larry</td>
+            </tr>
+            <tr>
+              <td>Nuevo périodo escolar:</td>
+              <td id="celNuevo_periodo">Larry</td>
+            </tr>
+            <tr>
+              <td>Fucionario que registra:</td>
+              <td id="celFuncionario">Larry</td>
+            </tr>
+            <tr>
+              <td>Fecha de inscripción:</td>
+              <td id="celInscripcion">Larry</td>
+            </tr>
+            <tr>
+              <td>Padece de enfermedad?:</td>
+              <td id="celPadece_enfermedad">Larry</td>
+            </tr>
+            <tr>
+              <td>Nombre de la enfermedad:</td>
+              <td id="celNombre_enfermedad">Larry</td>
+            </tr>
+            <tr>
+              <td>Utiliza tratamiento?:</td>
+              <td id="celUtiliza_tratamiento">Larry</td>
+            </tr>
+            <tr>
+              <td>Nombre del tratamiento:</td>
+              <td id="celNombre_tratamiento">Larry</td>
+            </tr>
+            <tr>
+              <td>Alergico a medicamento?:</td>
+              <td id="celAlergico_medicamento">Larry</td>
+            </tr>
+            <tr>
+              <td>Nombre del medicamento:</td>
+              <td id="celNombre_medicamento">Larry</td>
+            </tr>
+            <tr>
+              <td>Rubeola:</td>
+              <td id="celRubeola">Larry</td>
+            </tr>
+            <tr>
+              <td>Sarampión:</td>
+              <td id="celSarampión">Larry</td>
+            </tr>
+            <tr>
+              <td>Lechina:</td>
+              <td id="celLechina">Larry</td>
+            </tr>
+            <tr>
+              <td>Paperas:</td>
+              <td id="celPaperas">Larry</td>
+            </tr>
+            <tr>
+              <td>Posee otra enfermedad?:</td>
+              <td id="celOtra_enfermedad">Larry</td>
+            </tr>
+            <tr>
+              <td>Nombre de la enfermedad:</td>
+              <td id="celNombre_enfermedadOtra">Larry</td>
+            </tr>
+            <tr>
+              <td>Ninguna enfermdad:</td>
+              <td id="celNinguna">Larry</td>
+            </tr>
+            <tr>
+              <td>Atendido por psicológo?:</td>
+              <td id="celPsicologo">Larry</td>
+            </tr>
+            <tr>
+              <td>Tipo de nacimiento de parto:</td>
+              <td id="celNacimiento_parto">Larry</td>
+            </tr>
+            <tr>
+              <td>Se va solo?:</td>
+              <td id="celSolo">Larry</td>
+            </tr>
+            <tr>
+              <td>Nombre del representante:</td>
+              <td id="celRepre_retiro">Larry</td>
+            </tr>
+            <tr>
+              <td>Parentesco:</td>
+              <td id="celParentesco_retiro">Larry</td>
+            </tr>
+            <tr>
+              <td>Vive con la madre:</td>
+              <td id="celVive_madre">Larry</td>
+            </tr>
+            <tr>
+              <td>Vive con el padre:</td>
+              <td id="celVive_padre">Larry</td>
+            </tr>
+            <tr>
+              <td>Vive con hermanos:</td>
+              <td id="celVive_hermanos">Larry</td>
+            </tr>
+            <tr>
+              <td>Cuantos hermanos:</td>
+              <td id="celHermanos">Larry</td>
+            </tr>
+            <tr>
+              <td>Cuantas hermanas:</td>
+              <td id="celHermanas">Larry</td>
+            </tr>
+            <tr>
+              <td>Vive con otra persona:</td>
+              <td id="celVive_otra">Larry</td>
+            </tr>
+            <tr>
+              <td>Con quién vive?:</td>
+              <td id="celVive_quien">Larry</td>
+            </tr>
+            <tr>
+              <td>Tiene Hermanos en el plantel?:</td>
+              <td id="celHermanos_plantel">Larry</td>
+            </tr>
+            <tr>
+              <td>Cuantos hermanos:</td>
+              <td id="celCuantos_hermano">Larry</td>
+            </tr>
+            <tr>
+              <td>Grado que cursan:</td>
+              <td id="celGrado_cursan">Larry</td>
+            </tr>
+            <tr>
+              <td>Turno que cursan:</td>
+              <td id="celturno_cursan">Larry</td>
+            </tr>
+            <tr>
+              <td>Tipo de vivienda :</td>
+              <td id="celVivienda">Larry</td>
+            </tr>
+            <tr>
+              <td>Condición de la vivienda:</td>
+              <td id="celCondicion">Larry</td>
+            </tr>
+            <tr>
+              <td>Ingresos familiares:</td>
+              <td id="celIngresos">Larry</td>
+            </tr>
+            <tr>
+              <td>N* personas que dependen del ingreso:</td>
+              <td id="celPersonas_ingresos">Larry</td>
+            </tr>
+            <tr>
+              <td>Boletin de calificaciones:</td>
+              <td id="celCalificaciones">Larry</td>
+            </tr>
+            <tr>
+              <td>Boletin de promoción:</td>
+              <td id="celPromocion">Larry</td>
+            </tr>
+            <tr>
+              <td>Carta de buena conducta:</td>
+              <td id="celConducta">Larry</td>
+            </tr>
+            <tr>
+              <td>Copia de partida de nacimiento:</td>
+              <td id="celPartida_nac">Larry</td>
+            </tr>
+            <tr>
+              <td>Copia de cédula del alumno/a:</td>
+              <td id="celCopia_cedula">Larry</td>
+            </tr>
+            <tr>
+              <td>Foto del alumno:</td>
+              <td id="celFoto">Larry</td>
+            </tr>
+            <tr>
+              <td>Copia de cédula del representante:</td>
+              <td id="celCedcopia_repre">Larry</td>
+            </tr>
+            <tr>
+              <td>Foto del representante:</td>
+              <td id="celFoto_repre">Larry</td>
+            </tr>
+            <tr>
+              <td>Boletin de grado:</td>
+              <td id="celBoletin_grado">Larry</td>
+            </tr>
+            <tr>
+              <td>Otros documentos:</td>
+              <td id="celOtros_documentos">Larry</td>
+            </tr>
+            <tr>
+              <td>Documentos:</td>
+              <td id="celDocumentos">Larry</td>
+            </tr>
+            <tr>
+              <td>Status:</td>
+              <td id="celStatus">Larry</td>
+            </tr>
+
+           
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

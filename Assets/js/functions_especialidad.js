@@ -226,7 +226,7 @@ function fntDelEspecialidad(id_especialidad) {
 
 function ftnViewEspecialidad(id_especialidad)
 {
-    
+
            
             let  request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             let  ajaxUrl = base_url+'/Especialidad/getEspecialidad/'+id_especialidad; 
