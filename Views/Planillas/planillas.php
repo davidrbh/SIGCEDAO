@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-md-12">
                 <div class="tile" style="
-          display: grid;
+            display: grid;
 	        grid-template-columns: repeat(2, 1fr);
 	        grid-gap: 10px;
 	        grid-auto-rows: minmax(80px, auto)">
