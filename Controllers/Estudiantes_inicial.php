@@ -131,7 +131,7 @@ class Estudiantes_inicial extends Controllers
 
 
 
-			$btnDelete = '<button class="btn btn-danger btn-sm btnDelEstudiante_inicial" onClick="fntDelEstudiante_inicial(' . $arrData[$i]['inicial_id'] . ')" title="Eliminar Estudiante"><i class="far fa-trash-alt"></i></button>';
+			//$btnDelete = '<button class="btn btn-danger btn-sm btnDelEstudiante_inicial" onClick="fntDelEstudiante_inicial(' . $arrData[$i]['inicial_id'] . ')" title="Eliminar Estudiante"><i class="far fa-trash-alt"></i></button>';
 
 			//$btnDelete = '<button class="btn btn-secondary btn-sm" disabled><i class="far fa-trash-alt"></i></button>';
 
@@ -147,6 +147,25 @@ class Estudiantes_inicial extends Controllers
 
 		die();
 		}
+
+
+		public function getEstudiante_inicial(int $intId_estudiante)
+		{
+	
+			$intId_estudiante = intval($intId_estudiante);
+			if ($intId_estudiante > 0) {
+				$arrData = $this->model->selectEstudiante_inicial($intId_estudiante);
+				if (empty($arrData)) {
+					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+				} else {
+					$arrResponse = array('status' => true, 'data' => $arrData);
+				}
+				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+			}
+	
+			die();
+		}
+		
 
 }
 

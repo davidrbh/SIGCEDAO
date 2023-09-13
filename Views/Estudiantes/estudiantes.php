@@ -33,16 +33,7 @@
                   <thead>
                     <tr>
                       
-                      <!-- <th>Acciones</th>
-                      <th>Nombre</th>
-                      <th>Apellido</th>
-                      <th>Cédula</th>
-                      <th>Representante</th>
-                      <th>Teléfono</th>
-                      <th>Celular</th>
-                      <th>Sección</th>
-                      <th>Turno</th>
-                      <th>Status</th> -->
+               
                       <th>Acciones</th>
                       <th>Primer nombre</th>
                       <th>Segundo nombre</th>

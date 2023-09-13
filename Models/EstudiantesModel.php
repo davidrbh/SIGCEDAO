@@ -220,7 +220,7 @@ class EstudiantesModel extends Mysql
         LEFT JOIN `desc_seccion` 
         ON `desc_seccion`.`id_desc_seccion` = `seccion`.`desc_seccion_id`
         LEFT JOIN `estado`
-        ON `estudiantes`.`estado_id` = `estado`.`id_estado` WHERE id_estudiante = $this->intId_estudiante";
+        ON `estudiantes`.`estado_id` = `estado`.`id_estado` WHERE id_estudiante = $this->intId_estudiante AND `estudiantes`.`status`!= 0 ";
 		$request = $this->select($sql);
 		return $request;
 	}
