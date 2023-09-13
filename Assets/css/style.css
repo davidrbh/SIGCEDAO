@@ -57,7 +57,7 @@
 	display: none;
 }
 
-.conteoner {
+.container {
 	width: 75vw;
 	max-width: 1000px;
 	min-width: 320px;
@@ -86,14 +86,86 @@ img {
 
 }
 
-.logos-logo{
+ .logos-logo{
 	
-	position: relative;
-  top: -120px;
-  left: 900px;
+  position: relative;
+  top: -120px; 
+  left: 780px;
+
+} 
 
 
+@media (max-width: 1200.98px) {
+	.logos-logo{
+		width: 75px;
+		position: relative;
+		top: -120px; 
+		left: 700px;
+	}
+	
 }
+@media (max-width: 1000.98px) {
+	.logos-logo{
+		width: 75px;
+		position: relative;
+		top: 0px; 
+		left: 198px;
+	}
+	
+}
+
+
+@media (max-width: 728.98px) {
+	.logos-logo{
+		width: 75px;
+		position: relative;
+		top: 0px; 
+		left: 106px;
+	}
+	
+}
+
+
+@media (max-width: 628.98px) {
+	.logos-logo{
+		width: 75px;
+		position: relative;
+		top: 0px; 
+		left: 69px;
+	}
+	
+}
+
+@media (max-width: 528.98px) {
+	.logos-logo{
+		width: 75px;
+		position: relative;
+		top: 0px; 
+		left: 48px;
+	}
+	
+}
+
+@media (max-width: 428px) {
+	.logos-logo{
+		width: 70px;
+		position: relative;
+		top: 0px; 
+		left: 30px;
+	}
+	
+}
+/* @media (max-width: 768px) {
+	.logos-logo{
+		width: 100px;
+		position: relative;
+		top: 0px; 
+		left: 140px;
+	}
+	
+} */
+
+
 
 label{
 cursor: pointer;
@@ -146,6 +218,11 @@ cursor: pointer;
 	text-align: center;
 	font-size: 1.55rem;
 	
+}
+
+#escudo{
+	width: 450px;
+	 margin-left: 1.2rem;
 }
 
 
