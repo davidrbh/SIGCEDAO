@@ -1,7 +1,7 @@
 <div class="container panal-footer">
     <hr width="95%">
     <p class="text-center">Sistema de Gestión y Control de Estudiantes para la Escuela Distrital Antonio Ornés</p>
-    <p class="text-center">Copyright © 2023 Universidad Politecnica Territorial de Caracas Mariscal Sucre</p>
+    <p class="text-center">Copyright ©  <?php echo date('Y'); ?> Universidad Politecnica Territorial de Caracas Mariscal Sucre</p>
     <p class="text-center">Todos los Derechos Reservados</p>
     <img class="logos-logo" src="<?= media(); ?>/images/logo-colegio.png" alt width="80px">
     <img class="logos-logo" src="<?= media(); ?>/images/logo-uni.png" alt width="100px">
