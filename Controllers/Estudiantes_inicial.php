@@ -109,13 +109,145 @@ class Estudiantes_inicial extends Controllers
 			} else {
 				$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
 			}
+
+			if ($arrData[$i]['nombre_alumno2'] == "") {
+				$arrData[$i]['nombre_alumno2'] = 'No posee';
+			}else{
+				$arrData[$i]['nombre_alumno2'] == $arrData[$i]['nombre_alumno2'] ;
+			}
+
+			if ($arrData[$i]['apellido_alumno2'] == "") {
+				$arrData[$i]['apellido_alumno2'] = 'No posee';
+			}else{
+				$arrData[$i]['apellido_alumno2'] == $arrData[$i]['apellido_alumno2'] ;
+			}
+
+			if ($arrData[$i]['genero'] == 1) {
+				$arrData[$i]['genero'] = 'Masculino';
+			}else{
+				$arrData[$i]['genero'] ='Femenino' ;
+			}
+			if ($arrData[$i]['nacionalidad_alumno'] == 1) {
+				$arrData[$i]['nacionalidad_alumno'] = 'Venezolana';
+			}else{
+				$arrData[$i]['nacionalidad_alumno'] ='Extranjera' ;
+			}
+
+			if ($arrData[$i]['tipo_nacionalidad_padre'] == 1) {
+				$arrData[$i]['tipo_nacionalidad_padre'] = 'Venezolana';
+			}else{
+				$arrData[$i]['tipo_nacionalidad_padre'] ='Extranjera' ;
+			}
+
+			if ($arrData[$i]['tiene_hermanos'] == 1) {
+				$arrData[$i]['tiene_hermanos'] = 'Si';
+			}else{
+				$arrData[$i]['tiene_hermanos'] ='No' ;
+			}
+
 			if ($arrData[$i]['turno'] == 1) {
 				$arrData[$i]['turno'] = 'Diurno';
 			}else{
 				$arrData[$i]['turno'] ='Vespertino' ;
 			}
 
-			$arrData[$i]['nombre_madre'] =   $arrData[$i]['nombre_madre'].' '.$arrData[$i]['apellido_madre'];
+			if ($arrData[$i]['telefono_trabajo_madre'] == "") {
+				$arrData[$i]['telefono_trabajo_madre'] = 'No posee';
+			}else{
+				$arrData[$i]['telefono_trabajo_madre'] == $arrData[$i]['telefono_trabajo_madre'] ;
+			}
+
+			if ($arrData[$i]['telefono_trabajo_padre'] == "") {
+				$arrData[$i]['telefono_trabajo_padre'] = 'No posee';
+			}else{
+				$arrData[$i]['telefono_trabajo_padre'] == $arrData[$i]['telefono_trabajo_padre'] ;
+			}
+
+			if ($arrData[$i]['otros_datos_madre'] == "") {
+				$arrData[$i]['otros_datos_madre'] = 'Ninguno';
+			}else{
+				$arrData[$i]['otros_datos_madre'] == $arrData[$i]['otros_datos_madre'] ;
+			}
+
+			if ($arrData[$i]['otros_datos_padre'] == "") {
+				$arrData[$i]['otros_datos_padre'] = 'Ninguno';
+			}else{
+				$arrData[$i]['otros_datos_padre'] == $arrData[$i]['otros_datos_padre'] ;
+			}
+
+			if ($arrData[$i]['cual_problema_parto'] == "") {
+				$arrData[$i]['cual_problema_parto'] = 'Ninguno';
+			}else{
+				$arrData[$i]['cual_problema_parto'] == $arrData[$i]['cual_problema_parto'] ;
+			}
+
+			if ($arrData[$i]['cual_problema'] == "") {
+				$arrData[$i]['cual_problema'] = 'Ninguno';
+			}else{
+				$arrData[$i]['cual_problema'] == $arrData[$i]['cual_problema'] ;
+			}
+
+			if ($arrData[$i]['especifique_alergia'] == "") {
+				$arrData[$i]['especifique_alergia'] = 'Ninguna';
+			}else{
+				$arrData[$i]['turespecifique_alergiano'] == $arrData[$i]['turespecifique_alergiano'] ;
+			}
+
+			if ($arrData[$i]['causa_hospitalizado'] == "") {
+				$arrData[$i]['causa_hospitalizado'] = 'Ninguna';
+			}else{
+				$arrData[$i]['causa_hospitalizado'] == $arrData[$i]['causa_hospitalizado']  ;
+			}
+
+			if ($arrData[$i]['motora'] == 1) {
+				$arrData[$i]['motora'] = 'Si';
+			}else{
+				$arrData[$i]['motora'] ='No' ;
+			}
+
+			if ($arrData[$i]['crecimiento'] == 1) {
+				$arrData[$i]['crecimiento'] = 'Si';
+			}else{
+				$arrData[$i]['crecimiento'] ='No' ;
+			}
+
+			if ($arrData[$i]['auditiva'] == 1) {
+				$arrData[$i]['auditiva'] = 'Si';
+			}else{
+				$arrData[$i]['auditiva'] ='No' ;
+			}
+
+			if ($arrData[$i]['visual'] == 1) {
+				$arrData[$i]['visual'] = 'Si';
+			}else{
+				$arrData[$i]['visual'] ='No' ;
+			}
+
+			if ($arrData[$i]['otra_discapacidad'] == 1) {
+				$arrData[$i]['otra_discapacidad'] = 'Si';
+			}else{
+				$arrData[$i]['otra_discapacidad'] ='No' ;
+			}
+
+			if ($arrData[$i]['especifique_discapacidad'] == "") {
+				$arrData[$i]['especifique_discapacidad'] = 'Ninguna';
+			}else{
+				$arrData[$i]['especifique_discapacidad'] == $arrData[$i]['especifique_discapacidad'] ;
+			}
+
+			if ($arrData[$i]['cual_especialista'] == "") {
+				$arrData[$i]['cual_especialista'] = 'Ninguna';
+			}else{
+				$arrData[$i]['cual_especialista'] == $arrData[$i]['cual_especialista'] ;
+			}
+
+			if ($arrData[$i]['informacion_importante'] == "") {
+				$arrData[$i]['informacion_importante'] = 'Ninguna';
+			}else{
+				$arrData[$i]['informacion_importante'] == $arrData[$i]['informacion_importante'] ;
+			}
+
+			
 
 
 			$btnView = '<button class="btn btn-info btn-sm btnViewEstudiante_inicial" onClick="ftnViewEstudiante_inicial(' . $arrData[$i]['inicial_id'] . ')" title="Ver Estudiante"><i class="fa fa-eye" aria-hidden="true"></i></button>';

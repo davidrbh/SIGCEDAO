@@ -127,10 +127,10 @@
                      <th>Ha sido hospitalizado alguna vez?</th>
                      <th>Causa?</th>
                      <th>En caso de fiebre alta, que medicamento le administra?</th>
-                     <th>Motora</th>
-                     <th>De crecimiento</th>
-                     <th>Auditiva</th>
-                     <th>Visual</th>
+                     <th>Discapacidad motora</th>
+                     <th>Discapacidad de crecimiento</th>
+                     <th>Discapacidad auditiva</th>
+                     <th>Discapacidad visual</th>
                      <th>Otra discapacidad?</th>
                      <th>Cuál?</th>
                      <th>Es atendido por especialitas?</th>

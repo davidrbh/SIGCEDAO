@@ -1055,7 +1055,7 @@
               <td id="celNacionalidad">Larry</td>
             </tr>
             <tr>
-              <td>Estado:</td>
+              <td>Entidad federal:</td>
               <td id="celEstado">Larry</td>
             </tr>
             <tr>
@@ -1063,8 +1063,56 @@
               <td id="celNacimiento">Larry</td>
             </tr>
             <tr>
-              <td>Dirección:</td>
-              <td id="celDireccion">Larry</td>
+              <td>Talla de camisa:</td>
+              <td id="celTalla_camisa">Larry</td>
+            </tr>
+            <tr>
+              <td>Talla de pantalón:</td>
+              <td id="celTalla_pantalon">Larry</td>
+            </tr>
+            <tr>
+              <td>Talla de zapato:</td>
+              <td id="celTalla_zapato">Larry</td>
+            </tr>
+            <tr>
+              <td>Peso (KG):</td>
+              <td id="celPeso">Larry</td>
+            </tr>
+            <tr>
+              <td>Estatura (Metro):</td>
+              <td id="celEstatura">Larry</td>
+            </tr>
+            <tr>
+              <td>Tiene hermanos?:</td>
+              <td id="celHermanos">Larry</td>
+            </tr>
+            <tr>
+              <td>Cuantos hermanos?:</td>
+              <td id="celCuantos_hermanos">Larry</td>
+            </tr>
+            <tr>
+              <td>Tipo de alumno:</td>
+              <td id="celTipo_alumno">Larry</td>
+            </tr>
+            <tr>
+              <td>Turno:</td>
+              <td id="celTurno">Larry</td>
+            </tr>
+            <tr>
+              <td>Sección:</td>
+              <td id="celSeccion">Larry</td>
+            </tr>
+            <tr>
+              <td>Periodo escolar:</td>
+              <td id="celPeriodo_escolar">Larry</td>
+            </tr>
+            <tr>
+              <td>Funcionario:</td>
+              <td id="celFuncionario">Larry</td>
+            </tr>
+            <tr>
+              <td>Fecha de inscripción:</td>
+              <td id="celFec_inscripcion">Larry</td>
             </tr>
             <tr>
               <td>Nombre de la madre:</td>
@@ -1083,12 +1131,48 @@
               <td id="celCedula_madre">Larry</td>
             </tr>
             <tr>
-              <td>Ocupación de la madre:</td>
-              <td id="celOcupacion_madre">Larry</td>
+              <td>Estado civil:</td>
+              <td id="celCivil_madre">Larry</td>
+            </tr>
+            <tr>
+              <td>Lugar de nacimiento de la madre:</td>
+              <td id="celLugarNac_madre">Larry</td>
+            </tr>
+            <tr>
+              <td>Nacionalidad:</td>
+              <td id="celNacionalidad_madre2">Larry</td>
+            </tr> 
+            <tr>
+              <td>Entidad federal:</td>
+              <td id="celEntidad_federalMadre">Larry</td>
+            </tr>
+            <tr>
+              <td>Fecha de nacimiento:</td>
+              <td id="celFec_nacimientoMadre">Larry</td>
+            </tr>
+            <tr>
+              <td>Dirección de la madre:</td>
+              <td id="celDireccion_madre">Larry</td>
             </tr>
             <tr>
               <td>Teléfono de la madre:</td>
               <td id="celTelefono_madre">Larry</td>
+            </tr>
+            <tr>
+              <td>Dirección de trabajo de la madre:</td>
+              <td id="celTrabajo_madre">Larry</td>
+            </tr>
+            <tr>
+              <td>Teléfono del trabajo:</td>
+              <td id="celTeleTrabajo_madre">Larry</td>
+            </tr>
+            <tr>
+              <td>Nivel academico:</td>
+              <td id="celNivel_academicoMadre">Larry</td>
+            </tr>
+            <tr>
+              <td>Otros datos importantes de la madre:</td>
+              <td id="celOtros_datos1">Larry</td>
             </tr>
             <tr>
               <td>Nombre del padre:</td>
@@ -1107,272 +1191,268 @@
               <td id="celCedula_padre">Larry</td>
             </tr>
             <tr>
-              <td>Ocupación del padre:</td>
-              <td id="celOcupacion_padre">Larry</td>
+              <td>Estado civil:</td>
+              <td id="celCivil_padre">Larry</td>
+            </tr>
+            <tr>
+              <td>Lugar de nacimiento del padre:</td>
+              <td id="celLugarNac_padre">Larry</td>
+            </tr>
+            <tr>
+              <td>Nacionalidad:</td>
+              <td id="celNacionalidad_padre2">Larry</td>
+            </tr>
+            <tr>
+              <td>Entidad federal:</td>
+              <td id="celEntidad_federalPadre">Larry</td>
+            </tr>
+            <tr>
+              <td>Fecha de nacimiento:</td>
+              <td id="celFec_nacimientoPadre">Larry</td>
+            </tr>
+            <tr>
+              <td>Dirección del padre:</td>
+              <td id="celDireccion_padre">Larry</td>
             </tr>
             <tr>
               <td>Teléfono del padre:</td>
               <td id="celTelefono_padre">Larry</td>
             </tr>
             <tr>
-              <td>Nombre del representante:</td>
-              <td id="celNombre_repre">Larry</td>
+              <td>Dirección de trabajo del padre:</td>
+              <td id="celTrabajo_padre">Larry</td>
             </tr>
             <tr>
-              <td>Apellido del representante:</td>
-              <td id="celApellido_repre">Larry</td>
+              <td>Teléfono del trabajo:</td>
+              <td id="celTeleTrabajo_padre">Larry</td>
             </tr>
             <tr>
-              <td>Nacionalidad del representante:</td>
-              <td id="celNacionalidad_repre">Larry</td>
+              <td>Nivel academico:</td>
+              <td id="celNivel_academicoPadre">Larry</td>
             </tr>
             <tr>
-              <td>Cédula del representante:</td>
-              <td id="celCedula_repre">Larry</td>
+              <td>Otros datos importantes del padre:</td>
+              <td id="celOtros_datos2">Larry</td>
             </tr>
             <tr>
-              <td>Parentesco del representante:</td>
+              <td>Come solo?:</td>
+              <td id="celCome_solo">Larry</td>
+            </tr>
+            <tr>
+              <td>Lo ayudan?:</td>
+              <td id="celLo_ayudan">Larry</td>
+            </tr>
+            <tr>
+              <td>Quién lo ayuda:</td>
+              <td id="celQuien_loayuda">Larry</td>
+            </tr>
+            <tr>
+              <td>Comida favorita:</td>
+              <td id="celComida_favorita">Larry</td>
+            </tr>
+            <tr>
+              <td>Comida que rechaza:</td>
+              <td id="celComida_rechaza">Larry</td>
+            </tr>
+            <tr>
+              <td>Alimentos prohibidos:</td>
+              <td id="celAlimentos_prohibidos">Larry</td>
+            </tr>
+            <tr>
+              <td>Controla el esfinteres?:</td>
+              <td id="celEsfinteres">Larry</td>
+            </tr>
+            <tr>
+              <td>Se asea solo?:</td>
+              <td id="celAsea_solo">Larry</td>
+            </tr>
+            <tr>
+              <td>Cuantas horas duerme?:</td>
+              <td id="celHora_duerme">Larry</td>
+            </tr>
+            <tr>
+              <td>Tiempo que le dedica la madre:</td>
+              <td id="celTiempo_madre">Larry</td>
+            </tr>
+            <tr>
+              <td>Tiempo que le dedica el padre:</td>
+              <td id="celTiempo_padre">Larry</td>
+            </tr>
+            <tr>
+              <td>Tiempo que le dedica los abuelos:</td>
+              <td id="celTiempo_abuelo">Larry</td>
+            </tr>
+            <tr>
+              <td>Nombre de la persona que lo retira:</td>
+              <td id="celNombre_retira">Larry</td>
+            </tr>
+            <tr>
+              <td>Nacionalidad:</td>
+              <td id="celNacionalidad_retira">Larry</td>
+            </tr>
+            <tr>
+              <td>Cédula:</td>
+              <td id="celCedula_retira">Larry</td>
+            </tr>
+            <tr>
+              <td>Teléfono:</td>
+              <td id="celTelefono_retira">Larry</td>
+            </tr>
+            <tr>
+              <td>Parentesco con el alumno:</td>
               <td id="celParentesco">Larry</td>
             </tr>
             <tr>
-              <td>Ocupación del representante:</td>
-              <td id="celOcupacion_repre">Larry</td>
+              <td>Situación del embarazo de la madre:</td>
+              <td id="celSituacion_embarazo">Larry</td>
             </tr>
             <tr>
-              <td>Teléfono del representante:</td>
-              <td id="celTelefono_repre">Larry</td>
+              <td>Enfermedades durante el embarazo:</td>
+              <td id="celEnfermedades_embarazo">Larry</td>
             </tr>
             <tr>
-              <td>Celular del representante:</td>
-              <td id="celCelular_repre">Larry</td>
+              <td>Oficio o trabajo realizado durante el mismo:</td>
+              <td id="celOficio">Larry</td>
             </tr>
             <tr>
-              <td>Dirección del representante:</td>
-              <td id="celDireccion_repre">Larry</td>
+              <td>Situación del parto en el nacimiento:</td>
+              <td id="celSituacion_parto">Larry</td>
             </tr>
             <tr>
-              <td>Colaboración con el plantel:</td>
-              <td id="celColaboracion">Larry</td>
+              <td>Edad durante el parto:</td>
+              <td id="celEdad_parto">Larry</td>
             </tr>
             <tr>
-              <td>Nombre del plantel:</td>
-              <td id="celPLantel">Larry</td>
+              <td>Problemas durante el parto?:</td>
+              <td id="celProblemas_duranteParto">Larry</td>
             </tr>
             <tr>
-              <td>Grado cursado:</td>
-              <td id="celGrado_cursado">Larry</td>
+              <td>Cual problema?:</td>
+              <td id="celCual_problema1">Larry</td>
             </tr>
             <tr>
-              <td>Périodo escolar:</td>
-              <td id="celPeriodo_anterior">Larry</td>
+              <td>Peso al nacer(KG):</td>
+              <td id="celPeso_alNacer">Larry</td>
             </tr>
             <tr>
-              <td>Literal:</td>
-              <td id="celLiteral">Larry</td>
+              <td>Talla(CM):</td>
+              <td id="celTalla_alNacer">Larry</td>
             </tr>
             <tr>
-              <td>Es repitiente?:</td>
-              <td id="celRepitiente">Larry</td>
+              <td>Problemas a los primeros dias del parto?:</td>
+              <td id="celProblemas_primerosDias">Larry</td>
             </tr>
             <tr>
-              <td>Tipo de alumno:</td>
-              <td id="celTipo_alumno">Larry</td>
+              <td>Cual problema?:</td>
+              <td id="celCual_problema2">Larry</td>
             </tr>
             <tr>
-              <td>Turno:</td>
-              <td id="celTurno">Larry</td>
+              <td>Edad que comenzo hablar:</td>
+              <td id="celEdad_hablar">Larry</td>
             </tr>
             <tr>
-              <td>Sección:</td>
-              <td id="celSeccion">Larry</td>
+              <td>Edad que comenzo a camina:</td>
+              <td id="celEdad_caminar">Larry</td>
             </tr>
             <tr>
-              <td>Nuevo périodo escolar:</td>
-              <td id="celNuevo_periodo">Larry</td>
+              <td>Edad que dejo de utilizar pañales:</td>
+              <td id="celEdad_panales">Larry</td>
             </tr>
             <tr>
-              <td>Fucionario que registra:</td>
-              <td id="celFuncionario">Larry</td>
+              <td>Peso del alumno actual (KG):</td>
+              <td id="celPeso_actual">Larry</td>
             </tr>
             <tr>
-              <td>Fecha de inscripción:</td>
-              <td id="celInscripcion">Larry</td>
+              <td>Talla (CM):</td>
+              <td id="celTalla_actual">Larry</td>
             </tr>
             <tr>
-              <td>Padece de enfermedad?:</td>
-              <td id="celPadece_enfermedad">Larry</td>
+              <td>Grupo sanguineo:</td>
+              <td id="celGrupo_sanguineo">Larry</td>
             </tr>
             <tr>
-              <td>Nombre de la enfermedad:</td>
-              <td id="celNombre_enfermedad">Larry</td>
+              <td>Es alergico?:</td>
+              <td id="celEs_alergico">Larry</td>
             </tr>
             <tr>
-              <td>Utiliza tratamiento?:</td>
-              <td id="celUtiliza_tratamiento">Larry</td>
+              <td>Especifique alergia:</td>
+              <td id="celEspecifique_alergia">Larry</td>
             </tr>
             <tr>
-              <td>Nombre del tratamiento:</td>
-              <td id="celNombre_tratamiento">Larry</td>
+              <td>Enfermedades padecidas:</td>
+              <td id="celEnfermedades_padecidas">Larry</td>
             </tr>
             <tr>
-              <td>Alergico a medicamento?:</td>
-              <td id="celAlergico_medicamento">Larry</td>
+              <td>Ha sido hospitalizado alguna vez?:</td>
+              <td id="celHospitalizado">Larry</td>
             </tr>
             <tr>
-              <td>Nombre del medicamento:</td>
-              <td id="celNombre_medicamento">Larry</td>
+              <td>Causa?:</td>
+              <td id="celCausa_hospitalizado">Larry</td>
             </tr>
             <tr>
-              <td>Rubeola:</td>
-              <td id="celRubeola">Larry</td>
+              <td>Fiebre alta, que medicamento le administra?:</td>
+              <td id="celFiebre">Larry</td>
             </tr>
             <tr>
-              <td>Sarampión:</td>
-              <td id="celSarampión">Larry</td>
+              <td>Discapacidad motora :</td>
+              <td id="celMotora">Larry</td>
             </tr>
             <tr>
-              <td>Lechina:</td>
-              <td id="celLechina">Larry</td>
+              <td>Discapacidad de crecimiento:</td>
+              <td id="celCrecimiento">Larry</td>
             </tr>
             <tr>
-              <td>Paperas:</td>
-              <td id="celPaperas">Larry</td>
+              <td>Discapacidad auditiva:</td>
+              <td id="celAuditiva">Larry</td>
             </tr>
             <tr>
-              <td>Posee otra enfermedad?:</td>
-              <td id="celOtra_enfermedad">Larry</td>
+              <td>Discapacidad visual:</td>
+              <td id="celVisual">Larry</td>
             </tr>
             <tr>
-              <td>Nombre de la enfermedad:</td>
-              <td id="celNombre_enfermedadOtra">Larry</td>
+              <td>Otra discapacidad?:</td>
+              <td id="celOtra_discapacidad">Larry</td>
             </tr>
             <tr>
-              <td>Ninguna enfermdad:</td>
-              <td id="celNinguna">Larry</td>
+              <td>Cuál?:</td>
+              <td id="celCual3">Larry</td>
             </tr>
             <tr>
-              <td>Atendido por psicológo?:</td>
-              <td id="celPsicologo">Larry</td>
+              <td>Es atendido por especialitas?:</td>
+              <td id="celAtendido_especialista">Larry</td>
             </tr>
             <tr>
-              <td>Tipo de nacimiento de parto:</td>
-              <td id="celNacimiento_parto">Larry</td>
+              <td>Cuál?:</td>
+              <td id="celCual4">Larry</td>
             </tr>
             <tr>
-              <td>Se va solo?:</td>
-              <td id="celSolo">Larry</td>
+              <td>Presento problemas en el lenguaje?:</td>
+              <td id="celLenguaje">Larry</td>
             </tr>
             <tr>
-              <td>Nombre del representante:</td>
-              <td id="celRepre_retiro">Larry</td>
+              <td>Mano que utiliza frecuentemente:</td>
+              <td id="celMano_habil">Larry</td>
             </tr>
             <tr>
-              <td>Parentesco:</td>
-              <td id="celParentesco_retiro">Larry</td>
+              <td>Hora en que se acuesta:</td>
+              <td id="celHora_acuesta">Larry</td>
             </tr>
             <tr>
-              <td>Vive con la madre:</td>
-              <td id="celVive_madre">Larry</td>
+              <td>Hora en que se levanta:</td>
+              <td id="celHora_levanta">Larry</td>
             </tr>
             <tr>
-              <td>Vive con el padre:</td>
-              <td id="celVive_padre">Larry</td>
+              <td>Sueño del niño(a):</td>
+              <td id="celSueno_nino">Larry</td>
             </tr>
             <tr>
-              <td>Vive con hermanos:</td>
-              <td id="celVive_hermanos">Larry</td>
+              <td>Con quién duerme el niño?:</td>
+              <td id="celDuerme_nino">Larry</td>
             </tr>
             <tr>
-              <td>Cuantos hermanos:</td>
-              <td id="celHermanos">Larry</td>
-            </tr>
-            <tr>
-              <td>Cuantas hermanas:</td>
-              <td id="celHermanas">Larry</td>
-            </tr>
-            <tr>
-              <td>Vive con otra persona:</td>
-              <td id="celVive_otra">Larry</td>
-            </tr>
-            <tr>
-              <td>Con quién vive?:</td>
-              <td id="celVive_quien">Larry</td>
-            </tr>
-            <tr>
-              <td>Tiene Hermanos en el plantel?:</td>
-              <td id="celHermanos_plantel">Larry</td>
-            </tr>
-            <tr>
-              <td>Cuantos hermanos:</td>
-              <td id="celCuantos_hermano">Larry</td>
-            </tr>
-            <tr>
-              <td>Grado que cursan:</td>
-              <td id="celGrado_cursan">Larry</td>
-            </tr>
-            <tr>
-              <td>Turno que cursan:</td>
-              <td id="celturno_cursan">Larry</td>
-            </tr>
-            <tr>
-              <td>Tipo de vivienda :</td>
-              <td id="celVivienda">Larry</td>
-            </tr>
-            <tr>
-              <td>Condición de la vivienda:</td>
-              <td id="celCondicion">Larry</td>
-            </tr>
-            <tr>
-              <td>Ingresos familiares:</td>
-              <td id="celIngresos">Larry</td>
-            </tr>
-            <tr>
-              <td>N* personas que dependen del ingreso:</td>
-              <td id="celPersonas_ingresos">Larry</td>
-            </tr>
-            <tr>
-              <td>Boletin de calificaciones:</td>
-              <td id="celCalificaciones">Larry</td>
-            </tr>
-            <tr>
-              <td>Boletin de promoción:</td>
-              <td id="celPromocion">Larry</td>
-            </tr>
-            <tr>
-              <td>Carta de buena conducta:</td>
-              <td id="celConducta">Larry</td>
-            </tr>
-            <tr>
-              <td>Copia de partida de nacimiento:</td>
-              <td id="celPartida_nac">Larry</td>
-            </tr>
-            <tr>
-              <td>Copia de cédula del alumno/a:</td>
-              <td id="celCopia_cedula">Larry</td>
-            </tr>
-            <tr>
-              <td>Foto del alumno:</td>
-              <td id="celFoto">Larry</td>
-            </tr>
-            <tr>
-              <td>Copia de cédula del representante:</td>
-              <td id="celCedcopia_repre">Larry</td>
-            </tr>
-            <tr>
-              <td>Foto del representante:</td>
-              <td id="celFoto_repre">Larry</td>
-            </tr>
-            <tr>
-              <td>Boletin de grado:</td>
-              <td id="celBoletin_grado">Larry</td>
-            </tr>
-            <tr>
-              <td>Otros documentos:</td>
-              <td id="celOtros_documentos">Larry</td>
-            </tr>
-            <tr>
-              <td>Documentos:</td>
-              <td id="celDocumentos">Larry</td>
+              <td>Otra informacion que desee suministrar y deba suministrar:</td>
+              <td id="celInformacion_importante">Larry</td>
             </tr>
             <tr>
               <td>Status:</td>

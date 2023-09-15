@@ -16,12 +16,113 @@ document.addEventListener("DOMContentLoaded", function () {
     columns: [
       { data: "options" },
       { data: "nombre_alumno1" },
+      { data: "nombre_alumno2" },
       { data: "apellido_alumno1" },
+      { data: "apellido_alumno2" },
       { data: "cedula_escolar" },
-      { data: "nombre_madre" },
-      { data: "telefono_madre" },
-      { data: "nombre_seccion" },
+      { data: "fecha_nac" },
+      { data: "genero" },
+      { data: "nacionalidad_alumno" },
+      { data: "estado_alumno" },
+      { data: "nacimiento_alumno" },
+      { data: "talla_camisa" },
+      { data: "talla_pantalon" },
+      { data: "talla_zapato" },
+      { data: "peso" },
+      { data: "estatura" },
+      { data: "tiene_hermanos" },
+      { data: "cuantos_hermanos" },
+      { data: "tipo_alumno" },
       { data: "turno" },
+      { data: "nombre_seccion" },
+      { data: "periodo_escolar" },
+      { data: "funcionario" },
+      { data: "fecha_inscripcion" },
+      { data: "nombre_madre" },
+      { data: "apellido_madre" },
+      { data: "nacionalidad_madre" },
+      { data: "cedula_madre" },
+      { data: "estado_civil_madre" },
+      { data: "nacimiento_madre" },
+      { data: "tipo_nacionalidad_madre" },
+      { data: "estado_madre" },
+      { data: "fecha_nac_madre" },
+      { data: "direccion_hab_madre" },
+      { data: "telefono_madre" },
+      { data: "direccion_trabajo_madre" },
+      { data: "telefono_trabajo_madre" },
+      { data: "nivel_academico_madre" },
+      { data: "otros_datos_madre" },
+      { data: "nombre_padre" },
+      { data: "apellido_padre" },
+      { data: "nacionalidad_padre" },
+      { data: "cedula_padre" },
+      { data: "estado_civil_padre" },
+      { data: "nacimiento_padre" },
+      { data: "tipo_nacionalidad_padre" },
+      { data: "estado_padre" },
+      { data: "fecha_nac_padre" },
+      { data: "direccion_hab_padre" },
+      { data: "telefono_padre" },
+      { data: "direccion_trabajo_padre" },
+      { data: "telefono_trabajo_padre" },
+      { data: "nivel_academico_padre" },
+      { data: "otros_datos_padre" },
+      { data: "come_solo" },
+      { data: "lo_ayudan" },
+      { data: "quien_ayuda" },
+      { data: "comida_favortia" },
+      { data: "comida_rechaza" },
+      { data: "alimientos_prohibidos" },
+      { data: "enfinteres" },
+      { data: "asea_solo" },
+      { data: "horas_duerme" },
+      { data: "tiempo_dedica_madre" },
+      { data: "tiempo_dedica_padre" },
+      { data: "tiempo_dedica_abuelos" },
+      { data: "nombre_retiro" },
+      { data: "nacionalidad_retiro" },
+      { data: "cedula_retiro" },
+      { data: "celular_retiro" },
+      { data: "parentesco_retiro" },
+      { data: "situacion_embarazo" },
+      { data: "enfermedad_durante_embarazo" },
+      { data: "oficio_durante_embarazo" },
+      { data: "situacion_parto_nacimiento" },
+      { data: "edad_madre_embarazo" },
+      { data: "problemas_parto" },
+      { data: "cual_problema_parto" },
+      { data: "peso_alnacer" },
+      { data: "talla_alnacer" },
+      { data: "problemas_primeros_dias" },
+      { data: "cual_problema" },
+      { data: "edad_hablar" },
+      { data: "edad_caminar" },
+      { data: "edad_panales" },
+      { data: "peso_nino" },
+      { data: "talla_nino" },
+      { data: "grupo_sanguineo" },
+      { data: "alergico" },
+      { data: "especifique_alergia" },
+      { data: "enfermedades_padrecidad" },
+      { data: "hospitalizado" },
+      { data: "causa_hospitalizado" },
+      { data: "fiebre_alta_medicamento" },
+      { data: "motora" },
+      { data: "crecimiento" },
+      { data: "auditiva" },
+      { data: "visual" },
+      { data: "otra_discapacidad" },
+      { data: "especifique_discapacidad" },
+      { data: "atendido_especialista" },
+      { data: "cual_especialista" },
+      { data: "problemas_lenguaje" },
+      { data: "mano_habil" },
+      { data: "hora_para_dormir" },
+      { data: "hora_se_levanta" },
+      { data: "sueno_nino" },
+      { data: "con_quien_duerme" },
+      { data: "informacion_importante" },
       { data: "status" },
     ],
     dom: "lBfrtip",
@@ -438,254 +539,219 @@ function ftnViewEstudiante_inicial(id_estudiante)
              request.onreadystatechange = function(){
         if(request.readyState == 4 && request.status == 200){
             let  objData = JSON.parse(request.responseText);
-            //console.log(objData)
+            console.log(objData)
 
             if(objData.status)
             {
+              let segundoNombre = objData.data.nombre_alumno2 == null
+                ? 'No posee'
+                : objData.data.nombre_alumno2;
+                let segundoApellido = objData.data.apellido_alumno2 == null
+                ? 'No posee'
+                : objData.data.apellido_alumno2;
                let  statusEstudiante = objData.data.status == 1 
                 ? '<span class="badge badge-success">Activo</span>' 
                 : '<span class="badge badge-danger">Inactivo</span>';
 
-              //  let generoEstudiante = objData.data.genero == 1
-              //   ? 'Masculino'
-              //   : 'Femenino';
+               let generoEstudiante = objData.data.genero == 1
+                ? 'Masculino'
+                : 'Femenino';
 
-              //   let nacionalidadEstudiante = objData.data.nacionalidad_alumno == 1
-              //   ? 'Venezolana'
-              //   : 'Extranjera';
+                let nacionalidadEstudiante = objData.data.nacionalidad_alumno == 1
+                ? 'Venezolana'
+                : 'Extranjera';
 
-              //   let repitiente = objData.data.repitiente == 1
-              //   ? 'Si'
-              //   : 'No';
+                let nacionalidadPadre = objData.data.tipo_nacionalidad_padre == 1
+                ? 'Venezolana'
+                : 'Extranjera';
 
-              //   let turno = objData.data.turno == 1
-              //   ? 'Diurno'
-              //   : 'Vespertino';
+                let tiene_hermanos = objData.data.tiene_hermanos == 1
+                ? 'Si'
+                : 'No';
 
-              //   let padece_enfermedad =  objData.data.enfermedad_padece == 1
-              //   ? 'Si'
-              //   : 'No';
+                let turno = objData.data.turno == 1
+                ? 'Diurno'
+                : 'Vespertino';
 
-              //   let nombre_enfermedad =  objData.data.enfermedad_1 == null
-              //   ? 'No padece de enfermedad'
-              //   :  objData.data.enfermedad_1;
+                let telefonoTrabajoMadre = objData.data.telefono_trabajo_madre == null
+                ? 'No posee'
+                : objData.data.telefono_trabajo_madre;
 
-              //   let utiliza_tratamiento =  objData.data.tratamiento_enfermedad == 1
-              //   ? 'Si'
-              //   : 'No';
+                let telefonoTrabajoPadre = objData.data.telefono_trabajo_Padre == null
+                ? 'No posee'
+                : objData.data.telefono_trabajo_padre;
 
-              //   let nombre_tratamiento = objData.data.tratamiento_1 == null
-              //   ? 'Ninguno'
-              //   : objData.data.tratamiento_1;
+                let datosImportantesMadre = objData.data.otros_datos_madre == null
+                ? 'No posee'
+                : objData.data.otros_datos_madre;
 
-              //   let alergico_medicamento = objData.data.alergico_medicamento == 1
-              //   ? 'Si'
-              //   : 'No';
+                let datosImportantesPadre = objData.data.otros_datos_padre == null
+                ? 'No posee'
+                : objData.data.otros_datos_padre;
 
-              //   let nombre_medicamento = objData.data.alergico_1 == null 
-              //   ? 'Ninguno'
-              //   : objData.data.alergico_1;
+                let cual_problema_parto = objData.data.cual_problema_parto == null
+                ? 'Ninguno'
+                : objData.data.cual_problema_parto;
 
-              //   let rubeola = objData.data.rubeola == 1
-              //   ? "Si" 
-              //   : "No";
+                let cual_problema_1 = objData.data.cual_problema == null
+                ? 'Ninguno'
+                : objData.data.cual_problema;
 
-              //   let sarampion = objData.data.sarampion == 1
-              //   ? "Si" 
-              //   : "No";
+                let especifique_alergia = objData.data.especifique_alergia == null
+                ? 'Ninguna'
+                : objData.data.especifique_alergia;
 
-              //   let lechina = objData.data.lechina == 1
-              //   ? "Si" 
-              //   : "No";
+                let causa1 = objData.data.causa_hospitalizado == null
+                ? 'Ninguna'
+                : objData.data.causa_hospitalizado;
 
-              //   let paperas = objData.data.paperas == 1
-              //   ? "Si" 
-              //   : "No";
+                let motora = objData.data.motora == 1
+                ? 'Si'
+                : 'No';
 
-              //   let otra_enfermedad = objData.data.otra_enfermedad == 1
-              //   ? 'Si'
-              //   : 'No';
+                let crecimiento = objData.data.crecimiento == 1
+                ? 'Si'
+                : 'No';
 
-              //   let ninguna_enfermedad= objData.data.ninguna_enfermedad == 1
-              //   ? 'Si'
-              //   : 'No';
+                let auditiva = objData.data.auditiva == 1
+                ? 'Si'
+                : 'No';
 
-              //   let psicologo = objData.data.nombre_especialidad == 1
-              //   ? 'Si'
-              //   : 'No';
+                let visual = objData.data.visual == 1
+                ? 'Si'
+                : 'No';
 
-              //   let solo = objData.data.alumno_seva_solo == 1
-              //   ? 'Si'
-              //   : 'No';
+                let otra_discapacidad = objData.data.otra_discapacidad == 1
+                ? 'Si'
+                : 'No';
 
-              //   let vive_madre = objData.data.vive_madre == 1
-              //   ? 'Si'
-              //   : 'No';
+                let especifique_discapacidad = objData.data.especifique_discapacidad == null
+                ? 'Ninguna'
+                : objData.data.especifique_discapacidad;
 
-              //   let vive_padre = objData.data.vive_padre == 1
-              //   ? 'Si'
-              //   : 'No';
+                let cual_especialista = objData.data.cual_especialista == null
+                ? 'Ninguna'
+                : objData.data.cual_especialista;
 
-              //   let vive_hermanos = objData.data.vive_hermanos == 1
-              //   ? 'Si'
-              //   : 'No';
+                let informacion_importante = objData.data.informacion_importante == null
+                ? 'Ninguna'
+                : objData.data.informacion_importante;
 
-              //   let vive_otra_persona = objData.data.vive_otra_persona == 1
-              //   ? 'Si'
-              //   : 'No';
-
-              //   let hermanos_plantel = objData.data.hermanos_plantel == 1
-              //   ? 'Si'
-              //   : 'No';
-
-              //   let cuantos_hermanos_plantel = objData.data.cuantos_hermanos_plantel == null
-              //   ? 'Ninguno'
-              //   : objData.data.cuantos_hermanos_plantel;
-
-              //   let grado_cursanHermanos = objData.data.grado_cursanHermanos == null 
-              //   ? 'Ninguno'
-              //   : objData.data.grado_cursanHermanos;
-
-              //   let turno_cursanHermanos = objData.data.turno_cursanHermanos == null
-              //   ? 'Ninguno'
-              //   :  objData.data.turno_cursanHermanos;
-
-              //   let boletin_calificacion = objData.data.boletin_calificacion == 1
-              //   ? 'Si'
-              //   : 'No';
-
-              //   let boletin_promocion = objData.data.boletin_promocion == 1
-              //   ? 'Si'
-              //   : 'No';
-
-              //   let carta_conducta = objData.data.carta_conducta == 1
-              //   ? 'Si'
-              //   : 'No';
-
-              //   let copia_partida_nac = objData.data.copia_partida_nac == 1
-              //   ? 'Si'
-              //   : 'No';
-
-              //   let copia_cedula_alumno = objData.data.copia_cedula_alumno == 1
-              //   ? 'Si'
-              //   : 'No';
-
-              //   let foto_alumno = objData.data.foto_alumno == 1
-              //   ? 'Si'
-              //   : 'No';
-
-              //   let copia_cedula_repre = objData.data.copia_cedula_repre == 1
-              //   ? 'Si'
-              //   : 'No';
-
-              //   let foto_repre = objData.data.foto_repre == 1
-              //   ? 'Si'
-              //   : 'No';
-
-              //   let boletin_grado = objData.data.boletin_grado == 1
-              //   ? 'Si'
-              //   : 'No';
-
-              //   let otros_documentos = objData.data.otros_documentos == 1
-              //   ? 'Si'
-              //   : 'No';
-
-              //   let documentos_1 = objData.data.documentos_1 == 1
-              //   ? 'Si'
-              //   : 'No';
-                
 
 
             
-                // document.querySelector("#celNombre1").innerHTML = objData.data.nombre_alumno1;
-                // document.querySelector("#celNombre2").innerHTML = objData.data.nombre_alumno2;
-                // document.querySelector("#celApellido1").innerHTML = objData.data.apellido_alumno1;
-                // document.querySelector("#celApellido2").innerHTML = objData.data.apellido_alumno2;
-                // document.querySelector("#celCedula_escolar").innerHTML = objData.data.cedula_escolar;
-                // document.querySelector("#celFecha_nac").innerHTML = objData.data.fecha_nac;
-                // document.querySelector("#celGenero").innerHTML = generoEstudiante;
-                // document.querySelector("#celNacionalidad").innerHTML = nacionalidadEstudiante;
-                // document.querySelector("#celEstado").innerHTML = objData.data.desc_estado;
-                // document.querySelector("#celNacimiento").innerHTML = objData.data.lugar_nacimiento;
-                // document.querySelector("#celDireccion").innerHTML = objData.data.direccion_hab;
-                // document.querySelector("#celNombre_madre").innerHTML = objData.data.nombre_madre;
-                // document.querySelector("#celApellido_madre").innerHTML = objData.data.apellido_madre;
-                // document.querySelector("#celNacionalidad_madre").innerHTML = objData.data.nacionalidad_madre;
-                // document.querySelector("#celCedula_madre").innerHTML = objData.data.cedula_madre;
-                // document.querySelector("#celOcupacion_madre").innerHTML = objData.data.ocupacion_madre;
-                // document.querySelector("#celTelefono_madre").innerHTML = objData.data.telefono_madre;
-                // document.querySelector("#celNombre_padre").innerHTML = objData.data.nombre_padre;
-                // document.querySelector("#celApellido_padre").innerHTML = objData.data.apellido_padre;
-                // document.querySelector("#celNacionalidad_padre").innerHTML = objData.data.nacionalidad_padre;
-                // document.querySelector("#celCedula_padre").innerHTML = objData.data.cedula_padre;
-                // document.querySelector("#celOcupacion_padre").innerHTML = objData.data.ocupacion_padre;
-                // document.querySelector("#celTelefono_padre").innerHTML = objData.data.telefono_padre;
-                // document.querySelector("#celNombre_repre").innerHTML = objData.data.nombre_repre;
-                // document.querySelector("#celApellido_repre").innerHTML = objData.data.apellido_repre;
-                // document.querySelector("#celNacionalidad_repre").innerHTML = objData.data.nacionalidad_repre;
-                // document.querySelector("#celCedula_repre").innerHTML = objData.data.cedula_repre;
-                // document.querySelector("#celParentesco").innerHTML = objData.data.parentesco_repre;
-                // document.querySelector("#celOcupacion_repre").innerHTML = objData.data.ocupacion_repre;
-                // document.querySelector("#celTelefono_repre").innerHTML = objData.data.telefono_repre;
-                // document.querySelector("#celCelular_repre").innerHTML = objData.data.celular_repre;
-                // document.querySelector("#celDireccion_repre").innerHTML = objData.data.direccion_repre;
-                // document.querySelector("#celColaboracion").innerHTML = objData.data.colaboracion_plantel;
-                // document.querySelector("#celPLantel").innerHTML = objData.data.plantel;
-                // document.querySelector("#celGrado_cursado").innerHTML = objData.data.grado_cursado;
-                // document.querySelector("#celPeriodo_anterior").innerHTML = objData.data.periodo_escolar;
-                // document.querySelector("#celLiteral").innerHTML = objData.data.literal;
-                // document.querySelector("#celRepitiente").innerHTML = repitiente;
-                // document.querySelector("#celTipo_alumno").innerHTML = objData.data.tipo_alumno;
-                // document.querySelector("#celTurno").innerHTML = turno;
-                // document.querySelector("#celSeccion").innerHTML = objData.data.nombre_seccion;
-                // document.querySelector("#celNuevo_periodo").innerHTML = objData.data.periodo_escolar_new;
-                // document.querySelector("#celFuncionario").innerHTML = objData.data.funcionario;
-                // document.querySelector("#celInscripcion").innerHTML = objData.data.fecha_inscripcion;
-                // document.querySelector("#celPadece_enfermedad").innerHTML = padece_enfermedad;
-                // document.querySelector("#celNombre_enfermedad").innerHTML = nombre_enfermedad;
-                // document.querySelector("#celUtiliza_tratamiento").innerHTML = utiliza_tratamiento;
-                // document.querySelector("#celNombre_tratamiento").innerHTML = nombre_tratamiento;
-                // document.querySelector("#celAlergico_medicamento").innerHTML = alergico_medicamento;
-                // document.querySelector("#celNombre_medicamento").innerHTML = nombre_medicamento;
-                // document.querySelector("#celRubeola").innerHTML = rubeola;
-                // document.querySelector("#celSarampión").innerHTML = sarampion;
-                // document.querySelector("#celLechina").innerHTML = lechina;
-                // document.querySelector("#celPaperas").innerHTML = paperas;
-                // document.querySelector("#celOtra_enfermedad").innerHTML = otra_enfermedad;
-                // document.querySelector("#celNombre_enfermedadOtra").innerHTML = objData.data.otra_enfermedad_cual;
-                // document.querySelector("#celNinguna").innerHTML = ninguna_enfermedad;
-                // document.querySelector("#celPsicologo").innerHTML = psicologo;
-                // document.querySelector("#celNacimiento_parto").innerHTML = objData.data.nacimiento_parto;
-                // document.querySelector("#celSolo").innerHTML = solo;
-                // document.querySelector("#celRepre_retiro").innerHTML = objData.data.nombre_retiro;
-                // document.querySelector("#celParentesco_retiro").innerHTML = objData.data.parestesco_retiro;
-                // document.querySelector("#celVive_madre").innerHTML = vive_madre;
-                // document.querySelector("#celVive_padre").innerHTML = vive_padre;
-                // document.querySelector("#celVive_hermanos").innerHTML = vive_hermanos;
-                // document.querySelector("#celHermanos").innerHTML = objData.data.cuantos_hermanos;
-                // document.querySelector("#celHermanas").innerHTML = objData.data.cuantas_hermanas;
-                // document.querySelector("#celVive_otra").innerHTML = vive_otra_persona;
-                // document.querySelector("#celVive_quien").innerHTML = objData.data.cual_persona_vive;
-                // document.querySelector("#celHermanos_plantel").innerHTML = hermanos_plantel;
-                // document.querySelector("#celCuantos_hermano").innerHTML = cuantos_hermanos_plantel;
-                // document.querySelector("#celGrado_cursan").innerHTML = grado_cursanHermanos;
-                // document.querySelector("#celturno_cursan").innerHTML = turno_cursanHermanos;
-                // document.querySelector("#celVivienda").innerHTML = objData.data.tipo_vivienda;
-                // document.querySelector("#celCondicion").innerHTML = objData.data.condicion_vivienda;
-                // document.querySelector("#celIngresos").innerHTML = objData.data.ingresos_familiares;
-                // document.querySelector("#celPersonas_ingresos").innerHTML = objData.data.dependecia_ingreso;
-                // document.querySelector("#celCalificaciones").innerHTML = boletin_calificacion;
-                // document.querySelector("#celPromocion").innerHTML = boletin_promocion;
-                // document.querySelector("#celConducta").innerHTML = carta_conducta;
-                // document.querySelector("#celPartida_nac").innerHTML = copia_partida_nac;
-                // document.querySelector("#celCopia_cedula").innerHTML = copia_cedula_alumno;
-                // document.querySelector("#celFoto").innerHTML = foto_alumno;
-                // document.querySelector("#celCedcopia_repre").innerHTML = copia_cedula_repre;
-                // document.querySelector("#celFoto_repre").innerHTML = foto_repre;
-                // document.querySelector("#celBoletin_grado").innerHTML = boletin_grado;
-                // document.querySelector("#celOtros_documentos").innerHTML = otros_documentos;
-                // document.querySelector("#celDocumentos").innerHTML = documentos_1;
+                document.querySelector("#celNombre1").innerHTML = objData.data.nombre_alumno1;
+                document.querySelector("#celNombre2").innerHTML = segundoNombre;
+                document.querySelector("#celApellido1").innerHTML = objData.data.apellido_alumno1;
+                document.querySelector("#celApellido2").innerHTML = segundoApellido;
+                document.querySelector("#celCedula_escolar").innerHTML = objData.data.cedula_escolar;
+                document.querySelector("#celFecha_nac").innerHTML = objData.data.fecha_nac;
+                document.querySelector("#celGenero").innerHTML = generoEstudiante;
+                document.querySelector("#celNacionalidad").innerHTML = nacionalidadEstudiante;
+                document.querySelector("#celEstado").innerHTML = objData.data.estado_alumno;
+                document.querySelector("#celNacimiento").innerHTML = objData.data.nacimiento_alumno;
+                document.querySelector("#celTalla_camisa").innerHTML = objData.data.talla_camisa;
+                document.querySelector("#celTalla_pantalon").innerHTML = objData.data.talla_pantalon;
+                document.querySelector("#celTalla_zapato").innerHTML = objData.data.talla_zapato;
+                document.querySelector("#celPeso").innerHTML = objData.data.peso;
+                document.querySelector("#celEstatura").innerHTML = objData.data.estatura;
+                document.querySelector("#celHermanos").innerHTML = tiene_hermanos;
+                document.querySelector("#celCuantos_hermanos").innerHTML = objData.data.cuantos_hermanos;
+                document.querySelector("#celTipo_alumno").innerHTML = objData.data.tipo_alumno;
+                document.querySelector("#celTurno").innerHTML = turno;
+                document.querySelector("#celSeccion").innerHTML = objData.data.nombre_seccion;
+                document.querySelector("#celPeriodo_escolar").innerHTML = objData.data.periodo_escolar;
+                document.querySelector("#celFuncionario").innerHTML = objData.data.funcionario;
+                document.querySelector("#celFec_inscripcion").innerHTML = objData.data.fecha_inscripcion;
+                document.querySelector("#celNombre_madre").innerHTML = objData.data.nombre_madre;
+                document.querySelector("#celApellido_madre").innerHTML = objData.data.apellido_madre;
+                document.querySelector("#celNacionalidad_madre").innerHTML = objData.data.nacionalidad_madre;
+                document.querySelector("#celCedula_madre").innerHTML = objData.data.cedula_madre;
+                document.querySelector("#celCivil_madre").innerHTML = objData.data.estado_civil_madre;
+                document.querySelector("#celLugarNac_madre").innerHTML = objData.data.nacimiento_madre;
+                document.querySelector("#celNacionalidad_madre2").innerHTML = objData.data.tipo_nacionalidad_madre;
+                document.querySelector("#celEntidad_federalMadre").innerHTML = objData.data.estado_madre;
+                document.querySelector("#celFec_nacimientoMadre").innerHTML = objData.data.fecha_nac_madre;
+                document.querySelector("#celDireccion_madre").innerHTML = objData.data.direccion_hab_madre;
+                document.querySelector("#celTelefono_madre").innerHTML = objData.data.telefono_madre;
+                document.querySelector("#celTrabajo_madre").innerHTML = objData.data.direccion_trabajo_madre;
+                document.querySelector("#celTeleTrabajo_madre").innerHTML = telefonoTrabajoMadre;
+                document.querySelector("#celNivel_academicoMadre").innerHTML = objData.data.nivel_academico_madre;
+                document.querySelector("#celOtros_datos1").innerHTML = datosImportantesMadre;
+                document.querySelector("#celNombre_padre").innerHTML = objData.data.nombre_padre;
+                document.querySelector("#celApellido_padre").innerHTML = objData.data.apellido_padre;
+                document.querySelector("#celNacionalidad_padre").innerHTML = objData.data.nacionalidad_padre;
+                document.querySelector("#celCedula_padre").innerHTML = objData.data.cedula_padre;
+                document.querySelector("#celCivil_padre").innerHTML = objData.data.estado_civil_padre;
+                document.querySelector("#celLugarNac_padre").innerHTML = objData.data.nacimiento_padre;
+                document.querySelector("#celNacionalidad_padre2").innerHTML = nacionalidadPadre;
+                document.querySelector("#celEntidad_federalPadre").innerHTML = objData.data.estado_padre;
+                document.querySelector("#celFec_nacimientoPadre").innerHTML = objData.data.fecha_nac_padre;
+                document.querySelector("#celDireccion_padre").innerHTML = objData.data.direccion_hab_padre;
+                document.querySelector("#celTelefono_padre").innerHTML = objData.data.telefono_padre;
+                document.querySelector("#celTrabajo_padre").innerHTML = objData.data.direccion_trabajo_padre;
+                document.querySelector("#celTeleTrabajo_padre").innerHTML = telefonoTrabajoPadre;
+                document.querySelector("#celNivel_academicoPadre").innerHTML = objData.data.nivel_academico_padre;
+                document.querySelector("#celOtros_datos2").innerHTML = datosImportantesPadre;
+                document.querySelector("#celCome_solo").innerHTML = objData.data.come_solo;
+                document.querySelector("#celLo_ayudan").innerHTML = objData.data.lo_ayudan;
+                document.querySelector("#celQuien_loayuda").innerHTML = objData.data.quien_ayuda;
+                document.querySelector("#celComida_favorita").innerHTML = objData.data.comida_favortia;
+                document.querySelector("#celComida_rechaza").innerHTML = objData.data.comida_rechaza;
+                document.querySelector("#celAlimentos_prohibidos").innerHTML = objData.data.alimientos_prohibidos;
+                document.querySelector("#celEsfinteres").innerHTML = objData.data.enfinteres;
+                document.querySelector("#celAsea_solo").innerHTML = objData.data.asea_solo;
+                document.querySelector("#celHora_duerme").innerHTML = objData.data.horas_duerme;
+                document.querySelector("#celTiempo_madre").innerHTML = objData.data.tiempo_dedica_madre;
+                document.querySelector("#celTiempo_padre").innerHTML = objData.data.tiempo_dedica_padre;
+                document.querySelector("#celTiempo_abuelo").innerHTML = objData.data.tiempo_dedica_abuelos;
+                document.querySelector("#celNombre_retira").innerHTML = objData.data.nombre_retiro;
+                document.querySelector("#celNacionalidad_retira").innerHTML = objData.data.nacionalidad_retiro;
+                document.querySelector("#celCedula_retira").innerHTML = objData.data.cedula_retiro;
+                document.querySelector("#celTelefono_retira").innerHTML = objData.data.celular_retiro;
+                document.querySelector("#celParentesco").innerHTML = objData.data.parentesco_retiro;
+                document.querySelector("#celSituacion_embarazo").innerHTML = objData.data.situacion_embarazo;
+                document.querySelector("#celEnfermedades_embarazo").innerHTML = objData.data.enfermedad_durante_embarazo;
+                document.querySelector("#celOficio").innerHTML = objData.data.oficio_durante_embarazo;
+                document.querySelector("#celSituacion_parto").innerHTML = objData.data.situacion_parto_nacimiento;
+                document.querySelector("#celEdad_parto").innerHTML = objData.data.edad_madre_embarazo;
+                document.querySelector("#celProblemas_duranteParto").innerHTML = objData.data.problemas_parto;
+                document.querySelector("#celCual_problema1").innerHTML = cual_problema_parto;
+                document.querySelector("#celPeso_alNacer").innerHTML = objData.data.peso_alnacer;
+                document.querySelector("#celTalla_alNacer").innerHTML = objData.data.talla_alnacer;
+                document.querySelector("#celProblemas_primerosDias").innerHTML = objData.data.problemas_primeros_dias;
+                document.querySelector("#celCual_problema2").innerHTML = cual_problema_1;
+                document.querySelector("#celEdad_hablar").innerHTML = objData.data.edad_hablar;
+                document.querySelector("#celEdad_caminar").innerHTML = objData.data.edad_caminar;
+                document.querySelector("#celEdad_panales").innerHTML = objData.data.edad_panales;
+                document.querySelector("#celPeso_actual").innerHTML = objData.data.peso_nino;
+                document.querySelector("#celTalla_actual").innerHTML = objData.data.talla_nino;
+                document.querySelector("#celGrupo_sanguineo").innerHTML = objData.data.grupo_sanguineo;
+                document.querySelector("#celEs_alergico").innerHTML = objData.data.alergico;
+                document.querySelector("#celEspecifique_alergia").innerHTML = especifique_alergia;
+                document.querySelector("#celEnfermedades_padecidas").innerHTML = objData.data.enfermedades_padrecidad;
+                document.querySelector("#celHospitalizado").innerHTML = objData.data.hospitalizado;
+                document.querySelector("#celCausa_hospitalizado").innerHTML = causa1;
+                document.querySelector("#celFiebre").innerHTML = objData.data.fiebre_alta_medicamento;
+                document.querySelector("#celMotora").innerHTML = motora;
+                document.querySelector("#celCrecimiento").innerHTML = crecimiento;
+                document.querySelector("#celAuditiva").innerHTML = auditiva;
+                document.querySelector("#celVisual").innerHTML = visual;
+                document.querySelector("#celOtra_discapacidad").innerHTML = otra_discapacidad;
+                document.querySelector("#celCual3").innerHTML = especifique_discapacidad;
+                document.querySelector("#celAtendido_especialista").innerHTML = objData.data.atendido_especialista;
+                document.querySelector("#celCual4").innerHTML = cual_especialista;  
+                document.querySelector("#celLenguaje").innerHTML = objData.data.problemas_lenguaje;
+                document.querySelector("#celMano_habil").innerHTML = objData.data.mano_habil;
+                document.querySelector("#celHora_acuesta").innerHTML = objData.data.hora_para_dormir;
+                document.querySelector("#celHora_levanta").innerHTML = objData.data.hora_se_levanta;
+                document.querySelector("#celSueno_nino").innerHTML = objData.data.sueno_nino;
+                document.querySelector("#celDuerme_nino").innerHTML = objData.data.con_quien_duerme;
+                document.querySelector("#celInformacion_importante").innerHTML = informacion_importante;
                 document.querySelector("#celStatus").innerHTML = statusEstudiante;
+
+
+
 
              
                 $('#modalViewEstudiante_inicial').modal('show');
