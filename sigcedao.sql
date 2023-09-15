@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-08-2023 a las 03:29:38
+-- Tiempo de generación: 15-09-2023 a las 06:37:31
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.5
 
@@ -131,7 +131,7 @@ CREATE TABLE `especialidad` (
 --
 
 INSERT INTO `especialidad` (`id_especialidad`, `nombre_especialidad`, `descripcion`, `status`) VALUES
-(1, 'Docente de Aula', 'Maestro de Aula', 1),
+(1, 'Docente De Aula', 'Maestro De Aula', 1),
 (3, 'Docente Especialista', 'Especialista Del área', 1),
 (4, 'Ejemplo', 'Sdasdas', 0);
 
@@ -305,7 +305,7 @@ CREATE TABLE `estudiantes_inicial` (
   `talla_pantalon` int(11) NOT NULL,
   `talla_zapato` int(11) NOT NULL,
   `peso` int(11) NOT NULL,
-  `estatura` int(11) NOT NULL,
+  `estatura` float NOT NULL,
   `tiene_hermanos` int(11) NOT NULL,
   `cuantos_hermanos` int(11) DEFAULT NULL,
   `tipo_alumno` text COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -320,7 +320,7 @@ CREATE TABLE `estudiantes_inicial` (
   `cedula_madre` int(11) NOT NULL,
   `estado_civil_madre` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `nacimiento_madre` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `tipo_nacionalidad_madre` text COLLATE utf8mb4_swedish_ci NOT NULL DEFAULT '\'\\\'Venezolana\\\'\'',
+  `tipo_nacionalidad_madre` text COLLATE utf8mb4_swedish_ci NOT NULL DEFAULT 'Venezolana',
   `estado_madre_id` bigint(20) NOT NULL,
   `fecha_nac_madre` date NOT NULL,
   `direccion_hab_madre` mediumtext COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -368,14 +368,14 @@ CREATE TABLE `estudiantes_inicial` (
   `edad_madre_embarazo` int(11) NOT NULL,
   `problemas_parto` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `cual_problema_parto` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
-  `peso_alnacer` int(11) NOT NULL,
+  `peso_alnacer` float NOT NULL,
   `talla_alnacer` int(11) NOT NULL,
   `problemas_primeros_dias` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `cual_problema` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `edad_hablar` int(11) NOT NULL,
   `edad_caminar` int(11) NOT NULL,
   `edad_panales` int(11) NOT NULL,
-  `peso_nino` int(11) NOT NULL,
+  `peso_nino` float NOT NULL,
   `talla_nino` int(11) NOT NULL,
   `grupo_sanguineo` varchar(256) COLLATE utf8mb4_swedish_ci NOT NULL,
   `alergico` text COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -387,6 +387,7 @@ CREATE TABLE `estudiantes_inicial` (
   `motora` int(11) NOT NULL DEFAULT 0,
   `crecimiento` int(11) NOT NULL DEFAULT 0,
   `auditiva` int(11) NOT NULL DEFAULT 0,
+  `visual` int(11) NOT NULL DEFAULT 0,
   `otra_discapacidad` int(11) NOT NULL DEFAULT 0,
   `especifique_discapacidad` text COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `atendido_especialista` text COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -397,7 +398,7 @@ CREATE TABLE `estudiantes_inicial` (
   `hora_se_levanta` varchar(11) COLLATE utf8mb4_swedish_ci NOT NULL,
   `sueno_nino` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `con_quien_duerme` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `imporfacion_importante` int(11) DEFAULT NULL,
+  `informacion_importante` int(11) DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
@@ -405,8 +406,8 @@ CREATE TABLE `estudiantes_inicial` (
 -- Volcado de datos para la tabla `estudiantes_inicial`
 --
 
-INSERT INTO `estudiantes_inicial` (`inicial_id`, `nombre_alumno1`, `nombre_alumno2`, `apellido_alumno1`, `apellido_alumno2`, `cedula_escolar`, `fecha_nac`, `genero`, `nacionalidad_alumno`, `estado_id`, `nacimiento_alumno`, `talla_camisa`, `talla_pantalon`, `talla_zapato`, `peso`, `estatura`, `tiene_hermanos`, `cuantos_hermanos`, `tipo_alumno`, `turno`, `seccion_id`, `periodo_escolar`, `funcionario`, `fecha_inscripcion`, `nombre_madre`, `apellido_madre`, `nacionalidad_madre`, `cedula_madre`, `estado_civil_madre`, `nacimiento_madre`, `tipo_nacionalidad_madre`, `estado_madre_id`, `fecha_nac_madre`, `direccion_hab_madre`, `telefono_madre`, `direccion_trabajo_madre`, `telefono_trabajo_madre`, `nivel_academico_madre`, `otros_datos_madre`, `nombre_padre`, `apellido_padre`, `nacionalidad_padre`, `cedula_padre`, `estado_civil_padre`, `nacimiento_padre`, `tipo_nacionalidad_padre`, `estado_padre_id`, `fecha_nac_padre`, `direccion_hab_padre`, `telefono_padre`, `direccion_trabajo_padre`, `telefono_trabajo_padre`, `nivel_academico_padre`, `otros_datos_padre`, `come_solo`, `lo_ayudan`, `quien_ayuda`, `comida_favortia`, `comida_rechaza`, `alimientos_prohibidos`, `enfinteres`, `asea_solo`, `horas_duerme`, `tiempo_dedica_madre`, `tiempo_dedica_padre`, `tiempo_dedica_abuelos`, `nombre_retiro`, `nacionalidad_retiro`, `cedula_retiro`, `celular_retiro`, `parentesco_retiro`, `situacion_embarazo`, `enfermedad_durante_embarazo`, `oficio_durante_embarazo`, `situacion_parto_nacimiento`, `edad_madre_embarazo`, `problemas_parto`, `cual_problema_parto`, `peso_alnacer`, `talla_alnacer`, `problemas_primeros_dias`, `cual_problema`, `edad_hablar`, `edad_caminar`, `edad_panales`, `peso_nino`, `talla_nino`, `grupo_sanguineo`, `alergico`, `especifique_alergia`, `enfermedades_padrecidad`, `hospitalizado`, `causa_hospitalizado`, `fiebre_alta_medicamento`, `motora`, `crecimiento`, `auditiva`, `otra_discapacidad`, `especifique_discapacidad`, `atendido_especialista`, `cual_especialista`, `problemas_lenguaje`, `mano_habil`, `hora_para_dormir`, `hora_se_levanta`, `sueno_nino`, `con_quien_duerme`, `imporfacion_importante`, `status`) VALUES
-(1, 'Gabriel', NULL, 'Acosta', 'Barrera', 26940227, '2020-10-10', 1, 1, 1, 'Bogotá-Colombia', 4, 4, 26, 20, 1, 1, 2, 'Nuevo Ingreso', 1, 7, '2023-2024', 'David Barrera', '2023-08-08', 'Deynalix', 'Barrera', 'V-', 26940227, 'Soltera', 'Caracas', '\'\\\'Venezolana\\\'\'', 1, '1997-05-21', 'Av.panteón, esquina trocadero a san Gabriel, edificio san miguel, piso 12, apto 122-A', '02125529546', 'Av.panteón, esquina trocadero a san Gabriel, edificio san miguel, piso 12, apto 122-A', NULL, 'Bachiller', NULL, 'Vifael', 'Acosta', 'V-', 24640221, 'Soltero', 'Caracas', 1, 1, '1996-10-10', 'Cota 905', '04241123536', 'Cota 905', NULL, 'Bachiller', NULL, 'No', 'Si', 'La madre', 'Tetero', 'Aguacate', 'Ninguno', 'No', 'No', 8, 5, 5, 7, 'David Barrera', 'V-', 24723325, '04242029800', 'Tío ', 'Normal', 'Ninguna', 'Ninguno', 'Normal', 26, 'No', NULL, 3, 20, 'No', NULL, 1, 1, 2, 5, 50, 'ORH +', 'No', NULL, 'Ninguna', 'No', NULL, 'Acetominofen', 0, 0, 0, 0, NULL, 'No', NULL, 'No', 'Izquierda', '9', '6', 'Tranquilo', 'con la madre', NULL, 1);
+INSERT INTO `estudiantes_inicial` (`inicial_id`, `nombre_alumno1`, `nombre_alumno2`, `apellido_alumno1`, `apellido_alumno2`, `cedula_escolar`, `fecha_nac`, `genero`, `nacionalidad_alumno`, `estado_id`, `nacimiento_alumno`, `talla_camisa`, `talla_pantalon`, `talla_zapato`, `peso`, `estatura`, `tiene_hermanos`, `cuantos_hermanos`, `tipo_alumno`, `turno`, `seccion_id`, `periodo_escolar`, `funcionario`, `fecha_inscripcion`, `nombre_madre`, `apellido_madre`, `nacionalidad_madre`, `cedula_madre`, `estado_civil_madre`, `nacimiento_madre`, `tipo_nacionalidad_madre`, `estado_madre_id`, `fecha_nac_madre`, `direccion_hab_madre`, `telefono_madre`, `direccion_trabajo_madre`, `telefono_trabajo_madre`, `nivel_academico_madre`, `otros_datos_madre`, `nombre_padre`, `apellido_padre`, `nacionalidad_padre`, `cedula_padre`, `estado_civil_padre`, `nacimiento_padre`, `tipo_nacionalidad_padre`, `estado_padre_id`, `fecha_nac_padre`, `direccion_hab_padre`, `telefono_padre`, `direccion_trabajo_padre`, `telefono_trabajo_padre`, `nivel_academico_padre`, `otros_datos_padre`, `come_solo`, `lo_ayudan`, `quien_ayuda`, `comida_favortia`, `comida_rechaza`, `alimientos_prohibidos`, `enfinteres`, `asea_solo`, `horas_duerme`, `tiempo_dedica_madre`, `tiempo_dedica_padre`, `tiempo_dedica_abuelos`, `nombre_retiro`, `nacionalidad_retiro`, `cedula_retiro`, `celular_retiro`, `parentesco_retiro`, `situacion_embarazo`, `enfermedad_durante_embarazo`, `oficio_durante_embarazo`, `situacion_parto_nacimiento`, `edad_madre_embarazo`, `problemas_parto`, `cual_problema_parto`, `peso_alnacer`, `talla_alnacer`, `problemas_primeros_dias`, `cual_problema`, `edad_hablar`, `edad_caminar`, `edad_panales`, `peso_nino`, `talla_nino`, `grupo_sanguineo`, `alergico`, `especifique_alergia`, `enfermedades_padrecidad`, `hospitalizado`, `causa_hospitalizado`, `fiebre_alta_medicamento`, `motora`, `crecimiento`, `auditiva`, `visual`, `otra_discapacidad`, `especifique_discapacidad`, `atendido_especialista`, `cual_especialista`, `problemas_lenguaje`, `mano_habil`, `hora_para_dormir`, `hora_se_levanta`, `sueno_nino`, `con_quien_duerme`, `informacion_importante`, `status`) VALUES
+(1, 'Gabriel', NULL, 'Acosta', 'Barrera', 26940227, '2020-10-10', 1, 1, 22, 'Bogotá-Colombia', 4, 4, 26, 20, 1.32, 1, 2, 'Nuevo Ingreso', 1, 7, '2023-2024', 'David Barrera', '2023-08-08', 'Deynalix', 'Barrera', 'V-', 26940227, 'Soltera', 'Caracas', 'Venezolana', 14, '1997-05-21', 'Av.panteón, esquina trocadero a san Gabriel, edificio san miguel, piso 12, apto 122-A', '02125529546', 'Av.panteón, esquina trocadero a san Gabriel, edificio san miguel, piso 12, apto 122-A', NULL, 'Bachiller', NULL, 'Vifael', 'Acosta', 'V-', 24640221, 'Soltero', 'Caracas', 1, 1, '1996-10-10', 'Cota 905', '04241123536', 'Cota 905', NULL, 'Bachiller', NULL, 'No', 'Si', 'La madre', 'Tetero', 'Aguacate', 'Ninguno', 'No', 'No', 8, 5, 5, 7, 'David Barrera', 'V-', 24723325, '04242029800', 'Tío ', 'Normal', 'Ninguna', 'Ninguno', 'Normal', 26, 'No', NULL, 3.2, 20, 'No', NULL, 1, 1, 2, 5.2, 50, 'ORH +', 'No', NULL, 'Ninguna', 'No', NULL, 'Acetominofen', 0, 0, 0, 0, 0, NULL, 'No', NULL, 'No', 'Izquierda', '9', '6', 'Tranquilo', 'con la madre', NULL, 1);
 
 -- --------------------------------------------------------
 
