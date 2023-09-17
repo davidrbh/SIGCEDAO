@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-09-2023 a las 06:37:31
+-- Tiempo de generación: 17-09-2023 a las 07:15:40
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.5
 
@@ -281,7 +281,8 @@ CREATE TABLE `estudiantes` (
 --
 
 INSERT INTO `estudiantes` (`id_estudiante`, `nombre_alumno1`, `nombre_alumno2`, `apellido_alumno1`, `apellido_alumno2`, `cedula_escolar`, `fecha_nac`, `genero`, `nacionalidad_alumno`, `estado_id`, `lugar_nacimiento`, `direccion_hab`, `nombre_madre`, `apellido_madre`, `nacionalidad_madre`, `cedula_madre`, `ocupacion_madre`, `telefono_madre`, `nombre_padre`, `apellido_padre`, `nacionalidad_padre`, `cedula_padre`, `ocupacion_padre`, `telefono_padre`, `nombre_repre`, `apellido_repre`, `nacionalidad_repre`, `cedula_repre`, `parentesco_repre`, `ocupacion_repre`, `telefono_repre`, `celular_repre`, `direccion_repre`, `colaboracion_plantel`, `plantel`, `grado_cursado`, `periodo_escolar`, `literal`, `repitiente`, `tipo_alumno`, `turno`, `seccion_id`, `periodo_escolar_new`, `funcionario`, `fecha_inscripcion`, `enfermedad_padece`, `enfermedad_1`, `tratamiento_enfermedad`, `tratamiento_1`, `alergico_medicamento`, `alergico_1`, `rubeola`, `sarampion`, `lechina`, `paperas`, `otra_enfermedad`, `otra_enfermedad_cual`, `ninguna_enfermedad`, `psicologo`, `nacimiento_parto`, `alumno_seva_solo`, `nombre_retiro`, `parestesco_retiro`, `vive_madre`, `vive_padre`, `vive_hermanos`, `cuantos_hermanos`, `cuantas_hermanas`, `vive_otra_persona`, `cual_persona_vive`, `hermanos_plantel`, `cuantos_hermanos_plantel`, `grado_cursanHermanos`, `turno_cursanHermanos`, `tipo_vivienda`, `condicion_vivienda`, `ingresos_familiares`, `dependecia_ingreso`, `boletin_calificacion`, `boletin_promocion`, `carta_conducta`, `copia_partida_nac`, `copia_cedula_alumno`, `copia_cedula_repre`, `foto_alumno`, `foto_repre`, `boletin_grado`, `otros_documentos`, `documentos_1`, `status`) VALUES
-(1, 'Josue', 'Sebastian', 'Hernandez', 'Barrera', 24723325, '2012-08-30', 1, 1, 1, 'Maracay', 'Av.panteon, esquina trocadero a san gabriel edificio, san miguel, piso 12, apto 122-A', 'Deynalix', 'Barrera', 'V-', 26441548, 'Comerciante', '02125529546', 'Genniber', 'Hernandez', 'V-', 22412251, 'Comerciante', '02125514511', 'David', 'Barrera', 'V-', 24723325, 'Tio', 'Ingeniero Informatico', '02125529546', '04242029800', 'Av.panteon, esquina trocadero a san gabriel edificio, san miguel, piso 12, apto 122-A', 'Personal de apoyo', 'U.E.D Antonio Ornes', 'Cuarto', '2022-2023', 'B', 2, 'Nuevo Ingreso', 1, 1, '2023-2024', 'Josue Hernandez', '2023-08-07', 2, NULL, 2, NULL, 2, NULL, 0, 0, 0, 0, 0, 'Ninguna', 1, 2, 'Normal', 1, 'David Barrera', 'Tio', 1, 1, 2, 0, 0, 1, 'Abuela, Tio', 2, NULL, NULL, NULL, 'Apartamento', 'Propia', 500, 4, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, NULL, 1);
+(1, 'Josue', 'Sebastian', 'Hernandez', 'Barrera', 24723325, '2012-08-30', 1, 1, 1, 'Maracay', 'Av.panteon, esquina trocadero a san gabriel edificio, san miguel, piso 12, apto 122-A', 'Deynalix', 'Barrera', 'V-', 26441548, 'Comerciante', '02125529546', 'Genniber', 'Hernandez', 'V-', 22412251, 'Comerciante', '02125514511', 'David', 'Barrera', 'V-', 24723325, 'Tio', 'Ingeniero Informatico', '02125529546', '04242029800', 'Av.panteon, esquina trocadero a san gabriel edificio, san miguel, piso 12, apto 122-A', 'Personal de apoyo', 'U.E.D Antonio Ornes', 'Cuarto', '2022-2023', 'B', 2, 'Nuevo Ingreso', 1, 1, '2023-2024', 'Josue Hernandez', '2023-08-07', 2, NULL, 2, NULL, 2, NULL, 0, 0, 0, 0, 0, 'Ninguna', 1, 2, 'Normal', 1, 'David Barrera', 'Tio', 1, 1, 2, 0, 0, 1, 'Abuela, Tio', 2, NULL, NULL, NULL, 'Apartamento', 'Propia', 500, 4, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, NULL, 1),
+(2, 'Deivick', 'Moises', 'Acosta', 'Barrera', 36451541, '2015-10-16', 1, 1, 1, 'Caracas', 'Bogota,Colombia', 'Deynalix', 'Barrera', 'V-', 26451428, 'Comerciante', '02125529546', 'Vifael', 'Acosta', 'V-', 24781984, 'Comerciante', '02125514512', 'David', 'Barrera', 'V-', 24723325, 'Tio', 'Programador', '02125529546', '04242029800', 'Av.panteón ', 'Personal de apoyo', 'Armando Zuluaga Blanco', '2', '2022-2023', 'A', 0, 'Nuevo ingreso', 1, 11, '2023-2024', 'David Barrera', '2023-09-12', 2, NULL, 2, NULL, 2, NULL, 0, 0, 0, 0, 0, NULL, 1, 2, 'Normal', 2, 'David Barrera', 'Tio', 1, 1, 0, 0, 0, 1, 'Abuela', 2, NULL, NULL, NULL, 'Apartamento', 'Propia', 500, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -544,7 +545,8 @@ INSERT INTO `seccion` (`id_seccion`, `desc_seccion_id`, `docente_id`, `periodo_e
 (5, 15, NULL, '1', 1),
 (6, 16, NULL, '1', 1),
 (7, 17, 5, '2023-2024', 1),
-(8, 18, 4, '2023-2024', 1);
+(8, 18, 4, '2023-2024', 1),
+(11, 9, 2, '2022-2023', 1);
 
 -- --------------------------------------------------------
 
@@ -736,7 +738,7 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `id_estudiante` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_estudiante` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `estudiantes_inicial`
@@ -772,7 +774,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `seccion`
 --
 ALTER TABLE `seccion`
-  MODIFY `id_seccion` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_seccion` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `turno`
