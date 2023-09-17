@@ -36,5 +36,54 @@ class Secciones extends Controllers
         $this->views->getView($this, "secciones", $data);
     }
 
+
+    public function getSelectSecciones()
+    
+     {
+       
+       $periodo =  $_POST['periodo'];
+   
+       
+    
+       $grado =  $_POST['grado'];
+     
+      
+
+            $arrData = $this->model->selectSecciones($periodo,$grado);
+         
+    
+            for ($i = 0; $i < count($arrData); $i++) {
+           
+    
+                if ($arrData[$i]['status'] == 1) {
+                    $arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
+                } else {
+                    $arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
+                }
+    
+    
+            }
+            echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+    
+            die();
+    }
+
+    public function getSelectTurno($id)
+    {
+        $htmlOptions = "";
+        $intTurno = ($_POST['id']);
+        $arrData = $this->model ->selectSecciones_Turno($intTurno);
+        if(count($arrData) > 0 ){
+            for ($i=0; $i < count($arrData); $i++) { 
+                
+                $htmlOptions .= '<option value="'.$arrData[$i]['id_desc_seccion'].'">'.$arrData[$i]['nombre_seccion'].'</option>';
+                
+            }
+        }
+        echo $htmlOptions;
+        die();		
+    }
+
+  
 }
 ?>
