@@ -12,44 +12,26 @@
         </ul>
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-13">
           <div class="tile">
           
             <h3 class="tile-title">Filtrar por secciones</h3>
             <div class="tile-body">
               <form class="row"  id="formSecciones" name="formSecciones">
 
-              <!-- <div class="form-group col-md-3">
-                <label for="listPeriodo">Periodo Escolar:</label>
-                <select class="form-control selectpicker" id="listPeriodo" name="listPeriodo"  required>
-                  <option value="">Seleccione</option>
-                  <option value="2020-2021">2020-2021</option>
-                  <option value="2021-2022">2021-2022</option>
-                  <option value="2022-2023">2022-2023</option>
-                  <option value="2023-2024">2023-2024</option>
-                  <option value="2024-2025">2024-2025</option>
-                  <option value="2025-2026">2025-2026</option>
-                  <option value="2026-2027">2026-2027</option>
-                  <option value="2027-2028">2027-2028</option>
-                  <option value="2028-2029">2028-2029</option>
-                  <option value="2029-2030">2029-2030</option>
-                  <option value="2030-2031">2030-2031</option>
-                  <option value="2031-2032">2031-2032</option>
-                  <option value="2032-2033">2032-2033</option>
-                  <option value="2033-2034">2033-2034</option>
-                  <option value="2034-2035">2034-2035</option>
-                  <option value="2035-2036">2035-2036</option>
-                  <option value="2036-2037">2036-2037</option>
-                  <option value="2037-2038">2037-2038</option>
-                  <option value="2038-2039">2038-2039</option>
-                  <option value="2039-2040">2039-2040</option>
-                
-                </select>
-              </div> -->
               <div class="form-group col-md-3">
                   <label class="control-label">Periodo Escolar</label>
                   <input class="form-control valid " id="periodo" name="periodo" type="text" placeholder="Periodo escolar" required="">
                 </div>
+
+                <div class="form-group col-md-2">
+                <label for="listNivel">Nivel:</label>
+                <select class="form-control selectpicker" id="listNivel" name="listNivel" required>
+                  <option value="">Seleccione</option>
+                  <option value="1">Inicial</option>
+                  <option value="2">Basica</option>
+                </select>
+              </div>
 
 
               <div class="form-group col-md-3">
@@ -60,34 +42,12 @@
                   <option value="2">Vespertino</option>
                 </select>
               </div>
-<!-- 
-              <div class="form-group col-md-3">
-                <label for="listSeccion">Grado a cursar:</label>
-                <select class="form-control selectpicker" id="listSeccion" name="listSeccion" required>
-                  <option value="">Seleccione</option>
-                  <option value="3">Primero A</option>
-                  <option value="4">Primero B</option>
-                  <option value="5">Segundo A</option>
-                  <option value="6">Segundo B</option>
-                  <option value="7">Tercero A</option>
-                  <option value="8">Tercero B</option>
-                  <option value="9">Cuarto A</option>
-                  <option value="10">Cuarto B</option>
-                  <option value="11">Quinto A</option>
-                  <option value="12">Quinto B</option>
-                  <option value="13">Sexto A</option>
-                  <option value="14">Sexto B</option>
-                  <option value="17">Inicial A</option>
-                  <option value="18">Inicial B</option>
-                 
 
-                </select>
-              </div> -->
 
               
 
-              <div class="form-group col-md-3">
-                  <label for="listSeccion">Grado a cursar:</label>
+              <div class="form-group col-md-2">
+                  <label for="listSeccion">Grado:</label>
                   <select class="form-control  " data-live-search="true" id="listSeccion" name="listSeccion"
                     required="">
 
@@ -96,7 +56,7 @@
                 </div>
 
                
-                <div class="mb-3 col-md-3 align-self-end">
+                <div class="mb-3 col-md-2 align-self-end">
                   <button class="btn btn-primary" onClick="ftnSearchSecciones();" type="submit"><i class="bi bi-check-circle-fill me-2"></i>Buscar</button>
                 </div>
               </form>

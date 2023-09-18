@@ -42,9 +42,6 @@ class Secciones extends Controllers
      {
        
        $periodo =  $_POST['periodo'];
-   
-       
-    
        $grado =  $_POST['grado'];
      
       
@@ -68,11 +65,58 @@ class Secciones extends Controllers
             die();
     }
 
+    
+
+    public function getSelectSecciones_inicial()
+    
+     {
+       
+       $periodo =  $_POST['periodo'];
+       $grado =  $_POST['grado'];
+     
+      
+
+            $arrData = $this->model->selectSecciones_inicial($periodo,$grado);
+         
+    
+            for ($i = 0; $i < count($arrData); $i++) {
+           
+    
+                if ($arrData[$i]['status'] == 1) {
+                    $arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
+                } else {
+                    $arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
+                }
+    
+    
+            }
+            echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+    
+            die();
+    }
+
     public function getSelectTurno($id)
     {
         $htmlOptions = "";
         $intTurno = ($_POST['id']);
         $arrData = $this->model ->selectSecciones_Turno($intTurno);
+        if(count($arrData) > 0 ){
+            for ($i=0; $i < count($arrData); $i++) { 
+                
+                $htmlOptions .= '<option value="'.$arrData[$i]['id_desc_seccion'].'">'.$arrData[$i]['nombre_seccion'].'</option>';
+                
+            }
+        }
+        echo $htmlOptions;
+        die();		
+    }
+
+
+    public function getSelectTurno_inicial($id)
+    {
+        $htmlOptions = "";
+        $intTurno = ($_POST['id']);
+        $arrData = $this->model ->getSelectTurno_inicial($intTurno);
         if(count($arrData) > 0 ){
             for ($i=0; $i < count($arrData); $i++) { 
                 

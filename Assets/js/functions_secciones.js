@@ -34,9 +34,13 @@ function ftnSearchSecciones()
         "grado"  : listGrado
     } 
 
+    let nivel =  document.querySelector("#listNivel").value;
+
+    let url = nivel != 1 ? base_url + "/Secciones/getSelectSecciones" : base_url + "/Secciones/getSelectSecciones_inicial"
+
     $.ajax({
             data: data_,
-            url: base_url + "/Secciones/getSelectSecciones",
+            url: url,
             type: "POST",
             beforeSend: function () {},
             success: function (response) { 
@@ -73,9 +77,7 @@ function ftnSearchSecciones()
                       text: "<i class='fas fa-file-excel'></i> Excel",
                       titleAttr: "Exportar a Excel",
                       className: "btn btn-success",
-                      exportOptions: {
-                        columns: [1, 2, 3],
-                      },
+                     
                     },
                     {
                       extend: "pdfHtml5",
@@ -89,9 +91,7 @@ function ftnSearchSecciones()
                         (currentdate.getMonth() + 1) +
                         "/" +
                         currentdate.getFullYear(),
-                      exportOptions: {
-                        columns: [1, 2, 3],
-                      },
+                   
                       customize: function (doc) {
                         doc.content.splice(0, 0, {
                           columns: [
@@ -112,9 +112,7 @@ function ftnSearchSecciones()
                       text: "<i class='fas fa-file-csv'></i> CSV",
                       titleAttr: "Exportar a CSV",
                       className: "btn btn-info",
-                      exportOptions: {
-                        columns: [1, 2, 3],
-                      },
+                    
                     },
                   ],
                   resonsieve: "true",
@@ -137,12 +135,23 @@ function ftnSearchSecciones()
 
 $(document).ready(function () {
 
+  
+
+
+    $("#listNivel").change(function () {
+
+      let nivel =  document.querySelector("#listNivel").value;
+   
+  
+      let url = nivel != 1 ? base_url + "/Secciones/getSelectTurno" : base_url + "/Secciones/getSelectTurno_inicial"
+  
+
     $("#listTurno").change(function () {
       let parametros = "id=" + $("#listTurno").val();
   
       $.ajax({
         data: parametros,
-        url: base_url + "/Secciones/getSelectTurno",
+        url: url,
         type: "post",
         beforeSend: function () {
           
@@ -158,51 +167,10 @@ $(document).ready(function () {
     });
   
 });
+})
 
 
 
-
-
-////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-// function ftnSearchConsultas()
-// {
-//     let year = document.querySelector(".consultaMes").value;
-//     if(year == ""){
-//         swal("","Ingrese el año" , "error");
-//         return false;
-//     }
-//     if(year <= 999){
-//         swal("","El año debe contener 4 digitos" , "info");
-//         return false;
-//     }else{
-//         let request = (window.XMLHttpRequest) ?
-//             new XMLHttpRequest() :
-//             new ActiveXObject('Microsoft.XMLHTTP');
-//         let ajaxUrl = base_url+'/Estadisticas/estadisticas';
-//         divLoading.style.display = "flex";
-//         let formData = new FormData();
-//         formData.append('year',year);
-//         request.open("POST",ajaxUrl,true);
-//         request.send(formData);
-//         request.onreadystatechange = function()
-//         {
-//             if(request.readyState !=4) return;
-//             if(request.status == 200){
-//                 $("#consultasMeses").html(request.responseText);
-
-//                 divLoading.style.display = "none";
-//                 return false;
-//             }
-//         }
-//     }
-// }
 
 
 
