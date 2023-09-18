@@ -78,6 +78,8 @@
                       <th>Nombre</th>
                       <th>Apellido</th>
                       <th>Cédula escolar</th>
+                      <th>Docente</th>
+                      <th>Sección</th>
                       <th>Status</th>
 
                       

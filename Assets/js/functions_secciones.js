@@ -63,6 +63,8 @@ function ftnSearchSecciones()
                     { data: 'nombre_alumno1' },
                     { data: 'apellido_alumno1' },
                     { data: 'cedula_escolar' },
+                    { data: 'nombre_docente'},
+                    { data: 'nombre_seccion'},
                     { data: 'status' },
                    
                   
