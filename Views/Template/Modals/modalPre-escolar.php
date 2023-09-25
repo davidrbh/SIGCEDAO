@@ -863,23 +863,28 @@
                 <label class="control-label">Padece de alguna discapacidad?</label>
                 <div class="animated-checkbox">
                   <label>
+                  <input type="hidden" name="checkMotora" value="0">
                     <input type="checkbox" id="checkMotora" name="checkMotora" value="0"><span
                       class="label-text">Motora</span>
                   </label>
                   <label>
+                  <input type="hidden" name="checkCrecimiento" value="0">
                     <input type="checkbox" id="checkCrecimiento" name="checkCrecimiento" value="0"><span
                       class="label-text">De crecimiento</span>
                   </label>
                   <label>
+                  <input type="hidden" name="checkAuditiva" value="0">
                     <input type="checkbox" id="checkAuditiva" name="checkAuditiva" value="0"><span
                       class="label-text">Auditiva</span>
                   </label>
 
                   <label>
+                  <input type="hidden" name="checkVisual" value="0">
                     <input type="checkbox" id="checkVisual" name="checkVisual" value="0"><span
                       class="label-text">Visual</span>
                   </label>
                   <label>
+                  <input type="hidden" name="checkOtra_discapacidad" value="0">
                     <input type="checkbox" id="checkOtra_discapacidad" name="checkOtra_discapacidad" value="0"><span
                       class="label-text">Otra</span>
                   </label>
