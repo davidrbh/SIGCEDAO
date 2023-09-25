@@ -58,8 +58,369 @@ class Estudiantes extends Controllers
 
         public function setEstudiante()
         {
-            dep($_POST);
-        }
+			//dep($_POST);
+			if ($_POST) {
+
+				$id_estudiante = intval($_POST['idEstudiante']);
+				
+				$strNombre1 = $_POST['nombre_alumno1'];
+				$strNombre2 = $_POST['nombre_alumno2'];
+				$strApellido1 = $_POST['apellido_alumno1'];
+				$strApellido2 = $_POST['apellido_alumno2'];
+				$intCedula_escolar = $_POST['cedula_escolar'];
+				$fecha_nac = $_POST['fecha_nac'];
+				$intGenero = $_POST['listGenero'];
+				$intNacionalidad = $_POST['listNacionalidad'];
+				$selectEstadoid = $_POST['selectEstadoid'];
+
+				$lugar_nacimiento = $_POST['lugar_nacimiento'];
+				$direccion_habitacion = $_POST['direccion_habitacion'];
+				$nombre_madre = $_POST['nombre_madre'];
+				$apellido_madre = $_POST['apellido_madre'];
+				$listNacionalidad_madre = $_POST['listNacionalidad_madre'];
+				$cedula_madre = $_POST['cedula_madre'];
+				$ocupacion_madre = $_POST['ocupacion_madre'];
+				$telefono_madre = $_POST['telefono_madre'];
+				$nombre_padre = $_POST['nombre_padre'];
+				$apellido_padre = $_POST['apellido_padre'];
+
+				$listNacionalidad_padre = $_POST['listNacionalidad_padre'];
+				$cedula_padre = $_POST['cedula_padre'];
+				$ocupacion_padre = $_POST['ocupacion_padre'];
+				$telefono_padre = $_POST['telefono_padre'];
+				$nombre_repre = $_POST['nombre_repre'];
+				$apellido_repre = $_POST['apellido_repre'];
+				$listNacionalidad_rep = $_POST['listNacionalidad_rep'];
+				$cedula_repre = $_POST['cedula_repre'];
+				$listParentesco = $_POST['listParentesco'];
+				$ocupacion_repre = $_POST['ocupacion_repre'];
+
+				$telefono_repre = $_POST['telefono_repre'];
+				$celular_repre = $_POST['celular_repre'];
+				$direccion_repre = $_POST['direccion_repre'];
+				$colaboracion_plantel = $_POST['colaboracion_plantel'];
+				$plantel = $_POST['plantel'];
+				$listGrado_cursado = $_POST['listGrado_cursado'];
+				$Periodo_anterior = $_POST['periodo-escolar-anterior'];
+				$literal = $_POST['literal'];
+				$listRepitiente = $_POST['listRepitiente'];
+				$listTipo_alumno = $_POST['listTipo_alumno'];
+
+				$listTurno = $_POST['listTurno'];
+				$selectSeccionid = $_POST['selectSeccionid'];
+				$periodo_nuevo = $_POST['periodo-escolar-actual'];
+				$funcionario = $_POST['funcionario'];
+				$fecha_inscripcion = $_POST['fecha_inscripcion'];
+				$listPadece_enfermedad = $_POST['listPadece_enfermedad'];
+				$enfermedad_padece = $_POST['enfermedad_padece'] ? $_POST['enfermedad_padece'] : "No padece de enfermedad";
+				$listTratamiento = $_POST['listTratamiento'] ? $_POST['listTratamiento'] : "No";
+				$tratamiento = $_POST['tratamiento'] ? $_POST['tratamiento'] : "Ninguno";
+				$listAlergico_medicamento = $_POST['listAlergico_medicamento'];
+				
+				$medicamento = $_POST['medicamento'] ? $_POST['medicamento'] : "Ninguno";
+				$checkRubeola = $_POST['checkRubeola'];
+				$checkSarampion = $_POST['checkSarampion'];
+				$checkLechina = $_POST['checkLechina'];
+				$checkPapera = $_POST['checkPapera'];
+				$checkOtra = $_POST['checkOtra'];
+				$otra_enfermedad_cual = $_POST['otra_enfermedad_cual'] ? $_POST['otra_enfermedad_cual'] : "Ninguna";
+				$checkNinguna = $_POST['checkNinguna'];
+				$listPsicologo = $_POST['listPsicologo'];
+				$nacimiento_parto = $_POST['nacimiento_parto'];
+
+				$listSeva_solo = $_POST['listSeva_solo'];
+				$autorizada_retirarlo = $_POST['autorizada_retirarlo'];
+				$listParentesco_retiro = $_POST['listParentesco_retiro'];
+				$checkMadre = $_POST['checkMadre'];
+				$checkPadre = $_POST['checkPadre'];
+				$checkHermano = $_POST['checkHermano'];
+				$checkOtro = $_POST['checkOtro'];
+				$alumnoVive_otra = $_POST['alumnoVive_otra'] ? $_POST['alumnoVive_otra'] : "No" ;
+				$cuantos_hermanos = $_POST['cuantos_hermanos'] ? $_POST['cuantos_hermanos'] : 0;
+				$cuantos_hermanas = $_POST['cuantos_hermanas'] ? $_POST['cuantos_hermanas'] : 0;
+				
+				$listHermano_plantel = $_POST['listHermano_plantel'];				
+				$hermanos_plantel = $_POST['hermanos_plantel'] ? $_POST['hermanos_plantel'] : null;
+				$grado_hermanos = $_POST['grado_hermanos'] ? $_POST['grado_hermanos'] : null;
+				$turno_hermanos = $_POST['turno_hermanos'] ? $_POST['turno_hermanos'] : null;
+				$listVivienda = $_POST['listVivienda'];
+				$listCondicion_vivienda = $_POST['listCondicion_vivienda'];
+				$ingreso_familia = $_POST['ingreso_familia'];
+				$ingreso_numeroPersona = $_POST['ingreso_numeroPersona'];
+				$checkBoletin = $_POST['checkBoletin'];
+				$checkPromocion = $_POST['checkPromocion'];
+				
+				$checkconducta = $_POST['checkconducta'];
+				$checkPartida = $_POST['checkPartida'];
+				$checkCedulaAlumno = $_POST['checkCedulaAlumno'];
+				$checkCedulaRepre = $_POST['checkCedulaRepre'];
+				$checkFotosAlumno = $_POST['checkFotosAlumno'];
+				$checkFotosRepre = $_POST['checkFotosRepre'];
+				$checkBoletinGrado = $_POST['checkBoletinGrado'];
+				$checkOtrosDocumentos = $_POST['checkOtrosDocumentos'];
+				$otros_documentos = $_POST['otros_documentos'] ? $_POST['otros_documentos']  : null;
+				$listStatus = $_POST['listStatus'];
+	
+				
+
+				if (empty($strNombre1) || 
+					empty($strApellido1) || 
+					empty($intCedula_escolar) ||
+					empty($lugar_nacimiento) || 
+					empty($direccion_habitacion) ||
+					empty($nombre_madre) ||
+					empty($cedula_madre) ||
+				    empty($nombre_padre) || 
+					empty($cedula_padre) ||
+					empty($nombre_repre) ||
+					empty($cedula_repre) ||
+					empty($telefono_repre) ||
+					empty($direccion_repre) ||
+					empty($literal)) {
+					$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
+				} else {
+	
+	
+					if ($id_estudiante == 0) {
+						$option = 1;
+	
+						$request_estudiante = $this->model->insertEstudiante(
+							ucwords(strClean($strNombre1)),
+							ucwords(strClean($strNombre2)),
+							ucwords(strClean($strApellido1)),
+							ucwords(strClean($strApellido2)),
+							$intCedula_escolar,
+							$fecha_nac,
+							$intGenero,
+							$intNacionalidad,
+							$selectEstadoid,
+							ucwords(strClean($lugar_nacimiento)),
+							
+							ucwords(strClean($direccion_habitacion)),
+							ucwords(strClean($nombre_madre)),
+							ucwords(strClean($apellido_madre)),
+							$listNacionalidad_madre,
+							$cedula_madre,
+							ucwords(strClean($ocupacion_madre)),
+							$telefono_madre,
+							ucwords(strClean($nombre_padre)),
+							ucwords(strClean($apellido_padre)),
+							$listNacionalidad_padre,
+
+							$cedula_padre,
+							ucwords(strClean($ocupacion_padre)),
+							$telefono_padre,
+							ucwords(strClean($nombre_repre)),
+							ucwords(strClean($apellido_repre)),
+							$listNacionalidad_rep,
+							$cedula_repre,
+							$listParentesco,
+							ucwords(strClean($ocupacion_repre)),
+							$telefono_repre,
+
+							$celular_repre,
+							ucwords(strClean($direccion_repre)),
+							ucwords(strClean($colaboracion_plantel)),
+							$plantel,
+							$listGrado_cursado,
+							$Periodo_anterior,
+							ucwords(strClean($literal)),
+							$listRepitiente,
+							$listTipo_alumno,
+							$listTurno,
+
+							$selectSeccionid,
+							$periodo_nuevo,
+							$funcionario,
+							$fecha_inscripcion,
+							$listPadece_enfermedad,
+							ucwords(strClean($enfermedad_padece)),
+							$listTratamiento,
+							ucwords(strClean($tratamiento)),
+							$listAlergico_medicamento,
+							ucwords(strClean($medicamento)),
+							$checkRubeola,
+
+							$checkSarampion,
+							$checkLechina,
+							$checkPapera,
+							$checkOtra,
+							$otra_enfermedad_cual,
+							$checkNinguna,
+							$listPsicologo,
+							$nacimiento_parto,
+							$listSeva_solo,
+							ucwords(strClean($autorizada_retirarlo)),
+
+							$listParentesco_retiro,
+							$checkMadre,
+							$checkPadre,
+							$checkHermano,
+							$checkOtro,
+							$alumnoVive_otra,
+							$cuantos_hermanos,
+							$cuantos_hermanas,
+							$listHermano_plantel,
+							$hermanos_plantel,
+
+							$grado_hermanos,
+							$turno_hermanos,
+							$listVivienda,
+							$listCondicion_vivienda,
+							$ingreso_familia,
+							$ingreso_numeroPersona,
+							$checkBoletin,
+							$checkPromocion,
+							$checkconducta,
+							$checkPartida,
+
+							$checkCedulaAlumno,
+							$checkCedulaRepre,
+							$checkFotosAlumno,
+							$checkFotosRepre,
+							$checkBoletinGrado,
+							$checkOtrosDocumentos,
+							$otros_documentos,
+							$listStatus
+						);
+	
+					} else {
+						$option = 2;
+				
+						$request_estudiante = $this->model->updateEstudiante(
+							intval($id_estudiante),
+							ucwords(strClean($strNombre1)),
+							ucwords(strClean($strNombre2)),
+							ucwords(strClean($strApellido1)),
+							ucwords(strClean($strApellido2)),
+							$intCedula_escolar,
+							$fecha_nac,
+							$intGenero,
+							$intNacionalidad,
+							$selectEstadoid,
+							ucwords(strClean($lugar_nacimiento)),
+							
+							ucwords(strClean($direccion_habitacion)),
+							ucwords(strClean($nombre_madre)),
+							ucwords(strClean($apellido_madre)),
+							$listNacionalidad_madre,
+							$cedula_madre,
+							ucwords(strClean($ocupacion_madre)),
+							$telefono_madre,
+							ucwords(strClean($nombre_padre)),
+							ucwords(strClean($apellido_padre)),
+							$listNacionalidad_padre,
+
+							$cedula_padre,
+							ucwords(strClean($ocupacion_padre)),
+							$telefono_padre,
+							ucwords(strClean($nombre_repre)),
+							ucwords(strClean($apellido_repre)),
+							$listNacionalidad_rep,
+							$cedula_repre,
+							$listParentesco,
+							ucwords(strClean($ocupacion_repre)),
+							$telefono_repre,
+
+							$celular_repre,
+							ucwords(strClean($direccion_repre)),
+							ucwords(strClean($colaboracion_plantel)),
+							$plantel,
+							$listGrado_cursado,
+							$Periodo_anterior,
+							ucwords(strClean($literal)),
+							$listRepitiente,
+							$listTipo_alumno,
+							$listTurno,
+
+							$selectSeccionid,
+							$periodo_nuevo,
+							$funcionario,
+							$fecha_inscripcion,
+							$listPadece_enfermedad,
+							ucwords(strClean($enfermedad_padece)),
+							$listTratamiento,
+							ucwords(strClean($tratamiento)),
+							$listAlergico_medicamento,
+							ucwords(strClean($medicamento)),
+							$checkRubeola,
+
+							$checkSarampion,
+							$checkLechina,
+							$checkPapera,
+							$checkOtra,
+							$otra_enfermedad_cual,
+							$checkNinguna,
+							$listPsicologo,
+							$nacimiento_parto,
+							$listSeva_solo,
+							ucwords(strClean($autorizada_retirarlo)),
+
+							$listParentesco_retiro,
+							$checkMadre,
+							$checkPadre,
+							$checkHermano,
+							$checkOtro,
+							$alumnoVive_otra,
+							$cuantos_hermanos,
+							$cuantos_hermanas,
+							$listHermano_plantel,
+							$hermanos_plantel,
+
+							$grado_hermanos,
+							$turno_hermanos,
+							$listVivienda,
+							$listCondicion_vivienda,
+							$ingreso_familia,
+							$ingreso_numeroPersona,
+							$checkBoletin,
+							$checkPromocion,
+							$checkconducta,
+							$checkPartida,
+
+							$checkCedulaAlumno,
+							$checkCedulaRepre,
+							$checkFotosAlumno,
+							$checkFotosRepre,
+							$checkBoletinGrado,
+							$checkOtrosDocumentos,
+							$otros_documentos,
+							$listStatus
+						 );
+	
+	
+					}
+	
+	
+	
+					if ($request_estudiante > 0) {
+						if ($option == 1) {
+							$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+						} else {
+							$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+						}
+					} else if ($request_estudiante == false) {
+						$arrResponse = array('status' => false, 'msg' => '¡Atención! el estudiante ya existe, ingrese otra.');
+					} else {
+						$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
+					}
+				}
+	
+				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+			}
+			die();
+
+		
+
+
+			
+			
+			
+			
+	
+		}
+			
+        
 
         public function getNombreDocente($id)
 		{
@@ -345,7 +706,7 @@ class Estudiantes extends Controllers
 
 
 
-			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . '</div>';
 		}
 
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
@@ -389,6 +750,27 @@ class Estudiantes extends Controllers
 
 		die();
 	}
+
+
+	public function getEstudiante_1(int $intId_estudiante)
+	{
+
+
+		$intId_estudiante = intval($intId_estudiante);
+		if ($intId_estudiante > 0) {
+			
+			$arrData = $this->model->selectEstudiante_1($intId_estudiante);
+			if (empty($arrData)) {
+				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+			} else {
+				$arrResponse = array('status' => true, 'data' => $arrData);
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+
+		die();
+	}
+	
 	
 
 

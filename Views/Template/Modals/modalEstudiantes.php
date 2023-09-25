@@ -369,8 +369,8 @@
                 <label for="listTipo_alumno">Tipo de Alumno:</label>
                 <select class="form-control selectpicker" id="listTipo_alumno" name="listTipo_alumno" required>
                   <option value="">Seleccione</option>
-                  <option value="Nuevo ingreso">Nuevo Ingreso</option>
-                  <option value="Segundo">Regular</option>
+                  <option value="Nuevo Ingreso">Nuevo Ingreso</option>
+                  <option value="Regular">Regular</option>
       
                 </select>
               </div>
@@ -402,15 +402,15 @@
                   </select>
                 </div>
 
-                <div class="form-group col-md-2">
-                    <fieldset>
+                <div class="form-group col-md-3">
+                    <fieldset disabled
                       <label class="control-label" for="nombreDocente">Nombre del docente:</label>
                      <select class="form-control" id="nombreDocente" name="nombreDocente" type="text"placeholder="<?php  ?>" value="" readonly="">
                         </select>  
                     </fieldset>
                   </div>
 
-                  <div class="form-group col-md-2">
+                  <div class="form-group col-md-3">
                     <fieldset>
                       <label class="control-label" for="periodo-escolar-actual">Periodo escolar:</label>
                      <select class="form-control" id="periodo-escolar-actual" name="periodo-escolar-actual" type="text"placeholder="<?php  ?>" value="" readonly="">
@@ -430,8 +430,10 @@
               </div> -->
 
               <div class="form-group col-md-3">
-              <fieldset disabled>
+             
                   <label for="funcionario">Funcionario que realiza la inscripción:</label>
+                  <input type="hidden" name="funcionario" value="<?= $_SESSION['userData']['nombres'];?>">
+                  <fieldset disabled>
                   <input type="text" class="form-control valid validText" id="funcionario" name="funcionario" value="<?= $_SESSION['userData']['nombres'];?>" required="">
                 </fieldset>
                 </div>
@@ -512,27 +514,33 @@
                   enfermedades?</label>
                 <div class="animated-checkbox">
                   <label>
-                    <input type="checkbox" id="checkRubeola" name="checkRubeola" value="0"><span
+                  <input type="hidden" name="checkRubeola" value="0">
+                    <input type="checkbox" id="checkRubeola" name="checkRubeola" value="0" ><span
                       class="label-text">Rubeola</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkSarampion" name="checkSarampion" value="0"><span
+                  <input type="hidden" name="checkSarampion" value="0">
+                    <input type="checkbox" id="checkSarampion" name="checkSarampion" value="0" ><span
                       class="label-text">Sarampión</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkLechina" name="checkLechina" value="0"><span
+                  <input type="hidden" name="checkLechina" value="0">
+                    <input type="checkbox" id="checkLechina" name="checkLechina" value="0" ><span
                       class="label-text">Lechina</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkPapera" name="checkPapera" value="0"><span
+                  <input type="hidden" name="checkPapera" value="0">
+                    <input type="checkbox" id="checkPapera" name="checkPapera" value="0" ><span
                       class="label-text">Paperas</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkOtra" name="checkOtra" value="0"><span
+                  <input type="hidden" name="checkOtra" value="0">
+                    <input type="checkbox" id="checkOtra" name="checkOtra" value="0" ><span
                       class="label-text">Otra</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkNinguna" name="checkNinguna" value="0"><span
+                  <input type="hidden" name="checkNinguna" value="0">
+                    <input type="checkbox" id="checkNinguna" name="checkNinguna" value="0" ><span
                       class="label-text">Ninguna</span>
                   </label>
                   </label>
@@ -541,7 +549,7 @@
 
               <div class="form-group col-md-3 oculto3" style="display: none;">
                 <label class="control-label">Cuál?</label>
-                <input class="form-control valid" id="otra_enfermedad" name="otra_enfermedad" value="" type="text" placeholder="">
+                <input class="form-control valid" id="otra_enfermedad_cual" name="otra_enfermedad_cual" value="" type="text" placeholder="">
               </div>
 
               <div class="form-group col-md-3">
@@ -606,18 +614,22 @@
                 <label class="control-label">Con quién vive el Alumno?</label>
                 <div class="animated-checkbox">
                   <label>
+                  <input type="hidden" name="checkMadre" value="0">
                     <input type="checkbox" id="checkMadre" name="checkMadre" value="0"><span
                       class="label-text">Madre</span>
                   </label>
                   <label>
+                  <input type="hidden" name="checkPadre" value="0">
                     <input type="checkbox" id="checkPadre" name="checkPadre" value="0"><span
                       class="label-text">Padre</span>
                   </label>
                   <label>
+                  <input type="hidden" name="checkHermano" value="0">
                     <input type="checkbox" id="checkHermano" name="checkHermano" value="0"><span
                       class="label-text">Hermanos</span>
                   </label>
                   <label>
+                  <input type="hidden" name="checkOtro" value="0">
                     <input type="checkbox" id="checkOtro" name="checkOtro" value="0"><span
                       class="label-text">Otras personas</span>
                   </label>
@@ -659,7 +671,8 @@
 
               <div class="form-group col-md-3 oculto6" style="display: none;">
                 <label for="hermanos_plantel">Número de hermanos:</label>
-                <select class="form-control selectpicker " id="hermanos_plantel" name="hermanos_plantel" >
+                <input type="hidden" name="hermanos_plantel" value="">
+                <select class="form-control selectpicker " id="hermanos_plantel" name="hermanos_plantel" value="" >
                   <option value="">Seleccione</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -744,46 +757,56 @@
                 <label class="control-label">Documentos:</label>
                 <div class="animated-checkbox">
                   <label>
-                    <input type="checkbox" id="checkBoletin" name="checkBoletin" value="0"><span
+                  <input type="hidden" name="checkBoletin" value="0">
+                    <input type="checkbox" id="checkBoletin" name="checkBoletin" value="0" ><span
                       class="label-text">Boletin de calificación</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkPromocion" name="checkPromocion" value="0"><span
+                  <input type="hidden" name="checkPromocion" value="0">
+                    <input type="checkbox" id="checkPromocion" name="checkPromocion" value="0" ><span
                       class="label-text">Boletin de promoción</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkconducta" name="checkconducta" value="0"><span
+                  <input type="hidden" name="checkconducta" value="0">
+                    <input type="checkbox" id="checkconducta" name="checkconducta" value="0" ><span
                       class="label-text">Carta de buena conducta</span>
                   </label>
                   <label>
+                  <input type="hidden" name="checkPartida" value="0">
                     <input type="checkbox" id="checkPartida" name="checkPartida"
-                      value="0"><span class="label-text">Copia de partida de
+                      value="0" ><span class="label-text">Copia de partida de
                       nacimento</span>
                   </label>
                   <label>
+                  <input type="hidden" name="checkCedulaAlumno" value="0">
                     <input type="checkbox" id="checkCedulaAlumno" name="checkCedulaAlumno"
-                      value="0"><span class="label-text">Copia de la cédula del
+                      value="0" ><span class="label-text">Copia de la cédula del
                       alumno</span>
                   </label>
                   <label>
+                  <input type="hidden" name="checkCedulaRepre" value="0">
                     <input type="checkbox" id="checkCedulaRepre" name="checkCedulaRepre"
-                      value="0"><span class="label-text">Copia de la cédula del
+                      value="0" ><span class="label-text">Copia de la cédula del
                       representante</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkFotosAlumno" name="checkFotosAlumno" value="0"><span
+                  <input type="hidden" name="checkFotosAlumno" value="0">
+                    <input type="checkbox" id="checkFotosAlumno" name="checkFotosAlumno" value="0" ><span
                       class="label-text">Fotos del alumno</span>
                   </label>
                   <label>
+                  <input type="hidden" name="checkFotosRepre" value="0">
                     <input type="checkbox" id="checkFotosRepre" name="checkFotosRepre"
-                      value="0"><span class="label-text">Fotos del representante</span>
+                      value="0" ><span class="label-text">Fotos del representante</span>
                   </label>
                   <label>
+                  <input type="hidden" name="checkBoletinGrado" value="0">
                     <input type="checkbox" id="checkBoletinGrado" name="checkBoletinGrado"
-                      value="0"><span class="label-text">Boletin de grado</span>
+                      value="0" ><span class="label-text">Boletin de grado</span>
                   </label>
                   <label>
-                    <input type="checkbox" id="checkOtrosDocumentos" name="checkOtrosDocumentos" value="0"><span
+                  <input type="hidden" name="checkOtrosDocumentos" value="0">
+                    <input type="checkbox" id="checkOtrosDocumentos" name="checkOtrosDocumentos" value="0" ><span
                       class="label-text">Otros</span>
                   </label>
                   </label>
@@ -1092,7 +1115,7 @@
               <td id="celNombre_enfermedadOtra">Larry</td>
             </tr>
             <tr>
-              <td>Ninguna enfermdad:</td>
+              <td>Ninguna enfermedad:</td>
               <td id="celNinguna">Larry</td>
             </tr>
             <tr>

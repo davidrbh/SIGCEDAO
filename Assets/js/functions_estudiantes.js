@@ -318,12 +318,8 @@ formEstudiante.onsubmit = function (e) {
  */
 function openModal() {
   document.querySelector("#idEstudiante").value = "";
-  document
-    .querySelector(".modal-header")
-    .classList.replace("headerUpdate", "headerRegister");
-  document
-    .querySelector("#btnActionForm")
-    .classList.replace("btn-info", "btn-primary");
+  document.querySelector(".modal-header").classList.replace("headerUpdate", "headerRegister");
+  document.querySelector("#btnActionForm").classList.replace("btn-info", "btn-primary");
   document.querySelector("#btnText").innerHTML = "Guardar";
   document.querySelector("#titleModal").innerHTML = "Nuevo Estudiante";
   document.querySelector("#formEstudiante").reset();
@@ -334,12 +330,8 @@ function openModal() {
 
 function fntEditEstudiante(id_estudiante) {
   document.querySelector("#titleModal").innerHTML = "Actualizar Estudiante";
-  document
-    .querySelector(".modal-header")
-    .classList.replace("headerRegister", "headerUpdate");
-  document
-    .querySelector("#btnActionForm")
-    .classList.replace("btn-primary", "btn-info");
+  document.querySelector(".modal-header").classList.replace("headerRegister", "headerUpdate");
+  document.querySelector("#btnActionForm").classList.replace("btn-primary", "btn-info");
   document.querySelector("#btnText").innerHTML = "Actualizar";
 
   divLoading.style.display = "flex";
@@ -347,23 +339,188 @@ function fntEditEstudiante(id_estudiante) {
   let request = window.XMLHttpRequest
     ? new XMLHttpRequest()
     : new ActiveXObject("Microsoft.XMLHTTP");
-  let ajaxUrl = base_url + "/Estudiante/getEstudiante/" + id_estudiante;
+  let  ajaxUrl = base_url+'/Estudiantes/getEstudiante_1/'+id_estudiante; 
   request.open("GET", ajaxUrl, true);
   request.send();
 
   request.onreadystatechange = function () {
     if (request.readyState == 4 && request.status == 200) {
       let objData = JSON.parse(request.responseText);
-
+      console.log(objData)
+     
+      
       if (objData.status) {
-        document.querySelector("#id_estudiante").value =
-          objData.data.id_especialidad;
+        document.querySelector("#idEstudiante").value =objData.data.id_estudiante;
+        document.querySelector("#nombre_alumno1").value = objData.data.nombre_alumno1;
+        document.querySelector("#nombre_alumno2").value = objData.data.nombre_alumno2;
+        document.querySelector("#apellido_alumno1").value = objData.data.apellido_alumno1;
+        document.querySelector("#apellido_alumno2").value = objData.data.apellido_alumno2;
+        document.querySelector("#cedula_escolar").value = objData.data.cedula_escolar;
+        document.querySelector("#fecha_nac").value = objData.data.fecha_nac;
+        document.querySelector("#listGenero").value = objData.data.genero;
+        document.querySelector("#listNacionalidad").value = objData.data.nacionalidad_alumno;;
+        document.querySelector("#selectEstadoid").value = objData.data.estado_id;
+        document.querySelector("#lugar_nacimiento").value = objData.data.lugar_nacimiento;
+        document.querySelector("#direccion_habitacion").value = objData.data.direccion_hab;
+        document.querySelector("#nombre_madre").value = objData.data.nombre_madre;
+        document.querySelector("#apellido_madre").value = objData.data.apellido_madre;
+        document.querySelector("#listNacionalidad_madre").value = objData.data.nacionalidad_madre;
+        document.querySelector("#cedula_madre").value = objData.data.cedula_madre;
+        document.querySelector("#ocupacion_madre").value = objData.data.ocupacion_madre;
+        document.querySelector("#telefono_madre").value = objData.data.telefono_madre;
+        document.querySelector("#nombre_padre").value = objData.data.nombre_padre;
+        document.querySelector("#apellido_padre").value = objData.data.apellido_padre;
+        document.querySelector("#listNacionalidad_padre").value = objData.data.nacionalidad_padre;
+        document.querySelector("#cedula_padre").value = objData.data.cedula_padre;
+        document.querySelector("#ocupacion_padre").value = objData.data.ocupacion_padre;
+        document.querySelector("#telefono_padre").value = objData.data.telefono_padre;
+        document.querySelector("#nombre_repre").value = objData.data.nombre_repre;
+        document.querySelector("#apellido_repre").value = objData.data.apellido_repre;
+        document.querySelector("#listNacionalidad_rep").value = objData.data.nacionalidad_repre;
+        document.querySelector("#cedula_repre").value = objData.data.cedula_repre;
+        document.querySelector("#listParentesco").value = objData.data.parentesco_repre;
+        document.querySelector("#ocupacion_repre").value = objData.data.ocupacion_repre;
+        document.querySelector("#telefono_repre").value = objData.data.telefono_repre;
+        document.querySelector("#celular_repre").value = objData.data.celular_repre;
+        document.querySelector("#direccion_repre").value = objData.data.direccion_repre;
+        document.querySelector("#colaboracion_plantel").value = objData.data.colaboracion_plantel;
+        document.querySelector("#plantel").value = objData.data.plantel;
+        document.querySelector("#listGrado_cursado").value = objData.data.grado_cursado;
+        document.querySelector("#periodo-escolar-anterior").value = objData.data.periodo_escolar;
+        document.querySelector("#literal").value = objData.data.literal;
+        document.querySelector("#listRepitiente").value = objData.data.repitiente;
+        document.querySelector("#listTipo_alumno").value = objData.data.tipo_alumno;
+        //document.querySelector("#listTurno").value = objData.data.turno;
        
+        
+        let turn = objData.data.turno; 
+        
+        document.querySelector("#periodo-escolar-actual").value = objData.data.periodo_escolar_new;
+        document.querySelector("#funcionario").value = objData.data.funcionario;
+        document.querySelector("#fecha_inscripcion").value = objData.data.fecha_inscripcion;
+        document.querySelector("#listPadece_enfermedad").value = objData.data.enfermedad_padece;
+        document.querySelector("#enfermedad_padece").value = objData.data.enfermedad_1;
+        document.querySelector("#listTratamiento").value = objData.data.tratamiento_enfermedad;
+        document.querySelector("#tratamiento").value = objData.data.tratamiento_1;
+        document.querySelector("#listAlergico_medicamento").value = objData.data.alergico_medicamento;
+        document.querySelector("#medicamento").value = objData.data.alergico_1;
+        document.querySelector("#checkRubeola").value = objData.data.rubeola;
+        document.querySelector("#checkSarampion").value = objData.data.sarampion;
+        document.querySelector("#checkLechina").value = objData.data.lechina;
+        document.querySelector("#checkPapera").value = objData.data.paperas;
+        document.querySelector("#checkOtra").value = objData.data.otra_enfermedad;
+        document.querySelector("#otra_enfermedad_cual").value = objData.data.otra_enfermedad_cual;
+        document.querySelector("#checkNinguna").value = objData.data.ninguna_enfermedad;
+        document.querySelector("#listPsicologo").value = objData.data.psicologo;
+        document.querySelector("#nacimiento_parto").value = objData.data.nacimiento_parto;
+        document.querySelector("#listSeva_solo").value = objData.data.alumno_seva_solo;
+        document.querySelector("#autorizada_retirarlo").value = objData.data.nombre_retiro;
+        document.querySelector("#listParentesco_retiro").value = objData.data.parestesco_retiro;
+        document.querySelector("#checkMadre").value = objData.data.vive_madre;
+        document.querySelector("#checkPadre").value = objData.data.vive_padre;
+        document.querySelector("#checkHermano").value = objData.data.vive_hermanos;
+        document.querySelector("#cuantos_hermanos").value = objData.data.cuantos_hermanos;
+        document.querySelector("#cuantos_hermanas").value = objData.data.cuantas_hermanas;
+        document.querySelector("#checkOtro").value = objData.data.vive_otra_persona;
+        document.querySelector("#alumnoVive_otra").value = objData.data.cual_persona_vive;
+        document.querySelector("#listHermano_plantel").value = objData.data.hermanos_plantel;
+        document.querySelector("#hermanos_plantel").value = objData.data.cuantos_hermanos_plantel;
+        document.querySelector("#grado_hermanos").value = objData.data.grado_cursanHermanos;
+        document.querySelector("#turno_hermanos").value = objData.data.turno_cursanHermanos;
+        document.querySelector("#listVivienda").value = objData.data.tipo_vivienda;
+        document.querySelector("#listCondicion_vivienda").value = objData.data.condicion_vivienda;
+        document.querySelector("#ingreso_familia").value = objData.data.ingresos_familiares;
+        document.querySelector("#ingreso_numeroPersona").value = objData.data.dependecia_ingreso;
+        document.querySelector("#checkBoletin").value = objData.data.boletin_calificacion;
+        document.querySelector("#checkPromocion").value = objData.data.boletin_promocion;
+        document.querySelector("#checkconducta").value = objData.data.carta_conducta;
+        document.querySelector("#checkPartida").value = objData.data.copia_partida_nac;
+        document.querySelector("#checkCedulaAlumno").value = objData.data.copia_cedula_alumno;
+        document.querySelector("#checkFotosAlumno").value = objData.data.foto_alumno;
+        document.querySelector("#checkCedulaRepre").value = objData.data.copia_cedula_repre;
+        document.querySelector("#checkFotosRepre").value = objData.data.foto_repre;
+        document.querySelector("#checkBoletinGrado").value = objData.data.boletin_grado;
+        document.querySelector("#checkOtrosDocumentos").value = objData.data.otros_documentos;
+        document.querySelector("#otros_documentos").value = objData.data.documentos_1;
         document.querySelector("#listStatus").value = objData.data.status;
 
-        $("#listStatus").selectpicker("render");
-
+       
         $("#modalFormEstudiante").modal("show");
+
+        $("#listGenero").selectpicker("render");
+        $("#listNacionalidad").selectpicker("render");
+        $("#selectEstadoid").selectpicker("render");
+        $("#listNacionalidad_madre").selectpicker("render");
+        $("#listNacionalidad_padre").selectpicker("render");
+        $("#listNacionalidad_rep").selectpicker("render");
+        $("#listParentesco").selectpicker("render");
+        $("#listGrado_cursado").selectpicker("render");
+        $("#listRepitiente").selectpicker("render");
+        $("#listTipo_alumno").selectpicker("render");
+        $("#listTurno").selectpicker("render");
+        $("#listPadece_enfermedad").selectpicker("render");
+        $("#listTratamiento").selectpicker("render");
+        $("#listAlergico_medicamento").selectpicker("render");
+        $("#listPsicologo").selectpicker("render");
+        $("#nacimiento_parto").selectpicker("render");
+        $("#listSeva_solo").selectpicker("render");
+        $("#listParentesco_retiro").selectpicker("render");
+        $("#listHermano_plantel").selectpicker("render");
+        $("#hermanos_plantel").selectpicker("render");
+        $("#listVivienda").selectpicker("render");
+        $("#listCondicion_vivienda").selectpicker("render");
+        $("#listStatus").selectpicker("render");
+       
+
+        
+        
+        if(turn == 1){
+          
+
+          $('[data-id="listTurno"]').click();
+                $('#bs-select-10-1').click();
+
+                setTimeout(function() {
+                
+                  let selectElement = document.getElementById("selectSeccionid");
+
+                  
+                  let valorDeseado = objData.data.seccion_id; 
+                  selectElement.value = valorDeseado;
+
+                  
+                  let event = new Event("change", { bubbles: true });
+                  selectElement.dispatchEvent(event);
+                }, 5e3);
+              
+             
+
+             
+      
+          
+          }else{ $('[data-id="listTurno"]').click();
+                $('#bs-select-10-2').click();
+          
+                setTimeout(function() {
+                
+                  let selectElement = document.getElementById("selectSeccionid");
+
+                  
+                  let valorDeseado = objData.data.seccion_id; 
+                  selectElement.value = valorDeseado;
+
+                  
+                  let event = new Event("change", { bubbles: true });
+                  selectElement.dispatchEvent(event);
+                }, 5e3);
+
+        }
+
+      
+   
+        
+
+        $('.animated-checkbox [type="checkbox"]').toArray().forEach(e=>e.value== 1 ? e.click() : e.checked = false);
       } else {
         swal("Error", objData.msg, "error");
       }
