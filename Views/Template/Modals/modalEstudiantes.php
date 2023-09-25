@@ -480,6 +480,7 @@
 
               <div class="form-group col-md-2 oculto" style="display: none;">
                 <label for="listTratamiento">Sigue tratamiento?</label>
+                <input type="hidden" name="listTratamiento" value="">
                 <select class="form-control selectpicker " id="listTratamiento"  name="listTratamiento">
                   <option value="">Seleccione</option>
                   <option value="1">Si</option>
@@ -495,6 +496,7 @@
 
               <div class="form-group col-md-3 ">
                 <label for="listAlergico_medicamento">Alergico a algún medicamento?</label>
+                
                 <select class="form-control selectpicker " id="listAlergico_medicamento" name="listAlergico_medicamento" required>
                   <option value="">Seleccione</option>
                   <option value="1">Si</option>
