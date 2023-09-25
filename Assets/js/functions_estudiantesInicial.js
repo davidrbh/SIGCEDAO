@@ -202,7 +202,7 @@ formPre_escolar.onsubmit = function (e) {
   let  strHermanosPre = document.querySelector('#listHermanosPre').value; 
   let  strNombreMadrePre = document.querySelector('#nombre_madrePre').value;
   let  strApellidoMadrePre = document.querySelector('#apellido_madrePre').value;
-  let  intNacionalidadMadrePre = document.querySelector('#listNacionalidad_madrePre').value;
+  let  intNacionalidadMadrePre = document.querySelector('#listNacionalidad_madrePre_').value;
   let  intCedulaMadrePre = document.querySelector('#cedula_madrePre').value;
   let  strEstadoCivilMadre = document.querySelector('#listEstado_civil_madre').value;
   let  strNacimientoMadrePre = document.querySelector('#lugar_nacimientoMadrePre').value;
@@ -226,12 +226,46 @@ formPre_escolar.onsubmit = function (e) {
   let  intStatus2 = document.querySelector('#listStatus2').value;
   
 
-  if(strNombreAlumnoPre == '' || strApellidoAlumnoPre == '' || intCedulaEscolarPre == '' || intGeneroPre == ''
-   || intNacionalidadPre == '' || intEstadoPre == '' || strLugarNacimientoPre == ''|| intTallaCamisa == '' || intTallaPantalon == '' || intTallaZapato == '' || intPeso == ''
-   || intEstatura == '' || strHermanosPre == '' || strNombreMadrePre == ''|| strApellidoMadrePre == '' || intNacionalidadMadrePre == '' || intCedulaMadrePre == '' || strEstadoCivilMadre == ''
-   || strNacimientoMadrePre == '' || strNacionalidad_madre_pre == '' || intEstadoMadrePre == ''|| strDireccionHabitacionMadrePre == '' || intTelefonoMadrePre == '' || strDireccionTrabajoMadrePre == '' || strNivelAcademicoMadrePre == ''
-   || strNombrePadrePre == '' || strApellidoPadrePre == '' || intNacionalidadPadrePre == ''|| intCedulaPadrePre == '' || strNacimientoPadrePre == '' || strNacionalidad_Padre_pre == ''
-   || intEstadoPadrePre == '' || strDireccionHabitacionPadrePre == '' || intTelefonoPadrePre == ''|| strDireccionTrabajoPadrePre == '' || strNivelAcademicoPadrePre == '' || intStatus2 == '')
+  if(
+  strNombreAlumnoPre == '' || 
+    strApellidoAlumnoPre == '' ||
+    intCedulaEscolarPre == '' ||
+    intGeneroPre == ''||
+    intNacionalidadPre == '' ||
+    intEstadoPre == '' ||
+    strLugarNacimientoPre == ''||
+    intTallaCamisa == '' ||
+    intTallaPantalon == '' || 
+    intTallaZapato == '' || 
+    intPeso == ''||
+    intEstatura == '' ||
+    strHermanosPre == '' ||
+    strNombreMadrePre == ''||
+    strApellidoMadrePre == '' ||
+    intNacionalidadMadrePre == '' ||
+    intCedulaMadrePre == '' || 
+    strEstadoCivilMadre == ''|| 
+    strNacimientoMadrePre == '' || 
+    strNacionalidad_madre_pre == '' || 
+    intEstadoMadrePre == ''||
+    strDireccionHabitacionMadrePre == '' ||
+    intTelefonoMadrePre == '' ||
+    strDireccionTrabajoMadrePre == '' ||
+    strNivelAcademicoMadrePre == ''||
+    strNombrePadrePre == '' || 
+    strApellidoPadrePre == '' || 
+    intNacionalidadPadrePre == ''|| 
+    intCedulaPadrePre == '' || 
+    strNacimientoPadrePre == '' ||
+    strNacionalidad_Padre_pre == ''||
+    intEstadoPadrePre == '' ||
+    strDireccionHabitacionPadrePre == '' ||
+    intTelefonoPadrePre == ''||
+    strDireccionTrabajoPadrePre == '' ||
+    strNivelAcademicoPadrePre == '' ||
+    intStatus2 == ''
+  )
+
   {
       swal("Atención", "Todos los campos son obligatorios." , "error");
       return false;
@@ -761,4 +795,309 @@ function ftnViewEstudiante_inicial(id_estudiante)
         }
     }
 
+}
+
+function fntEditEstudiante_inicial(id_estudiante) {
+  document.querySelector("#titleModal").innerHTML = "Actualizar Estudiante";
+  document.querySelector(".modal-header").classList.replace("headerRegister", "headerUpdate");
+  document.querySelector("#btnActionForm").classList.replace("btn-primary", "btn-info");
+  document.querySelector("#btnText").innerHTML = "Actualizar";
+
+  divLoading.style.display = "flex";
+
+  let request = window.XMLHttpRequest
+    ? new XMLHttpRequest()
+    : new ActiveXObject("Microsoft.XMLHTTP");
+  let  ajaxUrl = base_url+'/Estudiantes_inicial/getEstudiante_inicial_1/'+id_estudiante; 
+  request.open("GET", ajaxUrl, true);
+  request.send();
+
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      let objData = JSON.parse(request.responseText);
+      console.log(objData)
+     
+      
+      if (objData.status) {
+        document.querySelector("#idPre-escolar").value =objData.data.inicial_id;
+        document.querySelector("#nombre_alumnoPre1").value = objData.data.nombre_alumno1;
+        document.querySelector("#nombre_alumnoPre2").value = objData.data.nombre_alumno2;
+        document.querySelector("#apellido_alumnoPre1").value = objData.data.apellido_alumno1;
+        document.querySelector("#apellido_alumnoPre2").value = objData.data.apellido_alumno2;
+        document.querySelector("#cedula_escolarPre").value = objData.data.cedula_escolar;
+        document.querySelector("#fecha_nac_pre").value = objData.data.fecha_nac;
+        document.querySelector("#listGeneroPre").value = objData.data.genero;
+        document.querySelector("#listNacionalidadPre").value = objData.data.nacionalidad_alumno;
+        document.querySelector("#selectEstadoid2").value = objData.data.estado_id;
+        document.querySelector("#lugar_nacimientoPre").value = objData.data.nacimiento_alumno;
+        document.querySelector("#listTalla_camisa").value = objData.data.talla_camisa;
+        document.querySelector("#listTalla_pantalon").value = objData.data.talla_pantalon;
+        document.querySelector("#listTalla_zapato").value = objData.data.talla_zapato;
+        document.querySelector("#peso").value = objData.data.peso;
+        document.querySelector("#estatura").value = objData.data.estatura;
+       // document.querySelector("#listHermanosPre").value = objData.data.tiene_hermanos;
+        let tiene_hermano_ = objData.data.tiene_hermanos;
+      
+        document.querySelector("#cuantos_hermanos").value = objData.data.cuantos_hermanos;
+        document.querySelector("#listTipo_alumno_pre").value = objData.data.tipo_alumno;
+       //document.querySelector("#listTurnoPre").value = objData.data.turno;
+       let turn = objData.data.turno; 
+        document.querySelector("#selectSeccionid").value = objData.data.seccion_id ;
+        document.querySelector("#periodo-escolar-actual").value = objData.data.periodo_escolar;
+        document.querySelector("#funcionario").value = objData.data.funcionario;
+        document.querySelector("#fecha_inscripcion").value = objData.data.fecha_inscripcion;
+        document.querySelector("#nombre_madrePre").value = objData.data.nombre_madre;
+        document.querySelector("#apellido_madrePre").value = objData.data.apellido_madre;
+        document.querySelector("#listNacionalidad_madrePre_").value = objData.data.nacionalidad_madre;
+        document.querySelector("#cedula_madrePre").value = objData.data.cedula_madre;
+        document.querySelector("#listEstado_civil_madre").value = objData.data.estado_civil_madre;
+        document.querySelector("#lugar_nacimientoMadrePre").value = objData.data.nacimiento_madre;
+        document.querySelector("#listNacionalidad_madrePre").value = objData.data.tipo_nacionalidad_madre;
+        document.querySelector("#selectEstadoid3").value = objData.data.estado_madre_id ;
+        document.querySelector("#fecha_nac_madrePre").value = objData.data.fecha_nac_madre;
+        document.querySelector("#direccion_habitacion_madrePre").value = objData.data.direccion_hab_madre;
+        document.querySelector("#telefono_madrePre").value = objData.data.telefono_madre;
+        document.querySelector("#direccion_trabajo_madrePre").value = objData.data.direccion_trabajo_madre;
+        document.querySelector("#telefono_madre_trabajo").value = objData.data.telefono_trabajo_madre;
+        document.querySelector("#listNivel_academico_madre").value = objData.data.nivel_academico_madre;
+        document.querySelector("#otrosDatos_madre").value = objData.data.otros_datos_madre;
+        document.querySelector("#nombre_padrePre").value = objData.data.nombre_padre;  
+        document.querySelector("#apellido_padrePre").value = objData.data.apellido_padre;
+        document.querySelector("#listNacionalidad_padrePre").value = objData.data.nacionalidad_padre;
+        document.querySelector("#cedula_padrePre").value = objData.data.cedula_padre;
+        document.querySelector("#listEstado_civil_padre").value = objData.data.estado_civil_padre;
+        document.querySelector("#lugar_nacimientoPadrePre").value = objData.data.nacimiento_padre;
+        document.querySelector("#listNacionalidad_padrePre_").value = objData.data.tipo_nacionalidad_padre;
+        document.querySelector("#selectEstadoid4").value = objData.data.tipo_nacionalidad_padre;
+        document.querySelector("#fecha_nac_padrePre").value = objData.data.fecha_nac_padre;
+        document.querySelector("#direccion_habitacion_PadrePre").value = objData.data.direccion_hab_padre;
+        document.querySelector("#telefono_padrePre").value = objData.data.telefono_padre;
+        document.querySelector("#direccion_trabajo_padre").value = objData.data.direccion_trabajo_padre;
+        document.querySelector("#telefono_padre_trabajo").value = objData.data.direccion_trabajo_padre;
+        document.querySelector("#listNivel_academico_padre").value = objData.data.nivel_academico_padre;
+        document.querySelector("#otrosDatos_padre").value = objData.data.otros_datos_padre;
+        document.querySelector("#listCome_solo").value = objData.data.come_solo;
+       // document.querySelector("#listLo_ayudan").value = objData.data.lo_ayudan;
+        let loayudan_ = objData.data.lo_ayudan;
+        document.querySelector("#quien_loayuda").value = objData.data.quien_ayuda;
+        document.querySelector("#comida_prefiere").value = objData.data.comida_favortia;
+        document.querySelector("#comida_rechaza").value = objData.data.comida_rechaza;
+        document.querySelector("#alimentos_prohibidos").value = objData.data.alimientos_prohibidos;
+        document.querySelector("#listEsfinteres").value = objData.data.enfinteres;
+        document.querySelector("#listAsea_solo").value = objData.data.asea_solo;
+        document.querySelector("#horas_dormidas").value = objData.data.horas_duerme;
+        document.querySelector("#tiempo_dedica_madre").value = objData.data.tiempo_dedica_madre;
+        document.querySelector("#tiempo_dedica_padre").value = objData.data.tiempo_dedica_padre;
+        document.querySelector("#tiempo_dedica_abuelo").value = objData.data.tiempo_dedica_abuelos;
+        document.querySelector("#persona_retirarlo").value = objData.data.nombre_retiro;
+        document.querySelector("#listNacionalidad_retiro").value = objData.data.nacionalidad_retiro;
+        document.querySelector("#cedula_retiro").value = objData.data.cedula_retiro;
+        document.querySelector("#telefono_retiro").value = objData.data.celular_retiro;
+        document.querySelector("#listParentescoPre").value = objData.data.parentesco_retiro;
+        document.querySelector("#embarazo_pre_escolar").value = objData.data.situacion_embarazo;
+        document.querySelector("#problema_embarazo").value = objData.data.enfermedad_durante_embarazo;
+        document.querySelector("#oficio_embarazo").value = objData.data.oficio_durante_embarazo;
+        document.querySelector("#parto_prescolar").value = objData.data.situacion_parto_nacimiento;
+        document.querySelector("#edad_embarazo").value = objData.data.edad_madre_embarazo;
+        //document.querySelector("#listProblema_parto").value = objData.data.problemas_parto;
+        let problema_parto = objData.data.problemas_parto;
+        document.querySelector("#cual_problema_parto").value = objData.data.cual_problema_parto;
+        document.querySelector("#peso_alnacer").value = objData.data.peso_alnacer;
+        document.querySelector("#talla_alnacer").value = objData.data.talla_alnacer;
+        //document.querySelector("#listProblema_nacimiento").value = objData.data.problemas_primeros_dias;
+        let nac_problema = objData.data.problemas_primeros_dias;
+        document.querySelector("#cual_problema_nacer").value = objData.data.cual_problema;
+        document.querySelector("#comenzo_hablar").value = objData.data.edad_hablar;
+        document.querySelector("#comenzo_caminar").value = objData.data.edad_caminar;
+        document.querySelector("#dejo_panales").value = objData.data.edad_panales;
+        document.querySelector("#peso_nino").value = objData.data.peso_nino;
+        document.querySelector("#talla_nino").value = objData.data.talla_nino;
+        document.querySelector("#grupo_sanguineo").value = objData.data.grupo_sanguineo;
+       // document.querySelector("#listAlergicoPre").value = objData.data.alergico;
+        let es_alergico = objData.data.alergico;
+        document.querySelector("#Especifique_alergico").value = objData.data.especifique_alergia;
+        document.querySelector("#enfermeda_padecida_nino").value = objData.data.enfermedades_padrecidad;
+        document.querySelector("#listHospitalizado").value = objData.data.hospitalizado;
+        document.querySelector("#alergico_causa").value = objData.data.causa_hospitalizado;
+        document.querySelector("#medicamento_fiebre").value = objData.data.fiebre_alta_medicamento;
+        document.querySelector("#checkMotora").value = objData.data.motora;
+        document.querySelector("#checkCrecimiento").value = objData.data.crecimiento;
+        document.querySelector("#checkAuditiva").value = objData.data.auditiva;
+        document.querySelector("#checkVisual").value = objData.data.visual;
+        document.querySelector("#checkOtra_discapacidad").value = objData.data.otra_discapacidad;
+        document.querySelector("#discapacidad_otra").value = objData.data.especifique_discapacidad;
+        //document.querySelector("#listEspecialistas").value = objData.data.atendido_especialista;
+        let especialista = objData.data.atendido_especialista;
+        
+        document.querySelector("#especialista_cual").value = objData.data.cual_especialista;
+        document.querySelector("#listProblema_lenguaje").value = objData.data.problemas_lenguaje;
+        document.querySelector("#listMano_frecuentemente").value = objData.data.mano_habil;
+        document.querySelector("#tiempo_acuesta").value = objData.data.hora_para_dormir;
+        document.querySelector("#tiempo_selevanta").value = objData.data.hora_se_levanta;
+        document.querySelector("#listsueno_nino").value = objData.data.sueno_nino;
+        document.querySelector("#duerme_nino").value = objData.data.con_quien_duerme;
+        document.querySelector("#informacion_sumisnitrar").value = objData.data.informacion_importante;
+        document.querySelector("#listStatus2").value = objData.data.status;
+       
+
+
+       
+        $("#modalFormPre-escolar").modal("show");
+
+        $("#listGeneroPre").selectpicker("render");
+        $("#listNacionalidadPre").selectpicker("render");
+        $("#selectEstadoid2").selectpicker("render");
+        $("#listTalla_camisa").selectpicker("render");
+        $("#listTalla_pantalon").selectpicker("render");
+        $("#listTalla_zapato").selectpicker("render");
+        $("#listHermanosPre").selectpicker("render");
+        $("#listTipo_alumno_pre").selectpicker("render");
+        $("#listTurnoPre").selectpicker("render");
+        $("#listNacionalidad_madrePre_").selectpicker("render");
+        $("#listEstado_civil_madre").selectpicker("render");
+        $("#listNacionalidad_madrePre").selectpicker("render");
+        $("#selectEstadoid3").selectpicker("render");
+        $("#listNivel_academico_madre").selectpicker("render");
+
+        $("#listNacionalidad_padrePre").selectpicker("render");
+        $("#listNacionalidad_padrePre_").selectpicker("render");
+        $("#listEstado_civil_padre").selectpicker("render");
+        $("#selectEstadoid4").selectpicker("render");
+        $("#listNivel_academico_padre").selectpicker("render");
+        $("#listCome_solo").selectpicker("render");
+        $("#listLo_ayudan").selectpicker("render");
+        $("#listEsfinteres").selectpicker("render");
+        $("#listAsea_solo").selectpicker("render");
+        $("#listNacionalidad_retiro").selectpicker("render");
+        $("#listParentescoPre").selectpicker("render");
+        $("#parto_prescolar").selectpicker("render");
+        $("#embarazo_pre_escolar").selectpicker("render");      
+        $("#listProblema_parto").selectpicker("render");
+        $("#listProblema_nacimiento").selectpicker("render");
+        $("#listAlergicoPre").selectpicker("render");
+        $("#listHospitalizado").selectpicker("render");
+        $("#listEspecialistas").selectpicker("render");
+        $("#listProblema_lenguaje").selectpicker("render");
+        $("#listMano_frecuentemente").selectpicker("render");
+        $("#listsueno_nino").selectpicker("render");
+        $("#listStatus2").selectpicker("render"); 
+
+    
+       if(tiene_hermano_ == 1){
+        $('[data-id="listHermanosPre"]').click();
+        $('#bs-select-6-1').click();
+
+       }else{
+        $('[data-id="listHermanosPre"]').click();
+        $('#bs-select-6-2').click();
+
+       }
+
+       if(loayudan_ == "Si"){
+        $('[data-id="listLo_ayudan"]').click();
+        $('#bs-select-18-1').click();
+
+       }else{
+        $('[data-id="listLo_ayudan"]').click();
+        $('#bs-select-18-2').click();
+
+       }
+
+       if(problema_parto == "Si"){
+        $('[data-id="listProblema_parto"]').click();
+        $('#bs-select-25-1').click();
+
+       }else{
+        $('[data-id="listProblema_parto"]').click();
+        $('#bs-select-25-2').click();
+
+       }
+
+       if(nac_problema == "Si"){
+        $('[data-id="listProblema_nacimiento"]').click();
+        $('#bs-select-26-1').click();
+
+       }else{
+        $('[data-id="listProblema_nacimiento"]').click();
+        $('#bs-select-26-2').click();
+
+       }
+
+       if(es_alergico == "Si"){
+        $('[data-id="listAlergicoPre"]').click();
+        $('#bs-select-27-1').click();
+
+       }else{
+        $('[data-id="listAlergicoPre"]').click();
+        $('#bs-select-27-2').click();
+
+       }
+
+       
+       if(especialista == "Si"){
+        $('[data-id="listEspecialistas"]').click();
+        $('#bs-select-29-1').click();
+
+       }else{
+        $('[data-id="listEspecialistas"]').click();
+        $('#bs-select-29-2').click();
+
+       }
+
+        
+        
+        if(turn == 1){
+          
+
+          $('[data-id="listTurnoPre"]').click();
+                $('#bs-select-8-1').click();
+
+                setTimeout(function() {
+                
+                  let selectElement = document.getElementById("selectSeccionid");
+
+                  
+                  let valorDeseado = objData.data.seccion_id; 
+                  selectElement.value = valorDeseado;
+
+                  
+                  let event = new Event("change", { bubbles: true });
+                  selectElement.dispatchEvent(event);
+                }, 5e3);
+              
+             
+
+             
+      
+          
+          }else{ $('[data-id="listTurno"]').click();
+                $('#bs-select-8-2').click();
+          
+                setTimeout(function() {
+                
+                  let selectElement = document.getElementById("selectSeccionid");
+
+                  
+                  let valorDeseado = objData.data.seccion_id; 
+                  selectElement.value = valorDeseado;
+
+                  
+                  let event = new Event("change", { bubbles: true });
+                  selectElement.dispatchEvent(event);
+                }, 5e3);
+
+        }
+
+      
+   
+        
+
+        $('.animated-checkbox [type="checkbox"]').toArray().forEach(e=>e.value== 1 ? e.click() : e.checked = false);
+      } else {
+        swal("Error", objData.msg, "error");
+      }
+    }
+    divLoading.style.display = "none";
+    return false;
+  };
 }

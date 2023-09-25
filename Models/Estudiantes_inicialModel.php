@@ -8,6 +8,7 @@ class Estudiantes_inicialModel extends Mysql
     public $seccion;
     public $periodo;
     public $id_estudiante;
+    public $intId_estudiante;
     public function __construct()
     {
         parent::__construct();
@@ -271,6 +272,16 @@ class Estudiantes_inicialModel extends Mysql
         WHERE `estudiantes_inicial`.`status` != 0 AND inicial_id = $this->intId_estudiante_inicial";
 		$request = $this->select($sql);
 		return $request;
+	}
+
+    public function selectEstudiante_inicial_1(int $id_estudiante)
+	{
+		//BUSCAR Estudiante
+		$this->intId_estudiante = $id_estudiante;
+		$sql = "SELECT * FROM estudiantes_inicial WHERE inicial_id = {$this->intId_estudiante} AND `estudiantes_inicial`.`status`!= 0 ";
+		$request = $this->select($sql);
+		return $request; 
+		
 	}
 
     public function selectEstados()

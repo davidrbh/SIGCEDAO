@@ -272,7 +272,7 @@ class Estudiantes_inicial extends Controllers
 
 
 
-			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . '</div>';
 		}
 
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
@@ -287,6 +287,23 @@ class Estudiantes_inicial extends Controllers
 			$intId_estudiante = intval($intId_estudiante);
 			if ($intId_estudiante > 0) {
 				$arrData = $this->model->selectEstudiante_inicial($intId_estudiante);
+				if (empty($arrData)) {
+					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+				} else {
+					$arrResponse = array('status' => true, 'data' => $arrData);
+				}
+				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+			}
+	
+			die();
+		}
+
+		public function getEstudiante_inicial_1(int $intId_estudiante)
+		{
+	
+			$intId_estudiante = intval($intId_estudiante);
+			if ($intId_estudiante > 0) {
+				$arrData = $this->model->selectEstudiante_inicial_1($intId_estudiante);
 				if (empty($arrData)) {
 					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 				} else {

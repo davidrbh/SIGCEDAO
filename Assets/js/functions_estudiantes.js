@@ -346,7 +346,7 @@ function fntEditEstudiante(id_estudiante) {
   request.onreadystatechange = function () {
     if (request.readyState == 4 && request.status == 200) {
       let objData = JSON.parse(request.responseText);
-      console.log(objData)
+     
      
       
       if (objData.status) {
@@ -358,7 +358,7 @@ function fntEditEstudiante(id_estudiante) {
         document.querySelector("#cedula_escolar").value = objData.data.cedula_escolar;
         document.querySelector("#fecha_nac").value = objData.data.fecha_nac;
         document.querySelector("#listGenero").value = objData.data.genero;
-        document.querySelector("#listNacionalidad").value = objData.data.nacionalidad_alumno;;
+        document.querySelector("#listNacionalidad").value = objData.data.nacionalidad_alumno;
         document.querySelector("#selectEstadoid").value = objData.data.estado_id;
         document.querySelector("#lugar_nacimiento").value = objData.data.lugar_nacimiento;
         document.querySelector("#direccion_habitacion").value = objData.data.direccion_hab;

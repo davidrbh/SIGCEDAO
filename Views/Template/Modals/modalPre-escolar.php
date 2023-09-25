@@ -168,8 +168,8 @@
                 <label for="listTipo_alumno_pre">Tipo de Alumno:</label>
                 <select class="form-control selectpicker" id="listTipo_alumno_pre" name="listTipo_alumno_pre" required>
                   <option value="">Seleccione</option>
-                  <option value="Nuevo ingreso">Nuevo Ingreso</option>
-                  <option value="Segundo">Regular</option>
+                  <option value="Nuevo Ingreso">Nuevo Ingreso</option>
+                  <option value="Regular">Regular</option>
       
                 </select>
               </div>
@@ -279,8 +279,8 @@
               </div>
 
               <div class="form-group col-md-1">
-                <label for="listNacionalidad_madrePre">Nacionalidad:</label>
-                <select class="form-control selectpicker" id="listNacionalidad_madrePre" name="listNacionalidad_madrePre" required>
+                <label for="listNacionalidad_madrePre_">Nacionalidad:</label>
+                <select class="form-control selectpicker" id="listNacionalidad_madrePre_" name="listNacionalidad_madrePre_" required>
                 <option value="">Seleccione</option>  
                 <option value="V-">V-</option>
                   <option value="E-">E-</option>
@@ -316,8 +316,8 @@
                   <label for="listNacionalidad_madre_Pre">Nacionalidad:</label>
                   <select class="form-control selectpicker " id="listNacionalidad_madrePre" name="listNacionalidad_madrePre" required>
                     <option value="">Seleccione</option>
-                    <option value="1">Venezolana</option>
-                    <option value="2">Extranjera</option>
+                    <option value="Venezolana">Venezolana</option>
+                    <option value="Extranjera">Extranjera</option>
                   </select>
                 </div>
 
@@ -430,8 +430,8 @@
                 </div>
 
                 <div class="form-group col-md-3">
-                  <label for="direccion_habitacion_Padre_Pre">Nacionalidad:</label>
-                  <select class="form-control selectpicker " id="direccion_habitacion_Padre_Pre" name="direccion_habitacion_Padre_Pre" required>
+                  <label for="listNacionalidad_padrePre_">Nacionalidad:</label>
+                  <select class="form-control selectpicker " id="listNacionalidad_padrePre_" name="listNacionalidad_padrePre_" required>
                     <option value="">Seleccione</option>
                     <option value="1">Venezolana</option>
                     <option value="2">Extranjera</option>
