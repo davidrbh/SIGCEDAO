@@ -228,8 +228,10 @@
               </div> -->
 
               <div class="form-group col-md-3">
+              <label for="funcionario">Funcionario que realiza la inscripción:</label>
+                  <input type="hidden" name="funcionario" value="<?= $_SESSION['userData']['nombres'];?>">
               <fieldset disabled>
-                  <label for="funcionario">Funcionario que realiza la inscripción:</label>
+                
                   <input type="text" class="form-control valid validText" id="funcionario" name="funcionario" value="<?= $_SESSION['userData']['nombres'];?>" required="">
                 </fieldset>
                 </div>

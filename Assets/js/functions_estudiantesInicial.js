@@ -219,7 +219,6 @@ formPre_escolar.onsubmit = function (e) {
   let  strNacimientoPadrePre = document.querySelector('#lugar_nacimientoPadrePre').value;
   let  strNacionalidad_Padre_pre = document.querySelector('#listNacionalidad_padrePre').value;
   let  intEstadoPadrePre = document.querySelector('#selectEstadoid4').value;
-  let  strDireccionHabitacionPadrePre = document.querySelector('#direccion_habitacion_Padre_Pre').value;
   let  intTelefonoPadrePre = document.querySelector('#telefono_padrePre').value;
   let  strDireccionTrabajoPadrePre = document.querySelector('#direccion_trabajo_padre').value;
   let  strNivelAcademicoPadrePre = document.querySelector('#listNivel_academico_padre').value;
@@ -259,7 +258,6 @@ formPre_escolar.onsubmit = function (e) {
     strNacimientoPadrePre == '' ||
     strNacionalidad_Padre_pre == ''||
     intEstadoPadrePre == '' ||
-    strDireccionHabitacionPadrePre == '' ||
     intTelefonoPadrePre == ''||
     strDireccionTrabajoPadrePre == '' ||
     strNivelAcademicoPadrePre == '' ||
@@ -294,7 +292,7 @@ formPre_escolar.onsubmit = function (e) {
         $("#modalFormPre-escolar").modal("hide");
         formPre_escolar.reset();
         swal("Estudiantes", objData.msg, "success");
-        tablePre_escolar.api().ajax.reload(function () {});
+        tableEstudiantes_inicial.api().ajax.reload(function () {});
       } else {
         swal("Error", objData.msg, "error");
       }
@@ -573,7 +571,7 @@ function ftnViewEstudiante_inicial(id_estudiante)
              request.onreadystatechange = function(){
         if(request.readyState == 4 && request.status == 200){
             let  objData = JSON.parse(request.responseText);
-            console.log(objData)
+           // console.log(objData)
 
             if(objData.status)
             {
@@ -815,7 +813,7 @@ function fntEditEstudiante_inicial(id_estudiante) {
   request.onreadystatechange = function () {
     if (request.readyState == 4 && request.status == 200) {
       let objData = JSON.parse(request.responseText);
-      console.log(objData)
+      //console.log(objData)
      
       
       if (objData.status) {
@@ -1063,7 +1061,7 @@ function fntEditEstudiante_inicial(id_estudiante) {
                   
                   let event = new Event("change", { bubbles: true });
                   selectElement.dispatchEvent(event);
-                }, 5e3);
+                }, 3e3);
               
              
 
@@ -1084,7 +1082,7 @@ function fntEditEstudiante_inicial(id_estudiante) {
                   
                   let event = new Event("change", { bubbles: true });
                   selectElement.dispatchEvent(event);
-                }, 5e3);
+                }, 3e3);
 
         }
 
