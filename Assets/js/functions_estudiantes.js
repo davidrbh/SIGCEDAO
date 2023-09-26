@@ -491,7 +491,7 @@ function fntEditEstudiante(id_estudiante) {
                   
                   let event = new Event("change", { bubbles: true });
                   selectElement.dispatchEvent(event);
-                }, 5e3);
+                }, 3e3);
               
              
 
@@ -512,7 +512,7 @@ function fntEditEstudiante(id_estudiante) {
                   
                   let event = new Event("change", { bubbles: true });
                   selectElement.dispatchEvent(event);
-                }, 5e3);
+                }, 3e3);
 
         }
 
