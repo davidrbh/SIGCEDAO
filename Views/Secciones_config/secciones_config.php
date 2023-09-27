@@ -4,7 +4,9 @@
       <div class="app-title">
         <div>
           <h1><i class="fa fa-id-card-o"></i> <?= $data['page_title']; ?>
+          <?php if(!empty($_SESSION['permisos'][4]['w'])){ ?>
           <button class="btn btn-primary" type="button" onclick="openModal();" ><i class="fa-solid fa-circle-plus"></i> Nueva Sección</button>
+          <?php } ?>
 
         </h1>
           

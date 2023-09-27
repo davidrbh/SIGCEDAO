@@ -10,7 +10,9 @@
       <div class="app-title">
         <div>
           <h1><i class="fa fa-solid fa-users"> </i> <?= $data['page_title']; ?>
-          <button class="btn btn-primary" type="button" onclick="openModal();" ><i class="fa-solid fa-circle-plus"></i> Nuevo Alumno</button>       
+          <?php if(!empty($_SESSION['permisos'][7]['w'])){ ?>
+          <button class="btn btn-primary" type="button" onclick="openModal();" ><i class="fa-solid fa-circle-plus"></i> Nuevo Alumno</button>  
+          <?php } ?>     
         </h1>
          
 

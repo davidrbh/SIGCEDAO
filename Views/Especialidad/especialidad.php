@@ -6,8 +6,9 @@
       <div class="app-title">
         <div>
           <h1><i class="fa-solid fa-puzzle-piece"></i> <?= $data['page_title']; ?>
+          <?php if(!empty($_SESSION['permisos'][6]['w'])){ ?>
           <button class="btn btn-primary" type="button" onclick="openModal();" ><i class="fa-solid fa-circle-plus"></i> Nueva especialidad</button>
-
+          <?php } ?>
         </h1>
           
         </div>
