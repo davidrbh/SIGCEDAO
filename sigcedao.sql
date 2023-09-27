@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2023 a las 21:05:49
+-- Tiempo de generación: 27-09-2023 a las 15:58:38
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.5
 
@@ -445,12 +445,12 @@ INSERT INTO `modulos` (`id_modulo`, `titulo`, `desc_modulo`, `status`) VALUES
 (1, 'Dashboard', 'dashboard', 1),
 (2, 'Roles', 'roles', 1),
 (3, 'Usuarios', 'usuarios', 1),
-(4, 'Personal Administrativo', 'Personal administrativo', 1),
-(5, 'Secciones', 'Aulas de clase', 1),
-(6, 'Docentes', 'Docentes de aulas', 1),
-(7, 'Especialidad', 'Especialidad de docentes', 1),
+(4, 'Configuración de secciones ', 'Configuración de secciones ', 1),
+(5, 'Docentes', 'Docentes de aulas', 1),
+(6, 'Especialidad', 'Especialidad de docentes', 1),
+(7, 'Estudiantes Inicial', 'Estudiantes de inicial', 1),
 (8, 'Estudiantes Basica', 'Estudiantes de basica', 1),
-(9, 'Estudiantes Inicial', 'Estudiantes de inicial', 1),
+(9, 'Secciones', 'Secciones', 1),
 (10, 'Planillas', 'Documentos', 1);
 
 -- --------------------------------------------------------
@@ -474,19 +474,46 @@ CREATE TABLE `permisos` (
 --
 
 INSERT INTO `permisos` (`id_permisos`, `rol_id`, `modulo_id`, `r`, `w`, `u`, `d`) VALUES
-(37, 2, 1, 0, 0, 0, 0),
-(38, 2, 2, 0, 0, 0, 0),
-(39, 2, 3, 0, 0, 0, 0),
-(40, 1, 1, 1, 1, 1, 1),
-(41, 1, 2, 1, 1, 1, 1),
-(42, 1, 3, 1, 1, 1, 1),
-(43, 1, 4, 1, 1, 1, 1),
-(44, 1, 5, 1, 1, 1, 1),
-(45, 1, 6, 1, 1, 1, 1),
-(46, 1, 7, 1, 1, 1, 1),
-(47, 1, 8, 1, 1, 1, 1),
-(48, 1, 9, 1, 1, 1, 1),
-(49, 1, 10, 1, 1, 1, 1);
+(50, 2, 1, 1, 0, 0, 0),
+(51, 2, 2, 1, 1, 1, 1),
+(52, 2, 3, 1, 1, 1, 1),
+(53, 2, 4, 1, 1, 1, 1),
+(54, 2, 5, 1, 1, 1, 1),
+(55, 2, 6, 1, 1, 1, 1),
+(56, 2, 7, 1, 1, 1, 0),
+(57, 2, 8, 1, 1, 1, 0),
+(58, 2, 9, 1, 0, 0, 0),
+(59, 2, 10, 1, 0, 0, 0),
+(70, 4, 1, 1, 0, 0, 0),
+(71, 4, 2, 0, 0, 0, 0),
+(72, 4, 3, 0, 0, 0, 0),
+(73, 4, 4, 1, 1, 1, 1),
+(74, 4, 5, 1, 1, 1, 1),
+(75, 4, 6, 1, 1, 1, 1),
+(76, 4, 7, 1, 1, 1, 0),
+(77, 4, 8, 1, 1, 1, 0),
+(78, 4, 9, 1, 0, 0, 0),
+(79, 4, 10, 1, 0, 0, 0),
+(80, 1, 1, 1, 0, 0, 0),
+(81, 1, 2, 1, 1, 1, 1),
+(82, 1, 3, 1, 1, 1, 1),
+(83, 1, 4, 1, 1, 1, 1),
+(84, 1, 5, 1, 1, 1, 1),
+(85, 1, 6, 1, 1, 1, 1),
+(86, 1, 7, 1, 1, 1, 0),
+(87, 1, 8, 1, 1, 1, 0),
+(88, 1, 9, 1, 0, 0, 0),
+(89, 1, 10, 1, 0, 0, 0),
+(110, 3, 1, 1, 0, 0, 0),
+(111, 3, 2, 0, 0, 0, 0),
+(112, 3, 3, 0, 0, 0, 0),
+(113, 3, 4, 0, 0, 0, 0),
+(114, 3, 5, 0, 0, 0, 0),
+(115, 3, 6, 0, 0, 0, 0),
+(116, 3, 7, 1, 1, 1, 0),
+(117, 3, 8, 1, 1, 1, 0),
+(118, 3, 9, 1, 0, 0, 0),
+(119, 3, 10, 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -609,7 +636,9 @@ INSERT INTO `usuario` (`id_usuario`, `cedula`, `nombres`, `apellidos`, `telefono
 (1, 'V-24723325', 'Josue Sebastian', 'Hernandez Barrera', '0424-2029800', '7396davidrbh@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', 1, '2022-07-23 19:51:47', 1),
 (2, 'V-14909718', 'Analix Dubraska', 'Hernandez Deyan', '0424-1697285', 'analix@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'b82c33bd7a7f6812facf-4419b02e4616b610625a-d4990f15b14a7dfe1fff-5ad55286698f85cdd', 2, '2022-07-24 21:14:03', 1),
 (9, 'V-3250811', 'Jildry', 'Marquez', '0212-8993222', 'mjildry23@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', 1, '2022-07-28 00:21:58', 1),
-(10, 'V-13528981', 'Richard', 'Parra', '0424-2939291', 'richard66np@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', 1, '2022-08-04 20:21:49', 1);
+(10, 'V-13528981', 'Richard', 'Parra', '0424-2939291', 'richard66np@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', 1, '2022-08-04 20:21:49', 1),
+(14, '898785', 'Lorena', 'Guzman', '04242654574', 'ejemplo@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', 3, '2023-09-26 15:47:42', 1),
+(15, '14723325', 'Maria', 'Gutierrez', '02125741416', 'ejemplo2@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', 4, '2023-09-26 15:49:24', 1);
 
 --
 -- Índices para tablas volcadas
@@ -770,7 +799,7 @@ ALTER TABLE `modulos`
 -- AUTO_INCREMENT de la tabla `permisos`
 --
 ALTER TABLE `permisos`
-  MODIFY `id_permisos` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id_permisos` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
 -- AUTO_INCREMENT de la tabla `personal_adminitrativo`
@@ -800,7 +829,7 @@ ALTER TABLE `turno`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_usuario` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Restricciones para tablas volcadas
