@@ -19,6 +19,7 @@ class Usuarios extends Controllers
 			{
 				header('location:' .base_url() .'/login');
 			}
+			getPermisos(3);
 
 
 	}
@@ -62,23 +63,31 @@ class Usuarios extends Controllers
 				$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
 			}
 
+			if($_SESSION['permisosMod']['r']){ 
+				$btnView = '<button class="btn btn-info btn-sm btnViewUsuario" onClick="ftnViewUsuario('.$arrData[$i]['id_usuario'].')" title="Ver Usuario"><i class="fa fa-eye" aria-hidden="true"></i></button>';
+			}
 
-			$btnView = '<button class="btn btn-info btn-sm btnViewUsuario" onClick="ftnViewUsuario(' . $arrData[$i]['id_usuario'] . ')" title="Ver Usuario"><i class="fa fa-eye" aria-hidden="true"></i></button>';
+			if($_SESSION['permisosMod']['u']){ 
+				if(($_SESSION['id_User'] == 1 and $_SESSION['userData']['id_rol'] == 1) || 
+					($_SESSION['userData']['id_rol'] == 1 and $arrData[$i]['id_rol'] != 1)){
+				$btnEdit ='<button class="btn btn-primary btn-sm btnEditUsuario" onClick="fntEditUsuario('.$arrData[$i]['id_usuario'].')" title="Editar Usuario"><i class="fas fa-pencil-alt"></i></button>';
+				}else{
+					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled><i class="fas fa-pencil-alt"></i></button>';
+				}
+			}
+
+			if($_SESSION['permisosMod']['d']){ 
+				if(($_SESSION['id_User'] == 1 and $_SESSION['userData']['id_rol'] == 1) || 
+					($_SESSION['userData']['id_rol'] == 1 and $arrData[$i]['id_rol'] != 1) and 
+					($_SESSION['userData']['id_usuario']  != $arrData[$i]['id_usuario'])){
+				$btnDelete = '<button class="btn btn-danger btn-sm btnDelUsuario" onClick="fntDelUsuario('.$arrData[$i]['id_usuario'].')" title="Eliminar Usuario"><i class="far fa-trash-alt"></i></button>';
+			 }else{
+					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled><i class="far fa-trash-alt"></i></button>';
+				
+			}
+		}
 
 
-
-
-			$btnEdit = '<button class="btn btn-primary btn-sm btnEditUsuario" onClick="fntEditUsuario(' . $arrData[$i]['id_usuario'] . ')" title="Editar Usuario"><i class="fas fa-pencil-alt"></i></button>';
-
-			//$btnEdit = '<button class="btn btn-secondary btn-sm" disabled><i class="fas fa-pencil-alt"></i></button>';
-
-
-
-
-
-			$btnDelete = '<button class="btn btn-danger btn-sm btnDelUsuario" onClick="fntDelUsuario(' . $arrData[$i]['id_usuario'] . ')" title="Eliminar Usuario"><i class="far fa-trash-alt"></i></button>';
-
-			//$btnDelete = '<button class="btn btn-secondary btn-sm" disabled><i class="far fa-trash-alt"></i></button>';
 
 
 

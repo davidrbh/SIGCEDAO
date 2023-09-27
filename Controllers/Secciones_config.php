@@ -17,6 +17,7 @@ class Secciones_config extends Controllers
 			{
 				header('location:' .base_url() .'/login');
 			}
+			getPermisos(4);
 
     }
    
@@ -48,22 +49,22 @@ class Secciones_config extends Controllers
 				$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
 			}
 
-
+			if($_SESSION['permisosMod']['r']){ 
 			$btnView = '<button class="btn btn-info btn-sm btnViewSeccion_config" onClick="ftnViewSeccion_config(' . $arrData[$i]['id_seccion'] . ')" title="Ver Sección"><i class="fa fa-eye" aria-hidden="true"></i></button>';
+			}
 
 
-
-
+			if($_SESSION['permisosMod']['u']){ 
 			$btnEdit = '<button class="btn btn-primary btn-sm btnEditSeccion_config" onClick="fntEditSeccion_config(' . $arrData[$i]['id_seccion'] . ')" title="Editar Sección"><i class="fas fa-pencil-alt"></i></button>';
-
+			}
 			//$btnEdit = '<button class="btn btn-secondary btn-sm" disabled><i class="fas fa-pencil-alt"></i></button>';
 
 
 
 
-
+			if($_SESSION['permisosMod']['d']){ 
 			$btnDelete = '<button class="btn btn-danger btn-sm btnDelSeccion_config" onClick="fntDelSeccion_config(' . $arrData[$i]['id_seccion'] . ')" title="Eliminar Sección"><i class="far fa-trash-alt"></i></button>';
-
+			}
 			//$btnDelete = '<button class="btn btn-secondary btn-sm" disabled><i class="far fa-trash-alt"></i></button>';
 
 

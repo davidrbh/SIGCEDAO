@@ -17,6 +17,7 @@ class Estudiantes extends Controllers
 			{
 				header('location:' .base_url() .'/login');
 			}
+			getPermisos(8);
     }
 
     /**
@@ -683,14 +684,14 @@ class Estudiantes extends Controllers
 			
 			$arrData[$i]['nombre_repre'] =   $arrData[$i]['nombre_repre'].' '.$arrData[$i]['apellido_repre'];
 
-
+			if($_SESSION['permisosMod']['r']){ 
 			$btnView = '<button class="btn btn-info btn-sm btnViewEstudiante" onClick="ftnViewEstudiante(' . $arrData[$i]['id_estudiante'] . ')" title="Ver Estudiante"><i class="fa fa-eye" aria-hidden="true"></i></button>';
+			}
 
 
-
-
+			if($_SESSION['permisosMod']['u']){ 
 			$btnEdit = '<button class="btn btn-primary btn-sm btnEditEstudiante" onClick="fntEditEstudiante(' . $arrData[$i]['id_estudiante'] . ')" title="Editar Estudiante"><i class="fas fa-pencil-alt"></i></button>';
-
+			}
 			//$btnEdit = '<button class="btn btn-secondary btn-sm" disabled><i class="fas fa-pencil-alt"></i></button>';
 
 

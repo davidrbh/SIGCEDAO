@@ -10,6 +10,7 @@ class Estudiantes_inicial extends Controllers
 			{
 				header('location:' .base_url() .'/login');
 			}
+			getPermisos(7);
     }
     public function estudiantes_inicial()
     {
@@ -678,14 +679,14 @@ class Estudiantes_inicial extends Controllers
 
 			
 
-
+			if($_SESSION['permisosMod']['r']){ 
 			$btnView = '<button class="btn btn-info btn-sm btnViewEstudiante_inicial" onClick="ftnViewEstudiante_inicial(' . $arrData[$i]['inicial_id'] . ')" title="Ver Estudiante"><i class="fa fa-eye" aria-hidden="true"></i></button>';
+			}
 
 
-
-
+			if($_SESSION['permisosMod']['u']){ 
 			$btnEdit = '<button class="btn btn-primary btn-sm btnEditEstudiante_inicial" onClick="fntEditEstudiante_inicial(' . $arrData[$i]['inicial_id'] . ')" title="Editar Estudiante"><i class="fas fa-pencil-alt"></i></button>';
-
+			}
 			//$btnEdit = '<button class="btn btn-secondary btn-sm" disabled><i class="fas fa-pencil-alt"></i></button>';
 
 

@@ -18,6 +18,7 @@ class Docentes extends Controllers
 			{
 				header('location:' .base_url() .'/login');
 			}
+			getPermisos(5);
     }
 
     /**
@@ -55,22 +56,22 @@ class Docentes extends Controllers
 
 			
 
-
+			if($_SESSION['permisosMod']['r']){ 
 			$btnView = '<button class="btn btn-info btn-sm btnViewDocente" onClick="ftnViewDocente(' . $arrData[$i]['id_docentes'] . ')" title="Ver Docente"><i class="fa fa-eye" aria-hidden="true"></i></button>';
+			}
 
 
-
-
+			if($_SESSION['permisosMod']['u']){ 
 			$btnEdit = '<button class="btn btn-primary btn-sm btnEditDocente" onClick="fntEditDocente(' . $arrData[$i]['id_docentes'] . ')" title="Editar Docente"><i class="fas fa-pencil-alt"></i></button>';
-
+			}
 			//$btnEdit = '<button class="btn btn-secondary btn-sm" disabled><i class="fas fa-pencil-alt"></i></button>';
 
 
 
 
-
+			if($_SESSION['permisosMod']['d']){ 
 			$btnDelete = '<button class="btn btn-danger btn-sm btnDelDocente" onClick="fntDelDocente(' . $arrData[$i]['id_docentes'] . ')" title="Eliminar Docente"><i class="far fa-trash-alt"></i></button>';
-
+			}
 			//$btnDelete = '<button class="btn btn-secondary btn-sm" disabled><i class="far fa-trash-alt"></i></button>';
 
 

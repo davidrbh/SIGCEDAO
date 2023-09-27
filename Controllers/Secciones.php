@@ -17,6 +17,7 @@ class Secciones extends Controllers
 			{
 				header('location:' .base_url() .'/login');
 			}
+            getPermisos(9);
 
     }
     /**
